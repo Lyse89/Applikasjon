@@ -1,0 +1,36 @@
+Beskrivelse av web-app
+    En alumni-side for nåværende studenter
+    ved usn hønefoss på studiet it og informasjonssystemer
+    
+
+Design
+
+    - Pålogging oppe til høyre
+    - Logo til venstre (?)
+    - Meny på midten.
+    
+
+Sider
+
+	- forside
+        - Enkel
+        - Nok info slik at besøkende forstår hva sidens
+          hensikt er.
+
+	- intranett-forside
+
+	- Admin-side
+	- godkjenning av events-side
+
+	- Karriere-side
+		- Tips til videre studier / jobb
+		- Linker til stillings-annonser
+
+	- profil-sider til alle brukere
+	- bruker-kontrollpanel
+	- Events
+	- stillingsannonse-side
+	- opprett-event-side
+	
+	- generell-chat
+	- karriere-chat
