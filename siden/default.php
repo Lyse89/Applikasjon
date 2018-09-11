@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr"> <!-- Hva er dir? -->
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="style/style.css" title="style" />
