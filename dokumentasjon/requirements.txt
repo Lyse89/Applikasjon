@@ -19,7 +19,7 @@ Sider
 
 	- intranett-forside
 
-	- Admin-side
+	- Admin-side.
 	- godkjenning av events-side
 
 	- Karriere-side
