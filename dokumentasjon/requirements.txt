@@ -1,4 +1,4 @@
-Beskrivelse av web-app
+﻿Beskrivelse av web-app
     En alumni-side for nåværende studenter
     ved usn hønefoss på studiet it og informasjonssystemer
     
@@ -32,5 +32,5 @@ Sider
 	- stillingsannonse-side
 	- opprett-event-side
 	
-	- generell-chat
-	- karriere-chat
+
+	-Kommentere på nyheter / artikler
