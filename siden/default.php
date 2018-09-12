@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr"> <!-- Hva er dir? -->
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="style/style.css" title="style" />
@@ -28,8 +28,8 @@
           <li>1</li>
           <li>2</li>
       </ul>
-  </body>
-  <footer>
+      <footer>
 
-  </footer>
+      </footer>
+  </body>
 </html>
