@@ -28,8 +28,8 @@
           <li>1</li>
           <li>2</li>
       </ul>
-  </body>
-  <footer>
+      <footer>
 
-  </footer>
+      </footer>
+  </body>
 </html>
