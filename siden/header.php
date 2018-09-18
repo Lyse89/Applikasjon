@@ -5,6 +5,7 @@
   <body>
     //Dette er en kommentar
     <div class="headerNav" id="headerNav">
+      <img scr="img/logo.png" alt="Logoen til USN" width="128" height="128">
     </div>
 
 
