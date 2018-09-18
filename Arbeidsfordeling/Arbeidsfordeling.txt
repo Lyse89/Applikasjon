@@ -1,11 +1,14 @@
 William:
 1) Default.php (2kolonner)
 
+
 Joakim:
 1) Footer.php
 
+
 Kristoffer:
 1) Intranett.php (3kolonner)
-Simen:
 
+
+Simen:
 1) Header.php
