@@ -5,7 +5,7 @@
   <body>
 
     <div class="headerNav" id="headerNav">
-      <img scr="/img/logo.png" alt="Logoen til USN" width="128" height="128">
+      <img src="img/logo.png" alt="Logoen til USN" width="84" height="42">
 
       <label>Brukernavnet <input type="text" id="navn"></label>
       <label>Passord <input types="password" id="pw"></label>
