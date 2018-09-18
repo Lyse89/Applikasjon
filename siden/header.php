@@ -3,9 +3,12 @@
   <head>
   <meta charset="utf-8">
   <body>
-    //Dette er en kommentar
+
     <div class="headerNav" id="headerNav">
-      <img scr="img/logo.png" alt="Logoen til USN" width="128" height="128">
+      <img scr="/img/logo.png" alt="Logoen til USN" width="128" height="128">
+
+      <label>Brukernavnet <input type="text" id="navn"></label>
+      <label>Passord <input types="password" id="pw"></label>
     </div>
 
 
