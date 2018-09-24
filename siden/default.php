@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <title>Default</title>
     <style>
+        h1{
+            font-size: 50px;
+        }
 
         #DefaultBoxes{
           margin-top:5%;
@@ -12,24 +15,36 @@
         #DefaultBoxes .Box{
           float:left;
           text-align: center;
-          width:44%;
+          width:65%;
           padding:10px;
+          border-style:solid;
+          border-width: 2px;
         }
+        #DefaultBoxes .Box1{
+          float:left;
+          text-align: center;
+          width:30%;
+          padding:10px;
+          border-style:solid;
+          border-width: 2px;
+        }
+
+
+
     </style>
 
  </head>
   <body>
-    <h1>H1</h1>
     <!-- Header (Nav) -->
     <nav class="Navbar"></nav>
 
     <section id="DefaultBoxes">
             <div class="Box"> <!-- Alumni Overskrift (Venstre) -->
-                <h3>Sett in noe vil ha her</h3>
-                <p> ay ay ay ay ay ay ay ay ay ay ay ay ay ay ay ay ay ay ay ay ay ay</p>
+                <h1>Alumni</h1>
+                <p>USN Ringerike</p>
             </div>
-            <div class="Box"> <!-- Registrerings box -->
-                <h3>Sett in noe vil ha her</h3>
+            <div class="Box1"> <!-- Registrerings box -->
+                <h2>Registrer deg her</h2>
                 <p> ay ay ay ay ay ay ay ay ay ay ay ay ay ay ay ay ay ay ay </p>
             </div>
     </div>
