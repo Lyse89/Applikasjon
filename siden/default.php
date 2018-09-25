@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <title>Default</title>
     <style>
-        h1{
-            font-size: 50px;
-        }
 
         #DefaultBoxes{
           margin-top:5%;
@@ -29,6 +27,17 @@
           border-width: 2px;
         }
 
+        /* Responsivt Design */
+        @media(max-width: 768px){
+            #DefaultBoxes .Box,
+            #DefaultBoxes .Box1{
+                text-align:center;
+                width:96%;
+                margin-top: 10px;
+                float:none;
+
+            }
+        }
 
 
     </style>
