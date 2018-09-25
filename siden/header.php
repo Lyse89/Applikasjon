@@ -9,7 +9,7 @@
       <img class="logo-headerNav" src="img/logo.png" alt="Logoen til USN" width="84" height="42">
         <div class="Loggin">
           <label>Brukernavnet <input type="text" id="navn"></label>
-          <label>Passord <input types="password" id="pw"></label>
+          <label>Passord <input types="text" id="pw"></label>
           <button type="submit">Login</button>
         </div>
     </div>
