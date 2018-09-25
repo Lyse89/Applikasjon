@@ -50,3 +50,7 @@ body {
   border: none;
   cursor: pointer;
 }
+
+.headerNav .Loggin button:hover {
+  background: #ccc;
+}
