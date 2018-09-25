@@ -10,6 +10,7 @@
         <div class="Loggin">
           <label>Brukernavnet <input type="text" id="navn"></label>
           <label>Passord <input types="password" id="pw"></label>
+          <button type="submit">Login</button>
         </div>
     </div>
 
