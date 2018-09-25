@@ -22,14 +22,31 @@ body {
     color: white;
 }
 
-.Loggin {
-    margin-left: 80%;
-    position: static;
-    float:inherit;
-}
-
 .logo-headerNav {
     float: left;
     margin-left: 4px;
     margin-top: 4px;
+}
+
+.headerNav .Loggin {
+    float:right;
+}
+
+.headerNav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+  width: 150px;
+}
+
+.headerNav .Loggin button {
+  float: right;
+  padding: 6px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
 }
