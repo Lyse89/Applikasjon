@@ -20,5 +20,12 @@
 
 .Loggin {
     margin-left: 80%;
-    margin-top: auto;
+    position: static;
+    float:inherit;
+}
+
+.logo-headerNav {
+    float: left;
+    margin-left: 4px;
+    margin-top: 4px;
 }
