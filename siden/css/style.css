@@ -1,0 +1,24 @@
+.headerNav {
+    background-color: blue;
+    overflow: hidden;
+}
+
+.headerNav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.headerNav a:hover, .dropdown:hover .dropbtn {
+    background-color: #555;
+    color: white;
+}
+
+.Loggin {
+    margin-left: 80%;
+    margin-top: auto;
+}
