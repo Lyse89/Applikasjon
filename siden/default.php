@@ -45,7 +45,9 @@
  </head>
   <body>
     <!-- Header (Nav) -->
-    <nav class="Navbar"></nav>
+    <?php
+    include_once('header.php');
+    ?>
 
     <section id="DefaultBoxes">
             <div class="Box"> <!-- Alumni Overskrift (Venstre) -->
