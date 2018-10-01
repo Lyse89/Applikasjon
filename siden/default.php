@@ -6,7 +6,6 @@
     <meta charset="utf-8">
     <title>Default</title>
     <style>
-
         #DefaultBoxes{
           margin-top:5%;
         }
@@ -18,10 +17,11 @@
           padding:10px;
           border-style:solid;
           border-width: 2px;
+
         }
         #DefaultBoxes .Box1{
-          float:left;
-          text-align: center;
+          float:right;
+          text-align: left;
           width:30%;
           padding:10px;
           border-style:solid;
@@ -50,6 +50,7 @@
     include_once('header.php');
     ?>
 
+
     <section id="DefaultBoxes">
             <div class="Box"> <!-- Alumni Overskrift (Venstre) -->
                 <h1>Alumni</h1>
@@ -57,9 +58,19 @@
             </div>
             <div class="Box1"> <!-- Registrerings box -->
                 <h2>Registrer deg her</h2>
-                <p> ay ay ay ay ay ay ay ay ay ay ay ay ay ay ay ay ay ay ay </p>
+                <form>
+                    Fornavn: <input type"text" id=Fornavn> Etternavn: <input type"text" id=Etternavn> <br>
+                    Email: <input type="email">                               <br>
+                    Fødselsdato: <input type="date" id="Fødselsdato">         <br>
+                    Passord: <input type="password" id="Passord">              <br>
+                    Gjenta Passord: <input type"=password" id="GjentaPassord"> <br>
+                    Mann:<input type="checkbox" name="Mann" value="Mann"> Kvinne:<input type="checkbox" name="Kvinne" value="Kvinne"> <br>
+                    <input type="submit" value="Registrer Deg" id="registrer">
+
+                </form>
             </div>
     </div>
+    </section>
 
     <!-- Footer -->
     <footer class ="footer"></footer>
