@@ -56,7 +56,7 @@ body {
   background: #ccc;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 484px) {
   .headerNav .Loggin {
     float: none;
   }
@@ -71,4 +71,9 @@ body {
   .headerNav input[type=text] {
     border: 1px solid #ccc;
   }
+.logo-headerNav {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 }
