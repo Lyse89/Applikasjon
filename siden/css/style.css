@@ -60,7 +60,7 @@ body {
   .headerNav .Loggin {
     float: none;
   }
-  .headerNav a, .topnav input[type=text], .topnav .Loggin button {
+  .headerNav a, .navHeader input[type=text], .navHeader .Loggin button {
     float: none;
     display: block;
     text-align: left;
