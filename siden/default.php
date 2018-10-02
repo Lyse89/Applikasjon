@@ -18,22 +18,46 @@
           float:left;
           text-align: center;
           width:60%;
-          border-style:solid;
+          /*border-style:solid;*/
           border-width: 2px;
-
         }
+
         #DefaultBoxes .Box1{
           margin-left: 2%;
           float:left;
           text-align: left;
           width:30%;
           padding:0px;
-          border-style:solid;
+          /* border-style:solid; */
           border-width: 2px;
         }
 
-        /* Register form */
+        #DefaultBoxes .Box1 h2{
+            padding-left: 22px;
+        }
 
+        /* Register form */
+        input[type=password], input[type=email], input[type=date]{
+            width: 70%;
+            padding: 10px;
+            margin: 5px 0px 22px 22px;
+            display: inline-block;
+            border: none;
+            background: #f1f1f1;
+        }
+
+        input[type=text]{
+            width: 30.5%;
+            padding: 10px;
+            margin: 5px 0 22px 22px;
+            display: inline-block;
+            border: none;
+            background: #f1f1f1;
+        }
+
+        input[type="submit"]{
+            margin-left: 58%;
+        }
 
         /* Responsivt Design */
         @media(max-width: 768px){
@@ -44,11 +68,8 @@
                 margin-top: 10px;
                 margin-left: 0%;
                 float:none;
-
             }
         }
-
-
     </style>
 
  </head>
@@ -65,16 +86,14 @@
                 <p>USN Ringerike</p>
             </div>
             <div class="Box1"> <!-- Registrerings box -->
-                <h2>Registrer deg her</h2>
+                <h2>Opprett en ny konto</h2>
                 <form>
-                    Fornavn: <input type"text" id=Fornavn> Etternavn: <input type"text" id=Etternavn> <br>
-                    Email: <input type="email">                               <br>
-                    Fødselsdato: <input type="date" id="Fødselsdato">         <br>
-                    Passord: <input type="password" id="Passord">              <br>
-                    Gjenta Passord: <input type"=password" id="GjentaPassord"> <br>
-                    Mann:<input type="radio" name="checked" checked ="checked" value="Mann"> Kvinne:<input type="radio" name="checked" value="Kvinne"> <br>
+                    <input type="text" id=Fornavn placeholder="Fornavn"><input type="text" id=Etternavn placeholder="Etternavn"> <br>
+                    <input type="email" placeholder="Email">                                <br>
+                    <input type="date" id="Fødselsdato" placeholder="Fødselsdato">          <br>
+                    <input type="password" id="Passord" placeholder="Passord">              <br>
+                    <input type="password" id="GjentaPassord" placeholder="Gjenta Passord"> <br>
                     <input type="submit" value="Registrer Deg" id="registrer">
-
                 </form>
             </div>
     </div>
