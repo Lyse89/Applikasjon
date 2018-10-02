@@ -15,10 +15,11 @@
         }
 
         #DefaultBoxes .Box{
+          margin-top: 6%;
           float:left;
           text-align: center;
-          width:60%;
-          /*border-style:solid;*/
+          width:55%;
+          /* border-style:solid;*/
           border-width: 2px;
         }
 
@@ -26,7 +27,7 @@
           margin-left: 2%;
           float:left;
           text-align: left;
-          width:30%;
+          width:35%;
           padding:0px;
           /* border-style:solid; */
           border-width: 2px;
