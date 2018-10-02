@@ -56,7 +56,7 @@ body {
   background: #ccc;
 }
 
-@media screen and (max-width: 488px) {
+@media screen and (max-width: 500px) {
   .headerNav .Loggin {
     float: none;
   }
