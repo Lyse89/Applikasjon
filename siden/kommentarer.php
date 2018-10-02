@@ -9,7 +9,7 @@
                 background-color: #ddd;
             }
 
-            .Kommentar {
+            .nyKommentarBoks {
                 width: 80%;
                 height: auto;
                 overflow: auto;
@@ -17,12 +17,12 @@
                 background-color: white;
             }
 
-            .Kommentar label {
+            .nyKommentarBoks label {
                 display: block;                
                 margin: 20px 0 10px 10%;
             }
 
-            .Kommentar textarea{
+            .nyKommentarBoks textarea{
                 min-width: 78%;
                 max-width: 78%;
                 min-height: 50px;
@@ -30,7 +30,7 @@
                 margin: 0% 10% 0% 10%;
             }
 
-            .Kommentar button {
+            .nyKommentarBoks button {
                 margin: 10px 12% 40px 0;
                 clear: both;
                 float: right;
@@ -40,11 +40,13 @@
     </head>
     <body>
         
-        <div class="Kommentar">
+        <div class="nyKommentarBoks">
             <label for="nyKommentar">Skriv en ny kommentar</label>
             <textarea name="nyKommentar">Tekst...</textarea>
             <button type="submit">Legg til</button>
         </div>
 
+        <div class="Kommentar">
+        </div>
     </body>
 </html>

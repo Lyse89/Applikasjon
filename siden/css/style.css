@@ -56,7 +56,7 @@ body {
   background: #ccc;
 }
 
-@media screen and (max-width: 484px) {
+@media screen and (max-width: 500px) {
   .headerNav .Loggin {
     float: none;
   }
@@ -73,7 +73,6 @@ body {
   }
 .logo-headerNav {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 38%;
 }
 }
