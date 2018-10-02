@@ -13,17 +13,16 @@
         #DefaultBoxes .Box{
           float:left;
           text-align: center;
-          width:65%;
-          padding:10px;
+          width:60%;
           border-style:solid;
           border-width: 2px;
 
         }
         #DefaultBoxes .Box1{
-          float:right;
+          margin-left: 2%;
+          float:left;
           text-align: left;
           width:30%;
-          padding:10px;
           border-style:solid;
           border-width: 2px;
         }
@@ -35,6 +34,7 @@
                 text-align:center;
                 width:96%;
                 margin-top: 10px;
+                margin-left: 0%;
                 float:none;
 
             }
