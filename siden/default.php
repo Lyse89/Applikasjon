@@ -6,8 +6,12 @@
     <meta charset="utf-8">
     <title>Default</title>
     <style>
+
+
         #DefaultBoxes{
           margin-top:5%;
+          padding: 16px;
+          background-color: white;
         }
 
         #DefaultBoxes .Box{
@@ -26,6 +30,9 @@
           border-style:solid;
           border-width: 2px;
         }
+
+        /* Register form */
+
 
         /* Responsivt Design */
         @media(max-width: 768px){
