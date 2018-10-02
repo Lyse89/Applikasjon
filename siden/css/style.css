@@ -55,3 +55,20 @@ body {
 .headerNav .Loggin button:hover {
   background: #ccc;
 }
+
+@media screen and (max-width: 600px) {
+  .headerNav .Loggin {
+    float: none;
+  }
+  .headerNav a, .topnav input[type=text], .topnav .Loggin button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .headerNav input[type=text] {
+    border: 1px solid #ccc;
+  }
+}
