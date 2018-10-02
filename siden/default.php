@@ -64,7 +64,7 @@
                     Fødselsdato: <input type="date" id="Fødselsdato">         <br>
                     Passord: <input type="password" id="Passord">              <br>
                     Gjenta Passord: <input type"=password" id="GjentaPassord"> <br>
-                    Mann:<input type="checkbox" name="Mann" value="Mann"> Kvinne:<input type="checkbox" name="Kvinne" value="Kvinne"> <br>
+                    Mann:<input type="radio" name="checked" checked ="checked" value="Mann"> Kvinne:<input type="radio" name="checked" value="Kvinne"> <br>
                     <input type="submit" value="Registrer Deg" id="registrer">
 
                 </form>
