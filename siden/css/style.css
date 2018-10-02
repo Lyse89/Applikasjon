@@ -73,7 +73,6 @@ body {
   }
 .logo-headerNav {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 38%;
 }
 }
