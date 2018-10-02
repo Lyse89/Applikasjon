@@ -14,7 +14,7 @@
           float:left;
           text-align: center;
           width:65%;
-          padding:10px;
+          padding:0px;
           border-style:solid;
           border-width: 2px;
 
@@ -23,7 +23,7 @@
           float:right;
           text-align: left;
           width:30%;
-          padding:10px;
+          padding:0px;
           border-style:solid;
           border-width: 2px;
         }
