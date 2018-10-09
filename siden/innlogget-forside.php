@@ -47,7 +47,7 @@
 
 <body>
     <?php
-    include once('header-innlogget.php')
+    include_once('header-innlogget.php')
     ?>
 
 	<div class=c3-flexbox>
