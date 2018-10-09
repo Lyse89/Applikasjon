@@ -1,0 +1,14 @@
+Hva har vi gjort?
+
+Begrunne designet.
+   En forside som består kun av innlogging, registrering og informasjon om siden for potensielle nye brukere.
+
+   Enkelt design som gjør siden forståelig for alle, uavhengig av funksjonsnivå.
+
+Utnyttelse av plass ( stor liten skjerm)
+    Utformingen på siden er gjort slik at alt innhold tilpasses til brukerens valg av dimensjoner på vinduet. 
+
+Farger, kontraster osv.
+    Fargevalget består i hovedsak av gråtoner, hvitt og en ubestemt farge som aksent som vil brukes i border og adskilling av elementer.
+
+    Det har ikke blitt gjort, men vi har planer om å gå over kontraster, valør og fargebruk i henhold til de kravene som er satt i forbindelse med universell utforming.
