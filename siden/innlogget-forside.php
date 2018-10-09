@@ -10,10 +10,6 @@
 			background-color: #ddd;
 		}
 
-		.header {
-			height: 100px;
-			background-color: white;
-		}
 		.footer {
 			height: 250px;
 			background-color: darkgrey;
@@ -50,8 +46,9 @@
 </head>
 
 <body>
-	<!-- placeholder -->
-	<div class=header></div>
+    <?php
+    include once('header-innlogget.php')
+    ?>
 
 	<div class=c3-flexbox>
 		<div>
