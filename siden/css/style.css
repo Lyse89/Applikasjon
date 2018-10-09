@@ -4,7 +4,7 @@ body {
  }
 
 .headerNav {
-    background-color: blue;
+    background-color: darkgrey;
     overflow: hidden;
 }
 
@@ -35,8 +35,9 @@ body {
 }
 
 .headerNav input[type=text] {
-  padding: 6px;
+  height: 10px;
   margin-top: 8px;
+  margin-bottom: 0px;
   font-size: 17px;
   border: none;
   width: 150px;
@@ -44,7 +45,7 @@ body {
 
 .headerNav .Loggin button {
   float: right;
-  padding: 6px;
+  padding: 5px;
   margin-top: 8px;
   margin-right: 16px;
   background: #ddd;
