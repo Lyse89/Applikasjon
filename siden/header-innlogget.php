@@ -4,5 +4,6 @@
       <a href="#anonser">Anonser</a>
       <a href="#events">Sosialt</a>
       <a href="#nyheter">IT nyheter</a>
+      <a href="#minSIde" right-margin="5%">Min Side</a>
     </div>
   </div>
