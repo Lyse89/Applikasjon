@@ -7,18 +7,20 @@
     <title>Default</title>
     <style>
 
+        /* En container for Tittel og registreringsboks */
         #DefaultBoxes{
           margin-top:5%;
           background-color: white;
         }
 
+        /* Tittel */
         #DefaultBoxes .Box{
           margin-top: 6%;
           float:left;
           text-align: center;
           width:55%;
         }
-
+        /* registreringsboks */
         #DefaultBoxes .Box1{
           margin: 2% 2% 2% 2%;
           float:left;
@@ -64,7 +66,7 @@
     include_once('header.php');
     ?>
 
-
+    <!-- Skrevet av William -->
     <div id="DefaultBoxes">
             <div class="Box"> <!-- Alumni Overskrift (Venstre) -->
                 <h1 style="font-size: 50px;">Alumni</h1>
@@ -82,6 +84,7 @@
                 </form>
             </div>
     </div>
+    <!-- Sjekket av William -->
 
 
     <!-- Footer -->
