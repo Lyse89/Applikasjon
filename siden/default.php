@@ -63,6 +63,8 @@
   <body>
     <!-- Header (Nav) -->
     <?php
+    // Denne siden er utviklet av Simen A. Lyse , siste gang endret 09.12.2018
+    // Denne siden er kontrollert av Simen A. Lyse, siste gang 10.12.2018
     include_once('header.php');
     ?>
 
