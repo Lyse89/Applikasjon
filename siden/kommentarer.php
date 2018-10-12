@@ -1,6 +1,10 @@
+<!-- Denne siden er utviklet av Kristoffer Sorensen, siste gang endret 02.10.2018-->
+<!-- CSS'en skal senere flyttes ut av denne filen -->
+<!-- Mulig at denne siden gjøres om til en include-fil -->
 <!DOCTYPE html>
 <html>
     <head>
+    <!-- Mangler en del meta-data -->
         <title> </title>
         <style>
             body {
@@ -85,6 +89,7 @@
                         <li class="kommentarNavn">Kristoffer Sorensen<li>
                         <li class="kommentarDato">2018-09-28<li>
                     </ol>
+<!-- Her må det finnes ut en losning for hvordan det blir med tekst i databasen -->
 <pre>
 Her er en preformatert kommentar.
 Her er en preformatert kommentar.
@@ -104,6 +109,7 @@ Her er en preformatert kommentar.
                         <li class="kommentarNavn">Kristoffer Sorensen<li>
                         <li class="kommentarDato">2018-09-28<li>
                     </ol>
+<!-- Her må det finnes ut en losning for hvordan det blir med tekst i databasen -->
 <pre>
 Her er en preformatert kommentar.
 Her er en preformatert kommentar.
