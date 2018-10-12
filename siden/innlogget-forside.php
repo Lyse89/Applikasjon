@@ -1,5 +1,6 @@
-<!-- Denne siden er utviklet av Kristoffer Sorensen, siste gang endret 12.10.2018-->
+<!-- Denne siden er utviklet av Kristoffer Sorensen, siste gang endret 18.09.2018-->
 <!-- CSS'en skal senere flyttes ut av denne filen -->
+<!-- Denne siden kommer antageligvis til å bli erstattet av innloggetforside2.php -->
 <!DOCTYPE html>
 <html>
 <head>
