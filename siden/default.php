@@ -6,12 +6,6 @@
     <meta charset="utf-8">
     <title>Default</title>
     <style>
-        body {
-
-        }
-        html {
-            height: 100%;
-        }
 
         #DefaultBoxes{
           margin-top:5%;
@@ -23,9 +17,6 @@
           float:left;
           text-align: center;
           width:55%;
-           border-style:solid;*/
-          border-width: 2px;
-
         }
 
         #DefaultBoxes .Box1{
@@ -34,8 +25,6 @@
           text-align: center;
           width:35%;
           padding:10px;
-           border-style:solid; */
-          border-width: 2px;
         }
 
         #DefaultBoxes .Box1 h2{
