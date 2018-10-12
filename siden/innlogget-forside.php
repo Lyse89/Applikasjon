@@ -1,3 +1,5 @@
+<!-- Denne siden er utviklet av Kristoffer Sorensen, siste gang endret 12.10.2018-->
+<!-- CSS'en skal senere flyttes ut av denne filen -->
 <!DOCTYPE html>
 <html>
 <head>
