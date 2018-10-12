@@ -1,3 +1,5 @@
+<!-- All kode skrevet av Kristoffer Sorensen 216387-->
+<!-- CSS'en skal senere flyttes ut av denne filen -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -57,6 +59,7 @@ body {
 include_once('header-innlogget.php')
 ?>
 
+<!-- Denne delen vil senere erstattes med data hentet fra db'en -->
 <div class="center">
 <h2>Nyheter</h2>
 <div class="flex-container">
