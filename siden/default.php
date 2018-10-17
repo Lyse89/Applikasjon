@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<!-- Denne siden er utviklet av William Rastad, siste gang endret 09.12.2018 -->
+<!-- Denne siden er kontrollert av William Rastad, siste gang 10.12.2018 -->
 <html lang="en" dir="ltr">
  <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -63,8 +65,8 @@
   <body>
     <!-- Header (Nav) -->
     <?php
-    // Denne siden er utviklet av Simen A. Lyse , siste gang endret 09.12.2018
-    // Denne siden er kontrollert av Simen A. Lyse, siste gang 10.12.2018
+    // Denne include-siden er utviklet av Simen A. Lyse , siste gang endret 09.12.2018
+    // Denne include-siden er kontrollert av Simen A. Lyse, siste gang 10.12.2018
     include_once('header.php');
     ?>
 
