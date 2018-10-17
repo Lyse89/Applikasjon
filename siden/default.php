@@ -70,7 +70,7 @@
     include_once('header.php');
     ?>
 
-    <!-- Skrevet av William -->
+
     <div id="DefaultBoxes">
             <div class="Box"> <!-- Alumni Overskrift (Venstre) -->
                 <h1 style="font-size: 50px;">Alumni</h1>
@@ -88,7 +88,6 @@
                 </form>
             </div>
     </div>
-    <!-- Sjekket av William -->
 
 
     <!-- Footer -->
