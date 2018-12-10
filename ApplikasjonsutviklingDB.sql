@@ -1,5 +1,6 @@
 -- Applikasjonsutvikling Database --
 -- Oppretter Database  --
+-- Databasen laget og kontrollert av William Rastad --
 DROP SCHEMA IF EXISTS ApplikasjonsutviklingDB;
 CREATE SCHEMA ApplikasjonsutviklingDB;
 USE ApplikasjonsutviklingDB;
