@@ -85,7 +85,7 @@
                     <input type="date" name="fødselsdato" id="Fødselsdato" placeholder="Fødselsdato">          <br>
                     <input type="password" name="passord" id="Passord" placeholder="Passord">              <br>
                     <input type="text" name="studentid" id="StudentID" placeholder="StudentID"> <br>
-                    <input type="submit" value="Registrer Deg" id="registrer">
+                    <input type="submit" name="btnSignup_form" value="Registrer Deg" id="registrer">
                 </form>
             </div>
     </div>
