@@ -1,4 +1,5 @@
 <?php
+// Simen
 include_once 'db.inc.php';
 
 if(isset($_POST['btnSignup_form']))
