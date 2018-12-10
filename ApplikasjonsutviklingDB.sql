@@ -8,7 +8,7 @@ USE ApplikasjonsutviklingDB;
 -- Oppretter Tabellen bruker --
 CREATE TABLE bruker(
 idbruker INT NOT NULL AUTO_INCREMENT,
-brukerNavn 	VARCHAR(45) NOT NULL,
+brukerNavn 	VARCHAR(45) NOT NULL UNIQUE,
 passord 	VARCHAR(40) NOT NULL,
 fornavn 	VARCHAR(40) NOT NULL,
 etternavn 	VARCHAR(40) NOT NULL,
