@@ -1,23 +1,19 @@
 <?php
 include_once 'db.inc.php';
 
-if(isset($_POST['btn-signup']))
+if(isset($_POST['btnSignup_form']))
 {
-   $uname = trim($_POST['txt_uname']);
-   $umail = trim($_POST['txt_umail']);
-   $upass = trim($_POST['txt_upass']);
+   $bfornavn = trim($_POST['fornavn']);
+   $uetternavn = trim($_POST['etternavn']);
+   $epost = trim($_POST['epost']);
+   $fødselsdato = trim($_POST['fødselsdato']);
+   $passord = trim($_POST['passord']);
+   $studentid = trim($_POST['studentid']);
 
-   if($uname=="") {
-      $error[] = "provide username !";
-   }
-   else if($umail=="") {
-      $error[] = "provide email id !";
-   }
-   else if(!filter_var($umail, FILTER_VALIDATE_EMAIL)) {
-      $error[] = 'Please enter a valid email address !';
-   }
-   else if($upass=="") {
-      $error[] = "provide password !";
+   // Dobbel saltet og hashet passord
+   $passord = sha1($salt.sha1($salt.&_POST['passord']));
+
+
    }
 
 ?>

@@ -82,7 +82,7 @@
                     <input type="text" name="fornavn" id=Fornavn placeholder="Fornavn">
                     <input type="text" name="etternavn" id=Etternavn placeholder="Etternavn"> <br>
                     <input type="email" name="epost" placeholder="Email">                                <br>
-                    <input type="date" name="fødselsdato" id="Fødselsdato" placeholder="Fødselsdato">          <br>
+                    <input type="password" name="førstePasord" id="Passord" placeholder="Passord">          <br>
                     <input type="password" name="passord" id="Passord" placeholder="Passord">              <br>
                     <input type="text" name="studentid" id="StudentID" placeholder="StudentID"> <br>
                     <input type="submit" name="btnSignup_form" value="Registrer Deg" id="registrer">
