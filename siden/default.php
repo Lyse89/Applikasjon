@@ -79,12 +79,12 @@
             <div class="Box1"> <!-- Registrerings box -->
                 <h2>Opprett en ny konto</h2>
                 <form class="signup-form" action="include/signeup.inc.php" method="POST">
-                    <input type="text" id=Fornavn placeholder="Fornavn">
-                    <input type="text" id=Etternavn placeholder="Etternavn"> <br>
-                    <input type="email" placeholder="Email">                                <br>
-                    <input type="date" id="Fødselsdato" placeholder="Fødselsdato">          <br>
-                    <input type="password" id="Passord" placeholder="Passord">              <br>
-                    <input type="password" id="GjentaPassord" placeholder="Gjenta Passord"> <br>
+                    <input type="text" name="fornavn" id=Fornavn placeholder="Fornavn">
+                    <input type="text" name="etternavn" id=Etternavn placeholder="Etternavn"> <br>
+                    <input type="email" name="epost" placeholder="Email">                                <br>
+                    <input type="date" name="fødselsdato" id="Fødselsdato" placeholder="Fødselsdato">          <br>
+                    <input type="password" name="passord" id="Passord" placeholder="Passord">              <br>
+                    <input type="text" name="studentid" id="StudentID" placeholder="StudentID"> <br>
                     <input type="submit" value="Registrer Deg" id="registrer">
                 </form>
             </div>
