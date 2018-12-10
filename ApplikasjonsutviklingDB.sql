@@ -1,16 +1,21 @@
--- Applikasjonsutvikling Database
+-- Applikasjonsutvikling Database --
 -- Oppretter Database  --
 DROP SCHEMA IF EXISTS ApplikasjonsutviklingDB;
 CREATE SCHEMA ApplikasjonsutviklingDB;
 USE ApplikasjonsutviklingDB;
 
+-- Oppretter Tabellen bruker --
 CREATE TABLE bruker(
-idbruker INT,
-brukerNavn VARCHAR(45),
-passord VARCHAR(40),
-ePost VARCHAR(45),
-feilLoginnTeller INT,
-feilLoginnSiste DATETIME,
-FeilIP VARCHAR(45),
+idbruker INT NOT NULL AUTO_INCREMENT,
+brukerNavn 	VARCHAR(45) NOT NULL,
+passord 	VARCHAR(40) NOT NULL,
+fornavn 	VARCHAR(40) NOT NULL,
+etternavn 	VARCHAR(40) NOT NULL,
+fødselsdato DATE NOT NULL,
+ePost 		VARCHAR(45) NOT NULL,
+feilLoginnTeller 	INT,
+feilLoginnSiste 	DATETIME,
+FeilIP 				VARCHAR(45),
+
 CONSTRAINT idbrukerPK PRIMARY KEY (idbruker)
 );
