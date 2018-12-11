@@ -28,8 +28,6 @@ if(isset($_POST['btnSignup_form'])) {
 
    $stmt->execute();
 
-   var_dump($_POST);
-
     } else {
     }
    header("Location: default.php");
