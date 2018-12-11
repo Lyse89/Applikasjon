@@ -6,8 +6,8 @@ if(isset($_POST['btnSignup_form'])) {
    $dsn = "mysql:host=localhost;dbname=alumni05";
    $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
 
-   $sql = "insert into bruker (idbruker,brukerNavn,passord,fornavn,etternavn,fødselsdato,ePost)";
-   $sql.= " values (:fornavn,:etternavn,:epost,:fødselsdato,:passord,:studentid)";
+   $sql = "insert into bruker (brukerNavn,passord,fornavn,etternavn,fødselsdato,ePost)";
+   $sql.= " values (:studentid,:passord,:fornavn,:etternavn,:fødselsdato,:epost)";
 
    $stmt = $db->prepare($sql);
 
