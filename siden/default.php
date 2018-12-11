@@ -78,7 +78,7 @@
             </div>
             <div class="Box1"> <!-- Registrerings box -->
                 <h2>Opprett en ny konto</h2>
-                <form class="signup-form" action="include/signeup.inc.php" method="POST">
+                <form class="signup-form" action="forsiden/registrering.inc.php" method="POST">
                     <input type="text" name="fornavn" id=Fornavn placeholder="Fornavn">
                     <input type="text" name="etternavn" id=Etternavn placeholder="Etternavn"> <br>
                     <input type="email" name="epost" placeholder="Email">                                <br>
