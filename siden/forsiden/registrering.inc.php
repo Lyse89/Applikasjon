@@ -26,9 +26,15 @@ if(isset($_POST['btnSignup_form'])) {
    $bstudentid = $_POST['studentid'];
 
    // Dobbel saltet og hashet passord
-   $bpassord = sha1($salt.sha1($salt.&_POST['passord']));
+   // $bpassord = sha1($salt.sha1($salt.&_POST['passord']));
 
    $stmt->execute();
+
+   var_dump($_POST);
+
+    } else {
+    }
+      header("Location: default.php");
 
 
 ?>
