@@ -1,9 +1,10 @@
 -- Applikasjonsutvikling Database --
 -- Oppretter Database  --
 -- Databasen laget og kontrollert av William Rastad --
-DROP SCHEMA IF EXISTS ApplikasjonsutviklingDB;
-CREATE SCHEMA ApplikasjonsutviklingDB;
-USE ApplikasjonsutviklingDB;
+
+DROP SCHEMA IF EXISTS alumni05;
+CREATE SCHEMA alumni05;
+USE alumni05;
 
 -- Oppretter Tabellen bruker --
 CREATE TABLE bruker(
