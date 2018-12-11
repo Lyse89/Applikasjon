@@ -3,7 +3,9 @@
 
 if(isset($_POST['btnSignup_form'])) {
    include_once("../includes/init.php");
-   $db = new myPDO();
+   $dsn = "mysql:host=localhost;dbname=alumni05";
+   $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
+
    $sql = "insert into bruker (idbruker,brukerNavn,passord,fornavn,etternavn,fødselsdato,ePost)";
    $sql.= " values (:fornavn,:etternavn,:epost,:fødselsdato,:passord,:studentid)";
 
