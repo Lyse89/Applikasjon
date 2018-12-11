@@ -6,22 +6,20 @@ if(isset($_POST['btnSignup_form'])) {
    $dsn = "mysql:host=localhost;dbname=alumni05";
    $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
 
-   $sql = "insert into bruker (brukerNavn,passord,fornavn,etternavn,fødselsdato,ePost)";
-   $sql.= "values (:studentid,:passord,:fornavn,:etternavn,:fødselsdato,:epost)";
+   $sql = "insert into bruker (brukerNavn,passord,fornavn,etternavn,ePost)";
+   $sql.= "values (:studentid,:passord,:fornavn,:etternavn,:epost)";
 
    $stmt = $db->prepare($sql);
 
    $stmt->bindParam(':fornavn',$bfornavn);
    $stmt->bindParam(':etternavn',$betternavn);
    $stmt->bindParam(':epost',$bepost);
-   $stmt->bindParam(':fødselsdato',$bfødselsdato);
    $stmt->bindParam(':passord',$bpassord);
    $stmt->bindParam(':studentid',$bstudentid);
 
    $bfornavn = $_POST['fornavn'];
    $betternavn = $_POST['etternavn'];
    $bepost = $_POST['epost'];
-   $bfødselsdato = $_POST['fødselsdato'];
    $bpassord = $_POST['passord'];
    $bstudentid = $_POST['studentid'];
 
@@ -34,7 +32,7 @@ if(isset($_POST['btnSignup_form'])) {
 
     } else {
     }
-      header("Location: default.php");
+   header("Location: default.php");
 
 
 ?>
