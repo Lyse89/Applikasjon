@@ -30,7 +30,7 @@ if(isset($_POST['btnSignup_form'])) {
 
     } else {
     }
-   header("Location: siden/default.php");
+   header("Location: /../default.php");
 
 
 ?>
