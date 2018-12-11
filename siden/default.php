@@ -79,10 +79,10 @@
             <h2>Opprett en ny konto</h2>
             <form class="signup-form" action="forsiden/registrering.inc.php" method="POST">
                 <input type="text" name="fornavn" id=Fornavn placeholder="Fornavn">
-                <input type="text" name="etternavn" id=Etternavn placeholder="Etternavn"> <br>
-                <input type="email" name="epost" placeholder="Email">                                <br>
-                <input type="password" name="forstePasord" id="Passord" placeholder="Passord">          <br>
-                <input type="password" name="passord" id="Passord" placeholder="Gjenta Passord">              <br>
+                <input type="text" name="etternavn" id=Etternavn placeholder="Etternavn"><br>
+                <input type="email" name="epost" placeholder="Email"><br>
+                <input type="password" name="forstePasord" id="Passord" placeholder="Passord"><br>
+                <input type="password" name="passord" id="Passord" placeholder="Gjenta Passord"><br>
                 <input type="text" name="studentid" id="StudentID" placeholder="StudentID"> <br>
                 <input type="submit" name="btnSignup_form" value="Registrer Deg" id="registrer">
             </form>
