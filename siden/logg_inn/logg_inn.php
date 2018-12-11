@@ -1,7 +1,6 @@
 <?php
     // For aa faa variabelen $salt $dbBrukernavn $dbPassord
     include_once("../includes/init.php");
-    echo("hallo test");
 
     // Maa endres til vaar server / localhost for lokal jobbing
     $dsn = "mysql:host=localhost;dbname=alumni05";
@@ -10,13 +9,6 @@
     $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
 
     $Melding = "";
-    if ($_POST['Logginn'] == "Logg inn") {
-        echo("ja");
-    }
-
-    echo($_POST['Logginn'] == "Logg inn");
-    echo($_POST['brukernavn']);
-    echo("\n");
     if (isSet($_POST['Logginn']) and $_POST['Logginn'] == "Logg inn") {
 
 
@@ -32,7 +24,6 @@
 
             // Dobbel saltet og hashet passord
             $passord = sha1($salt.sha1($salt.$_POST['passord']));
-            echo($passord);
 
             $sth->bindValue(':br', $_POST['brukernavn']);
             $sth->bindValue(':po', $passord);
