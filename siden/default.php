@@ -64,8 +64,8 @@
  <body>
     <!-- Header (Nav) -->
     <?php
-    include_once('forsiden/header.php');
     session_start();
+    include_once('forsiden/header.php');
     ?>
 
 
