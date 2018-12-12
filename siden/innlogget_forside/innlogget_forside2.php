@@ -55,9 +55,10 @@ body {
 
 <body>
 
-<?php
-include_once('header-innlogget.php')
-?>
+  <?php
+  session_start();
+  include_once('forsiden/header.php');
+  ?>
 
 <!-- Denne delen vil senere erstattes med data hentet fra db'en -->
 <div class="center">
