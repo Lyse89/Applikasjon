@@ -30,10 +30,14 @@
             $sth->execute();
             $res = $sth->fetchAll();
 
+            $cookie_name = "aii"
+            $cookie_value = $_POST['brukernavn']
+
+
             if ($res) {
                 // Header("Location: ..\side_OK.html");
                 // Hva som skal skje dersom brukeren finnes
-                $_SESSION['s_id'] = ['brukerNavn'];
+                setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 en dag
                 header("Location: ../innlogget_forside/innlogget_forside2.php");
             } else {
 
