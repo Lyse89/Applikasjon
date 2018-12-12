@@ -7,7 +7,7 @@ if(isset($_POST['btnSignup_form'])) {
    $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
 
    $sql = "insert into bruker (brukerNavn,passord,fornavn,etternavn,ePost,feilLoginnTeller)";
-   $sql.= "values (:studentid,:passord,:fornavn,:etternavn,:epost,0)";
+   $sql.= "values (:studentid,:passord,:fornavn,:etternavn,:epost,:loginnTeller)";
 
    $stmt = $db->prepare($sql);
 
@@ -16,12 +16,14 @@ if(isset($_POST['btnSignup_form'])) {
    $stmt->bindParam(':epost',$bepost);
    $stmt->bindParam(':passord',$bpassord);
    $stmt->bindParam(':studentid',$bstudentid);
+   $smt->bindParam('feilLoginnTeller');
 
    $bfornavn = $_POST['fornavn'];
    $betternavn = $_POST['etternavn'];
    $bepost = $_POST['epost'];
    $bpassord = $_POST['passord'];
    $bstudentid = $_POST['studentid'];
+   $loginnTeller = 0;
 
    // Dobbel saltet og hashet passord
    // $bpassord = sha1($salt.sha1($salt.&_POST['passord']));
@@ -30,7 +32,7 @@ if(isset($_POST['btnSignup_form'])) {
 
     } else {
     }
-   header("Location: /../default.php");
+   header("Location: /siden/");
 
 
 ?>
