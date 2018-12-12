@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <!-- Denne siden er utviklet av William Rastad, siste gang endret 09.12.2018 -->
 <!-- Denne siden er kontrollert av William Rastad, siste gang 10.12.2018 -->
+
+<?php
+session_start();
+if (isset($_SESSION['sessionId'])) {
+    header("Location:/app/siden/innlogget_forside/innlogget_forside2.php");
+}
+?>
+
 <html lang="en" dir="ltr">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -64,7 +72,6 @@
  <body>
     <!-- Header (Nav) -->
     <?php
-    session_start();
     include_once('forsiden/header.php');
     ?>
 
