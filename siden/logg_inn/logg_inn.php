@@ -33,12 +33,12 @@
             if ($res) {
                 // Header("Location: ..\side_OK.html");
                 // Hva som skal skje dersom brukeren finnes
-                echo("brukeren finnes");
-                $_SESSION['s_id'] = $row['brukerNavn'];
+                $_SESSION['s_id'] = ['brukerNavn'];
+                header("Location: ../innlogget_forside/innlogget_forside2.php");
             } else {
 
-                // Informasjon til bruker om at brukerId ikke finnes
-                $Melding = "<p>Finner ikke BrukerID</p>";
+                // Informasjon til bruker om at brukerId ikke finnes / feil inndata
+                header("Location: ../default.php");
             }
         }
     }
