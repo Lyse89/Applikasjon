@@ -6,7 +6,7 @@ if(isset($_POST['btnSignup_form'])) {
    $dsn = "mysql:host=localhost;dbname=alumni05";
 
    // Maa endres fra innocent, finne ut hva disse gjor
-   $db = new PDO($dsn,"root","1234");
+   $db = new PDO($dsn,$dbBrukernavn,$dbPassord);
 
    $loginnTeller = 0;
 
@@ -25,7 +25,7 @@ if(isset($_POST['btnSignup_form'])) {
    $bfornavn = $_POST['fornavn'];
    $betternavn = $_POST['etternavn'];
    $bepost = $_POST['epost'];
-   $bpassord = $_POST['passord'];
+   $bpassord = sha1($salt.sha1($salt.$_POST['passord']));
    $bstudentid = $_POST['studentid'];
 
 
