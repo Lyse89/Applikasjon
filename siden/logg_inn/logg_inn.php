@@ -1,4 +1,7 @@
 <?php
+    // Skrevet av William Rastad, Christoffer SÃ¸rensen og Simen .A Lyse.
+    // Kontrollert av William Rastad og Christoffer SÃ¸rensen.
+
     // For aa faa variabelen $salt $dbBrukernavn $dbPassord
     include_once("../includes/init.php");
 
@@ -11,14 +14,13 @@
     $Melding = "";
     if (isSet($_POST['Logginn']) and $_POST['Logginn'] == "Logg inn") {
 
-
         if ($_POST['brukernavn'] == "" or $_POST['passord'] == "") {
-            $Melding = "Angi bruker og passord før du forsøker å logge inn.";
+            $Melding = "Angi bruker og passord fï¿½r du forsï¿½ker ï¿½ logge inn.";
         } else {
 
             if (!$db) {die("Kunne ikke connecte til Databasen");}
 
-            //  PDO prepared metode 
+            //  PDO prepared metode
             $sql = "select * from bruker where brukerNavn=:br and passord=:po";
             $sth = $db->prepare($sql);
 
@@ -31,13 +33,13 @@
             $res = $sth->fetchAll();
 
             if ($res) {
-                // Header("Location: ..\side_OK.html");
-                // Hva som skal skje dersom brukeren finnes
-                echo("brukeren finnes");
+                // Login succesfull
+                $cookie_name = $_POST["brukernavn"];
+                setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 dag
+                header("Location: ../innlogget_forside/innlogget_forside2.php");
             } else {
-
-                // Informasjon til bruker om at brukerId ikke finnes
-                $Melding = "<p>Finner ikke BrukerID</p>";
+                // Login Failed
+                header("Location: logg_inn_siden.php");
             }
         }
     }

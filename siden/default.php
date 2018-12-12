@@ -64,8 +64,7 @@
  <body>
     <!-- Header (Nav) -->
     <?php
-    // Denne include-siden er utviklet av Simen A. Lyse , siste gang endret 09.12.2018
-    // Denne include-siden er kontrollert av Simen A. Lyse, siste gang 10.12.2018
+    session_start();
     include_once('forsiden/header.php');
     ?>
 

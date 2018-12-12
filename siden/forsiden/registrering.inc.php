@@ -1,6 +1,6 @@
 <?php
-// Simen
-
+// Skrevet av Simen A. Lyse
+// Kontrollert og testet av William Rastad og Kristoffer Sørensen
 if(isset($_POST['btnSignup_form'])) {
    include_once("../includes/init.php");
    $dsn = "mysql:host=localhost;dbname=alumni05";
@@ -33,7 +33,7 @@ if(isset($_POST['btnSignup_form'])) {
 
     } else {
     }
-    header("Location: ../siden/default.php");
+    header("Location: ../default.php");
 
 
 ?>
