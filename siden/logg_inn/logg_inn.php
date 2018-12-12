@@ -13,12 +13,12 @@
 
 
         if ($_POST['brukernavn'] == "" or $_POST['passord'] == "") {
-            $Melding = "Angi bruker og passord før du forsøker å logge inn.";
+            $Melding = "Angi bruker og passord fï¿½r du forsï¿½ker ï¿½ logge inn.";
         } else {
 
             if (!$db) {die("Kunne ikke connecte til Databasen");}
 
-            //  PDO prepared metode 
+            //  PDO prepared metode
             $sql = "select * from bruker where brukerNavn=:br and passord=:po";
             $sth = $db->prepare($sql);
 
@@ -34,6 +34,7 @@
                 // Header("Location: ..\side_OK.html");
                 // Hva som skal skje dersom brukeren finnes
                 echo("brukeren finnes");
+                $_SESSION['s_id'] = $row['brukerNavn'];
             } else {
 
                 // Informasjon til bruker om at brukerId ikke finnes
