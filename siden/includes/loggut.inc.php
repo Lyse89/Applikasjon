@@ -1,5 +1,6 @@
 <?php
 // setter cookien til en time over utgangs datoen
-setcookie(brukernavn, "", time() - 3600);
+session_start();
+session_destroy();
 header("Location: ../default.php");
 ?>
