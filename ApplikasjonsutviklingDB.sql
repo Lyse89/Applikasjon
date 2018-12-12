@@ -1,6 +1,6 @@
 -- Applikasjonsutvikling Database --
--- Oppretter Database  --
--- Databasen laget og kontrollert av William Rastad --
+-- Oppretter Database --
+-- Databasen laget og kontrollert av William Rastad 09.12.2018 --
 
 DROP SCHEMA IF EXISTS alumni05;
 CREATE SCHEMA alumni05;
