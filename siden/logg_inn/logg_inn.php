@@ -1,4 +1,7 @@
 <?php
+    // Skrevet av William Rastad, Christoffer Sørensen og Simen .A Lyse.
+    // Kontrollert av William Rastad og Christoffer Sørensen.
+
     // For aa faa variabelen $salt $dbBrukernavn $dbPassord
     include_once("../includes/init.php");
 
@@ -10,7 +13,6 @@
 
     $Melding = "";
     if (isSet($_POST['Logginn']) and $_POST['Logginn'] == "Logg inn") {
-
 
         if ($_POST['brukernavn'] == "" or $_POST['passord'] == "") {
             $Melding = "Angi bruker og passord f�r du fors�ker � logge inn.";
@@ -30,19 +32,14 @@
             $sth->execute();
             $res = $sth->fetchAll();
 
-            $cookie_name = "aii"
-            $cookie_value = $_POST['brukernavn']
-
-
             if ($res) {
-                // Header("Location: ..\side_OK.html");
-                // Hva som skal skje dersom brukeren finnes
-                setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 en dag
+                // Login succesfull
+                $cookie_name = $_POST["brukernavn"];
+                setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 dag
                 header("Location: ../innlogget_forside/innlogget_forside2.php");
             } else {
-
-                // Informasjon til bruker om at brukerId ikke finnes / feil inndata
-                header("Location: ../default.php");
+                // Login Failed
+                header("Location: logg_inn_siden.php");
             }
         }
     }
