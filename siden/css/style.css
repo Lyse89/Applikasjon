@@ -3,12 +3,12 @@ body {
      font-family: arial;
  }
 
-.headerNav {
+nav {
     background-color: darkgrey;
     overflow: hidden;
 }
 
-.headerNav a {
+nav a {
     float: left;
     display: block;
     color: #f2f2f2;
@@ -18,23 +18,23 @@ body {
     font-size: 17px;
 }
 
-.headerNav a:hover, .dropdown:hover .dropbtn {
+nav a:hover, .dropdown:hover .dropbtn {
     background-color: #555;
     color: white;
 }
 
-.logo-headerNav {
+.logo-navHeaderForsiden {
     float: left;
     margin-left: 4px;
     margin-top: 4px;
     margin-bottom: 0px;
 }
 
-.headerNav .Loggin {
+nav .Loggin {
     float:right;
 }
 
-.headerNav input[type=text] {
+nav input[type=text] {
   height: 10px;
   margin-top: 8px;
   margin-bottom: 0px;
@@ -43,7 +43,7 @@ body {
   width: 150px;
 }
 
-.headerNav .Loggin button {
+nav .Loggin button {
   float: right;
   padding: 5px;
   margin-top: 8px;
@@ -54,15 +54,15 @@ body {
   cursor: pointer;
 }
 
-.headerNav .Loggin button:hover {
+nav .Loggin button:hover {
   background: #ccc;
 }
 
 @media screen and (max-width: 500px) {
-  .headerNav .Loggin {
+  .navHeaderForsiden .Loggin {
     float: none;
   }
-  .headerNav a, .navHeader input[type=text], .navHeader .Loggin button {
+  nav a, .navHeader input[type=text], .navHeader .Loggin button {
     clear: both;
     float: none;
     display: block;
@@ -71,10 +71,10 @@ body {
     margin: 0;
     padding: 14px;
   }
-  .headerNav input[type=text] {
+  nav input[type=text] {
     border: 1px solid #ccc;
   }
-.logo-headerNav {
+.logo-navHeaderForsiden {
   display: block;
   margin-left: 38%;
 }
