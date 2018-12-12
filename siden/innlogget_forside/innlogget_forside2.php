@@ -57,7 +57,7 @@ body {
 
   <?php
   session_start();
-  include_once('forsiden/header.php');
+  include_once('../forsiden/header.php');
   ?>
 
 <!-- Denne delen vil senere erstattes med data hentet fra db'en -->
