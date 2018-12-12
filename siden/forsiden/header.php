@@ -4,7 +4,7 @@
   <img class="logo-navHeaderForsiden" src="img/logo.png" alt="Logoen til USN" width="84" height="42">
   <div class="Loggin">
     <?php
-    if (isset($_SESSION['s_id'])) {
+    if (isset($_COOKIE['bruker'])) {
       echo '<form action="include/logout.inc.php" method="POST">
       <button type="submit" name="submit">Logout</button>
       </form>';
