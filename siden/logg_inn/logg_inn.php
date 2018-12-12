@@ -33,20 +33,15 @@
             $res = $sth->fetchAll();
 
             if ($res) {
-                // Login succesfull
-                // Skrevet av William Rastad
+                session_start();
+                $_SESSION['sessionId'] = 'sessionIdEtellerannet';
 
-                // Lager random Cookie ID (cookie_navn) og value (loginn brukernavn)
-                // $cookie_name = session_create_id("");
-                // $cookie_value = $_POST["brukernavn"];
+                header("Location: /app/siden/innlogget_forside/innlogget_forside2.php");
 
-                // PREfixed placeholder for Cookies (Bruker random generert cookieID senere)
-                $cookie_name = "CookieID";
-                $cookie_value = "CookieValue";
-                setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 dag
-                header("Location: ../innlogget_forside/innlogget_forside2.php");
+
             } else {
                 // Login Failed
+                echo("Logg inn feiler");
                 header("Location: logg_inn_siden.php");
             }
         }
