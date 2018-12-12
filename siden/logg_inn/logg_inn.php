@@ -34,9 +34,14 @@
 
             if ($res) {
                 // Login succesfull
-                $cookie_name = $_POST["brukernavn"];
+                //William
+                // Lager random Cookie ID (cookie_navn) og value (loginn brukernavn)
+                $cookie_name = session_create_id("");
+                $cookie_value = $_POST["brukernavn"];
                 setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 dag
                 header("Location: ../innlogget_forside/innlogget_forside2.php");
+                echo ($cookie_name);
+                echo ($cookie_value);
             } else {
                 // Login Failed
                 header("Location: logg_inn_siden.php");
