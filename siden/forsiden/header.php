@@ -5,7 +5,7 @@
   <div class="Loggin">
     <?php
     if (isset($_COOKIE['bruker'])) {
-      echo '<form action="include/logout.inc.php" method="POST">
+      echo '<form action="../siden/includes/loggut.inc.php" method="POST">
       <button type="submit" name="submit">Logout</button>
       </form>';
     } else {
