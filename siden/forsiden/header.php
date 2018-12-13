@@ -11,7 +11,7 @@
           </form>';
 
         } else {
-          echo '<form action="/app/siden/logg_inn/logg_inn_siden.php">
+          echo '<form action="../siden/logg_inn/logg_inn_siden.php">
                 <button type="submit">Login</button>
                 </form>';
         }

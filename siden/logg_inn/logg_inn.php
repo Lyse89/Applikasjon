@@ -36,7 +36,7 @@
                 session_start();
                 $_SESSION['sessionId'] = 'sessionIdEtellerannet';
 
-                header("Location: /app/siden/innlogget_forside/innlogget_forside2.php");
+                header("Location: ../innlogget_forside/innlogget_forside2.php");
 
 
             } else {

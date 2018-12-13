@@ -12,7 +12,7 @@ if (!isset($_SESSION['sessionId'])) {
 
 <title>USN-Alumni</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="../css/style.css">
 <meta charset="utf-8">
 
 <style>
@@ -62,7 +62,7 @@ body {
 <body>
 
   <?php
-  include_once('../forsiden/header.php');
+  include_once('../includes/header_innlogget.php');
   ?>
 
 <!-- Denne delen vil senere erstattes med data hentet fra db'en -->
