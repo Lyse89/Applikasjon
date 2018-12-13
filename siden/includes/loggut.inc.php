@@ -4,5 +4,5 @@
 session_start();
 session_destroy();
 
-header("Location: /app/siden/default.php");
+header("Location: ../default.php");
 ?>

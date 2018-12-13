@@ -5,7 +5,7 @@
   <a href="#nyheter">IT nyheter</a>
   <a href="#minSIde" right-margin="5%">Min Side</a>
   <div class="Loggin">
-    <form action="../siden/includes/loggut.inc.php" method="POST">
+    <form action="../includes/loggut.inc.php" method="POST">
     <button type="submit" name="submit">Logout</button>
     </form>
   </div>
