@@ -18,6 +18,10 @@ nav a {
     font-size: 17px;
 }
 
+nav .bilde {
+  padding: 2px 2px;
+}
+
 nav a:hover, .dropdown:hover .dropbtn {
     background-color: #555;
     color: white;

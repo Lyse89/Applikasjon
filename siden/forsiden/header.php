@@ -1,7 +1,9 @@
 <!-- Denne include-siden er utviklet av Simen A. Lyse , siste gang endret 09.12.2018
 // Denne include-siden er kontrollert av Simen A. Lyse, siste gang 12.12.2018 -->
 <nav>
+<a class="bilde" href="default.php">
   <img class="logo-navHeaderForsiden" src="img/logo.png" alt="Logoen til USN" width="84" height="42">
+</a>
   <div class="Loggin">
     <?php
         // Må plassere Form action et annet sted (toppen av defaulth ellernoe)
