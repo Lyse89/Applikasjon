@@ -75,7 +75,7 @@ input[type=password], input[type=text]{
 
 <body>
 <nav>
-	<a class="bilde" href="../default.php">
+	<a class="bilde" href="../../default.php">
 	  <img class="logo-navHeaderForsiden" src="../img/logo.png" alt="Logoen til USN" width="84" height="42">
 	</a>
 </nav>
