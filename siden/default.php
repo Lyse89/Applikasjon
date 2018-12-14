@@ -5,7 +5,7 @@
 <?php
 session_start();
 if (isset($_SESSION['sessionId'])) {
-    header("Location:/app/siden/innlogget_forside/innlogget_forside2.php");
+    header("Location:../siden/innlogget_forside/innlogget_forside2.php");
 }
 ?>
 
