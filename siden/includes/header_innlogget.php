@@ -1,8 +1,14 @@
 <nav>
+  <?php
+  session_start();
+  if (!isset($_SESSION['sessionId'])) {
+      header("Location:../default.php");
+  }
+  ?>
   <a class="bilde" href="../default.php">
     <img class="logo-navHeaderForsiden" src="../img/logo.png" alt="Logoen til USN" width="84" height="42">
   </a>
-  <a href="#anonser">Anonser</a>
+  <a href="../anonser/anonser.php">Anonser</a>
   <a href="#events">Sosialt</a>
   <a href="#nyheter">IT nyheter</a>
   <a href="#minSIde" right-margin="5%">Min Side</a>
