@@ -5,14 +5,14 @@
 <?php
 session_start();
 if (isset($_SESSION['sessionId'])) {
-    header("Location:../siden/innlogget_forside/innlogget_forside2.php");
+    header("Location:siden/innlogget_forside/innlogget_forside2.php");
 }
 ?>
 
 <html lang="en" dir="ltr">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="siden/css/style.css">
     <meta charset="utf-8">
     <title>Default</title>
     <style>
@@ -72,7 +72,7 @@ if (isset($_SESSION['sessionId'])) {
  <body>
     <!-- Header (Nav) -->
     <?php
-    include_once('forsiden/header.php');
+    include_once('siden/forsiden/header.php');
     ?>
 
 

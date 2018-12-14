@@ -5,5 +5,5 @@
 session_start();
 session_destroy();
 
-header("Location: ../default.php");
+header("Location: ../../default.php");
 ?>
