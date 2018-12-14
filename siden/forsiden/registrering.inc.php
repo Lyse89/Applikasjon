@@ -1,6 +1,6 @@
 <?php
-// Denne include-siden er utviklet av William Rastad og Kristoffer Sørensen , siste gang endret 14.12.2018
-// Kontrollert og testet av William Rastad og Kristoffer Sørensen
+// Denne include-siden er utviklet av William Rastad og Kristoffer Sorensen , siste gang endret 14.12.2018
+// Kontrollert og testet av William Rastad og Kristoffer Sorensen
 if(isset($_POST['btnSignup_form'])) {
    include_once("../includes/init.php");
    $dsn = "mysql:host=localhost;dbname=alumni05";
