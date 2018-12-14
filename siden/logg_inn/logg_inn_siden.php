@@ -16,7 +16,7 @@
     if (isSet($_POST['Logginn']) and $_POST['Logginn'] == "Logg inn") {
 
         if ($_POST['brukernavn'] == "" or $_POST['passord'] == "") {
-            $Melding = "Angi bruker og passord f�r du fors�ker � logge inn.";
+            $Melding = "Angi bruker og passord foer du forsoeker aa logge inn.";
         } else {
 
             if (!$db) {die("Kunne ikke connecte til Databasen");}
@@ -43,7 +43,7 @@
 
             } else {
                 // Login Failed
-                echo("Innlogging mislykket");
+                $Melding = "Feil brukernavn eller passord";
                 // header("Location: logg_inn_siden.php");
             }
         }
@@ -64,6 +64,11 @@ input[type=password], input[type=text]{
 	border: 1;
 	background: #f1f1f1;
 }
+#Melding h2{
+    color: red;
+    text-align: center;
+    font-size: 17;
+}
 </style>
 </head>
 
@@ -78,6 +83,7 @@ input[type=password], input[type=text]{
 <!-- Action post log_inn.php-->
 <form method="post" id="form1" action="logg_inn_siden.php">
 <h1 align="center">Logg inn her</h1>
+<span ID="Melding" alt="Feilmelding for logg inn"><h2><?php echo($Melding); ?></h2></span>
 	<table border="0" cellpadding="3" cellspacing="0" style="border-collapse: collapse" width="100%" id="table1">
 		<tr>
 			<td align="center" valign="top">
@@ -91,6 +97,5 @@ input[type=password], input[type=text]{
 	</table>
 	<p align="center"><input type="submit" value="Logg inn" name="Logginn" id="Logginn"></p>
 </form>
-<span ID="Melding"><?php echo($Melding); ?></span>
 </body>
 </html>
