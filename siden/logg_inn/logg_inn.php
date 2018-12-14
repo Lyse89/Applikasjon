@@ -1,6 +1,6 @@
 <?php
-    // Skrevet av William Rastad, Christoffer Sørensen sist endret 14.12.2018
-    // Kontrollert av William Rastad og Christoffer Sørensen.
+    // Skrevet av William Rastad, Kristoffer Sorensen sist endret 14.12.2018
+    // Kontrollert av William Rastad, Kristoffer Sorensen.
 
     // For aa faa variabelen $salt $dbBrukernavn $dbPassord
     include_once("../includes/init.php");
