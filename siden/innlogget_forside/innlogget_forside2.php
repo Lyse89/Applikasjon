@@ -57,6 +57,7 @@ body {
 
   <?php
   include_once('../includes/header_innlogget.php');
+  include_once('../includes/ikke_logget_inn.inc.php');
   ?>
 
 <!-- Denne delen vil senere erstattes med data hentet fra db'en -->

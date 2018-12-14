@@ -7,6 +7,7 @@
   </head>
   <body>
     <?php
+    include_once('../includes/ikke_logget_inn.inc.php');
     include_once('../includes/header_innlogget.php');
     ?>
 
