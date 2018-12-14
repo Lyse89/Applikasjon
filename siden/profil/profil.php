@@ -13,8 +13,8 @@
     include_once('../includes/ikke_logget_inn.inc.php');
     ?>
 
-    <a href="bytt_passord.php">Bytt passord</a>
-    <a href="#LastOppProfilBilde">Last opp profil bilde</a>
+    <a href="bytt_passord.php">Bytt passord</a><br>
+    <a href="#LastOppProfilBilde">Last opp profil bilde</a><br>
 
   </body>
 </html>
