@@ -1,4 +1,5 @@
-<!-- Denne siden er utviklet av Kristoffer Sorensen, siste gang endret 12.10.2018-->
+<!-- Denne siden er utviklet av Kristoffer Sorensen, siste gang endret 14.12.2018
+// Denne include-siden er kontrollert av William, siste gang 14.12.2018 -->
 <!-- CSS'en skal senere flyttes ut av denne filen -->
 <!DOCTYPE html>
 <html>
