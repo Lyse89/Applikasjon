@@ -36,7 +36,7 @@
             if ($res) {
                 session_start();
                 // Denne parameteren (sessionId) skal endres til loggetInn
-                $_SESSION['sessionId'] = 'sessionIdEtellerannet';
+                $_SESSION['sessionId'] = true;
 
                 header("Location: ../innlogget_forside/innlogget_forside2.php");
 
