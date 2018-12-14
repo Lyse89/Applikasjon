@@ -1,0 +1,5 @@
+Databasen:
+    1. Endrete FeilIp til feilIp
+
+Header:
+    1. Sette logo til aa linke til hovedsiden
