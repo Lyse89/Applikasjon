@@ -4,7 +4,7 @@
 
 <?php
 session_start();
-if (isset($_SESSION['Innlogget'])) {
+if (isset($_SESSION['sessionId'])) {
     header("Location:../siden/innlogget_forside/innlogget_forside2.php");
 }
 ?>
