@@ -7,7 +7,7 @@
 <body>
 <!-- Action maa endres til riktig fil -->
 <form method="post" id="form1" action="logg_inn.php">
-<h1 align="center">Du må logge inn for å få se den sida!</h1>
+<h1 align="center">Du mï¿½ logge inn for ï¿½ fï¿½ se den sida!</h1>
 	<table border="0" cellpadding="3" cellspacing="0" style="border-collapse: collapse" width="100%" id="table1" bgcolor="#ccFFFF">
 		<tr>
 			<td width="50%" align="right" style="padding:2 10 2 10;">Bruker:</td>

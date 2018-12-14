@@ -1,5 +1,5 @@
 <?php
-    // Skrevet av William Rastad, Christoffer Sørensen og Simen .A Lyse.
+    // Skrevet av William Rastad, Christoffer Sørensen sist endret 14.12.2018
     // Kontrollert av William Rastad og Christoffer Sørensen.
 
     // For aa faa variabelen $salt $dbBrukernavn $dbPassord
