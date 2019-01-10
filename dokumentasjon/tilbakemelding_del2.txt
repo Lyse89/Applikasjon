@@ -1,0 +1,77 @@
+CSS
+	Ha en egen css-fil som tar for seg det som gjelder for absolutt alle filer / sider.
+
+	Apple produkter bytter ikke høyde og bredde når tlf flippes, der er det orientation som endres så dette må tilpasses.
+
+	Vi bør ha to til tre oppløsninger vi tester mot.
+
+	Vi skal ikke bruke faste størrelser på store elementer.
+		dvs. knapper og andre små elementer kan ha fast px, men alt annet bør være relativ (for eks prosent)
+
+	Fra w3 school
+		HTML5 introduced a method to let web designers take control over the viewport, through the <meta> tag.
+
+		You should include the following <meta> viewport element in all your web pages:
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+IKKE:
+	ingen eksterne php biblioteker
+	ikke jquery
+	ingen import
+	ingen font biblioteker
+	ikke bootstrap
+	
+Bare bruk små bokstaver på mappenavn
+
+
+
+
+
+Rapportene våre:
+	skal inneholde de valgene vi har gjort.
+		verdier vi har brukt og hvorfor
+			eks: grenseverdier for oppløsning
+		begrunnelse for valg av design / løsninger
+			eks: hvorfor vi eventuelt har valgt å inkludere stundentnr.
+
+viewport
+
+Kobling mot database:
+	Han vil at vi skal bruke pdo
+		og at det skal være den objekt orienterte metoden
+
+
+Ikke ha egen logg-inn-side
+Innloggingsfelt skal være direkte på førstesiden.
+
+
+Fokusfelt for innskriving som default på forsiden og logginn-siden
+	autofocus
+	
+Lage en css regel for når et felt er markert at bakgrunnen endrer farge.
+
+Sjekk at det fungerer å registrere seg med æøå
+	Eventuelt fikse character-set
+
+
+
+auto-innlogging etter registrering og henvisning til forsiden
+Eventuelt tilbakemelding til bruker om registreringen mislyktes.
+
+
+Det er ingen spesielt god grunn til å bruke include once, det bør man ha kontroll på uansett
+	include - filen som blir inkludert kan ha includes fra andre filer i seg
+	include once - filen som blir inkludert kan ikke ha includes fra andre sider
+	
+	
+Ha en egen variabler for database-connection (samme fil som det legges salt i)
+
+
+throw kan brukes til å ta vare på feilmelding og hva som skjedde
+
+
+Gunnar mente at det var litt mye å inkludere studentnr for registrering.
+
+Han vil / ser frem til at vi bruker mer objektorientert.
+	Vi bør bruke class og extends i php slik som vi bruker det i java.
+
