@@ -15,8 +15,8 @@
 
         } else {
           echo '<form method="post" id="form1" action="logg_inn_siden.php">
-                <input type="text" id="Bruker" name="brukernavn" placeholder="Brukernavn" autofocus>
-                <input type="password" id="Passord" name="passord" placeholder="Passord">
+                <input type="text" id="Bruker" name="br" placeholder="Brukernavn" autofocus>
+                <input type="password" id="Passord" name="po" placeholder="Passord">
                 <button type="submit">Login</button><br />
                 <label class="loggincookie">Forbli innlogget?
                 <input type="checkbox" checked="checked">
