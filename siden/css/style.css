@@ -64,10 +64,27 @@ nav .Loggin button {
   padding: 5px;
   margin-top: 8px;
   margin-right: 16px;
+  margin-left: 16px;
   background: #ddd;
   font-size: 17px;
   border: none;
   cursor: pointer;
+}
+
+.loggincookie {
+  display: block;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.sjekkmerke {
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #ccc;
 }
 
 nav .Loggin button:hover {
