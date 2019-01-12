@@ -8,7 +8,8 @@
 
     $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
 
-    $Melding = "";
+    $Melding = "Feil brukernavn eller passord";
+
     if (isSet($_POST['Logginn']) and $_POST['Logginn'] == "Logg inn") {
 
         if ($_POST['brukernavn'] == "" or $_POST['passord'] == "") {
