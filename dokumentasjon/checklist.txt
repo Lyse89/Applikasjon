@@ -1,10 +1,15 @@
-DEL 1
+MAL
     - Arbeidsoppgave [x] - Kristoffer
-    - Arbeidsoppgave []
+
+
+DEL 1
+    - Fikse CSS for innlogget forside [] - Kristoffer
+    - Sette innloggingsfelt til forsiden
+
 
 DEL 2
-    - Arbeidsoppgave []
-    - Arbeidsoppgave []
+    - Sette opp glemt passord
+
 
 DEL 3
     - Presentasjon om bruker []
