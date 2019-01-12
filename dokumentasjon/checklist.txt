@@ -1,0 +1,11 @@
+DEL 1
+    - Arbeidsoppgave [x] - Kristoffer
+    - Arbeidsoppgave []
+
+DEL 2
+    - Arbeidsoppgave []
+    - Arbeidsoppgave []
+
+DEL 3
+    - Arbeidsoppgave []
+    - Arbeidsoppgave []
