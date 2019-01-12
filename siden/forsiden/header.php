@@ -14,7 +14,9 @@
           </form>';
 
         } else {
-          echo '<form action="siden/logg_inn/logg_inn_siden.php">
+          echo '<form method="post" id="form1" action="logg_inn_siden.php">
+                <input type="text" id="Bruker" name="brukernavn" placeholder="Brukernavn" autofocus>
+                <input type="password" id="Passord" name="passord" placeholder="Passord">
                 <button type="submit">Login</button>
                 </form>';
         }
