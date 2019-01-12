@@ -10,6 +10,7 @@ DEL 1
 
 DEL 2
     - Sette opp glemt passord []
+    - Fikset at dsn-variabelen blir opprettet i init.php [x] - Kristoffer
 
 
 DEL 3
