@@ -1,17 +1,17 @@
 DEL 1
-    - Arbeidsoppgave [x] - Kristoffer
-    - Arbeidsoppgave []
+    - Registreringsknapp [] - William
 
 DEL 2
-    - Arbeidsoppgave []
-    - Arbeidsoppgave []
+    - []
+    - []
 
 DEL 3
     - Presentasjon om bruker []
     - endre e-post []
-    - Avregisrere seg []
-    - Hvilken informasjon om brukern skal brukern forandre []
-    - Frobli innlogget? []
+    - Avregistrere seg []
+    - Hvilken informasjon om brukeren skal brukern forandre []
+    - Forbli innlogget? []
     - Registrere interesser? []
-    - Lagge ny interesse []
+    - Lage ny interesse []
     - Bruker se liste over brukere []
+    - Lage Søk side [] - William
