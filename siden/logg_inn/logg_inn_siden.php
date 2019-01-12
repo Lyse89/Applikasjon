@@ -6,9 +6,6 @@
     // For aa faa variabelen $salt $dbBrukernavn $dbPassord
     include_once("../includes/init.php");
 
-    // Maa endres til vaar server / localhost for lokal jobbing
-    $dsn = "mysql:host=158.36.139.21;dbname=alumni05";
-
     // Maa endres fra innocent, finne ut hva disse gjor
     $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
 
