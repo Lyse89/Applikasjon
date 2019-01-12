@@ -7,5 +7,11 @@ DEL 2
     - Arbeidsoppgave []
 
 DEL 3
-    - Arbeidsoppgave []
-    - Arbeidsoppgave []
+    - Presentasjon om bruker []
+    - endre e-post []
+    - Avregisrere seg []
+    - Hvilken informasjon om brukern skal brukern forandre []
+    - Frobli innlogget? []
+    - Registrere interesser? []
+    - Lagge ny interesse []
+    - Bruker se liste over brukere []
