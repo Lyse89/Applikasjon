@@ -3,10 +3,12 @@
 <!-- Denne siden er kontrollert av William Rastad, siste gang 10.12.2018 -->
 
 <?php
-session_start();
-if (isset($_SESSION['sessionId'])) {
-    header("Location:siden/innlogget_forside/innlogget_forside2.php");
-}
+    // Sjekk for om brukeren er innlogget og videresending til innlogget forside
+    session_start();
+    if (isset($_SESSION['sessionId'])) {
+        header("Location:siden/innlogget_forside/innlogget_forside2.php");
+    }
+
 ?>
 
 <html lang="en" dir="ltr">

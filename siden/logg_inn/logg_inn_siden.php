@@ -3,10 +3,9 @@
 
 <?php
 
-    // For aa faa variabelen $salt $dbBrukernavn $dbPassord
+    // For aa faa variabelen $salt $dbBrukernavn $dbPassord $dsn
     include_once("../includes/init.php");
 
-    // Maa endres fra innocent, finne ut hva disse gjor
     $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
 
     $Melding = "";

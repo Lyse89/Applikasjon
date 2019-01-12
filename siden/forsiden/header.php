@@ -14,10 +14,10 @@
           </form>';
 
         } else {
-          echo '<form method="post" id="form1" action="logg_inn_siden.php">
-                <input type="text" id="Bruker" name="br" placeholder="Brukernavn" autofocus>
-                <input type="password" id="Passord" name="po" placeholder="Passord">
-                <button type="submit">Login</button><br />
+          echo '<form method="post" id="form1" action="default.php">
+                <input type="text" id="Bruker" name="brukernavn" placeholder="Brukernavn" autofocus>
+                <input type="password" id="Passord" name="passord" placeholder="Passord">
+                <button type="submit" value="Logg inn" name="Logginn">Login</button><br />
                 <label class="loggincookie">Forbli innlogget?
                 <input type="checkbox" checked="checked">
                 <span class="sjekkmerke"></span>
@@ -27,3 +27,50 @@
     ?>
   </div>
 </nav>
+
+<?php
+// For å få variabelene $salt, $dbBrukernavn, $dbPassord, $dsn
+include("siden/includes/init.php");
+
+// Kode for innlogging
+$db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
+
+$melding = "";
+if (isSet($_POST['Logginn']) and $_POST['Logginn'] == "Logg inn") {
+
+    if ($_POST['brukernavn'] == "" or $_POST['passord'] == "") {
+        $melding = "Angi bruker og passord foer du forsoeker aa logge inn.";
+    } else {
+
+        if (!$db) {die("Kunne ikke connecte til Databasen");}
+
+        //  PDO prepared metode
+        $sql = "select * from bruker where brukerNavn=:br and passord=:po";
+        $sth = $db->prepare($sql);
+
+        // Dobbel saltet og hashet passord
+        $passord = sha1($salt.sha1($salt.$_POST['passord']));
+
+        $sth->bindValue(':br', $_POST['brukernavn']);
+        $sth->bindValue(':po', $passord);
+        $sth->execute();
+        $res = $sth->fetchAll();
+
+        if ($res) {
+            session_start();
+            // Denne parameteren (sessionId) skal endres til loggetInn
+            $_SESSION['sessionId'] = true;
+
+            header("Location: siden/innlogget_forside/innlogget_forside2.php");
+
+
+        } else {
+            // Login Failed
+            header("Location: siden/logg_inn/logg_inn_siden.php");
+            // $melding = "Innlogging mislykket, prøv igjen";
+            
+        }
+    }
+}
+
+?>
