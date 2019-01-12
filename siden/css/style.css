@@ -50,6 +50,15 @@ nav input[type=text] {
   width: 150px;
 }
 
+nav input[type=password] {
+  height: 10px;
+  margin-top: 8px;
+  margin-bottom: 0px;
+  font-size: 17px;
+  border: none;
+  width: 150px;
+}
+
 nav .Loggin button {
   float: right;
   padding: 5px;
@@ -79,6 +88,9 @@ nav .Loggin button:hover {
     padding: 14px;
   }
   nav input[type=text] {
+    border: 1px solid #ccc;
+  }
+  nav input[type=password] {
     border: 1px solid #ccc;
   }
 .logo-navHeaderForsiden {
