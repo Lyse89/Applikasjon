@@ -3,13 +3,13 @@
 
 <?php
 
-    // For aa faa variabelen $salt $dbBrukernavn $dbPassord
+    // For aa faa variabelen $salt $dbBrukernavn $dbPassord $dsn
     include_once("../includes/init.php");
 
-    // Maa endres fra innocent, finne ut hva disse gjor
     $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
 
-    $Melding = "";
+    $Melding = "Feil brukernavn eller passord";
+
     if (isSet($_POST['Logginn']) and $_POST['Logginn'] == "Logg inn") {
 
         if ($_POST['brukernavn'] == "" or $_POST['passord'] == "") {
