@@ -3,7 +3,6 @@
 // Kontrollert og testet av William Rastad og Kristoffer Sorensen
 if(isset($_POST['btnSignup_form'])) {
    include_once("../includes/init.php");
-   $dsn = "mysql:host=158.36.139.21;dbname=alumni05";
 
    // Maa endres fra innocent, finne ut hva disse gjor
    $db = new PDO($dsn,$dbBrukernavn,$dbPassord);
