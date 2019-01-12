@@ -19,8 +19,7 @@
                 <input type="password" id="Passord" name="passord" placeholder="Passord">
                 <button type="submit">Login</button><br />
                 <label class="loggincookie">Forbli innlogget?
-                <input type="checkbox" checked="checked">
-                <span class="sjekkmerke"></span>
+                <input type="checkbox" name="forbliInnlogget">
                 </label>
                 </form>';
         }

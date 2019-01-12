@@ -76,15 +76,9 @@ nav .Loggin button {
   margin-top: 4px;
   margin-bottom: 4px;
   cursor: pointer;
-  font-size: 18px;
-}
-
-.sjekkmerke {
-  top: 0;
-  left: 0;
-  height: 25px;
-  width: 25px;
-  background-color: #ccc;
+  font-size: 17px;
+  margin-left: 23px;
+  cursor: pointer;
 }
 
 nav .Loggin button:hover {
@@ -96,6 +90,15 @@ nav .Loggin button:hover {
     float: none;
   }
   nav a, .navHeader input[type=text], .navHeader .Loggin button {
+    clear: both;
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  nav a, .navHeader input[type=password], .navHeader .Loggin button {
     clear: both;
     float: none;
     display: block;
