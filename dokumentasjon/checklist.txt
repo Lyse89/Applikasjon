@@ -6,6 +6,7 @@ DEL 1
     - Fikse CSS for innlogget forside [] - Kristoffer
     - Sette innloggingsfelt til forsiden
     - Registreringsknapp [] - William
+    - Farge på fokusert input felt [] - William
 
 
 DEL 2
@@ -22,4 +23,4 @@ DEL 3
     - Registrere interesser? []
     - Lage ny interesse []
     - Bruker se liste over brukere []
-    - Lage Søk side [] - William
+    - Lage Søk av bruker side [] - William
