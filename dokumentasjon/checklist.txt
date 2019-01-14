@@ -5,7 +5,7 @@ MAL
 DEL 1
     - Fikse CSS for innlogget forside [] - Kristoffer
     - Sette innloggingsfelt til forsiden
-    - Registreringsknapp [] - William
+    - Registreringsknapp [x] - William
     - Farge på fokusert input felt [] - William
 
 
@@ -26,3 +26,4 @@ DEL 3
     - Lage ny interesse []
     - Bruker se liste over brukere []
     - Lage Søk av bruker side [] - William
+    - Oppdatere Databasen i henhold til interesser []
