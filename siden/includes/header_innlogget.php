@@ -7,7 +7,7 @@
   <a href="../anonser/anonser.php">Annonser</a>
   <a href="../sosialt/sosialt.php">Sosialt</a>
   <a href="../nyheter/nyheter.php">IT nyheter</a>
-  <a href="#">Personer</a>
+  <a href="../personer/personer.php">Personer</a>
   <a href="../profil/profil.php">Min Side</a>
   <div class="Loggin">
     <form action="../includes/loggut.inc.php" method="POST">

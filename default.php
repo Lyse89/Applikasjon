@@ -38,7 +38,6 @@
             float:left;
             text-align: center;
             width:35%;
-            padding:10px;
         }
 
         #DefaultBoxes .Box1 h2{
@@ -56,7 +55,12 @@
         }
 
         input[type="submit"]{
-            margin-left: 59%;
+            float: right;
+            margin-right: 12.5%;
+            background: #ddd;
+            font-size: 17px;
+            border: none;
+            cursor: pointer;
         }
 
         /* Responsivt Design */
@@ -69,6 +73,8 @@
                 float:none;
             }
         }
+
+
     </style>
 </head>
  <body>
