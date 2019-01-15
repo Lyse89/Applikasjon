@@ -9,7 +9,7 @@
 
     .SøkPersonerBox{
         margin:5% 20% 0.1% 20%;
-        background-color: #ccc;
+        background-color: ;
         text-align: center;
     }
 
@@ -41,7 +41,7 @@
     }
     .SøkResultater {
         margin:1% 25% 2% 25%;
-        background-color: #ccc;
+        background-color:;
         text-align: center;
     }
 
@@ -56,7 +56,7 @@ include_once('../includes/ikke_logget_inn.inc.php');
 
 <div class="SøkPersonerBox">
     <h1> Søk på Interesser </h1>
-    <form class="søk-Interesser" action="PHP for Søk" method="POST">
+    <form class="søk-Interesser" action="personer.inc.php" method="POST">
         <input type="text" name="Interesser" id=Interesser placeholder="Interesser">
         <input type="submit" name="SøkPåInteresse" value="Søk" id="SøkPåInteresse">
     </form>
@@ -66,39 +66,39 @@ include_once('../includes/ikke_logget_inn.inc.php');
     <table style="width:100%">
     <h2> Resultater:
         <tr>
-            <th>Firstname</th>
-            <th>Lastname</th>
-        <th>Age</th>
+            <th>Fornavn</th>
+            <th>Etternavn</th>
+            <th>Interesse</th>
         </tr>
         <tr>
             <td>William</td>
             <td>Rastad</td>
-            <td>23</td>
+            <td>Java</td>
         </tr>
         <tr>
             <td>William</td>
             <td>Rastad</td>
-            <td>23</td>
+            <td>Java</td>
         </tr>
         <tr>
             <td>William</td>
             <td>Rastad</td>
-            <td>23</td>
+            <td>Java</td>
         </tr>
         <tr>
             <td>William</td>
             <td>Rastad</td>
-            <td>23</td>
+            <td>Java</td>
         </tr>
         <tr>
             <td>William</td>
             <td>Rastad</td>
-            <td>23</td>
+            <td>Java</td>
         </tr>
         <tr>
             <td>William</td>
             <td>Rastad</td>
-            <td>23</td>
+            <td>Java</td>
         </tr>
     </table>
 </div>

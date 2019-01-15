@@ -19,3 +19,28 @@ CREATE TABLE bruker (
     FeilIP VARCHAR(45),
     CONSTRAINT idbrukerPK PRIMARY KEY (idbruker)
 );
+
+CREATE TABLE interesser (
+    interesse VARCHAR (50)
+);
+
+CREATE TABLE interesserkobling (
+	idbruker INT NOT NULL,
+	interesser VARCHAR (45),
+    CONSTRAINT brukerFK FOREIGN KEY (idbruker) REFERENCES bruker (idbruker),
+    CONSTRAINT interesserFK FOREIGN KEY (interesse) REFERENCES interesser (interesse)
+);
+
+
+
+
+
+
+
+
+CREATE TABLE bio (
+	idbruker INT NOT NULL,
+    bio VARCHAR (255),
+    CONSTRAINT bioPK PRIMARY KEY (idbruker, bio),
+    CONSTRAINT biobruker FOREIGN KEY (idbruker) REFERENCES bruker (idbruker)
+);

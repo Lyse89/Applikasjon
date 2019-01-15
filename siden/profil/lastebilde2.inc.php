@@ -3,9 +3,9 @@ if(isset($_POST["submitProfilBilde"])) {
   if( empty($_FILES["lasteOppProfilBilde"]["name"])) {
   die ("<p>Ingen fil er valgt</p>");
   } else {
-    //$temp_fil = $_FILES["lasteOppProfilBilde"]["temp_name"];
+    $temp_fil = $_FILES["lasteOppProfilBilde"]["temp_name"];
     $filnavn = "profilBilde/" . $_FILES["lasteOppProfilBilde"]["name"];
-    move_uploaded_file($filnavn)
+    move_uploaded_file($temp_fil, $filnavn)
       //echo "bilde lastet opp";
       or die ("Mislykket med å laste opp bilde");
 
