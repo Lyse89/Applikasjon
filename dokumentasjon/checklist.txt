@@ -14,7 +14,7 @@ DEL 2
     - Sette opp glemt passord []
     - Fikse at dsn-variabelen blir opprettet i init.php [x] - Kristoffer
     - Logginnfunksjon fra default.php [x] - Kristoffer
-    - Endre logg_inn_siden.php sin feilmeldinger [] - Kristoffer
+    - Endre logg_inn_siden.php sin feilmeldinger [x] - Kristoffer
 
 
 DEL 3
