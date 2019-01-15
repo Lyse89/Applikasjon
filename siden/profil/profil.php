@@ -1,5 +1,6 @@
 <!-- Denne include-siden er utviklet av Simen A. Lyse , siste gang endret 14.12.2018
 // Denne include-siden er kontrollert av Simen A. Lyse, siste gang 14.12.2018 -->
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <link rel="stylesheet" type="text/css" href="../css/style.css">
@@ -11,10 +12,11 @@
     <?php
     include_once('../includes/header_innlogget.php');
     include_once('../includes/ikke_logget_inn.inc.php');
+    include('lastebilde.inc.php')
     ?>
 
     <h2>Last Opp Profil Bilde</h2>
-    <form class="lasteOppProfilBilde" action"/lastebilde.inc.php" method="POST" enctype="multipart/form-data">
+    <form action"lastebilde.inc.php" method="POST" enctype="multipart/form-data">
       Velg et profil bilde:<br>
       <input type="file" name="lasteOppProfilBilde" id="lasteOppProfilBilde"><br>
       <input type="submit" value="Last Opp Bilde" name="submitProfilBilde">
