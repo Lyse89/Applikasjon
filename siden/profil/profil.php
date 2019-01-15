@@ -15,6 +15,7 @@
 
     <h2>Last Opp Profil Bilde</h2>
     <form class="lasteOppProfilBilde" action"/lastebilde.inc.php" method="POST" enctype="multipart/form-data">
+      Velg et profil bilde:<br>
       <input type="file" name="lasteOppProfilBilde" id="lasteOppProfilBilde"><br>
       <input type="submit" value="Last Opp Bilde" name="submitProfilBilde">
     </form>

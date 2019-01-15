@@ -18,6 +18,7 @@ DEL 2
 
 
 DEL 3
+    - Lagre en cookie når en har haket av det vet logg inn []
     - Presentasjon om bruker []
     - endre e-post []
     - Avregistrere seg []
