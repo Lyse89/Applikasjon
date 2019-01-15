@@ -6,6 +6,8 @@ body {
      font-family: arial;
  }
 
+ /* Header */
+
 nav {
     background-color: darkgrey;
     overflow: hidden;
@@ -117,4 +119,5 @@ nav .Loggin button:hover {
   display: block;
   margin-left: 38%;
 }
-}
+
+/*Min side*/
