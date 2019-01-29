@@ -6,18 +6,21 @@
 <link rel="stylesheet" type="text/css" href="../css/style.css">
   <head>
     <meta charset="utf-8">
-    <title>Sosialt</title>
+    <title>Profil</title>
   </head>
   <body>
     <?php
     include_once('../includes/header_innlogget.php');
     include_once('../includes/ikke_logget_inn.inc.php');
-    include('lastebilde.inc.php')
     ?>
 
     <h2>Last Opp Profil Bilde</h2>
-    <form action"lastebilde.inc.php" method="POST" enctype="multipart/form-data">
+    <form action="lastebilde.inc.php" method="POST" enctype="multipart/form-data">
       Velg et profil bilde:<br>
+      <div id="dom" style="display: none;">
+        <?php
+         ?>
+
       <input type="file" name="lasteOppProfilBilde" id="lasteOppProfilBilde"><br>
       <input type="submit" value="Last Opp Bilde" name="submitProfilBilde">
     </form>
