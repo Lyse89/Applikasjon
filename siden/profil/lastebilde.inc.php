@@ -1,44 +1,41 @@
 <?php
-$target_dir = "profilBilde/";
-$target_file = $target_dir . basename($_FILES["lasteOppProfilBilde"]["name"]);
-$uploadOk = 1;
-$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-// Check if image file is a actual image or fake image
+$Mappe = "profilBilde/";
+$LastseOpp = 1;
+
 if(isset($_POST["submitProfilBilde"])) {
-    $check = getimagesize($_FILES["lasteOppProfilBilde"]["tmp_name"]);
-    if($check !== false) {
-        echo "File is an image - " . $check["mime"] . ".";
-        $uploadOk = 1;
+    $Fil = $Mappe . basename($_FILES["lasteOppProfilBilde"]["name"]);
+    $FileType = strtolower(pathinfo($Fil,PATHINFO_EXTENSION));
+    $Sjekk = getimagesize($_FILES["lasteOppProfilBilde"]["tmp_name"]);
+    if($Sjekk !== false) {
+        $Melding =  "File is an image - " . $Sjekk["mime"] . ".";
+        $LastseOpp = 1;
     } else {
-        echo "File is not an image.";
-        $uploadOk = 0;
+        $Melding =  "Filen er ikke et bilde";
+        $LastseOpp = 0;
     }
 }
-// Check if file already exists
-if (file_exists($target_file)) {
-    echo "Sorry, file already exists.";
-    $uploadOk = 0;
-}
-// Check file size
+
 if ($_FILES["lasteOppProfilBilde"]["size"] > 500000) {
-    echo "Sorry, your file is too large.";
-    $uploadOk = 0;
+    $Melding =  "Filen er for stor, må være mindre en 500 000 bytes";
+    $LastseOpp = 0;
 }
-// Allow certain file formats
-if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-&& $imageFileType != "gif" ) {
-    echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-    $uploadOk = 0;
+
+if($FileType != "jpg" && $FileType != "png" && $FileType != "jpeg"
+&& $FileType != "gif" ) {
+    $Melding =  "Bare jpg, png, jpeg og gif er lov å laste opp.";
+    $LastseOpp = 0;
 }
-// Check if $uploadOk is set to 0 by an error
-if ($uploadOk == 0) {
-    echo "Sorry, your file was not uploaded.";
-// if everything is ok, try to upload file
+
+if ($LastseOpp == 0) {
+    $Melding = " Filen kunne ikke bli lastet opp.";
+
 } else {
-    if (move_uploaded_file($_FILES["lasteOppProfilBilde"]["tmp_name"], $target_file)) {
-        echo "The file ". basename( $_FILES["lasteOppProfilBilde"]["name"]). " has been uploaded.";
+    if (move_uploaded_file($_FILES["lasteOppProfilBilde"]["tmp_name"], $Fil)) {
+        $Melding = "Filen ". basename( $_FILES["lasteOppProfilBilde"]["name"]). " har blitt lastet opp.";
     } else {
-        echo "Sorry, there was an error uploading your file.";
+        $Melding =  "En ukjent feil skjede når du prøvde å laste opp, kontak eier av siden vis det ikke funker";
     }
 }
+
+ header("Location: profil.php");
 ?>
