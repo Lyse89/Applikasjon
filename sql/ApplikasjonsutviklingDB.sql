@@ -21,22 +21,11 @@ CREATE TABLE bruker (
 );
 
 CREATE TABLE interesser (
-    interesse VARCHAR (50)
-);
-
-CREATE TABLE interesserkobling (
 	idbruker INT NOT NULL,
-	interesser VARCHAR (45),
-    CONSTRAINT brukerFK FOREIGN KEY (idbruker) REFERENCES bruker (idbruker),
-    CONSTRAINT interesserFK FOREIGN KEY (interesse) REFERENCES interesser (interesse)
+	interesse VARCHAR (45),
+    CONSTRAINT idbrukerinteressePK PRIMARY KEY (idbruker, interesse),
+    CONSTRAINT brukerFK FOREIGN KEY (idbruker) REFERENCES bruker (idbruker)
 );
-
-
-
-
-
-
-
 
 CREATE TABLE bio (
 	idbruker INT NOT NULL,

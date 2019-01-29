@@ -61,46 +61,5 @@ include_once('../includes/ikke_logget_inn.inc.php');
         <input type="submit" name="SøkPåInteresse" value="Søk" id="SøkPåInteresse">
     </form>
 </div>
-
-<div class="SøkResultater">
-    <table style="width:100%">
-    <h2> Resultater:
-        <tr>
-            <th>Fornavn</th>
-            <th>Etternavn</th>
-            <th>Interesse</th>
-        </tr>
-        <tr>
-            <td>William</td>
-            <td>Rastad</td>
-            <td>Java</td>
-        </tr>
-        <tr>
-            <td>William</td>
-            <td>Rastad</td>
-            <td>Java</td>
-        </tr>
-        <tr>
-            <td>William</td>
-            <td>Rastad</td>
-            <td>Java</td>
-        </tr>
-        <tr>
-            <td>William</td>
-            <td>Rastad</td>
-            <td>Java</td>
-        </tr>
-        <tr>
-            <td>William</td>
-            <td>Rastad</td>
-            <td>Java</td>
-        </tr>
-        <tr>
-            <td>William</td>
-            <td>Rastad</td>
-            <td>Java</td>
-        </tr>
-    </table>
-</div>
 </body>
 </html>

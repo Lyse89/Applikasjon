@@ -3,7 +3,23 @@
 
 -- Testverdi (en bruker av systemet som skal kunne logge seg inn
 -- attributtet for passord er hashen for passordet 'passord'
-INSERT INTO bruker (brukerNavn, passord, fornavn, etternavn, ePost, feilLoginnTeller, feilLoginnSiste, FeilIP)
-VALUES("bruker", "535961d8695ee56b5d8ee42fa76063a03ac726c6", "fornavn", "etternavn", "hallo@epost.no", 1, current_time(), "FeilLoggInnIP-felt");
 
-SELECT * FROM bruker
+INSERT INTO interesser (idbruker, interesse) VALUES
+('1', 'Python'),
+('1', 'Java'),
+('1', 'Php'),
+('2', 'lego'),
+('2', 'Python');
+
+INSERT INTO bio (idbruker, bio) VALUES
+('1', 'Hei jeg heter william');
+
+
+SELECT idbruker, fornavn, etternavn FROM bruker;
+SELECT * FROM interesser;
+SELECT * FROM bio;
+
+SELECT bruker.fornavn, bruker.etternavn, interesser.interesse
+FROM bruker
+INNER JOIN interesser ON bruker.idbruker = interesser.idbruker
+WHERE interesse LIKE "%lego%"
