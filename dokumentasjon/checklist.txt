@@ -27,7 +27,7 @@ DEL 3
     [ ] Registrere interesser? 
     [ ] Lage ny interesse - William
     [ ] Bruker se liste over brukere 
-    [ ] Lage S�k av Interesser side  - William
+    [x] Lage S�k av Interesser side  - William
     [x] Oppdatere Databasen i henhold til interesser - William
     [ ] Laste opp profil bilde  - Simen
 
