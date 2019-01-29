@@ -9,11 +9,33 @@
   </head>
   <body>
     <form class="signup-form" action="/bytt_passord.inc.php" method="POST">
-        <input type="password" name="gamlePO" id=gamlePO placeholder="Gamle Passordet"><br>
-        <input type="password" name="nyePO" id=nyePO placeholder="Nye Passordet"><br>
-        <input type="password" name="nyePO_sjekk" placeholder="Gjenta ny Passordet"><br>
-        <input type="submit" name="byttePO_form" value="Bytt Passord" id="byttePO">
+
+		<!-- Gammelt passord-->
+        <input type="password" name="gammeltPassord" id=gamlePO placeholder="Gamle Passordet"><br>
+
+		<!-- Innskrivningsfelt for nytt passord-->
+        <input type="password" name="nyttPassord" id="nyttPassord"  placeholder="Nye Passordet"><br>
+        <input type="password" name="nyttPassordGjenta" id="nyttPassordGjenta" placeholder="Gjenta ny Passordet"><br>
+
+        <input type="submit" name="byttPassord" id="byttPassord" value="Bytt Passord" >
     </form>
 
   </body>
 </html>
+
+<script type="text/javascript">
+	var nyttPassord = document.getElementById("nyttPassord");
+	var nyttPassordGjenta = document.getElementById("nyttPassordGjenta");
+
+	function validerPassord(){
+	  if(nyttPassord.value != nyttPassordGjenta.value) {
+		nyttPassordGjenta.setCustomValidity("Passordene samsvarer ikke");
+	  } else {
+		nyttPassordGjenta.setCustomValidity('');
+	  }
+	}
+
+	// 
+	nyttPassord.onchange = validerPassord;
+	nyttPassordGjenta.onkeyup = validerPassord;
+</script>
