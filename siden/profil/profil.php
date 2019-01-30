@@ -30,6 +30,10 @@
     </form>
 
     <h2>Registrere interesser</h2>
+    <form class="presentasjon" action="/interesser.inc.php" method="POST">
+      <input type="text" name="interesser" id=interesser placeholder="Skriv en Interesse"><br>
+      <input type="submit" name="registrerInt" id="registrerInt">
+    </form>
 
     <h2>Bytte Passord</h2>
     <form class="byttePO" action="/bytt_passord.inc.php" method="POST">
