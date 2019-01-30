@@ -1,32 +1,36 @@
-MAL
-    - Arbeidsoppgave [x] - Kristoffer
+﻿MAL
+    [x] Arbeidsoppgave - Kristoffer
 
 
 DEL 1
-    - Fikse CSS for innlogget forside [] - Kristoffer
-    - Sette innloggingsfelt til forsiden
-    - Registreringsknapp [x] - William
-    - Farge p� fokusert input felt [] - William
-    - Style Profile siden [] - Simen
+    [ ] Fikse CSS for innlogget forside  - Kristoffer
+    [x] Sette innloggingsfelt til forsiden - Simen(?)
+    [x] Registreringsknapp - William
+    [ ] Farge p� fokusert input felt  - William
+    [ ] Style Profile siden  - Simen
 
 
 DEL 2
-    - Sette opp glemt passord []
-    - Fikse at dsn-variabelen blir opprettet i init.php [x] - Kristoffer
-    - Logginnfunksjon fra default.php [x] - Kristoffer
-    - Endre logg_inn_siden.php sin feilmeldinger [x] - Kristoffer
+    [ ] Sette opp glemt passord 
+    [x] Fikse at dsn-variabelen blir opprettet i init.php - Kristoffer
+    [x] Logginnfunksjon fra default.php - Kristoffer
+    [x] Endre logg_inn_siden.php sin feilmeldinger - Kristoffer
 
 
 DEL 3
-    - Lagre en cookie når en har haket av det vet logg inn []
-    - Presentasjon om bruker []
-    - endre e-post []
-    - Avregistrere seg []
-    - Hvilken informasjon om brukeren skal brukern forandre []
-    - Forbli innlogget? []
-    - Registrere interesser? []
-    - Lage ny interesse []
-    - Bruker se liste over brukere []
-    - Lage S�k av bruker side [] - William
-    - Oppdatere Databasen i henhold til interesser []
-    - Laste opp profil bilde [] - Simen
+    [ ] Lagre en cookie når en har haket av det vet logg inn 
+    [ ] Forbli innlogget? 
+    [ ] Presentasjon om bruker 
+    [ ] endre e-post 
+    [ ] Avregistrere seg 
+    [ ] Hvilken informasjon om brukeren skal brukern forandre 
+    [ ] Registrere interesser? 
+    [ ] Lage ny interesse - William
+    [ ] Bruker se liste over brukere 
+    [x] Lage S�k av Interesser side  - William
+    [x] Oppdatere Databasen i henhold til interesser - William
+    [ ] Laste opp profil bilde  - Simen
+
+DEL 4
+
+DEL 5
