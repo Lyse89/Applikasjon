@@ -8,7 +8,8 @@ DEL 1
     [x] Registreringsknapp - William
     [ ] Farge p� fokusert input felt  - William
     [ ] Style Profile siden  - Simen
-
+    [ ] Bytte PROFILNAVN til STUDENTID (everywhere)
+    [ ] Bytte "Person" Siden sitt navn til "Søk" - William
 
 DEL 2
     [ ] Sette opp glemt passord 
@@ -20,17 +21,19 @@ DEL 2
 DEL 3
     [ ] Lagre en cookie når en har haket av det vet logg inn 
     [ ] Forbli innlogget? 
-    [ ] Presentasjon om bruker 
+    [ ] Presentasjon om bruker (bio) - William
     [ ] endre e-post 
     [ ] Avregistrere seg 
     [ ] Hvilken informasjon om brukeren skal brukern forandre 
-    [ ] Registrere interesser? 
+    [ ] Registrere interesser? -William
     [ ] Lage ny interesse - William
     [ ] Bruker se liste over brukere 
     [x] Lage S�k av Interesser side  - William
     [x] Oppdatere Databasen i henhold til interesser - William
     [ ] Laste opp profil bilde  - Simen
 
+
 DEL 4
+
 
 DEL 5
