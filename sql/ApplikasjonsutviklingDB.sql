@@ -23,7 +23,7 @@ CREATE TABLE bruker (
 );
 
 CREATE TABLE interesser (
-	brukerNavn VARCHAR(45) NOT NULL UNIQUE,
+	brukerNavn VARCHAR(45) NOT NULL,
 	interesse VARCHAR (45),
     CONSTRAINT idbrukerinteressePK PRIMARY KEY (brukerNavn, interesse),
     CONSTRAINT brukerFK FOREIGN KEY (brukerNavn) REFERENCES bruker (brukerNavn)

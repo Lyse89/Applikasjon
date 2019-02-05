@@ -5,7 +5,7 @@ USE alumni05;
 -- attributtet for passord er hashen for passordet 'passord'
 
 INSERT INTO interesser (brukerNavn, interesse) VALUES
-('1', 'Python'),
+('654321', 'Python'),
 ('1', 'Java'),
 ('1', 'Php'),
 ('2', 'lego'),
@@ -15,7 +15,7 @@ INSERT INTO bio (brukerNavn, bio) VALUES
 ('1', 'Hei jeg heter william');
 
 
-SELECT idbruker, fornavn, etternavn FROM bruker;
+SELECT * FROM bruker;
 SELECT * FROM interesser;
 SELECT * FROM bio;
 
