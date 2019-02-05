@@ -13,7 +13,7 @@ DEL 1
     [ ] Organisere css-filene
     [ ] Sette opp orientation for apple devices
     [ ] Bestemme 3 grenseverdier for opplosning
-    [ ] Tydeligere visuelt hint for markerte felt
+    [x] Tydeligere visuelt hint for markerte felt - William
 
 
 

@@ -2,7 +2,7 @@
 // Denne include-siden er kontrollert av Simen A. Lyse, siste gang 12.01.2019 -->
 <style>
 input:focus {
-  background-color: #a3a3c2;
+  border-color:#0000e6;
 }
 </style>
 <nav>
