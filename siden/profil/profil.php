@@ -14,10 +14,11 @@
     include_once('../includes/header_innlogget.php');
     include_once('../includes/ikke_logget_inn.inc.php');
     ?>
-
-    <button class="profilSettings" onclick="openPage('profil', this, 'red')" id="defaultOpen">Profil</button>
-    <button class="profilSettings" onclick="openPage('pass', this, 'green')">Bytte Passord</button>
-    <button class="profilSettings" onclick="openPage('email', this, 'blue')">Bytte email</button>
+    <div class="meny">
+      <button class="profilSettings" onclick="openPage('profil', this, 'gray')" id="defaultOpen">Profil</button>
+      <button class="profilSettings" onclick="openPage('pass', this, 'gray')">Bytte Passord</button>
+      <button class="profilSettings" onclick="openPage('email', this, 'gray')">Bytte email</button>
+    </div>
 
     <section id="profil" class="section">
     <h2 id="lastoppbilde">Last Opp Profil Bilde</h2>

@@ -130,29 +130,44 @@ nav .Loggin button:hover {
   color: green;
 }
 
-
-
 .profilSettings {
-  margin-top: 14px;
   background-color: #555;
   color: white;
   float: left;
   border: none;
   outline: none;
   cursor: pointer;
+  margin-top: 50px;
   padding: 14px 16px;
   font-size: 17px;
-  width: 25%;
+  width: 340px;
 }
 
 .profilSettings:hover {
   background-color: #777;
 }
 
+.meny {
+  margin-left: 80px;
+}
 
 .section {
   color: black;
+  border: 1px solid darkgrey;
   display: none;
-  padding: 100px 20px;
-  height: 100%;
+  padding: 50px 20px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 80px;
+  background-color: darkgrey;
+}
+
+input .section {
+  height: 10px;
+  margin-top: 8px;
+  margin-bottom: 0px;
+  font-size: 17px;
+  border: none;
+  width: 150px;
 }
