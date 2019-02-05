@@ -2,7 +2,7 @@
 // Denne include-siden er kontrollert av Simen A. Lyse, siste gang 12.01.2019 -->
 <style>
 input:focus {
-  outline: 1px solid #6699ff;    
+  outline: 1px solid #6699ff;
 }
 </style>
 <nav>
@@ -19,7 +19,7 @@ input:focus {
 
         } else {
           echo '<form method="post" id="form1" action="default.php">
-                <input type="text" id="Bruker" name="brukernavn" placeholder="Brukernavn" autofocus>
+                <input type="text" id="Bruker" name="brukernavn" placeholder="StudentID" autofocus>
                 <input type="password" id="Passord" name="passord" placeholder="Passord">
                 <button type="submit" value="Logg inn" name="Logginn">Login</button><br />
                 <label class="loggincookie">Forbli innlogget?
