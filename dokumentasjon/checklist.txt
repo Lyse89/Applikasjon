@@ -9,7 +9,7 @@ DEL 1
     [ ] Farge p� fokusert input felt  - William
     [ ] Style Profile siden  - Simen
     [ ] Bytte PROFILNAVN til STUDENTID (everywhere)
-    [ ] Bytte "Person" Siden sitt navn til "Søk" - William
+    [x] Bytte "Person" Siden sitt navn til "Søk" - William
 
 DEL 2
     [ ] Sette opp glemt passord 
@@ -27,8 +27,8 @@ DEL 3
     [ ] Hvilken informasjon om brukeren skal brukern forandre 
     [ ] Registrere interesser? -William
     [ ] Lage ny interesse - William
-    [ ] Bruker se liste over brukere 
-    [x] Lage S�k av Interesser side  - William
+    [ ] Bruker se liste over brukere
+    [x] Lage S�k av Interesser side - William
     [x] Oppdatere Databasen i henhold til interesser - William
     [ ] Laste opp profil bilde  - Simen
 
