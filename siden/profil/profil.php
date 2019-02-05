@@ -45,8 +45,7 @@
 
     <h2 id="redigerePres">Redigere Din Presentasjon<h2>
     <form class="presentasjon" action="presentasjon.inc.php" method="POST">
-      <textarea>
-      </textarea><br>
+      <textarea name="bio" placeholder="Skriv din bio"></textarea><br>
       <input type="submit" name="submitPres" id="skrivPres" value="Redigere">
     </form>
 
