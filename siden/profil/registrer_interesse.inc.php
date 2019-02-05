@@ -5,7 +5,7 @@ include_once("../includes/init.php");
 $db = new PDO($dsn,$dbBrukernavn,$dbPassord);
 
 // SQL query og values
-$sql = "insert into interesser (idbruker,interesse)";
+$sql = "insert into interesser (brukerNavn,interesse)";
 $sql.= "values (:studentid,:interesser)";
 
 // Prepared statemens
@@ -14,7 +14,7 @@ $stmt->bindParam(':studentid',$bstudentid);
 $stmt->bindParam(':interesser',$binteresse);
 
 // Henter verdier
-$bstudentid = '1';
+$bstudentid = '123456';
 $binteresse = $_POST['interesser'];
 
 // Kjører sql query

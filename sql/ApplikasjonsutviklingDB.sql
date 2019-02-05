@@ -6,10 +6,12 @@ DROP SCHEMA IF EXISTS alumni05;
 CREATE SCHEMA alumni05;
 USE alumni05;
 
+
 -- Oppretter Tabellen bruker --
+-- brukerNavn er studentens studentnummer (vanlig med 6 tall) --
+-- idbruker er autoincrement som starter på 1 --
 CREATE TABLE bruker (
-    idbruker INT NOT NULL AUTO_INCREMENT,
-    brukerNavn VARCHAR(45) NOT NULL UNIQUE,
+	brukerNavn VARCHAR(45) NOT NULL UNIQUE,
     passord VARCHAR(40) NOT NULL,
     fornavn VARCHAR(40) NOT NULL,
     etternavn VARCHAR(40) NOT NULL,
@@ -17,19 +19,19 @@ CREATE TABLE bruker (
     feilLoginnTeller INT,
     feilLoginnSiste DATETIME,
     FeilIP VARCHAR(45),
-    CONSTRAINT idbrukerPK PRIMARY KEY (idbruker)
+    CONSTRAINT brukerNavnPK PRIMARY KEY (brukerNavn)
 );
 
 CREATE TABLE interesser (
-	idbruker INT NOT NULL,
+	brukerNavn VARCHAR(45) NOT NULL UNIQUE,
 	interesse VARCHAR (45),
-    CONSTRAINT idbrukerinteressePK PRIMARY KEY (idbruker, interesse),
-    CONSTRAINT brukerFK FOREIGN KEY (idbruker) REFERENCES bruker (idbruker)
+    CONSTRAINT idbrukerinteressePK PRIMARY KEY (brukerNavn, interesse),
+    CONSTRAINT brukerFK FOREIGN KEY (brukerNavn) REFERENCES bruker (brukerNavn)
 );
 
 CREATE TABLE bio (
-	idbruker INT NOT NULL,
+	brukerNavn VARCHAR(45) NOT NULL UNIQUE,
     bio VARCHAR (255),
-    CONSTRAINT bioPK PRIMARY KEY (idbruker, bio),
-    CONSTRAINT biobruker FOREIGN KEY (idbruker) REFERENCES bruker (idbruker)
+    CONSTRAINT bioPK PRIMARY KEY (brukerNavn, bio),
+    CONSTRAINT biobruker FOREIGN KEY (brukerNavn) REFERENCES bruker (brukerNavn)
 );
