@@ -1,5 +1,5 @@
 ﻿MAL
-    [x] Arbeidsoppgave - Kristoffer
+    [x] Arbeidsoppgave - Navn
 
 
 DEL 1
@@ -10,21 +10,30 @@ DEL 1
     [ ] Style Profile siden  - Simen
     [ ] Bytte PROFILNAVN til STUDENTID (everywhere)
     [x] Bytte "Person" Siden sitt navn til "Søk" - William
+    [ ] Organisere css-filene
+    [ ] Sette opp orientation for apple devices
+    [ ] Bestemme 3 grenseverdier for opplosning
+    [ ] Tydeligere visuelt hint for markerte felt
+
+
 
 DEL 2
     [ ] Sette opp glemt passord 
     [x] Fikse at dsn-variabelen blir opprettet i init.php - Kristoffer
     [x] Logginnfunksjon fra default.php - Kristoffer
     [x] Endre logg_inn_siden.php sin feilmeldinger - Kristoffer
+    [ ] Sjekk at øæå fungerer ved registrering og innlogging
+    [ ] Automatisk innlogging etter registrering - Kristoffer
+
+
 
 
 DEL 3
-    [ ] Lagre en cookie når en har haket av det vet logg inn 
-    [ ] Forbli innlogget? 
+    [ ] Forbli innlogget via cookie
     [ ] Presentasjon om bruker (bio) - William
-    [ ] endre e-post 
+    [ ] Endre e-post - Kristoffer
+    [ ] Endre passord - Kristoffer
     [ ] Avregistrere seg 
-    [ ] Hvilken informasjon om brukeren skal brukern forandre 
     [ ] Registrere interesser? -William
     [ ] Lage ny interesse - William
     [ ] Bruker se liste over brukere
