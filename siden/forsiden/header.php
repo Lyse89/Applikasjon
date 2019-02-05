@@ -63,6 +63,7 @@ if (isSet($_POST['Logginn']) and $_POST['Logginn'] == "Logg inn") {
             session_start();
             // Denne parameteren (sessionId) skal endres til loggetInn
             $_SESSION['sessionId'] = true;
+            $_SESSION['brukernavn'] = $_POST['brukernavn'];
 
             header("Location: siden/innlogget_forside/innlogget_forside2.php");
 
