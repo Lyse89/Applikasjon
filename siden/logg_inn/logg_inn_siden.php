@@ -85,7 +85,7 @@ input[type=password], input[type=text]{
 	<table border="0" cellpadding="3" cellspacing="0" style="border-collapse: collapse" width="100%" id="table1">
 		<tr>
 			<td align="center" valign="top">
-        <input type="text" id="Bruker" name="brukernavn" placeholder="Brukernavn" autofocus></td>
+        <input type="text" id="Bruker" name="brukernavn" placeholder="StudentID" autofocus></td>
 		</tr>
 
 		<tr>
