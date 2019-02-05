@@ -15,6 +15,11 @@ INSERT INTO bio (brukerNavn, bio) VALUES
 ('1', 'Hei jeg heter william');
 
 
+UPDATE bio.bio
+SET column1 = value1, column2 = value2, ...
+WHERE condition;
+
+
 SELECT * FROM bruker;
 SELECT * FROM interesser;
 SELECT * FROM bio;

@@ -14,10 +14,10 @@ $stmt->bindParam(':studentid',$bstudentid);
 $stmt->bindParam(':bio',$bbio);
 
 // Henter verdier
+session_start();
 $bstudentid = '654321';
 $bbio = $_POST['bio'];
 
 // Kjører sql query
 $stmt->execute();
-
 ?>
