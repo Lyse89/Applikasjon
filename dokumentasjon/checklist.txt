@@ -6,7 +6,7 @@ DEL 1
     [ ] Fikse CSS for innlogget forside  - Kristoffer
     [x] Sette innloggingsfelt til forsiden - Simen(?)
     [x] Registreringsknapp - William
-    [ ] Farge p� fokusert input felt  - William
+    [x] Farge p� fokusert input felt  - William
     [ ] Style Profile siden  - Simen
     [ ] Bytte PROFILNAVN til STUDENTID (everywhere)
     [x] Bytte "Person" Siden sitt navn til "Søk" - William

@@ -29,15 +29,22 @@
             margin-top: 6%;
             float:left;
             text-align: center;
-            width:55%;
+            width:35%;
+            background-color: lightgrey;
+            margin-left: 10%;
+            margin-right: 5%;
+            margin-top: 7%;
+            border-radius: 25px;
         }
 
         /* registreringsboks */
         #DefaultBoxes .Box1{
+            border-radius: 25px;
             margin: 2% 2% 2% 2%;
             float:left;
             text-align: center;
             width:35%;
+            background-color: lightgrey;
         }
 
         #DefaultBoxes .Box1 h2{
@@ -57,10 +64,11 @@
         input[type="submit"]{
             float: right;
             margin-right: 12.5%;
-            background: #ddd;
+            background: #f1f1f1;
             font-size: 17px;
             border: none;
             cursor: pointer;
+            margin-bottom: 22px;
         }
 
         /* Responsivt Design */
@@ -68,7 +76,7 @@
             #DefaultBoxes .Box,
             #DefaultBoxes .Box1{
                 text-align:center;
-                width:90%;
+                width:100%;
                 margin: 2% 2% 2% 2%;
                 float:none;
             }
@@ -106,6 +114,6 @@
 
     <!-- Footer -->
     <footer class ="footer"></footer>
-    
+
   </body>
 </html>

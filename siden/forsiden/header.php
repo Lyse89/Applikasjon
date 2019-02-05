@@ -1,6 +1,10 @@
 <!-- Denne include-siden er utviklet av Simen A. Lyse og Kristoffer Sorensen , siste gang endret 14.12.2018
 // Denne include-siden er kontrollert av Simen A. Lyse, siste gang 12.01.2019 -->
-
+<style>
+input:focus {
+  background-color: #a3a3c2;
+}
+</style>
 <nav>
 <a class="bilde" href="default.php">
   <img class="logo-navHeaderForsiden" src="siden/img/logo.png" alt="Logoen til USN" width="84" height="42">
@@ -67,7 +71,7 @@ if (isSet($_POST['Logginn']) and $_POST['Logginn'] == "Logg inn") {
             // Login Failed
             header("Location: siden/logg_inn/logg_inn_siden.php");
             // $melding = "Innlogging mislykket, prøv igjen";
-            
+
         }
     }
 }
