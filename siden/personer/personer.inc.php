@@ -43,6 +43,9 @@
         text-align: center;
     }
 
+    #errormsg {
+        color:red;
+    }
     </style>
  </head>
  <body>
@@ -61,16 +64,18 @@ include_once('../includes/ikke_logget_inn.inc.php');
 </div>
 
 <div class="SøkResultater">
-        <?php
-        // DB Connect
-        include_once("../includes/init.php");
-        $dsn = "mysql:host=localhost;dbname=alumni05";
-        $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
+    <?php
+    // DB Connect
+    include_once("../includes/init.php");
+    $dsn = "mysql:host=localhost;dbname=alumni05";
+    $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
+    $søkord = $_POST['Interesser'];
+    $stmt = $db->query("SELECT bruker.fornavn, bruker.etternavn, interesser.interesse FROM bruker INNER JOIN interesser ON bruker.brukerNavn = interesser.brukerNavn WHERE interesse LIKE '%$søkord%'");
 
-        $søkord = $_POST['Interesser'];
+    if (!$søkord){
+        echo "<div id='errormsg'>Skriv inn en interesse</div>";
 
-        $stmt = $db->query("SELECT bruker.fornavn, bruker.etternavn, interesser.interesse FROM bruker INNER JOIN interesser ON bruker.brukerNavn = interesser.brukerNavn WHERE interesse LIKE '%$søkord%'");
-
+    }elseif($stmt->rowCount()){
         echo "<table width=100%>";
         echo "<h2> Resultater:";
         echo "<tr><td><b>Fornavn</b></td><td><b>Etternavn</b></td><td><b>Interesse</b></td>";
@@ -80,7 +85,10 @@ include_once('../includes/ikke_logget_inn.inc.php');
             echo "<tr><td>{$row['fornavn']}</td><td>{$row['etternavn']}</td><td>{$row['interesse']}</tr>";
         }
         echo "</table>";
-        ?>
+    }else{
+        echo "<div id='errormsg'>Søket ga ingen resultat</div>";
+    }
+    ?>
 </div>
 </body>
 </html>
