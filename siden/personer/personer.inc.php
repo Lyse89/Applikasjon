@@ -69,7 +69,7 @@ include_once('../includes/ikke_logget_inn.inc.php');
 
         $søkord = $_POST['Interesser'];
 
-        $stmt = $db->query("SELECT bruker.fornavn, bruker.etternavn, interesser.interesse FROM bruker INNER JOIN interesser ON bruker.idbruker = interesser.idbruker WHERE interesse LIKE '%$søkord%'");
+        $stmt = $db->query("SELECT bruker.fornavn, bruker.etternavn, interesser.interesse FROM bruker INNER JOIN interesser ON bruker.brukerNavn = interesser.brukerNavn WHERE interesse LIKE '%$søkord%'");
 
         echo "<table width=100%>";
         echo "<h2> Resultater:";

@@ -14,7 +14,7 @@ $stmt->bindParam(':studentid',$bstudentid);
 $stmt->bindParam(':interesser',$binteresse);
 
 // Henter verdier
-$bstudentid = '123456';
+$bstudentid = '112311';
 $binteresse = $_POST['interesser'];
 
 // Kjører sql query
