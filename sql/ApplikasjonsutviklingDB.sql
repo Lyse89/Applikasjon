@@ -35,3 +35,11 @@ CREATE TABLE bio (
     CONSTRAINT bioPK PRIMARY KEY (brukerNavn, bio),
     CONSTRAINT biobruker FOREIGN KEY (brukerNavn) REFERENCES bruker (brukerNavn)
 );
+
+CREATE TABLE token (
+    brukerNavn VARCHAR(45) NOT NULL UNIQUE,
+    token CHAR(256),
+    expires DATE,
+    CONSTRAINT tokenPK PRIMARY KEY (brukerNavn),
+    CONSTRAINT tokenbruker FOREIGN KEY (brukerNavn) REFERENCES bruker (brukerNavn)
+);
