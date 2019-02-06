@@ -30,12 +30,12 @@ DEL 2
 
 DEL 3
     [ ] Forbli innlogget via cookie
-    [ ] Presentasjon om bruker (bio) - William
+    [x] Presentasjon om bruker (bio) - William
     [ ] Endre e-post - Kristoffer
     [ ] Endre passord - Kristoffer
-    [ ] Avregistrere seg 
-    [ ] Registrere interesser? -William
-    [ ] Lage ny interesse - William
+    [ ] Avregistrere seg
+    [x] Registrere interesser? -William
+    [x] Lage ny interesse - William
     [ ] Bruker se liste over brukere
     [x] Lage S�k av Interesser side - William
     [x] Oppdatere Databasen i henhold til interesser - William

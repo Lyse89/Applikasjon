@@ -15,7 +15,6 @@ $brukernavn = $_SESSION['brukernavn'];
 $stmt = $db->prepare($sql);
 $stmt->bindParam(':studentid',$bstudentid);
 $stmt->bindParam(':interesser',$binteresse);
-
 // Henter verdier
 
 $bstudentid = $brukernavn;
@@ -23,5 +22,5 @@ $binteresse = $_POST['interesser'];
 
 // Kjører sql query
 $stmt->execute();
-
+header("Location: profil.php");
 ?>

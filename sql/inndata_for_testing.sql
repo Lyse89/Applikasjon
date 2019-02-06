@@ -12,12 +12,12 @@ INSERT INTO interesser (brukerNavn, interesse) VALUES
 ('2', 'Python');
 
 INSERT INTO bio (brukerNavn, bio) VALUES
-('1', 'Hei jeg heter william');
+('q', 'Hei jeg heter william');
 
 
-UPDATE bio.bio
-SET column1 = value1, column2 = value2, ...
-WHERE condition;
+UPDATE bio
+SET bio = 'heiheihei'
+WHERE bio.brukerNavn = q;
 
 
 SELECT * FROM bruker;

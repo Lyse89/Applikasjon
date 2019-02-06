@@ -9,6 +9,7 @@
   <a href="../nyheter/nyheter.php">IT nyheter</a>
   <a href="../personer/personer.php">Søk Interesser</a>
   <a href="../profil/profil.php">Min Side</a>
+  <a href="../min_profil/min_profil.php">Min Profil</a>
   <div class="Loggin">
     <form action="../includes/loggut.inc.php" method="POST">
     <button type="submit" name="submit">Logout</button>
