@@ -38,7 +38,7 @@ CREATE TABLE bio (
 
 CREATE TABLE token (
     brukerNavn VARCHAR(45) NOT NULL UNIQUE,
-    token CHAR(256),
+    token CHAR(128),
     expires DATE,
     CONSTRAINT tokenPK PRIMARY KEY (brukerNavn),
     CONSTRAINT tokenbruker FOREIGN KEY (brukerNavn) REFERENCES bruker (brukerNavn)
