@@ -19,9 +19,9 @@ body {
 /* Endre navnet paa center */
 .center {
     box-shadow: 10px 10px 8px #c0c0c0;
-    margin: 0 0 50px 0;
-    padding: 0 5% 0 5%;
-    width: 90%;
+    margin: 0 5% 50px 5%;
+    padding: 0 2% 0 2%;
+    width: 86%;
     /*max-width: 1230px;*/
     background-color: white;
     float: left;
