@@ -34,12 +34,12 @@
             margin-left: 10%;
             margin-right: 5%;
             margin-top: 7%;
-            border-radius: 25px;
+            border-radius: 5px;
         }
 
         /* registreringsboks */
         #DefaultBoxes .Box1{
-            border-radius: 25px;
+            border-radius: 5px;
             margin: 2% 2% 2% 2%;
             float:left;
             text-align: center;
