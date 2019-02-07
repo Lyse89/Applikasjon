@@ -38,7 +38,7 @@ body {
 .flex-container {
     width:100%;
     margin: 30px 0 30px 0;
-	padding-bottom: 25px;
+    padding-bottom: 25px;
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;

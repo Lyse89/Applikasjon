@@ -34,7 +34,7 @@
 			background-color: white;
 			font-size: 14px;
 		    box-shadow: 5px 10px 18px #c0c0c0;
-	
+
 		}
 
 		.c3-flexbox {
@@ -68,7 +68,7 @@
 				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 			</p>
-			
+
 
 		</div>
 		<div>
