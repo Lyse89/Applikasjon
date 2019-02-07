@@ -15,7 +15,7 @@
         margin-left: 20%;
         margin-right: 20%;
         width:60%;
-        text-align: center
+        text-align: center;
     }
     /*ProfilBilde Box*/
     .Profilbilde{
@@ -32,7 +32,7 @@
     }
     /*Bio Tekst Box*/
     .biotekst{
-        width: 59%;
+        width: 60%;
         text-align: left;
         font-size: 20px;
     }
@@ -44,6 +44,13 @@
         float:left;
         text-align: center;
         border-style: ridge;
+    }
+
+    .Interessernr{
+        margin-left: 21%;
+        width: 60%;
+        text-align: left;
+        font-size: 13px;
     }
 
     /*Legge til ny interesse box*/
@@ -68,6 +75,7 @@
         font-size: 17px;
         border: none;
         cursor: pointer;
+        margin-bottom: 1%;
     }
 
     /*Event box*/
@@ -91,13 +99,13 @@
     <article class="MinProfil">
         <h1> Min Profil</h1>
         <section class="Profilbilde">
+            <br>
             <img src="../profil/Profilbilde/maxresdefault.jpg" style="width:250px;height:250px;">
         </section>
 
         <section class="Bio">
             <div class="biotekst">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
@@ -106,9 +114,53 @@
             </div>
         </section>
 
+
+
+
+
+
         <section class="Interesser">
-            <h1>Interesser</h1>
+            <div class="Interessernr">
+            <?php
+            // DB Connect
+            include_once("../includes/init.php");
+            include_once('../includes/ikke_logget_inn.inc.php');
+            $dsn = "mysql:host=localhost;dbname=alumni05";
+            $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
+            $søkord = $_SESSION['brukernavn'];
+            $stmt = $db->query("SELECT interesse FROM interesser WHERE brukerNavn LIKE '$søkord'");
+
+            if($stmt->rowCount()){
+                echo "<h2> Interesser:";
+                echo "<br>";
+
+                $count = 0;
+                while ($row = $stmt->fetch())
+                {
+                    $count ++;
+                    echo $count;
+                    echo " ";
+                    echo $row['interesse'];
+                    if ($count <= 39 ) {
+                        echo ", ";
+                    }
+
+                    if ($count == 5 OR $count == 10 OR $count == 15 OR $count == 20 OR $count == 25 OR $count == 30 OR $count == 35 OR $count == 40){
+                        echo "<br>";
+                    }
+                    if ($count >= 40) {
+                        break;
+                    }
+                }
+            }
+            ?>
+            </div>
         </section>
+
+
+
+
+
 
         <section class="Leggtilnyinteresse">
             <h1>Legg til en ny interesse</h1>

@@ -17,7 +17,7 @@ INSERT INTO bio (brukerNavn, bio) VALUES
 
 UPDATE bio
 SET bio = 'heiheihei'
-WHERE bio.brukerNavn = q;
+WHERE bio.brukerNavn = 'q';
 
 
 SELECT * FROM bruker;
@@ -28,3 +28,6 @@ SELECT bruker.fornavn, bruker.etternavn, interesser.interesse
 FROM bruker
 INNER JOIN interesser ON bruker.idbruker = interesser.idbruker
 WHERE interesse LIKE "%lego%"
+
+
+SELECT interesse FROM interesser WHERE brukerNavn LIKE "q" ORDER BY interesse ASC;
