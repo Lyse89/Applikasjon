@@ -1,6 +1,10 @@
 -- Testet og kontrollert av Kristoffer Sorensen
 USE alumni05;
 
+INSERT INTO token(brukernavn,token,expires) VALUES
+('bruker', 'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh', CURRENT_DATE());
+
+
 -- Testverdi (en bruker av systemet som skal kunne logge seg inn
 -- attributtet for passord er hashen for passordet 'passord'
 
