@@ -23,5 +23,24 @@ $bbio = $_POST['bio'];
 // Kjører sql query
 $stmt->execute();
 //header("Location: profil.php");
-echo $stmt->rowCount() . " records UPDATED successfully";
+if ($stmt->rowCount() != 0){
+    header("Location: profil.php");
+}
+
+if ($stmt->rowCount() == 0){
+    $sql = "INSERT INTO bio (brukerNavn, bio)";
+    $sql.= "VALUES (:studentid,:bio)";
+
+    // Prepared statemens
+    $stmt = $db->prepare($sql);
+    $stmt->bindParam(':studentid',$bstudentid);
+    $stmt->bindParam(':bio',$bbio);
+    // Henter verdier
+    $bstudentid = $brukernavn;
+    $bbio = $_POST['bio'];
+
+    // Kjører sql query
+    $stmt->execute();
+    header("Location: profil.php");
+    }
 ?>
