@@ -15,12 +15,18 @@ body {
     font-family:arial;
     background-color:#ddd;
 }
+.topp-boks {
+    height: 75px;
+}
 /* Endre navnet paa center */
 .center {
-    max-width: 1230px;
+    box-shadow: 10px 10px 8px #c0c0c0;
+    margin: 0 5% 50px 5%;
+    width: 90%;
+    /*max-width: 1230px;*/
     background-color: white;
     float: left;
-    margin-bottom: 50px;
+    /*margin-bottom: 50px;*/
 }
 
 .center h2 {
@@ -32,6 +38,7 @@ body {
 
 .flex-container {
     margin: 30px;
+	padding-bottom: 25px;
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
@@ -60,6 +67,7 @@ body {
   include_once('../includes/header_innlogget.php');
   include_once('../includes/ikke_logget_inn.inc.php');
   ?>
+<div class="topp-boks"></div>
 
 <!-- Denne delen vil senere erstattes med data hentet fra db'en -->
 <div class="center">
@@ -83,16 +91,6 @@ body {
 
     <div>
         <h3>Nyhets-overskrift4</h3>
-        <p>Some text here, yes indeed some text</p>
-        <p>Some text here, yes indeed some text</p>
-    </div>
-    <div>
-        <h3>Nyhets-overskrift5</h3>
-        <p>Some text here, yes indeed some text</p>
-        <p>Some text here, yes indeed some text</p>
-    </div>
-    <div>
-        <h3>Nyhets-overskrift6</h3>
         <p>Some text here, yes indeed some text</p>
         <p>Some text here, yes indeed some text</p>
     </div>
@@ -120,6 +118,12 @@ body {
         <p>Some text here, yes indeed some text</p>
         <p>Some text here, yes indeed some text</p>
     </div>
+    <div>
+        <h3>Event-overskrift4</h3>
+        <img src="something.png" style="width:100%;">
+        <p>Some text here, yes indeed some text</p>
+        <p>Some text here, yes indeed some text</p>
+    </div>
 </div>
 </div>
 
@@ -138,6 +142,11 @@ body {
     </div>
     <div>
         <h3>Jobb-overskrift3</h3>
+        <p>Some text here, yes indeed some text</p>
+        <p>Some text here, yes indeed some text</p>
+    </div>
+    <div>
+        <h3>Jobb-overskrift4</h3>
         <p>Some text here, yes indeed some text</p>
         <p>Some text here, yes indeed some text</p>
     </div>
