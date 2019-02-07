@@ -31,7 +31,10 @@ SELECT * FROM bio;
 SELECT bruker.fornavn, bruker.etternavn, interesser.interesse
 FROM bruker
 INNER JOIN interesser ON bruker.idbruker = interesser.idbruker
-WHERE interesse LIKE "%lego%"
+WHERE interesse LIKE "%lego%";
 
+SELECT fornavn, etternavn
+FROM bruker
+WHERE brukerNavn LIKE "q";
 
 SELECT interesse FROM interesser WHERE brukerNavn LIKE "q" ORDER BY interesse ASC;
