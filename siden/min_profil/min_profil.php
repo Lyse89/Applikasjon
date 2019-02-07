@@ -164,7 +164,7 @@
 
         <section class="Leggtilnyinteresse">
             <h1>Legg til en ny interesse</h1>
-            <form class="presentasjon" action="../profil/registrer_interesse.inc.php" method="POST">
+            <form class="presentasjon" action="min_profil.inc.php" method="POST">
               <input type="text" name="interesser" id=interesse placeholder="Skriv en Interesse"><br>
               <input type="submit" name="registrerInt" id="registrerInt">
             </form>
