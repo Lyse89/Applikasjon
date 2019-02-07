@@ -16,8 +16,7 @@
     ?>
     <div class="meny">
       <button class="profilSettings" onclick="openPage('profil', this, 'gray')" id="defaultOpen">Profil</button>
-      <button class="profilSettings" onclick="openPage('pass', this, 'gray')">Bytte Passord</button>
-      <button class="profilSettings" onclick="openPage('email', this, 'gray')">Bytte email</button>
+      <button class="profilSettings" onclick="openPage('pass', this, 'gray')">Instillinger</button>
     </div>
 
     <section id="profil" class="section">
@@ -61,9 +60,8 @@
         <input type="password" name="nyePO_sjekk" placeholder="Gjenta ny Passordet"><br>
         <input type="submit" name="submitByttePO" id="byttePO" value="Bytt Passord">
     </form>
-  </section>
 
-  <section id="email" class="section">
+
     <h2 id="bytteEpost">Bytte E-post</h2>
     <form class="BytteEpost" action="/bytteEpost.inc.php" method="POST">
       <input type="email" name="epost" placeholder="Skriv nye Epost"><br>
