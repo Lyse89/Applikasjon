@@ -90,7 +90,8 @@
     /* Responsiv */
     @media (min-width: 769px) and (max-width: 1080px) {
         #MinProfil .Profilbilde,
-        #MinProfil .Bio{
+        #MinProfil .Bio,
+        #MinProfil .biotekst{
             width: 100%;
             text-align: center;
 
@@ -98,7 +99,8 @@
     }
     @media (min-width: 320px) and (max-width: 768px) {
         #MinProfil .Profilbilde,
-        #MinProfil .Bio{
+        #MinProfil .Bio,
+        #MinProfil .biotekst{
             width:100%;
             text-align: center;
         }
