@@ -133,7 +133,7 @@
         ?>
         <section class="Profilbilde">
             <br>
-            <img src="../profil/Profilbilde/maxresdefault.jpg" style="width:250px;height:250px;">
+            <img src="../profil/Profilbilde/profilbilde.png" style="width:250px;height:250px;">
         </section>
 
         <section class="Bio">
@@ -177,7 +177,7 @@
                 {
                     $count ++;
                     echo $count;
-                    echo " ";
+                    echo ": ";
                     echo $row['interesse'];
                     if ($count <= 39 ) {
                         echo ", ";
