@@ -204,10 +204,6 @@
 
         <section class="Events">
             <h1>Events</h1>
-            <h3>Event-overskrift3</h3>
-            <img src="something.png" style="width:100%;">
-            <p>Some text here, yes indeed some text</p>
-            <p>Some text here, yes indeed some text</p>
         </section>
     </article>
 </body>
