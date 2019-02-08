@@ -145,9 +145,8 @@
                 $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
                 $søkord = $_SESSION['brukernavn'];
                 $stmt = $db->query("SELECT bio FROM bio WHERE brukerNavn LIKE '$søkord'");
-
+                echo "<h2> Bio:";
                 if($stmt->rowCount()){
-                    echo "<h2> Bio:";
                     echo "<br>";
 
                     $count = 0;
