@@ -119,7 +119,6 @@
         <?php
         include_once("../includes/init.php");
         include_once('../includes/ikke_logget_inn.inc.php');
-        $dsn = "mysql:host=localhost;dbname=alumni05";
         $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
         $søkord = $_SESSION['brukernavn'];
         $stmt = $db->query("SELECT fornavn, etternavn FROM bruker WHERE brukerNavn LIKE '$søkord'");
@@ -141,7 +140,6 @@
                 <?php
                 include_once("../includes/init.php");
                 include_once('../includes/ikke_logget_inn.inc.php');
-                $dsn = "mysql:host=localhost;dbname=alumni05";
                 $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
                 $søkord = $_SESSION['brukernavn'];
                 $stmt = $db->query("SELECT bio FROM bio WHERE brukerNavn LIKE '$søkord'");
@@ -164,7 +162,6 @@
             <?php
             include_once("../includes/init.php");
             include_once('../includes/ikke_logget_inn.inc.php');
-            $dsn = "mysql:host=localhost;dbname=alumni05";
             $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
             $søkord = $_SESSION['brukernavn'];
             $stmt = $db->query("SELECT interesse FROM interesser WHERE brukerNavn LIKE '$søkord'");
@@ -177,7 +174,7 @@
                 {
                     $count ++;
                     echo $count;
-                    echo ": ";
+                    echo " ";
                     echo $row['interesse'];
                     if ($count <= 39 ) {
                         echo ", ";
