@@ -145,9 +145,8 @@
                 $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
                 $søkord = $_SESSION['brukernavn'];
                 $stmt = $db->query("SELECT bio FROM bio WHERE brukerNavn LIKE '$søkord'");
-
+                echo "<h2> Bio:";
                 if($stmt->rowCount()){
-                    echo "<h2> Bio:";
                     echo "<br>";
 
                     $count = 0;
@@ -205,10 +204,6 @@
 
         <section class="Events">
             <h1>Events</h1>
-            <h3>Event-overskrift3</h3>
-            <img src="something.png" style="width:100%;">
-            <p>Some text here, yes indeed some text</p>
-            <p>Some text here, yes indeed some text</p>
         </section>
     </article>
 </body>

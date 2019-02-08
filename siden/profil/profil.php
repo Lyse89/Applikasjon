@@ -87,22 +87,22 @@ include_once('../includes/ikke_logget_inn.inc.php');
         </div>
 
         <div class="instillinger-boks">
-              <form class="presentasjon" action="presentasjon.inc.php" method="POST">
-                <h2 id="redigerePres">Redigere Presentasjon</h2>
-                <textarea name="bio" placeholder="Skriv din bio(maks 255 tegn)"></textarea><br>
-                <input type="submit" name="submitPres" id="skrivPres" value="Redigere">
-              </form>
-        </div>
-    </div>
-    <div class="flex-container">
-
-        <div class="instillinger-boks">
               <form class="presentasjon" action="../profil/registrer_interesse.inc.php" method="POST">
                 <h2 id="registInt">Registrere interesser</h2>
                 <input type="text" name="interesser" id=interesse placeholder="Skriv en Interesse"><br>
                 <input type="submit" name="registrerInt" id="registrerInt">
               </form>
         </div>
+
+        <div class="instillinger-boks">
+              <form class="presentasjon" action="presentasjon.inc.php" method="POST">
+                <h2 id="redigerePres">Redigere Presentasjon</h2>
+                    <textarea name="bio" placeholder="Skriv din bio(maks 255 tegn) "rows="6" cols="70"></textarea><br>
+                <input type="submit" name="submitPres" id="skrivPres" value="Redigere">
+              </form>
+        </div>
+    </div>
+    <div class="flex-container">
 
         <div class="instillinger-boks">
               <form class="byttePO" action="/bytt_passord.inc.php" method="POST">
