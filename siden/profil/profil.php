@@ -71,20 +71,20 @@
         </form>
 
       <form class="presentasjon" action="presentasjon.inc.php" method="POST">
-        <h2 id="redigerePres">Redigere Din Presentasjon<h2>
+        <h2 id="redigerePres">Redigere Presentasjon  </h2>
         <textarea name="bio" placeholder="Skriv din bio"></textarea><br>
         <input type="submit" name="submitPres" id="skrivPres" value="Redigere">
       </form>
 
       <form class="presentasjon" action="../profil/registrer_interesse.inc.php" method="POST">
-        <h2 id="registInt">Registrere interesser</h2>
+        <h2 id="registInt">Registrere interesser  </h2>
         <input type="text" name="interesser" id=interesse placeholder="Skriv en Interesse"><br>
         <input type="submit" name="registrerInt" id="registrerInt">
       </form>
 
 
       <form class="byttePO" action="/bytt_passord.inc.php" method="POST">
-        <h2 id="byttePass">Bytte Passord</h2>
+        <h2 id="byttePass">Bytte Passord   </h2>
           <input type="password" name="gamlePO" id=gamlePO placeholder="Gamle Passordet"><br>
           <input type="password" name="nyePO" id=nyePO placeholder="Nye Passordet"><br>
           <input type="password" name="nyePO_sjekk" placeholder="Gjenta ny Passordet"><br>
@@ -92,7 +92,7 @@
         </form>
 
       <form class="BytteEpost" action="/bytteEpost.inc.php" method="POST">
-          <h2 id="bytteEpost">Bytte E-post</h2>
+          <h2 id="bytteEpost">Bytte E-post  </h2>
         <input type="email" name="epost" placeholder="Skriv nye Epost"><br>
         <input type="password" name="passord" placeholder="Passord"><br>
         <input type="submit" name="submitBytteEpost" id="bytteEpost" value="Bytte Epost">
