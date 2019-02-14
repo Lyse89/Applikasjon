@@ -67,7 +67,6 @@ include_once('../includes/ikke_logget_inn.inc.php');
     <?php
     // DB Connect
     include_once("../includes/init.php");
-    $dsn = "mysql:host=localhost;dbname=alumni05";
     $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
     $søkord = $_POST['Interesser'];
     $stmt = $db->query("SELECT bruker.fornavn, bruker.etternavn, interesser.interesse FROM bruker INNER JOIN interesser ON bruker.brukerNavn = interesser.brukerNavn WHERE interesse LIKE '%$søkord%'");
