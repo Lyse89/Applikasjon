@@ -4,7 +4,6 @@
 
 include_once("../includes/init.php");
 
-$dsn = "mysql:host=localhost;dbname=alumni05";
 $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
 
 $Melding = "";
