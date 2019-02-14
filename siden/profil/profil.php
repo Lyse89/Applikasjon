@@ -61,6 +61,7 @@ include_once('../includes/ikke_logget_inn.inc.php');
 ?>
 
 <div class="center">
+        <h1>Instillinger</h1>
     <div class="flex-container">
         <div class="instillinger-boks">
                 <form action="lastebilde.inc.php" method="POST" enctype="multipart/form-data">
