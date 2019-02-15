@@ -47,6 +47,8 @@ Spesifikt for vår gruppe
 	En del steder $dsn blir opprettet unødvendig
 		fikset
 
+    Mangler entitetisering for interesser ( mange til mange forhold).
+
 Del 5
 	Anngi hva administratorbruker heter i rapporten
 	Sørg for at administrator-brukeren er opprettet.
