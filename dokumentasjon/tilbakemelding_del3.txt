@@ -1,0 +1,53 @@
+Rapport
+	Ta med en referanse til gdpr.
+		Holder ikke at vi sier at det må gjøres på bakgrunn av gdpr.
+		
+	Skrive mer utdypende om hvorfor vi har valgt de forskjellige oppløsningene.
+
+	Skrive mer utdypende om datamodellen. Oppdatert ER-diagram i alle deler av rapporten.
+
+
+
+
+Styling / CSS
+
+	Gjøre visuell forskjell for når man er logget inn som administrator
+	og når man er logget inn som vanlig bruker.
+
+	Masse snakk om utnytting av hele skjermen nok en gang.
+		Spesifikt nevnt på vår innlogget forside.
+
+	Mer kreativt
+		Gjør det synlig at det ikke er en offisiell usn-side.
+		Fjern / erstatt logoen.
+
+	Han hintet til at menyen alltid burde være festet til toppen.
+
+
+
+Spesifikt for vår gruppe	
+	Delen i rapporten for husket-innlogging var veldig god.
+	Delen relatert til gdpr og sletting er lite utfyllende og trenger referanser.
+
+	Passordet blir delvis tildekket i safari.
+
+	Endre til norske ord
+		events, email
+
+	Tenk på plassbruk på innlogget forside.
+
+	Riktig char set, problemer med æåø.
+		Nevnte ikke spesifikt hvor.
+
+	Sette bakgrunnsfarge for felt med fokus, ikke nok med border.
+
+	Søk på interesser bør vise eksisterende alternativer.
+		Evt. topp 10 / fuzzy search der matchende interesser kommer opp basert på søk.
+
+	En del steder $dsn blir opprettet unødvendig
+		fikset
+
+Del 5
+	Anngi hva administratorbruker heter i rapporten
+	Sørg for at administrator-brukeren er opprettet.
+
