@@ -173,8 +173,6 @@
                 while ($row = $stmt->fetch())
                 {
                     $count ++;
-                    echo $count;
-                    echo " ";
                     echo $row['interesse'];
                     if ($count <= 39 ) {
                         echo ", ";

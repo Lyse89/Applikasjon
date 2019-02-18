@@ -40,5 +40,15 @@ WHERE brukerNavn LIKE "q";
 SELECT interesse FROM interesser WHERE brukerNavn LIKE "q" ORDER BY interesse ASC;
 
 DELETE FROM interesser
-WHERE brukerNavn ='q'
-AND interesse = 'q';
+WHERE brukerNavn ='112311'
+AND interesse LIKE ' ';
+
+DELETE FROM interesser
+WHERE interesse = '';
+
+SELECT interesse
+FROM interesser
+GROUP BY interesse
+ORDER BY COUNT(*) DESC
+LIMIT 10;
+

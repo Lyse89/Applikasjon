@@ -8,7 +8,7 @@
     <style>
 
     .SøkPersonerBox{
-        margin:5% 20% 0.1% 20%;
+        margin:2% 20% 0.1% 20%;
         background-color: ;
         text-align: center;
     }
@@ -45,17 +45,40 @@
         text-align: center;
     }
 
+    .top10interesser {
+        text-align: left;
+        margin:1% 20% 3% 46%;
+        font-size: 18px;
+    }
+    h1{
+        text-align: center;
+    }
     </style>
  </head>
  <body>
-
 <?php
+include_once("../includes/init.php");
 include_once('../includes/header_innlogget.php');
 include_once('../includes/ikke_logget_inn.inc.php');
 ?>
+    <h1> Top 10 Interesser </h1>
+<div class = "top10interesser">
+    <?php
+    $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
+    $stmt = $db->query('SELECT interesse FROM interesser GROUP BY interesse ORDER BY COUNT(*) DESC LIMIT 10;');
+    $count = 0;
+    if($stmt->rowCount()){
+        while ($row = $stmt->fetch()){
+            $count ++;
+            echo $count, ': ', $row['interesse'];
+            echo "<br>";
+        }
+    }
+    ?>
+</div>
 
 <div class="SøkPersonerBox">
-    <h1> Søk på Interesser </h1>
+    <h2> Søk på Interesser </h2>
     <form class="søk-Interesser" action="personer.inc.php" method="POST">
         <input type="text" name="Interesser" id=Interesser placeholder="Interesser">
         <input type="submit" name="SøkPåInteresse" value="Søk" id="SøkPåInteresse">
