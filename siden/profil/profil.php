@@ -43,13 +43,13 @@
         height: 200px;
         background-color: #dddddd;
     }
-    
+
     .instillinger-boks {
         width: 260px;
-        padding: 30px; 
+        padding: 30px;
     }
     .instillinger-boks {
-        
+
     }
 
 </style>
@@ -92,6 +92,14 @@ include_once('../includes/ikke_logget_inn.inc.php');
                 <h2 id="registInt">Registrere interesser</h2>
                 <input type="text" name="interesser" id=interesse placeholder="Skriv en Interesse"><br>
                 <input type="submit" name="registrerInt" id="registrerInt">
+              </form>
+        </div>
+
+        <div class="instillinger-boks">
+              <form class="presentasjon" action="../profil/slett_interesse.inc.php" method="POST">
+                <h2 id="registInt">Slett Interesse</h2>
+                <input type="text" name="slett_interesser" id=slett_interesse placeholder="Skriv en interesse"><br>
+                <input type="submit" name="SlettInt" id="SlettInt">
               </form>
         </div>
 

@@ -104,14 +104,13 @@
                 <input type="text" name="fornavn" id=Fornavn placeholder="Fornavn">
                 <input type="text" name="etternavn" id=Etternavn placeholder="Etternavn"><br>
                 <input type="email" name="epost" placeholder="Email"><br>
-                <input type="password" name="forstePasord" id="Passord" placeholder="Passord"><br>
+                <input type="password" name="forstePassord" id="Passord" placeholder="Passord "><br>
                 <input type="password" name="passord" id="GjentaPassord" placeholder="Gjenta Passord"><br>
                 <input type="text" name="studentid" id="StudentID" placeholder="StudentID"> <br>
-                <input type="submit" name="btnSignup_form" value="Registrer Deg" id="registrer">
+                <input type="submit" name="btnSignup_form" value="Registrer Deg" id="registrer" onclick="Validate()">
             </form>
         </div>
     </div>
-
     <!-- Footer -->
     <footer class ="footer"></footer>
 

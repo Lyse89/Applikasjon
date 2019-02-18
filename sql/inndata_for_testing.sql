@@ -38,3 +38,7 @@ FROM bruker
 WHERE brukerNavn LIKE "q";
 
 SELECT interesse FROM interesser WHERE brukerNavn LIKE "q" ORDER BY interesse ASC;
+
+DELETE FROM interesser
+WHERE brukerNavn ='q'
+AND interesse = 'q';

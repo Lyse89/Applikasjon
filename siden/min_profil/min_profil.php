@@ -142,7 +142,7 @@
                 include_once('../includes/ikke_logget_inn.inc.php');
                 $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
                 $søkord = $_SESSION['brukernavn'];
-                $stmt = $db->query("SELECT bio FROM bio WHERE brukerNavn LIKE '$søkord'");
+                $stmt = $db->query("SELECT bio FROM bio WHERE brukerNavn = '$søkord'");
                 echo "<h2> Bio:";
                 if($stmt->rowCount()){
                     echo "<br>";
@@ -164,7 +164,7 @@
             include_once('../includes/ikke_logget_inn.inc.php');
             $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
             $søkord = $_SESSION['brukernavn'];
-            $stmt = $db->query("SELECT interesse FROM interesser WHERE brukerNavn LIKE '$søkord'");
+            $stmt = $db->query("SELECT interesse FROM interesser WHERE brukerNavn = '$søkord'");
             echo "<h2> Interesser:";
             if($stmt->rowCount()){
                 echo "<br>";
