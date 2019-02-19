@@ -3,6 +3,7 @@
 <style>
 input:focus {
   outline: 1px solid #6699ff;
+  background-color: lightyellow;
 }
 </style>
 <nav>
