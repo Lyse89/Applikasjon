@@ -43,3 +43,13 @@ CREATE TABLE token (
     CONSTRAINT tokenPK PRIMARY KEY (brukerNavn),
     CONSTRAINT tokenbruker FOREIGN KEY (brukerNavn) REFERENCES bruker (brukerNavn)
 );
+
+CREATE TABLE meldinger (
+	avsender VARCHAR(45),
+    mottaker VARCHAR(45),
+    titel VARCHAR(120),
+    sendtTid DATETIME,
+    melding VARCHAR(255),
+    CONSTRAINT meldingerPK PRIMARY KEY (avsender, mottaker, sndtTid),
+    CONSTRAINT meldingerFK FOREIGN KEY (avsender, mottaker) REFERENCES bruker (brukerNavn)
+    );
