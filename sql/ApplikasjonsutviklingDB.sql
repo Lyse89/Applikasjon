@@ -51,5 +51,6 @@ CREATE TABLE meldinger (
     sendtTid DATETIME,
     melding VARCHAR(255),
     CONSTRAINT meldingerPK PRIMARY KEY (avsender, mottaker, sndtTid),
-    CONSTRAINT meldingerFK FOREIGN KEY (avsender, mottaker) REFERENCES bruker (brukerNavn)
+    CONSTRAINT meldingerFK FOREIGN KEY (avsender) REFERENCES bruker (brukerNavn),
+    CONSTRAINT meldingerFK FOREIGN KEY (mottaker) REFERENCES bruker (brukerNavn)
     );
