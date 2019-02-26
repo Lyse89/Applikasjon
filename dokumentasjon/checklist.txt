@@ -42,6 +42,7 @@ DEL 3
     [ ] Laste opp profil bilde  - Simen
     [ ] Slette Interesser
     [ ] Maks 255 Chars på bio insert, Rød boks når brukeren er over 255 tegn.
+    [ ] Entitetisering mellom interesser og bruker ( mange til mange forhold)
 
 
 DEL 4
