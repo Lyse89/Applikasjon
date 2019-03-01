@@ -33,7 +33,7 @@ CREATE TABLE bio (
 	brukerNavn VARCHAR(45) NOT NULL UNIQUE,
     bio VARCHAR (255),
     CONSTRAINT bioPK PRIMARY KEY (brukerNavn, bio),
-    CONSTRAINT biobruker FOREIGN KEY (brukerNavn) REFERENCES bruker (brukerNavn)
+    CONSTRAINT biobrukerFK FOREIGN KEY (brukerNavn) REFERENCES bruker (brukerNavn)
 );
 
 CREATE TABLE token (
@@ -44,13 +44,14 @@ CREATE TABLE token (
     CONSTRAINT tokenbruker FOREIGN KEY (brukerNavn) REFERENCES bruker (brukerNavn)
 );
 
+
 CREATE TABLE meldinger (
 	avsender VARCHAR(45),
     mottaker VARCHAR(45),
-    titel VARCHAR(120),
+    tittel VARCHAR(120),
     sendtTid DATETIME,
     melding VARCHAR(255),
-    CONSTRAINT meldingerPK PRIMARY KEY (avsender, mottaker, sndtTid),
-    CONSTRAINT meldingerFK FOREIGN KEY (avsender) REFERENCES bruker (brukerNavn),
-    CONSTRAINT meldingerFK FOREIGN KEY (mottaker) REFERENCES bruker (brukerNavn)
+    CONSTRAINT meldingerPK PRIMARY KEY (avsender, mottaker, sendtTid),
+    CONSTRAINT meldingerBrukerFK FOREIGN KEY (avsender) REFERENCES bruker (brukerNavn),
+    CONSTRAINT meldingerBrukerFK2 FOREIGN KEY (mottaker) REFERENCES bruker (brukerNavn)
     );
