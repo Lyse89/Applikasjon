@@ -50,6 +50,7 @@ DEL 4
     [ ] Invitering av brukere til arrangement
     [ ] Registrere interesse for arrangement
     [ ] Sende meldinger til andre brukere
+    [ ] Behold scroll ved oppdatering av relevante sider(losning paa canvas)
 
 DEL 5
     [ ] 
