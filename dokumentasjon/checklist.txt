@@ -49,7 +49,7 @@ DEL 4
     [ ] Arrangement-side
     [ ] Invitering av brukere til arrangement
     [ ] Registrere interesse for arrangement
-    [ ] Sende meldinger til andre brukere
+    [ ] Sende meldinger til andre brukere - Simen
     [ ] Behold scroll ved oppdatering av relevante sider(losning paa canvas)
 
 DEL 5
