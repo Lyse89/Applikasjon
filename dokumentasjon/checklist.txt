@@ -8,7 +8,7 @@ DEL 1
     [x] Registreringsknapp - William
     [x] Farge paa fokusert input felt  - William
     [ ] Style Profile siden  - Simen
-    [ ] Bytte PROFILNAVN til STUDENTID (everywhere)
+    [x] Bytte PROFILNAVN til STUDENTID (everywhere)
     [x] Bytte "Person" Siden sitt navn til "Søk" - William
     [ ] Organisere css-filene
     [ ] Sette opp orientation for apple devices
