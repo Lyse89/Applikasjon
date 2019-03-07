@@ -9,6 +9,7 @@
   <a href="../nyheter/nyheter.php">IT nyheter</a>
   <a href="../personer/personer.php">Søk Interesser</a>
   <a href="../min_profil/min_profil.php">Min Profil</a>
+  <a href="../min_profil/meldinger.php">Meldinger</a>
   <a href="../profil/profil.php">Instillinger</a>
   <div class="Loggin">
     <form action="../includes/loggut.inc.php" method="POST">
