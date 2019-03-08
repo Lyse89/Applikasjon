@@ -82,13 +82,13 @@
     </div>
 
     <div class="arrangementListeBoks">
-        <h2>Tittel for arrangement</h2>
+        <h2><a href="arrangement.php">Tittel for arrangement</a></h2>
         <p>Dato : yyyy.mm.dd</p>
         <p>Sted : lokasjon for arrangement</p>
     </div>
 
     <div class="arrangementListeBoks">
-        <h2>Tittel for arrangement</h2>
+        <h2><a href="arrangement.php">Tittel for arrangement</a></h2>
         <p>Dato : yyyy.mm.dd</p>
         <p>Sted : lokasjon for arrangement</p>
     </div>

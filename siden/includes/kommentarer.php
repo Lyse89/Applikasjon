@@ -15,7 +15,7 @@
 
         <div class="KommentarTekst">
             <ol>
-                <li class="kommentarNavn"><h3>Kristoffer Sorensen</h3><li>
+                <li class="kommentarNavn"><h3>Fornavn Etternavn</h3><li>
                 <li class="kommentarDato">2018-09-28<li>
             </ol>
 

@@ -17,15 +17,38 @@
             font-family: arial;
         }
 
-        .ArrangementBoks {
+        .arrangementBoks {
             box-sizing: border-box;
             width: 70%;
-            height: 500px;
+            min-height: 400px;
             overflow: auto;
             padding: 50px 80px 50px 80px;
-            margin: 50px 15% 50px 15%;
+            margin: 50px 15% 0 15%;
             background-color: white;
         }
+		.arrangementBoks h1 {
+			padding-bottom: 5px;
+			border-bottom: 4px solid lightgrey;
+		}
+		.arrangementBoks h2 {
+			margin-top: 0;
+			font-size: 18px;
+		}
+		.arrangementBeskrivelse {
+			width: 50%;
+			float: left;
+			margin: 0 10% 25px 0;
+		}
+		.arrangementDeltagelse {
+			margin: 0 0 25px 0;
+			width: 40%;
+			float: right;
+		}
+		.arrangementInvitasjon {
+			clear: both;
+
+		}
+
     </style>
 </head>
 <body>
@@ -34,8 +57,33 @@
     include_once('../includes/header_innlogget.php');
     ?>
 
-    <div class="ArrangementBoks">
-    <h1>Tittel for arrangement</h1>
+    <div class="arrangementBoks">
+		<h1>Tittel for arrangement</h1>
+		<div class="arrangementBeskrivelse">
+			<h2>Detaljer</h2>
+			<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+			non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+			<input type="button" value="Delta">
+		</div>
+		<div class="arrangementDeltagelse">
+			<h2>Skal</h2>
+			<p>Fornavn Etternavn</p>
+			<p>Fornavn Etternavn</p>
+			<p>Fornavn Etternavn</p>
+			<p>Fornavn Etternavn</p>
+
+		</div>
+		<div class = "arrangementInvitasjon">
+			<h2>Inviter til arrangementet</h2>
+			<input type="text" name="" id="" placeholder="Søk på navn">
+
+		</div>
     </div>
 
     <?php
