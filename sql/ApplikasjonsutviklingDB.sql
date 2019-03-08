@@ -58,10 +58,11 @@ CREATE TABLE meldinger (
 -- For arrangement
 CREATE TABLE arrangement (
     arrangementId INT(5),
+    tittel VARCHAR(20),
     vert VARCHAR(45),
-    startTid DATETIME(),
-    sluttTid DATETIME(),
-    Beskrivelse VARCHAR(255)
+    startTid DATETIME,
+    sluttTid DATETIME,
+    Beskrivelse VARCHAR(255),
     CONSTRAINT arrangementPK PRIMARY KEY(arrangementId),
     CONSTRAINT arrangementBrukerFK FOREIGN KEY(vert) REFERENCES bruker(brukerNavn)
 );
