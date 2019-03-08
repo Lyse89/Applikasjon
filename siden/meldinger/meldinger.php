@@ -6,6 +6,10 @@
     <style media="screen">
 
     </style>
+    <?php
+    include_once('../includes/header_innlogget.php');
+    include_once('../includes/ikke_logget_inn.inc.php');
+    ?>
   </head>
   <body>
     <form class="sende" action="sendmeldigner.inc.php" method="post">
