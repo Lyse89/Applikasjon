@@ -135,6 +135,12 @@ nav a:hover {
   color: white;
 }
 
+@media screen and (min-width: 480px) {
+  div.gjome {
+    display: none;
+  }
+}
+
 
 }
 /* {

@@ -19,11 +19,14 @@
       </form>
     </div>
   </div>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-  <span class="hamburger">
-    <i class="fa fa-bars"></i>
-  </span> Menu
-  </a>
+
+  <div class="gjome">
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <span class="hamburger">
+      <i class="fa fa-bars"></i>
+    </span> 
+    </a>
+  </div>
 </nav>
 
 <script>

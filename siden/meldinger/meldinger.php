@@ -43,7 +43,7 @@
         <form class="instillinger-boks" action="sendmeldigner.inc.php" method="post">
           <h2>Send en melding</h2>
           <input type="text" name="mottaker" value="mottaker" placeholder="Mottaker">
-          <textarea name="name" rows="14" cols="120"></textarea>
+          <textarea name="melding" rows="14" cols="30"></textarea>
           <input type="submit" name="sendMelding" id="sendMelding">
         </form>
   </div>
