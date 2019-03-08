@@ -19,6 +19,7 @@
         float: left;
         width: 40%;
         margin: 50px 2.5% 0 7.5%;
+		box-shadow: 10px 10px 8px #c0c0c0;
     }
     .arrangementListe h1{
         width: 90%;
@@ -38,15 +39,28 @@
         margin: 0;
         font-size: 20px;
     }
+    .arrangementListeBoks a{
+		text-decoration: none;
+		color: black;
+    }
     
+    .arrangementListeBoks a:hover{
+		color: #9985ad;
+    }
+
     .arrangementNy {
         float: right;
         margin: 50px 7.5% 0 2.5%;
         background-color: white;
         height: 600px;
         width: 40%;
-        
+		box-shadow: 10px 10px 8px #c0c0c0;
+    }
 
+    .arrangementNy h1{
+        width: 90%;
+        margin: 25px 5% 25px 5%;
+        border-bottom: 3px solid lightgrey;
     }
 
 </style>
@@ -58,12 +72,11 @@
     include_once('../includes/header_innlogget.php');
     include_once('../includes/ikke_logget_inn.inc.php');
     ?>
-    <a href="arrangement.php">Midlertidig link til et arrangement</a>
 
 <div class="arrangementListe">
     <h1>Kommende arrangement</h1>
-    <div class="arrangementListeBoks">
-        <h2>Tittel for arrangement</h2>
+    <div class="arrangementListeBoks" >
+        <h2><a href="arrangement.php">Tittel for arrangement</a></h2>
         <p>Dato : yyyy.mm.dd</p>
         <p>Sted : lokasjon for arrangement</p>
     </div>
@@ -81,7 +94,7 @@
     </div>
 </div>
 <div class="arrangementNy">
-
+    <h1>Opprett nytt arrangement</h1>
 </div>
 
 </body>
