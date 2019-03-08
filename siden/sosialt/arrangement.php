@@ -1,5 +1,5 @@
-<!-- Denne include-siden er utviklet av Simen A. Lyse , siste gang endret 14.12.2018
-// Denne include-siden er kontrollert av Simen A. Lyse, siste gang 14.12.2018 -->
+<!-- Denne include-siden er utviklet av Kristoffer Sorensen, siste gang endret 08.03.2019
+// Denne include-siden er kontrollert av Kristoffer Sorensen, siste gang 08.03.2019-->
 <!DOCTYPE html>
 <html lang="no" dir="ltr">
 <head>
