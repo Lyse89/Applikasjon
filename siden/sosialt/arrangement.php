@@ -34,6 +34,12 @@
 			margin-top: 0;
 			font-size: 18px;
 		}
+		.arrangementBoks img {
+            margin-bottom: 25px;
+            background-color: lightgrey;
+            width: 100%;
+            height: 200px;
+        }
 		.arrangementBeskrivelse {
 			width: 50%;
 			float: left;
@@ -41,11 +47,12 @@
 		}
 		.arrangementDeltagelse {
 			margin: 0 0 25px 0;
+            min-height: 200px;
 			width: 40%;
 			float: right;
 		}
 		.arrangementInvitasjon {
-			clear: both;
+            clear: right;
 
 		}
 
@@ -59,7 +66,9 @@
 
     <div class="arrangementBoks">
 		<h1>Tittel for arrangement</h1>
+
 		<div class="arrangementBeskrivelse">
+            <img>
 			<h2>Detaljer</h2>
 			<p>
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -78,12 +87,12 @@
 			<p>Fornavn Etternavn</p>
 			<p>Fornavn Etternavn</p>
 
-		</div>
-		<div class = "arrangementInvitasjon">
-			<h2>Inviter til arrangementet</h2>
-			<input type="text" name="" id="" placeholder="Søk på navn">
 
 		</div>
+        <div class = "arrangementInvitasjon">
+            <h2>Inviter til arrangementet</h2>
+            <input type="text" name="" id="" placeholder="Søk på navn">
+        </div>
     </div>
 
     <?php
