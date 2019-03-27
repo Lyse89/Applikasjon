@@ -18,7 +18,7 @@ DEL 1
 
 
 DEL 2
-    [ ] Sette opp glemt passord 
+    [ ] Sette opp glemt passord
     [x] Fikse at dsn-variabelen blir opprettet i init.php - Kristoffer
     [x] Logginnfunksjon fra default.php - Kristoffer
     [x] Endre logg_inn_siden.php sin feilmeldinger - Kristoffer
@@ -49,8 +49,13 @@ DEL 4
     [ ] Arrangement-side
     [ ] Invitering av brukere til arrangement
     [ ] Registrere interesse for arrangement
-    [ ] Sende meldinger til andre brukere - Simen
+    [ ] Sende meldinger til andre brukere !!EMAIL!! - Simen
     [ ] Behold scroll ved oppdatering av relevante sider(losning paa canvas)
 
+
 DEL 5
-    [ ] 
+    [ ]
+
+    [ ] Lagg SQL tabeller for Nyheter og Events
+    [ ] Se over Entitetisering i SQL
+    [ ] Prøve å fjerne <div> sections
