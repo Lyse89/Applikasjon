@@ -1,0 +1,58 @@
+# Tilbakemelding app del 4
+
+Vi maa ha argumentasjon for alle valg gjort i databasemodellen.
+
+Mangler fortsatt argumentasjon for valg av oppløsning
+
+
+Vi mangler "noen" tabeller.
+
+Del 5 regnes som ikke levert dersom datamodellen ikke er satt opp ordentlig.
+
+Ingenting kan ligge i responsbufferen. For eks. header som er en del av respons bufferen. Ikke inkluder html-tagger i starten av en php-fil
+Feilmeldingen vises ikke paa windows eller linux servere, men det er fortsatt feil. Blanke linjer teller ogsaa som html-kode.
+
+$\_GET sendes med url'en. Derfor skal denne aldri brukes til aa sende
+epost, brukernavn osv.
+Greit aa bruke dette til aa sende arrangement-navn.
+
+Spesifikt oss:
+    Tilkoblingen til databasen er spredd paa for mange forskjellige filer.
+
+Universell utforming
+Sjekk bruk av h-tagger
+
+Vi har mangler relatert til semantiske tagger
+    article, section, header, footer
+
+Inkludere i rapporten hvorfor vi bruker navtag tre ganger
+
+Mangler sjekk om de som registrer seg har usn-epost.
+Diskusjon om admin skal kunne lage en bruker.
+    Tiltenkt for aa kunne registrere brukere som har sluttet paa usn
+
+Det som logges inn med skal vaere brukernavn, ikke studentnr epost eller lignende.
+
+Den som setter opp applikasjonen maa vite at web-serverbrukeren ha tilgang til mappen osm bilder skal lastes opp til.
+For aa kunne laste opp bilder saa maa brukeren ha skriverett.
+Vi maa si ifra i rapporten der bilder skal lagres slik at serverholder kan sette riktige rettigheter for mappen som bildene skal kunne lagres i.
+Gi beskjed om storrelsekriterier slik at serverholder setter det inn i serverens phpkonfigurasjon.
+
+Vi kan lagre bilder i databasen som en blob.
+
+Input-felts bredder bør være i pixel, ikke relative maaleenheter.
+
+Inkludere studier skal fortsatt vaere mulig.
+
+Mer i rapporten om melding med hvorfor og hvordan.
+
+Meldinger fra administrator maa gaa til epost.
+
+Meldingssystemet kan vaere enten meldingssystem internt eller kun via epost.
+
+
+Beskjed om registrering er vellykket eller ikke.
+
+
+
+
