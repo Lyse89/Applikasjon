@@ -15,22 +15,25 @@ CREATE TABLE bruker (
     passord VARCHAR(40) NOT NULL,
     fornavn VARCHAR(40) NOT NULL,
     etternavn VARCHAR(40) NOT NULL,
-    studie VARCHAR(40),
     ePost VARCHAR(45) NOT NULL,
     feilLoginnTeller INT,
     feilLoginnSiste DATETIME,
     FeilIP VARCHAR(45),
     CONSTRAINT brukerNavnPK PRIMARY KEY (brukerNavn)
 );
-
 CREATE TABLE studie (
 	studieId VARCHAR(10),
     studieNavn VARCHAR(45),
     studieGrad VARCHAR(45),
-    CONSTRAINT studiePK PRIMARY KEY (studieID),
-    CONSTRAINT studieFK FOREIGN KEY (studieID) REFERENCES bruker (studie)
+    CONSTRAINT studiePK PRIMARY KEY (studieId)
 );
-
+CREATE TABLE studiedeltagelse (
+	studieId VARCHAR(10),
+    brukerNavn VARCHAR(45),
+    CONSTRAINT studiedeltagelsePK PRIMARY KEY (studieId, brukerNavn),
+    CONSTRAINT studiedeltagelseBrukerFK FOREIGN KEY (brukerNavn) REFERENCES bruker(brukerNavn),
+    CONSTRAINT studiedeltagelseStudieFK FOREIGN KEY (studieId) REFERENCES studie(studieId)
+);
 CREATE TABLE interesser (
 	brukerNavn VARCHAR(45) NOT NULL,
 	interesse VARCHAR (45),
@@ -52,8 +55,6 @@ CREATE TABLE token (
     CONSTRAINT tokenPK PRIMARY KEY (brukerNavn),
     CONSTRAINT tokenbruker FOREIGN KEY (brukerNavn) REFERENCES bruker (brukerNavn)
 );
-
-
 CREATE TABLE meldinger (
 	avsender VARCHAR(45),
     mottaker VARCHAR(45),
@@ -67,8 +68,9 @@ CREATE TABLE meldinger (
 -- For arrangement
 CREATE TABLE arrangement (
     arrangementId INT(5),
-    tittel VARCHAR(20),
+    tittel VARCHAR(40),
     vert VARCHAR(45),
+    lokasjon VARCHAR(40),
     startTid DATETIME,
     sluttTid DATETIME,
     Beskrivelse VARCHAR(255),
