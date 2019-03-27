@@ -1,3 +1,6 @@
+<?php 
+include_once('../includes/ikke_logget_inn.inc.php');
+?>
 <!-- Denne include-siden er utviklet av Kristoffer Sorensen, siste gang endret 08.03.2019
 // Denne include-siden er kontrollert av Kristoffer Sorensen, siste gang 08.03.2019-->
 <!DOCTYPE html>
@@ -60,10 +63,8 @@
 </head>
 <body>
     <?php
-    include_once('../includes/ikke_logget_inn.inc.php');
     include_once('../includes/header_innlogget.php');
     ?>
-
     <div class="arrangementBoks">
 		<h1>Tittel for arrangement</h1>
 
