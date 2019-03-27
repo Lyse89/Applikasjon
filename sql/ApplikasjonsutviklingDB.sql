@@ -15,11 +15,20 @@ CREATE TABLE bruker (
     passord VARCHAR(40) NOT NULL,
     fornavn VARCHAR(40) NOT NULL,
     etternavn VARCHAR(40) NOT NULL,
+    studie VARCHAR(40),
     ePost VARCHAR(45) NOT NULL,
     feilLoginnTeller INT,
     feilLoginnSiste DATETIME,
     FeilIP VARCHAR(45),
     CONSTRAINT brukerNavnPK PRIMARY KEY (brukerNavn)
+);
+
+CREATE TABLE studie (
+	studieId VARCHAR(10),
+    studieNavn VARCHAR(45),
+    studieGrad VARCHAR(45),
+    CONSTRAINT studiePK PRIMARY KEY (studieID),
+    CONSTRAINT studieFK FOREIGN KEY (studieID) REFERENCES bruker (studie)
 );
 
 CREATE TABLE interesser (
