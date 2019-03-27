@@ -52,3 +52,12 @@ GROUP BY interesse
 ORDER BY COUNT(*) DESC
 LIMIT 10;
 
+-- Inndata for eventer
+insert into arrangement values(11111, 'Tittelen for arr1', 'q', 'Lokasjon for arr1', current_date(), current_date(), 'Beskrivelse av arrangementet1');
+insert into arrangement values(11112, 'Tittelen for arr2', 'q', 'Lokasjon for arr2', current_date(), current_date(), 'Beskrivelse av arrangementet2');
+insert into arrangement values(11113, 'Tittelen for arr3', 'q', 'Lokasjon for arr3', current_date(), current_date(), 'Beskrivelse av arrangementet3');
+insert into arrangement values(11114, 'Tittelen for arr4', 'q', 'Lokasjon for arr4', current_date(), current_date(), 'Beskrivelse av arrangementet4');
+insert into arrangement values(11115, 'Tittelen for arr5', 'q', 'Lokasjon for arr5', current_date(), current_date(), 'Beskrivelse av arrangementet5');
+insert into arrangement values(11116, 'Tittelen for arr6', 'q', 'Lokasjon for arr6', current_date(), current_date(), 'Beskrivelse av arrangementet6');
+
+select * from arrangement;
