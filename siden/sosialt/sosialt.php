@@ -1,5 +1,8 @@
-<!-- Denne include-siden er utviklet av Kristoffer Sorensen, siste gang endret 08.03.2019
-// Denne include-siden er kontrollert av Kristoffer Sorensen, siste gang 08.03.2019-->
+<?php
+    include_once('../includes/ikke_logget_inn.inc.php');
+//Denne include-siden er utviklet av Kristoffer Sorensen, siste gang endret 27.03.2019
+// Denne include-siden er kontrollert av Kristoffer Sorensen, siste gang 27.03.2019
+?>
 <!DOCTYPE html>
 <html lang="no" dir="ltr">
 <link rel="stylesheet" type="text/css" href="../css/style.css">
@@ -70,28 +73,27 @@
 <body>
     <?php
     include_once('../includes/header_innlogget.php');
-    include_once('../includes/ikke_logget_inn.inc.php');
+    include_once('../includes/init.php');
     ?>
 
 <div class="arrangementListe">
     <h1>Kommende arrangement</h1>
-    <div class="arrangementListeBoks" >
-        <h2><a href="arrangement.php">Tittel for arrangement</a></h2>
-        <p>Dato : yyyy.mm.dd</p>
-        <p>Sted : lokasjon for arrangement</p>
-    </div>
 
-    <div class="arrangementListeBoks">
-        <h2><a href="arrangement.php">Tittel for arrangement</a></h2>
-        <p>Dato : yyyy.mm.dd</p>
-        <p>Sted : lokasjon for arrangement</p>
-    </div>
+    <?php
+        $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
+        $stmt = $db->query('SELECT * FROM arrangement ORDER BY startTid DESC LIMIT 5');
 
-    <div class="arrangementListeBoks">
-        <h2><a href="arrangement.php">Tittel for arrangement</a></h2>
-        <p>Dato : yyyy.mm.dd</p>
-        <p>Sted : lokasjon for arrangement</p>
-    </div>
+        if($stmt->rowCount()){
+            while ($row = $stmt->fetch()){
+
+                echo '<div class="arrangementListeBoks" >';
+                    echo '<h2><a href="arrangement.php">', $row['tittel'],'</a></h2>';
+                    echo '<p>Dato : ', $row['startTid'], '</p>';
+                    echo '<p>Sted : ', $row['lokasjon'], '</p>';
+                echo '</div>';
+            }
+        }
+    ?>
 </div>
 <div class="arrangementNy">
     <h1>Opprett nytt arrangement</h1>
