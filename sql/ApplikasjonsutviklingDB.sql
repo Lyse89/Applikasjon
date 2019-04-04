@@ -7,6 +7,10 @@ CREATE SCHEMA alumni05;
 USE alumni05;
 
 
+CREATE TABLE roller (
+    rolle VARCHAR(15),
+    CONSTRAINT rollerPK PRIMARY KEY(rolle)
+);
 -- Oppretter Tabellen bruker --
 -- brukerNavn er studentens studentnummer (vanlig med 6 tall) --
 -- idbruker er autoincrement som starter på 1 --
@@ -19,26 +23,23 @@ CREATE TABLE bruker (
     feilLoginnTeller INT,
     feilLoginnSiste DATETIME,
     FeilIP VARCHAR(45),
-    CONSTRAINT brukerNavnPK PRIMARY KEY (brukerNavn)
+    rolle VARCHAR(15),
+    CONSTRAINT brukerNavnPK PRIMARY KEY (brukerNavn),
+    CONSTRAINT brukerRolleFK FOREIGN KEY(rolle) REFERENCES roller(rolle)
 );
-CREATE TABLE studie (
-	studieId VARCHAR(10),
-    studieNavn VARCHAR(45),
-    studieGrad VARCHAR(45),
-    CONSTRAINT studiePK PRIMARY KEY (studieId)
-);
-CREATE TABLE studiedeltagelse (
-	studieId VARCHAR(10),
-    brukerNavn VARCHAR(45),
-    CONSTRAINT studiedeltagelsePK PRIMARY KEY (studieId, brukerNavn),
-    CONSTRAINT studiedeltagelseBrukerFK FOREIGN KEY (brukerNavn) REFERENCES bruker(brukerNavn),
-    CONSTRAINT studiedeltagelseStudieFK FOREIGN KEY (studieId) REFERENCES studie(studieId)
-);
+
 CREATE TABLE interesser (
-	brukerNavn VARCHAR(45) NOT NULL,
+	interesseid INTEGER(6) AUTO_INCREMENT,
 	interesse VARCHAR (45),
-    CONSTRAINT idbrukerinteressePK PRIMARY KEY (brukerNavn, interesse),
-    CONSTRAINT brukerFK FOREIGN KEY (brukerNavn) REFERENCES bruker (brukerNavn)
+    CONSTRAINT interesseidPK PRIMARY KEY(interesseid)
+);
+
+CREATE TABLE interessekobling (
+	brukerNavn VARCHAR(45),
+	interesseid INTEGER (6),
+    CONSTRAINT interessekoblingBrukerFK FOREIGN KEY (brukerNavn) REFERENCES bruker (brukerNavn),
+    CONSTRAINT interessekoblingInteresserFK FOREIGN KEY (interesseid) REFERENCES interesser(interesseid)
+
 );
 
 CREATE TABLE bio (
@@ -55,6 +56,8 @@ CREATE TABLE token (
     CONSTRAINT tokenPK PRIMARY KEY (brukerNavn),
     CONSTRAINT tokenbruker FOREIGN KEY (brukerNavn) REFERENCES bruker (brukerNavn)
 );
+
+/*
 CREATE TABLE meldinger (
 	avsender VARCHAR(45),
     mottaker VARCHAR(45),
@@ -65,22 +68,56 @@ CREATE TABLE meldinger (
     CONSTRAINT meldingerBrukerFK FOREIGN KEY (avsender) REFERENCES bruker (brukerNavn),
     CONSTRAINT meldingerBrukerFK2 FOREIGN KEY (mottaker) REFERENCES bruker (brukerNavn)
 );
+*/
 -- For arrangement
 CREATE TABLE arrangement (
     arrangementId INT(5),
-    tittel VARCHAR(40),
+    tittel VARCHAR(20),
     vert VARCHAR(45),
-    lokasjon VARCHAR(40),
+    lokasjon VARCHAR(45),
     startTid DATETIME,
     sluttTid DATETIME,
     Beskrivelse VARCHAR(255),
     CONSTRAINT arrangementPK PRIMARY KEY(arrangementId),
     CONSTRAINT arrangementBrukerFK FOREIGN KEY(vert) REFERENCES bruker(brukerNavn)
 );
+
 CREATE TABLE arrangementDeltagelse (
     arrangementId INT(5),
     deltager VARCHAR(45),
     CONSTRAINT arrangementDeltagelsePK PRIMARY KEY(arrangementId, deltager),
     CONSTRAINT arrangementDeltagelseBrukerFK FOREIGN KEY(deltager) REFERENCES bruker(brukerNavn),
     CONSTRAINT arrangementDeltagelseArrangementFK FOREIGN KEY(arrangementId) REFERENCES arrangement(arrangementId)
+);
+
+CREATE TABLE nyheter (
+    nyhetsid INTEGER(5),
+    tittel VARCHAR(20),
+    forfatter VARCHAR(20),
+    beskrivelse VARCHAR(200),
+    CONSTRAINT nyheterPK PRIMARY KEY(nyhetsid)
+);
+
+CREATE TABLE jobbAnnonse (
+    annonseid INTEGER(5),
+    tittel VARCHAR(20),
+    forfatter VARCHAR(20),
+    beskrivelse VARCHAR(200),
+    url VARCHAR(35),
+    CONSTRAINT jobbAnnonsePK PRIMARY KEY(annonseid)
+);
+
+
+CREATE TABLE varsel(
+    varselid INTEGER(5),
+    varsletBruker VARCHAR(45),
+    begrunnelse VARCHAR(15),
+    CONSTRAINT varselPK PRIMARY KEY(varselid),
+    CONSTRAINT varselBrukerFK FOREIGN KEY(varsletBruker) REFERENCES bruker(brukerNavn)
+);
+
+CREATE TABLE annmerkning (
+    brukerNavn VARCHAR(45),
+    tid DATETIME,
+    CONSTRAINT annmerkningPK PRIMARY KEY(brukerNavn, tid)
 );
