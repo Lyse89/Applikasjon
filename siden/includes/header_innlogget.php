@@ -12,7 +12,7 @@
     <a href="../personer/personer.php">Søk Interesser</a>
     <a href="../min_profil/min_profil.php">Min Profil</a>
     <a href="../meldinger/meldinger.php">Meldinger</a>
-    <a href="../profil/profil.php">Instillinger</a>
+    <a href="../brukerInstillinger/profil.php">Instillinger</a>
     <div class="Loggin">
       <form action="../includes/loggut.inc.php" method="POST">
       <button type="submit" name="submit">Logout</button>
@@ -24,7 +24,7 @@
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <span class="hamburger">
       <i class="fa fa-bars"></i>
-    </span> 
+    </span>
     </a>
   </div>
 </nav>
