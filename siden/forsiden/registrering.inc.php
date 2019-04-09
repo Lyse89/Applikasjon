@@ -10,7 +10,7 @@ if(isset($_POST['btnSignup_form'])) {
    $loginnTeller = 0;
 
    $sql = "insert into bruker (brukerNavn,passord,fornavn,etternavn,ePost,feilLoginnTeller)";
-   $sql.= "values (:studentid,:passord,:fornavn,:etternavn,:epost,$loginnTeller)";
+   $sql.= "values (:brukernavn,:passord,:fornavn,:etternavn,:epost,$loginnTeller)";
 
    $stmt = $db->prepare($sql);
 
@@ -18,14 +18,16 @@ if(isset($_POST['btnSignup_form'])) {
    $stmt->bindParam(':etternavn',$betternavn);
    $stmt->bindParam(':epost',$bepost);
    $stmt->bindParam(':passord',$bpassord);
-   $stmt->bindParam(':studentid',$bstudentid);
+   $stmt->bindParam(':brukernavn',$bbrukernavn);
 
 
    $bfornavn = $_POST['fornavn'];
    $betternavn = $_POST['etternavn'];
    $bepost = $_POST['epost'];
    $bpassord = sha1($salt.sha1($salt.$_POST['passord']));
-   $bstudentid = $_POST['studentid'];
+   $bbrukernavn = $_POST['brukernavn'];
+
+  mkdir("../brukere/$bbrukernavn", 0700);
 
 
    $stmt->execute();
