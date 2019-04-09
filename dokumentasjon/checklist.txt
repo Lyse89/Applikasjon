@@ -14,6 +14,7 @@ DEL 1
     [ ] Sette opp orientation for apple devices
     [ ] Bestemme 3 grenseverdier for opplosning
     [x] Tydeligere visuelt hint for markerte felt - William
+    [ ] IF ELSE tester for registrering
 
 
 
