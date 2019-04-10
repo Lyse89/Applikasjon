@@ -3,7 +3,7 @@
 
 
 DEL 1
-    [ ] Fikse CSS for innlogget forside  - Kristoffer
+    [X] Fikse CSS for innlogget forside  - Kristoffer
     [x] Sette innloggingsfelt til forsiden - Simen(?)
     [x] Registreringsknapp - William
     [x] Farge paa fokusert input felt  - William
@@ -42,7 +42,7 @@ DEL 3
     [x] Oppdatere Databasen i henhold til interesser - William
     [ ] Laste opp profil bilde  - Simen
     [x] Slette Interesser
-    [ ] Maks 255 Chars på bio insert, Rød boks når brukeren er over 255 tegn.
+    [x] Maks 255 Chars på bio insert.
     [x] Entitetisering mellom interesser og bruker ( mange til mange forhold)
 
 

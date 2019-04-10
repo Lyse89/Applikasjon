@@ -15,6 +15,10 @@
       padding: 0;
       background-color: #ddd;
     }
+    h2{
+        font-size: 18px;
+
+    }
 
     .center {
         box-shadow: 10px 10px 8px #c0c0c0;
@@ -89,7 +93,7 @@ include_once('../includes/ikke_logget_inn.inc.php');
 
         <div class="instillinger-boks">
               <form class="presentasjon" action="../brukerInstillinger/registrer_interesse.inc.php" method="POST">
-                <h2 id="registInt">Registrere interesser</h2>
+                <h2 id="registInt">Registrere Interesser</h2>
                 <input type="text" name="interesser" id=interesse placeholder="Skriv en Interesse"><br>
                 <input type="submit" name="registrerInt" id="registrerInt">
               </form>
@@ -104,12 +108,30 @@ include_once('../includes/ikke_logget_inn.inc.php');
         </div>
 
         <div class="instillinger-boks">
+              <form class="presentasjon" action="../brukerInstillinger/reg_studie.inc.php" method="POST">
+                <h2 id="registStu">Registrer Studie</h2>
+                <input type="text" name="registrer_studie" id=registrer_studie placeholder="Skriv ditt studie"><br>
+                <input type="submit" name="regstu" id="Regstu">
+              </form>
+        </div>
+
+        <div class="instillinger-boks">
+              <form class="presentasjon" action="../brukerInstillinger/slett_studie.inc.php" method="POST">
+                <h2 id="slettStu">Slett Studie</h2>
+                <input type="text" name="slett_studie" id=slettStu placeholder="Skriv studie"><br>
+                <input type="submit" name="slettstu" id="slettestu">
+              </form>
+        </div>
+
+        <div class="instillinger-boks">
               <form class="presentasjon" action="presentasjon.inc.php" method="POST">
                 <h2 id="redigerePres">Redigere Presentasjon</h2>
-                    <textarea name="bio" placeholder="Skriv din bio(maks 255 tegn) "rows="6" cols="70"></textarea><br>
+                    <textarea name="bio" placeholder="Skriv din bio(maks 255 tegn) "rows="6" cols="70" minlength="0" maxlength="255"></textarea><br>
                 <input type="submit" name="submitPres" id="skrivPres" value="Redigere">
               </form>
         </div>
+
+
     </div>
     <div class="flex-container">
 
