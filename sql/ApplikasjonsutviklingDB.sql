@@ -40,20 +40,6 @@ CREATE TABLE interessekobling (
     CONSTRAINT interessekoblingInteresserFK FOREIGN KEY (interesse) REFERENCES interesser(interesse)
 );
 
-insert into interesser (interesse) VALUES
-("Python"),
-("MySQL"),
-("HTML"),
-("CSS"),
-("Javascript"),
-("Java"),
-("PHP");
-
-INSERT INTO interessekobling(BrukerNavn, interesse) VALUES
-("q", "Python"),
-("q", "MySQL"),
-("q", "PHP");
-
 CREATE TABLE bio (
 	brukerNavn VARCHAR(45) NOT NULL UNIQUE,
     bio VARCHAR (255),
@@ -134,12 +120,8 @@ CREATE TABLE annmerkning (
     CONSTRAINT annmerkningPK PRIMARY KEY(brukerNavn, tid)
 );
 
--- SELECT FOR Å VISE INTERESSER PÅ MIN PROFIL --
-SELECT interesser.interesse FROM interesser
-INNER JOIN interessekobling
-ON interessekobling.interesse = interesser.interesse 	
-AND interessekobling.brukernavn = "q";
-
-SELECT * FROM bruker;
-SELECT * FROM interesser;
-SELECT * FROM interessekobling;
+CREATE TABLE regler (
+	regelnr VARCHAR(2),
+    tekst VARCHAR(255),
+    CONSTRAINT regelnrPK PRIMARY KEY(regelnr)
+);
