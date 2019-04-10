@@ -9,7 +9,7 @@ if(isset($_POST['btnSignup_form'])) {
 
    $loginnTeller = 0;
 
-   $sql = "insert into bruker (brukerNavn,passord,fornavn,etternavn,ePost,feilLoginnTeller)";
+   $sql = "insert into bruker (brukernavn,passord,fornavn,etternavn,ePost,feilLoginnTeller)";
    $sql.= "values (:brukernavn,:passord,:fornavn,:etternavn,:epost,$loginnTeller)";
 
    $stmt = $db->prepare($sql);
