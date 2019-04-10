@@ -88,7 +88,7 @@ include_once('../includes/ikke_logget_inn.inc.php');
         </div>
 
         <div class="instillinger-boks">
-              <form class="presentasjon" action="../profil/registrer_interesse.inc.php" method="POST">
+              <form class="presentasjon" action="../brukerInstillinger/registrer_interesse.inc.php" method="POST">
                 <h2 id="registInt">Registrere interesser</h2>
                 <input type="text" name="interesser" id=interesse placeholder="Skriv en Interesse"><br>
                 <input type="submit" name="registrerInt" id="registrerInt">
@@ -96,7 +96,7 @@ include_once('../includes/ikke_logget_inn.inc.php');
         </div>
 
         <div class="instillinger-boks">
-              <form class="presentasjon" action="../profil/slett_interesse.inc.php" method="POST">
+              <form class="presentasjon" action="../brukerInstillinger/slett_interesse.inc.php" method="POST">
                 <h2 id="registInt">Slett Interesse</h2>
                 <input type="text" name="slett_interesser" id=slett_interesse placeholder="Skriv en interesse"><br>
                 <input type="submit" name="SlettInt" id="SlettInt">

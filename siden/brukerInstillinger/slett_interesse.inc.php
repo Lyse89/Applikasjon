@@ -12,7 +12,7 @@ $db = new PDO($dsn,$dbBrukernavn,$dbPassord);
 $brukernavn = $_SESSION['brukernavn'];
 $søkord = $_POST['slett_interesser'];
 
-$sql = "DELETE FROM interesser WHERE brukerNavn = '$brukernavn' AND interesse LIKE '$søkord'";
+$sql = "DELETE FROM interessekobling WHERE brukerNavn = '$brukernavn' AND interesse LIKE '$søkord'";
 
 $stmt = $db->prepare($sql);
 $stmt->bindParam($brukernavn,$bstudentid);

@@ -164,7 +164,7 @@
             include_once('../includes/ikke_logget_inn.inc.php');
             $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
             $søkord = $_SESSION['brukernavn'];
-            $stmt = $db->query("SELECT interesse FROM interesser WHERE brukerNavn = '$søkord'");
+            $stmt = $db->query("SELECT interesser.interesse FROM interesser INNER JOIN interessekobling ON interessekobling.interesse = interesser.interesse AND interessekobling.brukernavn = '$søkord'");
             echo "<h2> Interesser:";
             if($stmt->rowCount()){
                 echo "<br>";

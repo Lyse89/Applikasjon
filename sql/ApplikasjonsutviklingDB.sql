@@ -29,18 +29,30 @@ CREATE TABLE bruker (
 );
 
 CREATE TABLE interesser (
-	interesseid INTEGER(6) AUTO_INCREMENT,
 	interesse VARCHAR (45),
-    CONSTRAINT interesseidPK PRIMARY KEY(interesseid)
+    CONSTRAINT interessePK PRIMARY KEY(interesse)
 );
 
 CREATE TABLE interessekobling (
 	brukerNavn VARCHAR(45),
-	interesseid INTEGER (6),
+	interesse VARCHAR (45),
     CONSTRAINT interessekoblingBrukerFK FOREIGN KEY (brukerNavn) REFERENCES bruker (brukerNavn),
-    CONSTRAINT interessekoblingInteresserFK FOREIGN KEY (interesseid) REFERENCES interesser(interesseid)
-
+    CONSTRAINT interessekoblingInteresserFK FOREIGN KEY (interesse) REFERENCES interesser(interesse)
 );
+
+insert into interesser (interesse) VALUES
+("Python"),
+("MySQL"),
+("HTML"),
+("CSS"),
+("Javascript"),
+("Java"),
+("PHP");
+
+INSERT INTO interessekobling(BrukerNavn, interesse) VALUES
+("q", "Python"),
+("q", "MySQL"),
+("q", "PHP");
 
 CREATE TABLE bio (
 	brukerNavn VARCHAR(45) NOT NULL UNIQUE,
@@ -121,3 +133,13 @@ CREATE TABLE annmerkning (
     tid DATETIME,
     CONSTRAINT annmerkningPK PRIMARY KEY(brukerNavn, tid)
 );
+
+-- SELECT FOR Å VISE INTERESSER PÅ MIN PROFIL --
+SELECT interesser.interesse FROM interesser
+INNER JOIN interessekobling
+ON interessekobling.interesse = interesser.interesse 	
+AND interessekobling.brukernavn = "q";
+
+SELECT * FROM bruker;
+SELECT * FROM interesser;
+SELECT * FROM interessekobling;
