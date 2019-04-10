@@ -1,6 +1,5 @@
 <?php
 $Mappe = "profilBilde/";
-$LastseOpp = 1;
 
 if(isset($_POST["submitProfilBilde"])) {
     $Fil = $Mappe . basename($_FILES["lasteOppProfilBilde"]["name"]);

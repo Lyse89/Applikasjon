@@ -106,7 +106,7 @@
                 <input type="email" name="epost" placeholder="E-post"><br>
                 <input type="password" name="forstePassord" id="Passord" placeholder="Passord "><br>
                 <input type="password" name="passord" id="GjentaPassord" placeholder="Gjenta Passord"><br>
-                <input type="text" name="studentid" id="StudentID" placeholder="StudentID"> <br>
+                <input type="text" name="brukernavn" id="brukernavn" placeholder="Bruker Navn"> <br>
                 <input type="submit" name="btnSignup_form" value="Registrer Deg" id="registrer" onclick="Validate()">
             </form>
         </div>

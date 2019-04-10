@@ -32,6 +32,39 @@
         padding: 30px;
     }
 
+    .inputBoks {
+      width: 240px;
+      float: left;
+      margin: 5px 5px 5px 5px;
+    }
+
+    .inputTitel {
+      margin: 5px 5px 5px 5px;
+      clear: left;
+      float: left;
+      width: 320px;
+    }
+
+    .inputText {
+      clear: left;
+      float: left;
+      margin: 5px 5px 5px 5px;
+      height: 80px;
+      width: 480px;
+    }
+
+    .sndBtn {
+      float: left;
+      clear: left;
+      width: 70px;
+      text-align: center;
+      margin: 5px 5px 5px 5px;
+    }
+
+    fieldset {
+      border: none;
+    }
+
     </style>
     <?php
     include_once('../includes/header_innlogget.php');
@@ -40,12 +73,15 @@
   </head>
   <body>
     <div class="center">
-        <form class="instillinger-boks" action="sendmeldigner.inc.php" method="post">
-          <h2>Send en melding</h2>
-          <input type="text" name="mottaker" value="mottaker" placeholder="Mottaker">
-          <textarea name="melding" rows="14" cols="30"></textarea>
-          <input type="submit" name="sendMelding" id="sendMelding">
-        </form>
+      <form method="POST" action="form_send.php" onsubmit="sjekkSubmit();">
+        <fieldset>
+            <input type="email" placeholder="Til" name="til" id="til" class="inputBoks" onchange="sjekkFelt()" autofocus>
+            <input type="email" placeholder="Fra" name="fra" id="fra" class="inputBoks" onchange="sjekkFelt()">
+            <input type="text" placeholder="Titel" name="subj" id="subj" class="inputTitel" onchange="sjekkFelt()">
+            <textarea type="text" placeholder="Tekst...." name="meld" id="meld" class="inputText"></textarea>
+             <input type="submit" value="Send" name="send" id="send" class="sndBtn">
+        </fieldset>
+      </form>
   </div>
 
   </body>
