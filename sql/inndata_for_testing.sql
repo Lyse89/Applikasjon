@@ -61,3 +61,4 @@ insert into arrangement values(11115, 'Tittelen for arr5', 'q', 'Lokasjon for ar
 insert into arrangement values(11116, 'Tittelen for arr6', 'q', 'Lokasjon for arr6', current_date(), current_date(), 'Beskrivelse av arrangementet6');
 
 select * from arrangement;
+select * from bruker;
