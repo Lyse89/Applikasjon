@@ -121,3 +121,9 @@ CREATE TABLE annmerkning (
     tid DATETIME,
     CONSTRAINT annmerkningPK PRIMARY KEY(brukerNavn, tid)
 );
+
+CREATE TABLE regler (
+	regelnr VARCHAR(2),
+    tekst VARCHAR(255),
+    CONSTRAINT regelnrPK PRIMARY KEY(regelnr)
+);
