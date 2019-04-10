@@ -41,9 +41,9 @@ DEL 3
     [x] Lage Sok av Interesser side - William
     [x] Oppdatere Databasen i henhold til interesser - William
     [ ] Laste opp profil bilde  - Simen
-    [ ] Slette Interesser
+    [x] Slette Interesser
     [ ] Maks 255 Chars på bio insert, Rød boks når brukeren er over 255 tegn.
-    [ ] Entitetisering mellom interesser og bruker ( mange til mange forhold)
+    [x] Entitetisering mellom interesser og bruker ( mange til mange forhold)
 
 
 DEL 4
