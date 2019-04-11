@@ -1,13 +1,18 @@
-<!-- Denne include-siden er utviklet av Joakim Westby, siste gang endret 14.12.2018
-// Denne include-siden er kontrollert av Joakim Westby, siste gang 14.12.2018 -->
+<?php
+// Denne include-siden er utviklet av Simen Lyse, siste gang endret 14.12.2018
+// Denne include-siden er kontrollert av Simen Lyse, siste gang 14.12.2018 
+?>
 
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
+<style>
+footer {
+	margin: 50px 0 0 0;
+	float: left;
+	height: 200px;
+	width: 100%;
+	background-color: #aaaaaa;
+}
+</style>
 
-  </body>
-</html>
+<footer>
+<a href="../regler/regler.php">Regler</a>
+</footer>
