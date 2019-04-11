@@ -29,25 +29,17 @@ CREATE TABLE bruker (
 );
 
 CREATE TABLE interesser (
+	interesseid INTEGER(6) AUTO_INCREMENT,
 	interesse VARCHAR (45),
-    CONSTRAINT interessePK PRIMARY KEY(interesse)
+    CONSTRAINT interesseidPK PRIMARY KEY(interesseid)
 );
 
 CREATE TABLE interessekobling (
 	brukerNavn VARCHAR(45),
-	interesse VARCHAR (45),
+	interesseid INTEGER (6),
     CONSTRAINT interessekoblingBrukerFK FOREIGN KEY (brukerNavn) REFERENCES bruker (brukerNavn),
-    CONSTRAINT interessekoblingInteresserFK FOREIGN KEY (interesse) REFERENCES interesser(interesse)
-);
+    CONSTRAINT interessekoblingInteresserFK FOREIGN KEY (interesseid) REFERENCES interesser(interesseid)
 
-CREATE TABLE studier (
-	studie VARCHAR(45),
-    CONSTRAINT studierPK PRIMARY KEY (studie)
-);
-
-CREATE TABLE studiekobling (
-	brukerNavn VARCHAR(45),
-    studie VARCHAR(45)
 );
 
 CREATE TABLE bio (
@@ -80,12 +72,12 @@ CREATE TABLE meldinger (
 -- For arrangement
 CREATE TABLE arrangement (
     arrangementId INT(5),
-    tittel VARCHAR(20),
+    tittel VARCHAR(40),
     vert VARCHAR(45),
     lokasjon VARCHAR(45),
     startTid DATETIME,
     sluttTid DATETIME,
-    Beskrivelse VARCHAR(255),
+    Beskrivelse VARCHAR(1000),
     CONSTRAINT arrangementPK PRIMARY KEY(arrangementId),
     CONSTRAINT arrangementBrukerFK FOREIGN KEY(vert) REFERENCES bruker(brukerNavn)
 );
@@ -100,18 +92,21 @@ CREATE TABLE arrangementDeltagelse (
 
 CREATE TABLE nyheter (
     nyhetsid INTEGER(5),
-    tittel VARCHAR(20),
+    tittel VARCHAR(40),
     forfatter VARCHAR(20),
-    beskrivelse VARCHAR(200),
+    beskrivelse VARCHAR(1000),
+    lagtTil DATETIME,
     CONSTRAINT nyheterPK PRIMARY KEY(nyhetsid)
 );
 
 CREATE TABLE jobbAnnonse (
     annonseid INTEGER(5),
-    tittel VARCHAR(20),
+    tittel VARCHAR(40),
+    stilling VARCHAR(40),
     forfatter VARCHAR(20),
-    beskrivelse VARCHAR(200),
-    url VARCHAR(35),
+    beskrivelse VARCHAR(1000),
+    url VARCHAR(100),
+    lagtTil DATETIME,
     CONSTRAINT jobbAnnonsePK PRIMARY KEY(annonseid)
 );
 
@@ -127,15 +122,5 @@ CREATE TABLE varsel(
 CREATE TABLE annmerkning (
     brukerNavn VARCHAR(45),
     tid DATETIME,
-    CONSTRAINT annmerkningPK PRIMARY KEY(brukerNavn, tid),
-    CONSTRAINT anmerkningFK FOREIGN KEY(brukerNavn) REFERENCES bruker(brukerNavn)
+    CONSTRAINT annmerkningPK PRIMARY KEY(brukerNavn, tid)
 );
-
-CREATE TABLE regler (
-	regelnr VARCHAR(2),
-    tekst VARCHAR(255),
-    CONSTRAINT regelnrPK PRIMARY KEY(regelnr)
-);
-
-SELECT * FROM studier;
-SELECT * FROM studiekobling;
