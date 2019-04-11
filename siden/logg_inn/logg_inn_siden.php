@@ -1,7 +1,6 @@
-<!-- Denne siden er utviklet av William Rastad og Kristoffer Sorensen, siste gang endret 14.12.2018 -->
-<!-- Denne siden er kontrollert av William Rastad og Kristoffer Sorensen, siste gang 14.12.2018 -->
-
 <?php
+//Denne siden er utviklet av William Rastad og Kristoffer Sorensen, siste gang endret 14.12.2018
+//Denne siden er kontrollert av William Rastad og Kristoffer Sorensen, siste gang 14.12.2018
 
     // For aa faa variabelen $salt $dbBrukernavn $dbPassord $dsn
     include_once("../includes/init.php");
