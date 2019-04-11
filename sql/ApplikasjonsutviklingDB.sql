@@ -36,17 +36,28 @@ CREATE TABLE bruker (
 );
 
 CREATE TABLE interesser (
-	interesseid INTEGER(6) AUTO_INCREMENT,
 	interesse VARCHAR (45),
-    CONSTRAINT interesseidPK PRIMARY KEY(interesseid)
+    CONSTRAINT interessePK PRIMARY KEY(interesse)
 );
 
 CREATE TABLE interessekobling (
 	brukerNavn VARCHAR(45),
-	interesseid INTEGER (6),
+	interesse VARCHAR (45),
+    CONSTRAINT interessekoblingPK PRIMARY KEY (brukerNavn, interesse),
     CONSTRAINT interessekoblingBrukerFK FOREIGN KEY (brukerNavn) REFERENCES bruker (brukerNavn),
-    CONSTRAINT interessekoblingInteresserFK FOREIGN KEY (interesseid) REFERENCES interesser(interesseid)
+    CONSTRAINT interessekoblingInteresserFK FOREIGN KEY (interesseid) REFERENCES interesser(interesse)
+);
+CREATE TABLE studier (
+	studie VARCHAR (45),
+    CONSTRAINT studierPK PRIMARY KEY(studie)
+);
 
+CREATE TABLE studiekobling (
+	brukerNavn VARCHAR(45),
+	studie VARCHAR (45),
+    CONSTRAINT studiekoblingPK PRIMARY KEY (brukerNavn, studie),
+    CONSTRAINT studiekoblingBrukerFK FOREIGN KEY (brukerNavn) REFERENCES bruker (brukerNavn),
+    CONSTRAINT studiekoblingStudierFK FOREIGN KEY (studie) REFERENCES studier(studie)
 );
 
 CREATE TABLE bio (
@@ -137,20 +148,3 @@ CREATE TABLE regler (
     tekst VARCHAR(255),
     CONSTRAINT regelnrPK PRIMARY KEY(regelnr)
 );
-
-UPDATE bruker 
-SET bruker.rolle = "Admin"
-WHERE bruker.brukerNavn = "q";
-
-
-INSERT INTO bruker (rolle)
-SELECT rolle FROM roller
-WHERE roller.rolle = 'Admin' AND bruker.brukerNavn = 'q';
-
-
-
-SELECT studier.studie FROM studier INNER JOIN studiekobling ON studiekobling.studie = studier.studie AND studiekobling.brukernavn = "q";
-SELECT * FROM studier;
-SELECT * FROM studiekobling;
-SELECT * FROM roller;
-SELECT * FROM bruker;
