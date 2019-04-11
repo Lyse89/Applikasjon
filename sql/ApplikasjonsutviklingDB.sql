@@ -117,7 +117,8 @@ CREATE TABLE varsel(
 CREATE TABLE annmerkning (
     brukerNavn VARCHAR(45),
     tid DATETIME,
-    CONSTRAINT annmerkningPK PRIMARY KEY(brukerNavn, tid)
+    CONSTRAINT annmerkningPK PRIMARY KEY(brukerNavn, tid),
+    CONSTRAINT anmerkningFK FOREIGN KEY(brukerNavn) REFERENCES bruker(brukerNavn)
 );
 
 CREATE TABLE regler (
