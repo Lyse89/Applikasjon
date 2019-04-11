@@ -7,7 +7,7 @@ DEL 1
     [x] Sette innloggingsfelt til forsiden - Simen(?)
     [x] Registreringsknapp - William
     [x] Farge paa fokusert input felt  - William
-    [ ] Style Profile siden  - Simen
+    [ ] Style Instillinger siden  - Simen
     [x] Bytte PROFILNAVN til STUDENTID (everywhere)
     [x] Bytte "Person" Siden sitt navn til "Søk" - William
     [ ] Organisere css-filene
@@ -24,7 +24,7 @@ DEL 2
     [x] Logginnfunksjon fra default.php - Kristoffer
     [x] Endre logg_inn_siden.php sin feilmeldinger - Kristoffer
     [ ] Sjekk at øæå fungerer ved registrering og innlogging
-    [ ] Automatisk innlogging etter registrering - Kristoffer
+    [x] Automatisk innlogging etter registrering - Kristoffer
 
 
 
@@ -47,7 +47,8 @@ DEL 3
 
 
 DEL 4
-    [ ] Arrangement-side
+    [x] Arrangement-side
+    [ ] Enkeltarrangement-side
     [ ] Invitering av brukere til arrangement
     [ ] Registrere interesse for arrangement
     [ ] Sende meldinger til andre brukere !!EMAIL!! - Simen
@@ -57,6 +58,6 @@ DEL 4
 DEL 5
     [ ]
 
-    [ ] Lagg SQL tabeller for Nyheter og Events
+    [ ] Lag SQL tabeller for Nyheter og Events
     [ ] Se over Entitetisering i SQL
     [ ] Prøve å fjerne <div> sections
