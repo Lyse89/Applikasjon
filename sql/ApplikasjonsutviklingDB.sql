@@ -45,7 +45,7 @@ CREATE TABLE interessekobling (
 	interesse VARCHAR (45),
     CONSTRAINT interessekoblingPK PRIMARY KEY (brukerNavn, interesse),
     CONSTRAINT interessekoblingBrukerFK FOREIGN KEY (brukerNavn) REFERENCES bruker (brukerNavn),
-    CONSTRAINT interessekoblingInteresserFK FOREIGN KEY (interesseid) REFERENCES interesser(interesse)
+    CONSTRAINT interessekoblingInteresserFK FOREIGN KEY (interesse) REFERENCES interesser(interesse)
 );
 CREATE TABLE studier (
 	studie VARCHAR (45),
