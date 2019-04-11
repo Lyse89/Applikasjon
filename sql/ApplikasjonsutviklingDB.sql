@@ -7,13 +7,20 @@ CREATE SCHEMA alumni05;
 USE alumni05;
 
 
+
 CREATE TABLE roller (
     rolle VARCHAR(15),
     CONSTRAINT rollerPK PRIMARY KEY(rolle)
 );
+
+INSERT INTO roller (rolle) VALUES
+("Admin"),
+("Bruker"),
+("Utestengt"),
+("Karantene"),
+("Avregistrert");
+
 -- Oppretter Tabellen bruker --
--- brukerNavn er studentens studentnummer (vanlig med 6 tall) --
--- idbruker er autoincrement som starter på 1 --
 CREATE TABLE bruker (
 	brukerNavn VARCHAR(45) NOT NULL UNIQUE,
     passord VARCHAR(40) NOT NULL,
@@ -124,3 +131,26 @@ CREATE TABLE annmerkning (
     tid DATETIME,
     CONSTRAINT annmerkningPK PRIMARY KEY(brukerNavn, tid)
 );
+
+CREATE TABLE regler (
+	regelnr VARCHAR(2),
+    tekst VARCHAR(255),
+    CONSTRAINT regelnrPK PRIMARY KEY(regelnr)
+);
+
+UPDATE bruker 
+SET bruker.rolle = "Admin"
+WHERE bruker.brukerNavn = "q";
+
+
+INSERT INTO bruker (rolle)
+SELECT rolle FROM roller
+WHERE roller.rolle = 'Admin' AND bruker.brukerNavn = 'q';
+
+
+
+SELECT studier.studie FROM studier INNER JOIN studiekobling ON studiekobling.studie = studier.studie AND studiekobling.brukernavn = "q";
+SELECT * FROM studier;
+SELECT * FROM studiekobling;
+SELECT * FROM roller;
+SELECT * FROM bruker;
