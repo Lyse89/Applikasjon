@@ -78,13 +78,13 @@ body {
 	margin: 0px 0px 0px 31% ;
 
 }
-footer {
+/*footer {
 	margin: 50px 0 0 0;
 	float: left;
 	height: 300px;
 	width: 100%;
 	background-color: #aaaaaa;
-
+*/
 }
 </style>
 </head>
@@ -183,6 +183,8 @@ footer {
     </div>
 </div>
 </div>
-<footer></footer>
 </body>
+<?php
+  include_once('../includes/footer.php');
+?>
 </html>

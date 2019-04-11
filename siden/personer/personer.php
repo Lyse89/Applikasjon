@@ -7,10 +7,26 @@
     <title>Personer</title>
     <style>
 
-    .SøkPersonerBox{
-        margin:2% 20% 0.1% 20%;
-        background-color: ;
-        text-align: center;
+    .søkPersonerBox{
+        width: 40%;
+        margin: 30px 0 30px 0;
+        padding-bottom: 25px;
+        display:inline-block;
+        margin-right:10px;
+        margin-left: 10px;
+        position: center;
+    }
+
+        .center {
+        box-shadow: 10px 10px 8px #c0c0c0;
+        margin: 0 5% 50px 5%;
+        margin-top: 50px;
+        padding: 0 2% 0 2%;
+        width: 86%;
+        /*max-width: 1230px;*/
+        background-color: white;
+        float: left;
+        /*margin-bottom: 50px;*/
     }
 
     /* Søk på Interesser og finn Personer */
@@ -53,6 +69,12 @@
     h1{
         text-align: center;
     }
+
+    .instillinger-boks {
+        width: 260px;
+        padding: 30px;
+    }
+
     </style>
  </head>
  <body>
@@ -77,12 +99,85 @@ include_once('../includes/ikke_logget_inn.inc.php');
     ?>
 </div>
 
-<div class="SøkPersonerBox">
+<div class="søkPersonerBox">
     <h2> Søk på Interesser </h2>
-    <form class="søk-Interesser" action="personer.inc.php" method="POST">
+    <form class="søk-Interesser" action="personer.php" method="POST">
         <input type="text" name="Interesser" id=Interesser placeholder="Interesser">
-        <input type="submit" name="SøkPåInteresse" value="Søk" id="SøkPåInteresse">
+        <input type="submit" name="søkPåInteresse" value="Søk" id="søkPåInteresse">
     </form>
+    <div class="SøkResultater">
+    <?php
+    if (isset($_POST['søkPåInteresse']))
+    {
+        søkInteresse();
+    }
+    function søkInteresse() {
+        // DB Connect
+        include("../includes/init.php");
+        $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
+        $søkord = $_POST['Interesser'];
+        $stmt = $db->query("SELECT bruker.fornavn, bruker.etternavn, interessekobling.interesse FROM bruker INNER JOIN interessekobling ON bruker.brukerNavn = interessekobling.brukerNavn WHERE interesse LIKE '%$søkord%'");
+
+        if (!$søkord){
+            echo "<div id='errormsg'>Skriv inn en interesse</div>";
+
+        }elseif($stmt->rowCount()){
+            echo "<table width=100%>";
+            echo "<h2> Resultater:";
+            echo "<tr><td><b>Fornavn</b></td><td><b>Etternavn</b></td><td><b>Interesse</b></td>";
+
+            while ($row = $stmt->fetch())
+            {
+                echo "<tr><td>{$row['fornavn']}</td><td>{$row['etternavn']}</td><td>{$row['interesse']}</tr>";
+            }
+            echo "</table>";
+        }else{
+            echo "<div id='errormsg'>Søket ga ingen resultat</div>";
+        }
+    
+    }
+    ?>
 </div>
+</div>
+<div class="søkPersonerBox">
+    <h2> Søk på person </h2>
+    <form class="søk-person" action="personer.php" method="POST">
+        <input type="text" name="brukernavn" id=brukernavn placeholder="Brukernavn">
+        <input type="submit" name="søkBrukernavn" value="søkBrukernavn" id="søkBrukernavn">
+    </form>
+    <?php
+    if (isset($_POST['søkBrukernavn']))
+    {
+        søkPerson();
+    }
+    function søkPerson() {
+        // DB Connect
+        include("../includes/init.php");
+        $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
+        $søkord = $_POST['brukernavn'];
+        $stmt = $db->query("SELECT * FROM bruker
+        WHERE brukerNavn LIKE '%$søkord%'");
+
+        if (!$søkord){
+            echo "<div id='errormsg'>Skriv inn en interesse</div>";
+
+        }elseif($stmt->rowCount()){
+            echo "<table width=100%>";
+            echo "<h2> Resultater:";
+            echo "<tr><td><b>Fornavn</b></td><td><b>Etternavn</b></td><td><b>Interesse</b></td>";
+
+            while ($row = $stmt->fetch())
+            {
+                echo "<tr><td>{$row['fornavn']}</td><td>{$row['etternavn']}</td><td>{$row['interesse']}</tr>";
+            }
+            echo "</table>";
+        }else{
+            echo "<div id='errormsg'>Søket ga ingen resultat</div>";
+        }
+    
+    }
+    ?>
+</div>
+
 </body>
 </html>
