@@ -1,5 +1,5 @@
 <?php
-// Denne include-siden er utviklet av William Rastad, siste gang endret 05.02.2019
+// Denne include-siden er utviklet av William Rastad, siste gang endret 10.04.2019
 // Includes og Connection
 include_once("../includes/init.php");
 include_once('../includes/ikke_logget_inn.inc.php');

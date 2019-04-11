@@ -1,4 +1,4 @@
-<!-- Denne include-siden er utviklet av Simen A. Lyse , siste gang endret 14.12.2018
+<!-- Denne include-siden er utviklet av Simen A. Lyse, William Rastad og Christoffer Sørensen siste gang endret 14.12.2018
 // Denne include-siden er kontrollert av Simen A. Lyse, siste gang 14.12.2018 -->
 
 <!DOCTYPE html>
@@ -65,14 +65,26 @@ include_once('../includes/ikke_logget_inn.inc.php');
 ?>
 
 <div class="center">
-        <h1>Instillinger</h1>
+        <h1>Admin Instillinger</h1>
     <div class="flex-container">
         <div class="instillinger-boks">
-
+            <h2>Gi brukere en rolle</h2>
+            <form class="GiRolle-form" action="gi_rolle.inc.php" method="POST">
+                <p>Bruker:  <input type="text" name="BrukerNavnGiRolle" id="BrukerNavnGiRolle" placeholder="BrukerNavn"> </p>
+                <p>Rolle:   <select name="Roller"> </p>
+                                <option value="Admin">Admin</option>
+                                <option value="Bruker">Bruker</option>
+                                <option value="Utestengt">Utestengt</option>
+                                <option value="Karantene">Karantene</option>
+                                <option value="Avregistrert">Avregistrert</option>
+                            </select>
+                            <br>
+                <input type="submit" name="btnGiRolle" value="Gi Rolle" id="GiRolleButton">
+            </form>
         </div>
 
         <div class="instillinger-boks">
-              
+
         </div>
 
         <div class="instillinger-boks">
@@ -100,7 +112,7 @@ include_once('../includes/ikke_logget_inn.inc.php');
         </div>
 
         <div class="instillinger-boks">
-        
+
         </div>
     </div>
 </div>

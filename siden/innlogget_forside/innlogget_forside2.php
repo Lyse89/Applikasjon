@@ -1,10 +1,14 @@
-<!-- Denne siden er utviklet av Kristoffer Sorensen, siste gang endret 14.12.2018
-// Denne include-siden er kontrollert av William, siste gang 14.12.2018 -->
-<!-- CSS'en skal senere flyttes ut av denne filen -->
+<?php
+//Denne siden er utviklet av Kristoffer Sorensen, siste gang endret 14.12.2018
+//Denne include-siden er kontrollert av William, siste gang 14.12.2018
+//
+//CSS'en skal senere flyttes ut av denne filen
+include_once('../includes/init.php');
+$db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
+?>
 <!DOCTYPE html>
 <html>
 <head>
-
 <title>USN-Alumni</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="../css/style.css">
@@ -37,7 +41,7 @@ body {
 
 .flex-container {
     width:100%;
-    margin: 30px 0 30px 0;
+    margin: 30px 0 0 0;
     padding-bottom: 25px;
     display: flex;
     flex-wrap: wrap;
@@ -57,6 +61,9 @@ body {
     margin: 25px;
     line-height: 10px;
     font-size: 15px;
+}
+.flex-container p {
+    line-height: 15px;
 }
 
 .topp-nyhets-boks {
@@ -104,83 +111,65 @@ body {
 <div class="center">
 <h2>Nyheter</h2>
 <div class="flex-container">
-    <div>
-        <h3>Nyhets-overskrift1</h3>
-        <p>Some text here, yes indeed some text</p>
-        <p>Some text here, yes indeed some text</p>
-    </div>
-    <div>
-        <h3>Nyhets-overskrift2</h3>
-        <p>Some text here, yes indeed some text</p>
-        <p>Some text here, yes indeed some text</p>
-    </div>
-    <div>
-        <h3>Nyhets-overskrift3</h3>
-        <p>Some text here, yes indeed some text</p>
-        <p>Some text here, yes indeed some text</p>
-    </div>
+    <?php
 
-    <div>
-        <h3>Nyhets-overskrift4</h3>
-        <p>Some text here, yes indeed some text</p>
-        <p>Some text here, yes indeed some text</p>
-    </div>
+        $stmt = $db->query('SELECT * FROM nyheter ORDER BY lagtTil DESC LIMIT 4');
+
+        if($stmt->rowCount()){
+            while ($row = $stmt->fetch()){
+
+                $beskrivelse = substr($row['beskrivelse'], 0, 120);
+                echo '<div>';
+                    echo '<h3>', $row['tittel'],'</h3>';
+                    echo '<p>'.$beskrivelse.'</p>';
+                echo '</div>';
+            }
+        }
+    ?>
 </div>
 </div>
+
 
 <div class="center">
 <h2>Events</h2>
 <div class="flex-container">
-    <div>
-        <h3>Event-overskrift1</h3>
-        <img src="something.png" style="width:100%;">
-        <p>Some text here, yes indeed some text</p>
-        <p>Some text here, yes indeed some text</p>
-    </div>
-    <div>
-        <h3>Event-overskrift2</h3>
-        <img src="something.png" style="width:100%;">
-        <p>Some text here, yes indeed some text</p>
-        <p>Some text here, yes indeed some text</p>
-    </div>
-    <div>
-        <h3>Event-overskrift3</h3>
-        <img src="something.png" style="width:100%;">
-        <p>Some text here, yes indeed some text</p>
-        <p>Some text here, yes indeed some text</p>
-    </div>
-    <div>
-        <h3>Event-overskrift4</h3>
-        <img src="something.png" style="width:100%;">
-        <p>Some text here, yes indeed some text</p>
-        <p>Some text here, yes indeed some text</p>
-    </div>
+    <?php
+
+        $stmt = $db->query('SELECT * FROM arrangement ORDER BY startTid DESC LIMIT 4');
+
+        if($stmt->rowCount()){
+            while ($row = $stmt->fetch()){
+
+                $beskrivelse = substr($row['Beskrivelse'], 0, 120);
+                echo '<div>';
+                    echo '<h3>', $row['tittel'],'</h3>';
+                    echo '<img src="something.png" style="width:100%;">';
+                    echo '<p>'.$beskrivelse.'</p>';
+                echo '</div>';
+            }
+        }
+    ?>
 </div>
 </div>
 
 <div class="center">
 <h2>Jobber</h2>
 <div class="flex-container">
-    <div>
-        <h3>Jobb-overskrift1</h3>
-        <p>Some text here, yes indeed some text</p>
-        <p>Some text here, yes indeed some text</p>
-    </div>
-    <div>
-        <h3>Jobb-overskrift2</h3>
-        <p>Some text here, yes indeed some text</p>
-        <p>Some text here, yes indeed some text</p>
-    </div>
-    <div>
-        <h3>Jobb-overskrift3</h3>
-        <p>Some text here, yes indeed some text</p>
-        <p>Some text here, yes indeed some text</p>
-    </div>
-    <div>
-        <h3>Jobb-overskrift4</h3>
-        <p>Some text here, yes indeed some text</p>
-        <p>Some text here, yes indeed some text</p>
-    </div>
+    <?php
+
+        $stmt = $db->query('SELECT * FROM jobbAnnonse ORDER BY lagtTil DESC LIMIT 4');
+
+        if($stmt->rowCount()){
+            while ($row = $stmt->fetch()){
+
+                $beskrivelse = substr($row['beskrivelse'], 0, 120);
+                echo '<div>';
+                    echo '<h3>', $row['tittel'],'</h3>';
+                    echo '<p>'.$beskrivelse.'</p>';
+                echo '</div>';
+            }
+        }
+    ?>
 </div>
 </div>
 </body>
