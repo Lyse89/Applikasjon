@@ -65,7 +65,7 @@ include_once('../includes/ikke_logget_inn.inc.php');
 <div class = "top10interesser">
     <?php
     $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
-    $stmt = $db->query('SELECT interesse FROM interesser GROUP BY interesse ORDER BY COUNT(*) DESC LIMIT 10;');
+    $stmt = $db->query('SELECT interesse FROM interessekobling GROUP BY interesse ORDER BY COUNT(*) DESC LIMIT 10;');
     $count = 0;
     if($stmt->rowCount()){
         while ($row = $stmt->fetch()){

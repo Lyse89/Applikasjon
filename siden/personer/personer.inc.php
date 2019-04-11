@@ -69,7 +69,7 @@ include_once('../includes/ikke_logget_inn.inc.php');
     include_once("../includes/init.php");
     $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
     $søkord = $_POST['Interesser'];
-    $stmt = $db->query("SELECT bruker.fornavn, bruker.etternavn, interesser.interesse FROM bruker INNER JOIN interesser ON bruker.brukerNavn = interesser.brukerNavn WHERE interesse LIKE '%$søkord%'");
+    $stmt = $db->query("SELECT bruker.fornavn, bruker.etternavn, interessekobling.interesse FROM bruker INNER JOIN interessekobling ON bruker.brukerNavn = interessekobling.brukerNavn WHERE interesse LIKE '%$søkord%'");
 
     if (!$søkord){
         echo "<div id='errormsg'>Skriv inn en interesse</div>";

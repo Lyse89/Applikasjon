@@ -20,7 +20,7 @@ input:focus {
 
         } else {
           echo '<form method="post" id="form1" action="default.php">
-                <input type="text" id="Bruker" name="brukernavn" placeholder="StudentID" autofocus>
+                <input type="text" id="Bruker" name="brukernavn" placeholder="Brukernavn" autofocus>
                 <input type="password" id="Passord" name="passord" placeholder="Passord">
                 <button type="submit" value="Logg inn" name="Logginn">Login</button><br />
                 <label class="loggincookie">Forbli innlogget?

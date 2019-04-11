@@ -7,23 +7,23 @@ include_once('../includes/ikke_logget_inn.inc.php');
 $db = new PDO($dsn,$dbBrukernavn,$dbPassord);
 
 // SQL query og values
-$sql1 = "insert into interesser (interesse)";
-$sql1.= "values (:interesser)";
-$sql = "insert into interessekobling (brukerNavn,interesse)";
-$sql.= "values (:studentid,:interesser)";
+$sql1 = "insert into studier (studie)";
+$sql1.= "values (:registrer_studie)";
+$sql = "insert into studiekobling (brukerNavn,studie)";
+$sql.= "values (:studentid,:registrer_studie)";
 
 $brukernavn = $_SESSION['brukernavn'];
 // Prepared statemens
 $stmt1 =  $db->prepare($sql1);
-$stmt1->bindParam(':interesser', $binteresse);
+$stmt1->bindParam(':registrer_studie', $bstudie);
 
 $stmt = $db->prepare($sql);
 $stmt->bindParam(':studentid',$bstudentid);
-$stmt->bindParam(':interesser',$binteresse);
+$stmt->bindParam(':registrer_studie',$bstudie);
 // Henter verdier
 
 $bstudentid = $brukernavn;
-$binteresse = $_POST['interesser'];
+$bstudie = $_POST['registrer_studie'];
 
 // Kjører sql query
 $stmt1->execute();
