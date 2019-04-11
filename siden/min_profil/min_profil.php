@@ -1,3 +1,7 @@
+<?php
+include_once('../includes/ikke_logget_inn.inc.php');
+include_once('../includes/init.php')
+?>
 <!DOCTYPE html>
 <html>
 <!-- Denne siden er utviklet av William Rastad, siste gang endret 06.02.2019 -->
@@ -36,9 +40,10 @@
         text-align: left;
         font-size: 13px;
     }
+    /* studie*/
 
     /*Interesser Box*/
-    #MinProfil .Interesser{
+    #MinProfil .Interesser, .StudieSection{
         margin-top: 3%;
         width: 99%;
         float:left;
@@ -46,7 +51,7 @@
         border-style: ridge;
     }
 
-    #MinProfil .Interessernr{
+    #MinProfil .Interessernr, .StudieDiv{
         margin-left: 21%;
         width: 60%;
         text-align: left;
@@ -112,13 +117,10 @@
 <body>
     <?php
     include_once('../includes/header_innlogget.php');
-    include_once('../includes/ikke_logget_inn.inc.php');
     ?>
 
     <article id="MinProfil">
         <?php
-        include_once("../includes/init.php");
-        include_once('../includes/ikke_logget_inn.inc.php');
         $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
         $søkord = $_SESSION['brukernavn'];
         $stmt = $db->query("SELECT fornavn, etternavn FROM bruker WHERE brukerNavn LIKE '$søkord'");
@@ -138,8 +140,6 @@
         <section class="Bio">
             <div class="biotekst">
                 <?php
-                include_once("../includes/init.php");
-                include_once('../includes/ikke_logget_inn.inc.php');
                 $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
                 $søkord = $_SESSION['brukernavn'];
                 $stmt = $db->query("SELECT bio FROM bio WHERE brukerNavn = '$søkord'");
@@ -156,12 +156,35 @@
                 ?>
             </div>
         </section>
-
+        <section class="StudieSection">
+            <div class="StudieDiv">
+                <?php
+                $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
+                $søkord = $_SESSION['brukernavn'];
+                $stmt = $db->query("SELECT studier.studie FROM studier INNER JOIN studiekobling ON studiekobling.studie = studier.studie AND studiekobling.brukernavn = '$søkord'");
+                echo "<h2> Studie: ";
+                if($stmt->rowCount()){
+                    $count=0;
+                    while ($row = $stmt->fetch())
+                    {
+                        echo $row['studie'];
+                        if ($count <= 39 ) {
+                            echo ", ";
+                        }
+                        if ($count == 5 OR $count == 10 OR $count == 15 OR $count == 20 OR $count == 25 OR $count == 30 OR $count == 35 OR $count == 40){
+                            echo "<br>";
+                        }
+                        if ($count >= 40) {
+                            break;
+                        }
+                    }
+                }
+                ?>
+            </div>
+        </section>
         <section class="Interesser">
             <div class="Interessernr">
             <?php
-            include_once("../includes/init.php");
-            include_once('../includes/ikke_logget_inn.inc.php');
             $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
             $søkord = $_SESSION['brukernavn'];
             $stmt = $db->query("SELECT interesser.interesse FROM interesser INNER JOIN interessekobling ON interessekobling.interesse = interesser.interesse AND interessekobling.brukernavn = '$søkord'");

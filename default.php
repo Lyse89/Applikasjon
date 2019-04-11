@@ -1,8 +1,8 @@
-<!DOCTYPE html>
-<!-- Denne siden er utviklet av William Rastad, siste gang endret 09.12.2018 -->
-<!-- Denne siden er kontrollert av William Rastad, siste gang 10.12.2018 -->
-
 <?php
+//DOCTYPE
+//Denne siden er utviklet av William Rastad, siste gang endret 09.12.2018
+//Denne siden er kontrollert av William Rastad, siste gang 10.12.2018
+
     // Sjekk for om brukeren er innlogget og videresending til innlogget forside
     session_start();
     if (isset($_SESSION['sessionId'])) {

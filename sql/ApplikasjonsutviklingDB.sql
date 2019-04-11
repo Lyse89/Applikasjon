@@ -40,6 +40,16 @@ CREATE TABLE interessekobling (
     CONSTRAINT interessekoblingInteresserFK FOREIGN KEY (interesse) REFERENCES interesser(interesse)
 );
 
+CREATE TABLE studier (
+	studie VARCHAR(45),
+    CONSTRAINT studierPK PRIMARY KEY (studie)
+);
+
+CREATE TABLE studiekobling (
+	brukerNavn VARCHAR(45),
+    studie VARCHAR(45)
+);
+
 CREATE TABLE bio (
 	brukerNavn VARCHAR(45) NOT NULL UNIQUE,
     bio VARCHAR (255),
@@ -126,3 +136,6 @@ CREATE TABLE regler (
     tekst VARCHAR(255),
     CONSTRAINT regelnrPK PRIMARY KEY(regelnr)
 );
+
+SELECT * FROM studier;
+SELECT * FROM studiekobling;
