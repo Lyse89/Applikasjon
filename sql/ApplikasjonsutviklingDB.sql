@@ -143,6 +143,14 @@ CREATE TABLE anmerkning (
     CONSTRAINT anmerkingbrukerFK FOREIGN KEY (brukerNavn) REFERENCES bruker(brukerNavn)
 );
 
+CREATE TABLE utestengt (
+	brukerNavn VARCHAR(45),
+    gittAv VARCHAR(45),
+    tid DATETIME,
+    CONSTRAINT utestengtPK PRIMARY KEY (brukerNavn, tid),
+    CONSTRAINT utestengtBrukerFK FOREIGN KEY (brukerNavn) REFERENCES bruker(brukerNavn)
+);
+
 CREATE TABLE karantene (
 	brukerNavn VARCHAR(45),
     gittAv VARCHAR(45),
