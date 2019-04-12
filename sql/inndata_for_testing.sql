@@ -54,17 +54,17 @@ ORDER BY COUNT(*) DESC
 LIMIT 10;
 
 -- Inndata for eventer
-insert into arrangement values(11111, 'Motivasjonsforedrag i vestre floy', 'q', 'Lokasjon for arr2', current_date(), current_date(), 'Velkommen til motivasjonsforedrag. Dette er beskrivelsen av arrangementet. Vi kan by paa pizza og kaker til paameldte.');
+insert into arrangement values(11111, 'Motivasjonsforedrag i vestre fløy', 'q', 'Lokasjon for arr2', current_date(), current_date(), 'Velkommen til motivasjonsforedrag. Dette er beskrivelsen av arrangementet. Vi kan by på pizza og kaker til påmeldte.');
 insert into arrangement values(11112, 'Hackathon', 'q', 'Lokasjon for arr1', current_date(), current_date(), 'Vel møtt til hackathon, arrangementet starter i det lille auditoriet. Oppgavene slippes klokken 7 og før dette vil deltagere deles opp i grupper for brainstorming.');
 insert into arrangement values(11113, 'Lan 23-25 mars', 'q', 'Lokasjon for arr3', current_date(), current_date(), 'Debug inviterer til lan i workshop rommet. Det vil bli avholdt konkurranser i de spillene som stemmer frem. Det vil bli servert gratis pizza på fredag kveld.');
 insert into arrangement values(11114, 'Quiz - Jokern', 'q', 'Lokasjon for arr4', current_date(), current_date(), 'Imorgen blir det quiz på Jokern - Ringerike Studentkro kl 20, husk det blir premier! Trykk skal hvis dere vet dere kommer! Gledes til å se dere imorgen!');
 insert into arrangement values(11115, '10 års jubileum', 'q', 'Lokasjon for arr5', current_date(), current_date(), 'Beskrivelse av arrangementet5');
 
 -- insert into nyheter values(11111, 'Tittel', 'q', 'beskrivelse');
-insert into nyheter values(11111, '50 nye parkeringsplasser', 'q', 'Ilopet av hosten vil det komme 50 ny parkeringsplasser disponible for studenter.',current_date());
-insert into nyheter values(11112, 'Leie av serverplass', 'q', 'Det vil naa vaere mulig for studenter ved usn aa leie egen serverplass.',current_date());
-insert into nyheter values(11113, 'Stundenter fra usn paa utveksling', 'q', 'beskrivelse',current_date());
-insert into nyheter values(11114, 'Aapning av det nye bygget', 'q', 'Nybygget staar klart til hosten. I denne forbindelse vil det vaere aapningsseremoni med underholdning 14.04.2019.',current_date());
+insert into nyheter values(11111, '50 nye parkeringsplasser', 'q', 'Iløpet av høsten vil det komme 50 ny parkeringsplasser disponible for studenter.',current_date());
+insert into nyheter values(11112, 'Leie av serverplass', 'q', 'Det vil nå være mulig for studenter ved usn å leie egen serverplass.',current_date());
+insert into nyheter values(11113, 'Stundenter fra usn på utveksling', 'q', 'beskrivelse',current_date());
+insert into nyheter values(11114, 'Åpning av det nye bygget', 'q', 'Nybygget står klart til høsten. I denne forbindelse vil det være åpningsseremoni med underholdning 14.04.2019.',current_date());
 
 insert into jobbAnnonse values(11111, 'Sopra Steria', 'Junior-Utvikler','q','Sopra Steria er for tredje år på rad kåret til Norges beste arbeidsplass av Great Place to Work. Som kunnskapsbedrift er det viktig for oss å tiltrekke de flinkeste menneskene og utvikle dem videre i deres karriere, samtidig som de har det gøy på jobb. Med noen av Norges mest spennende kunder og digitaliseringsprosjekter, er vi stadig på jakt etter dyktige konsulenter. Har du lyst til å bli vår kollega?', 'https://www.soprasteria.no', current_date());
 insert into jobbAnnonse values(11112, 'Kartverket', 'Systemarkitekt','q','Beskrivelse', 'url', current_date());
