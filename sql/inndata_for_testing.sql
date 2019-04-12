@@ -82,5 +82,17 @@ CREATE TABLE jobbAnnonse (
     CONSTRAINT jobbAnnonsePK PRIMARY KEY(annonseid)
 );
 
+
 select * from arrangement;
 select * from bruker;
+
+
+select * from anmerkning;
+INSERT INTO anmerkning (brukerNavn, tid, forklaring) VALUES
+("q", now(), "Dette er en forklaring på anmerkningen");
+
+select * from karantene;
+INSERT INTO karantene (brukerNavn, startTid, sluttTid) VALUES
+('q', now(), now() + INTERVAL 1 DAY),
+('q', now(), now() + INTERVAL 1 WEEK),
+('q', now(), now() + INTERVAL 1 MONTH);

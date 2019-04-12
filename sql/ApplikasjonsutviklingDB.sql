@@ -6,8 +6,6 @@ DROP SCHEMA IF EXISTS alumni05;
 CREATE SCHEMA alumni05;
 USE alumni05;
 
-
-
 CREATE TABLE roller (
     rolle VARCHAR(15),
     CONSTRAINT rollerPK PRIMARY KEY(rolle)
@@ -128,7 +126,6 @@ CREATE TABLE jobbAnnonse (
     CONSTRAINT jobbAnnonsePK PRIMARY KEY(annonseid)
 );
 
-
 CREATE TABLE varsel(
     varselid INTEGER(5),
     varsletBruker VARCHAR(45),
@@ -137,10 +134,20 @@ CREATE TABLE varsel(
     CONSTRAINT varselBrukerFK FOREIGN KEY(varsletBruker) REFERENCES bruker(brukerNavn)
 );
 
-CREATE TABLE annmerkning (
+CREATE TABLE anmerkning (
     brukerNavn VARCHAR(45),
     tid DATETIME,
-    CONSTRAINT annmerkningPK PRIMARY KEY(brukerNavn, tid)
+    forklaring VARCHAR (255),
+    CONSTRAINT annmerkningPK PRIMARY KEY(brukerNavn, tid),
+    CONSTRAINT anmerkingbrukerFK FOREIGN KEY (brukerNavn) REFERENCES bruker(brukerNavn)
+);
+
+CREATE TABLE karantene (
+	brukerNavn VARCHAR(45),
+    startTid DATETIME,
+    sluttTid DATETIME,
+    CONSTRAINT karantenePK PRIMARY KEY(brukerNavn, startTid, sluttTid),
+    CONSTRAINT karanteneBrukerFK FOREIGN KEY (brukerNavn) REFERENCES bruker(brukerNavn)
 );
 
 CREATE TABLE regler (
