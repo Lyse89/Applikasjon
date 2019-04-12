@@ -81,8 +81,9 @@ include_once('../includes/ikke_logget_inn.inc.php');
 ?>
 
 <div class="center">
-        <h1>Admin Funksjoner</h1>
+    <h1>Admin Funksjoner</h1>
     <div class="flex-container">
+
         <div class="instillinger-boks">
             <h2>Gi bruker en rolle</h2>
             <form class="GiRolle-form" action="gi_rolle.inc.php" method="POST">
@@ -121,33 +122,29 @@ include_once('../includes/ikke_logget_inn.inc.php');
         </div>
 
         <div class="instillinger-boks">
-
         </div>
 
         <div class="instillinger-boks">
-
         </div>
 
         <div class="instillinger-boks">
-
         </div>
 
         <div class="instillinger-boks">
-
         </div>
-
 
     </div>
+
     <div class="flex-container">
 
         <div class="instillinger-boks">
-
         </div>
 
         <div class="instillinger-boks">
-
         </div>
+
     </div>
+
 </div>
 </body>
 </html>

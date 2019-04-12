@@ -31,16 +31,21 @@ elseif ( $_POST['Straff'] === 'Karantene' ) {
     $sql = "INSERT INTO karantene (brukerNavn, startTid, sluttTid) VALUES";
     $sql.= "('$brukernavn', now(), $karanteneTid)";
 
+    $sql1 = "UPDATE bruker SET bruker.rolle = '$straff' WHERE bruker.brukerNavn = '$brukernavn'";
+
     $stmt = $db->prepare($sql);
+    $stmt1 = $db->prepare($sql1);
 
     $stmt->bindParam($brukernavn,$bbrukernavn);
     $stmt->bindParam($karanteneTid,$bkaranteneTid);
-
+    $stmt1->bindParam($straff,$bstraff);
 
     $bbrukernavn = $brukernavn;
     $bkaranteneTid = $karanteneTid;
+    $bstraff = $straff;
 
     $stmt->execute();
+    $stmt1->execute();
 }
 elseif ( $_POST['Straff'] === 'Anmerkning' ) {
     $anmerkningforklaring = $_POST['anmerkningForklaring'];
