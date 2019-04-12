@@ -85,9 +85,11 @@ CREATE TABLE jobbAnnonse (
 
 select * from arrangement;
 select * from bruker;
-
-
+select * from utestengt;
 select * from anmerkning;
+INSERT INTO utestengt (brukerNavn, gittAv, tid) VALUES
+("q", "q", now());
+
 INSERT INTO anmerkning (brukerNavn, tid, forklaring) VALUES
 ("q", now(), "Dette er en forklaring på anmerkningen");
 
