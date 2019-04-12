@@ -140,7 +140,8 @@ CREATE TABLE anmerkning (
     tid DATETIME,
     forklaring VARCHAR (255),
     CONSTRAINT annmerkningPK PRIMARY KEY(brukerNavn, tid),
-    CONSTRAINT anmerkingbrukerFK FOREIGN KEY (brukerNavn) REFERENCES bruker(brukerNavn)
+    CONSTRAINT anmerkingbrukerFK FOREIGN KEY (brukerNavn) REFERENCES bruker(brukerNavn),
+    CONSTRAINT anmerkingadminbrukerFK FOREIGN KEY (gittAv) REFERENCES bruker(brukerNavn)
 );
 
 CREATE TABLE utestengt (
@@ -148,7 +149,8 @@ CREATE TABLE utestengt (
     gittAv VARCHAR(45),
     tid DATETIME,
     CONSTRAINT utestengtPK PRIMARY KEY (brukerNavn, tid),
-    CONSTRAINT utestengtBrukerFK FOREIGN KEY (brukerNavn) REFERENCES bruker(brukerNavn)
+    CONSTRAINT utestengtBrukerFK FOREIGN KEY (brukerNavn) REFERENCES bruker(brukerNavn),
+    CONSTRAINT utestengtadminbrukerFK FOREIGN KEY (gittAv) REFERENCES bruker(brukerNavn)
 );
 
 CREATE TABLE karantene (
@@ -157,7 +159,8 @@ CREATE TABLE karantene (
     startTid DATETIME,
     sluttTid DATETIME,
     CONSTRAINT karantenePK PRIMARY KEY(brukerNavn, startTid, sluttTid),
-    CONSTRAINT karanteneBrukerFK FOREIGN KEY (brukerNavn) REFERENCES bruker(brukerNavn)
+    CONSTRAINT karanteneBrukerFK FOREIGN KEY (brukerNavn) REFERENCES bruker(brukerNavn),
+    CONSTRAINT karanteneadminbrukerFK FOREIGN KEY (gittAv) REFERENCES bruker(brukerNavn)
 );
 
 CREATE TABLE regler (
