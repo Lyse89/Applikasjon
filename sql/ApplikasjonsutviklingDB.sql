@@ -136,6 +136,7 @@ CREATE TABLE varsel(
 
 CREATE TABLE anmerkning (
     brukerNavn VARCHAR(45),
+    gittAv VARCHAR(45),
     tid DATETIME,
     forklaring VARCHAR (255),
     CONSTRAINT annmerkningPK PRIMARY KEY(brukerNavn, tid),
@@ -144,6 +145,7 @@ CREATE TABLE anmerkning (
 
 CREATE TABLE karantene (
 	brukerNavn VARCHAR(45),
+    gittAv VARCHAR(45),
     startTid DATETIME,
     sluttTid DATETIME,
     CONSTRAINT karantenePK PRIMARY KEY(brukerNavn, startTid, sluttTid),

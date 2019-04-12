@@ -59,15 +59,15 @@ DEL 5
     [x] Regel side
     [ ] Legge til regler som admin, på regel siden
     [ ] Lagge en rapport funksjon for brukere
-    [ ] Admin skal kunne gi advarsel
-    [ ] Sette brukere i karantene/utestenge
-    [ ] Avregistrering av brukeer (set rollen til avregistreret)
+    [x] Admin skal kunne gi advarsel
+    [semi x] Sette brukere i karantene/utestenge (Kan gi rolle som admin, men trenger funksjon for at brukere ikke kan logge seg inn)
+    [semi x] Avregistrering av brukeer (set rollen til avregistreret)Kan gi rolle som admin, men trenger funksjon for at brukere ikke kan logge seg inn
     [x] Side med oversikt over antall anmerkninger
     [ ] Ta ut en begrenset rapport om misbrukt eller ekslusjon
     [ ] Hvis en bruker, som ikke er administrator prøver å komme inn på en av administrators sider, 
         skal også brukeren bli logget ut, og bringes til startsiden, med en melding både til bruker og 
 	til administrator. Denne meldingen vil være en automatisert rapport til administrator om misbruk.
-    [ ] En administrator skal kunne kvalifisere en annen bruker som administrator også
+    [x] En administrator skal kunne kvalifisere en annen bruker som administrator også
     [ ] Melding til administrator skal gå til alle administratorer.
     [ ] Dersom administrator har gitt en advarsel, en karantene eller en eksklusjon, så 
 	skal det registreres i databasen hvilken administrator som har gjort dette. 
