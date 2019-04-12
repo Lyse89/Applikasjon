@@ -98,3 +98,7 @@ INSERT INTO karantene (brukerNavn, startTid, sluttTid) VALUES
 ('q', now(), now() + INTERVAL 1 DAY),
 ('q', now(), now() + INTERVAL 1 WEEK),
 ('q', now(), now() + INTERVAL 1 MONTH);
+
+insert into regler values(1, 'Man skal ikke plage andre');
+insert into regler values(2, 'Man skal være grei og snil');
+insert into regler values(3, 'for øvrig kan man gjøre hva man vil');
