@@ -1,3 +1,6 @@
+<?php
+    include_once('../includes/ikke_logget_inn.inc.php');
+?>
 <!-- Denne siden er utviklet av William Rastad siste gang endret 14.01.2019 -->
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -82,7 +85,6 @@
     <?php
     include_once("../includes/init.php");
     include_once('../includes/header_innlogget.php');
-    include_once('../includes/ikke_logget_inn.inc.php');
     ?>
         <h1> Top 10 Interesser </h1>
     <div class = "top10interesser">
