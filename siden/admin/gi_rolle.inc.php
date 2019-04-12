@@ -7,7 +7,7 @@ include_once('../includes/ikke_logget_inn.inc.php');
 
 $db = new PDO($dsn,$dbBrukernavn,$dbPassord);
 
-// SQL query og values
+
 $brukernavn = $_POST['BrukerNavnGiRolle'];
 $rolle = $_POST['Roller'];
 
