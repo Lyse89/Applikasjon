@@ -16,6 +16,7 @@
     <div class="Loggin">
 
     <?php
+    include("rollesjekk.inc.php");
     if ($_SESSION['rolle'] == "Admin") {
     ?>
         <a href="../admin/admin_hovedside.php">Admin</a>

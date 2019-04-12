@@ -3,6 +3,7 @@
 //Denne include-siden er kontrollert av William, siste gang 14.12.2018
 //
 //CSS'en skal senere flyttes ut av denne filen
+include('../includes/ikke_logget_inn.inc.php');
 include_once('../includes/init.php');
 $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
 ?>
@@ -99,8 +100,7 @@ body {
 <body>
 
   <?php
-  include_once('../includes/header_innlogget.php');
-  include_once('../includes/ikke_logget_inn.inc.php');
+  include('../includes/header_innlogget.php');
   ?>
 <div class ="topp-nyhets-boks">
 	<h1>Lorem Ipsum</h1>
