@@ -19,7 +19,7 @@ if ($_POST['Straff'] === 'Utestengt') {
     $sql1 ="INSERT INTO utestengt (brukerNavn, gittAv, tid)";
     $sql1.="VALUES('$brukernavn', '$brukernavnAdmin', now())";
 
-    $stmt1 = $db->prepare($sql);
+    $stmt1 = $db->prepare($sql1);
     $stmt = $db->prepare($sql);
 
     $stmt1->bindParam($brukernavn,$bbrukernavn);
@@ -64,7 +64,7 @@ elseif ( $_POST['Straff'] === 'Anmerkning' ) {
     $anmerkningforklaring = $_POST['anmerkningForklaring'];
 
     $sql = "INSERT INTO anmerkning (brukerNavn, gittAv, tid, forklaring) VALUES";
-    $sql.= "('$brukernavn','$brukernavnAdmin' now(), '$anmerkningforklaring')";
+    $sql.= "('$brukernavn','$brukernavnAdmin', now(), '$anmerkningforklaring')";
 
     $stmt = $db->prepare($sql);
 
