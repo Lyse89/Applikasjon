@@ -23,7 +23,7 @@ DEL 2
     [x] Fikse at dsn-variabelen blir opprettet i init.php - Kristoffer
     [x] Logginnfunksjon fra default.php - Kristoffer
     [x] Endre logg_inn_siden.php sin feilmeldinger - Kristoffer
-    [ ] Sjekk at øæå fungerer ved registrering og innlogging
+    [x] Sjekk at øæå fungerer ved registrering og innlogging
     [x] Automatisk innlogging etter registrering - Kristoffer
 
 
@@ -37,7 +37,7 @@ DEL 3
     [ ] Avregistrere seg
     [x] Registrere interesser? -William
     [x] Lage ny interesse - William
-    [ ] Bruker se liste over brukere
+    [x] Bruker se liste over brukere
     [x] Lage Sok av Interesser side - William
     [x] Oppdatere Databasen i henhold til interesser - William
     [ ] Laste opp profil bilde  - Simen
@@ -47,8 +47,8 @@ DEL 3
 
 
 DEL 4
-    [x] Arrangement-side
-    [ ] Enkeltarrangement-side
+    [x] Arrangement-side - Kristoffer
+    [ ] Enkeltarrangement-side - Kristoffer
     [ ] Invitering av brukere til arrangement
     [ ] Registrere interesse for arrangement
     [ ] Sende meldinger til andre brukere !!EMAIL!! - Simen
@@ -75,3 +75,4 @@ DEL 5
     [ ] Lag SQL tabeller for Nyheter og Events
     [ ] Se over Entitetisering i SQL
     [ ] Prøve å fjerne <div> sections
+
