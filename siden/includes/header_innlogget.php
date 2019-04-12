@@ -14,6 +14,14 @@
     <a href="../meldinger/meldinger.php">Meldinger</a>
     <a href="../brukerInstillinger/profil.php">Instillinger</a>
     <div class="Loggin">
+
+    <?php
+    if ($_SESSION['rolle'] == "Admin") {
+    ?>
+        <a href="../admin/admin_hovedside.php">Admin</a>
+    <?php
+    };
+     ?>
       <form action="../includes/loggut.inc.php" method="POST">
       <button type="submit" name="submit">Logout</button>
       </form>
