@@ -15,15 +15,21 @@
     <a href="../brukerInstillinger/profil.php">Instillinger</a>
     <div class="Loggin">
 
-    <?php
-    include("settrolle.inc.php");
-    if ($_SESSION['rolle'] == "Admin") {
-    ?>
-        <a href="../admin/admin_hovedside.php">Admin</a>
-    <?php
-    };
-     ?>
+
       <form action="../includes/loggut.inc.php" method="POST">
+          <?php
+          include("settrolle.inc.php");
+          if ($_SESSION['rolle'] == "Admin") {
+          ?>
+              <a href="../admin/admin_hovedside.php">Admin</a>
+              <style>
+                  nav{
+                      background-color: red;
+                  }
+              </style>
+          <?php
+          };
+           ?>
       <button type="submit" name="submit">Logout</button>
       </form>
     </div>
