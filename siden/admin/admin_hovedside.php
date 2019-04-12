@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
   <head>
     <meta charset="utf-8">
-    <title>Adminpanel</title>
+    <title>AdminFunksjoner</title>
   </head>
   <style media="screen">
     body {
@@ -81,7 +81,7 @@ include_once('../includes/ikke_logget_inn.inc.php');
 ?>
 
 <div class="center">
-    <h1>Admin Funksjoner</h1>
+    <h1>Admin Hovedside</h1>
     <div class="flex-container">
 
         <div class="instillinger-boks">

@@ -7,8 +7,11 @@
     <title>Personer</title>
     <style>
 
+    .top10intfontsize{
+        font-size: 15px;
+    }
     .søkPersonerBox{
-        width: 40%;
+        width: 48%;
         margin: 30px 0 30px 0;
         padding-bottom: 25px;
         display:inline-block;
@@ -16,20 +19,16 @@
         margin-left: 10px;
         position: center;
     }
-
-        .center {
-        box-shadow: 10px 10px 8px #c0c0c0;
-        margin: 0 5% 50px 5%;
-        margin-top: 50px;
-        padding: 0 2% 0 2%;
-        width: 86%;
-        /*max-width: 1230px;*/
-        background-color: white;
-        float: left;
-        /*margin-bottom: 50px;*/
+    .søkPersonerBox h2, form{
+        position: center;
+        text-align: center;
+    }
+    .søkPersonerBox input[type="submit"], input[type="text"]{
+        text-align: left;
     }
 
     /* Søk på Interesser og finn Personer */
+
     input[type=text]{
         width: 20%;
         padding: 10px;
@@ -56,6 +55,7 @@
       text-align: left;
     }
     .SøkResultater {
+        width: 50%;
         margin:1% 25% 2% 25%;
         background-color:;
         text-align: center;
@@ -67,6 +67,7 @@
         font-size: 18px;
     }
     h1{
+        font-size: 20px;
         text-align: center;
     }
 
@@ -78,34 +79,44 @@
     </style>
  </head>
  <body>
-<?php
-include_once("../includes/init.php");
-include_once('../includes/header_innlogget.php');
-include_once('../includes/ikke_logget_inn.inc.php');
-?>
-    <h1> Top 10 Interesser </h1>
-<div class = "top10interesser">
     <?php
-    $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
-    $stmt = $db->query('SELECT interesse FROM interessekobling GROUP BY interesse ORDER BY COUNT(*) DESC LIMIT 10;');
-    $count = 0;
-    if($stmt->rowCount()){
-        while ($row = $stmt->fetch()){
-            $count ++;
-            echo $count, ': ', $row['interesse'];
-            echo "<br>";
-        }
-    }
+    include_once("../includes/init.php");
+    include_once('../includes/header_innlogget.php');
+    include_once('../includes/ikke_logget_inn.inc.php');
     ?>
-</div>
+        <h1> Top 10 Interesser </h1>
+    <div class = "top10interesser">
+        <?php
+        $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
+        $stmt = $db->query('SELECT interesse FROM interessekobling GROUP BY interesse ORDER BY COUNT(*) DESC LIMIT 10;');
+        $count = 0;
+        echo "<div class='top10intfontsize'>";
+        if($stmt->rowCount()){
+            while ($row = $stmt->fetch()){
+                $count ++;
+                echo $count, ': ', $row['interesse'];
+                echo "<br>";
+            }
+        }
+        echo "</div>";
+        ?>
+    </div>
 
-<div class="søkPersonerBox">
-    <h2> Søk på Interesser </h2>
-    <form class="søk-Interesser" action="personer.php" method="POST">
-        <input type="text" name="Interesser" id=Interesser placeholder="Interesser">
-        <input type="submit" name="søkPåInteresse" value="Søk" id="søkPåInteresse">
-    </form>
-    <div class="SøkResultater">
+    <div class="søkPersonerBox">
+        <h2> Søk på Interesser </h2>
+        <form class="søk-Interesser" action="personer.php" method="POST">
+            <input type="text" name="Interesser" id=Interesser placeholder="Interesser" style="width: 150px;">
+            <input type="submit" name="søkPåInteresse" value="Søk" id="søkPåInteresse">
+        </form>
+    </div>
+
+    <div class="søkPersonerBox">
+        <h2> Søk på person </h2>
+        <form class="søk-person" action="personer.php" method="POST">
+            <input type="text" name="brukernavn" id=brukernavn placeholder="Fornavn eller Etternavn" style="width: 150px;">
+            <input type="submit" name="søkBrukernavn" value="Søk" id="søkBrukernavn">
+        </form>
+    </div>
     <?php
     if (isset($_POST['søkPåInteresse']))
     {
@@ -122,6 +133,7 @@ include_once('../includes/ikke_logget_inn.inc.php');
             echo "<div id='errormsg'>Skriv inn en interesse</div>";
 
         }elseif($stmt->rowCount()){
+            echo "<div class='SøkResultater'>";
             echo "<table width=100%>";
             echo "<h2> Resultater:";
             echo "<tr><td><b>Fornavn</b></td><td><b>Etternavn</b></td><td><b>Interesse</b></td>";
@@ -131,20 +143,14 @@ include_once('../includes/ikke_logget_inn.inc.php');
                 echo "<tr><td>{$row['fornavn']}</td><td>{$row['etternavn']}</td><td>{$row['interesse']}</tr>";
             }
             echo "</table>";
+            echo "</div>";
         }else{
             echo "<div id='errormsg'>Søket ga ingen resultat</div>";
         }
-    
+
     }
     ?>
-</div>
-</div>
-<div class="søkPersonerBox">
-    <h2> Søk på person </h2>
-    <form class="søk-person" action="personer.php" method="POST">
-        <input type="text" name="brukernavn" id=brukernavn placeholder="Brukernavn">
-        <input type="submit" name="søkBrukernavn" value="søkBrukernavn" id="søkBrukernavn">
-    </form>
+
     <?php
     if (isset($_POST['søkBrukernavn']))
     {
@@ -156,28 +162,30 @@ include_once('../includes/ikke_logget_inn.inc.php');
         $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
         $søkord = $_POST['brukernavn'];
         $stmt = $db->query("SELECT * FROM bruker
-        WHERE brukerNavn LIKE '%$søkord%'");
+        WHERE fornavn LIKE '%$søkord%' OR etternavn LIKE '%$søkord%'");
 
         if (!$søkord){
-            echo "<div id='errormsg'>Skriv inn en interesse</div>";
+            echo "<div id='errormsg'>Skriv inn et fornavn</div>";
 
         }elseif($stmt->rowCount()){
+            echo "<div class='SøkResultater'>";
             echo "<table width=100%>";
             echo "<h2> Resultater:";
-            echo "<tr><td><b>Fornavn</b></td><td><b>Etternavn</b></td><td><b>Interesse</b></td>";
+            echo "<tr><td><b>Fornavn</b></td><td><b>Etternavn</b></td></td>";
 
             while ($row = $stmt->fetch())
             {
-                echo "<tr><td>{$row['fornavn']}</td><td>{$row['etternavn']}</td><td>{$row['interesse']}</tr>";
+                echo "<tr><td>{$row['fornavn']}</td><td>{$row['etternavn']}</td></tr>";
             }
             echo "</table>";
+            echo "</div>";
         }else{
             echo "<div id='errormsg'>Søket ga ingen resultat</div>";
         }
-    
+
     }
     ?>
-</div>
+
 
 </body>
 </html>
