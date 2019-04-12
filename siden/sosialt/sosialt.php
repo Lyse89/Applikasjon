@@ -1,7 +1,7 @@
 <?php
     include_once('../includes/ikke_logget_inn.inc.php');
-//Denne include-siden er utviklet av Kristoffer Sorensen, siste gang endret 27.03.2019
-// Denne include-siden er kontrollert av Kristoffer Sorensen, siste gang 27.03.2019
+    //Denne include-siden er utviklet av Kristoffer Sorensen, siste gang endret 27.03.2019
+    // Denne include-siden er kontrollert av Kristoffer Sorensen, siste gang 27.03.2019
 ?>
 <!DOCTYPE html>
 <html lang="no" dir="ltr">
