@@ -1,6 +1,7 @@
-/*-- Denne include-siden er utviklet av Simen A. Lyse , siste gang endret 14.12.2018
-// Denne include-siden er kontrollert av Simen A. Lyse, siste gang 14.12.2018 */
-
+/*
+Denne include-siden er utviklet av Simen A. Lyse , siste gang endret 24.05.2019
+Denne include-siden er kontrollert av Simen A. Lyse, siste gang 24.05.2019
+*/
 body {
      margin:0;
      font-family: arial;
@@ -25,6 +26,7 @@ body {
 
  nav button {
   background-color: #ddd;
+  float: right;
   color: #0d0d0d;
   border: none;
   color: black;
