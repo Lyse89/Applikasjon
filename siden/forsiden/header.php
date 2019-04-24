@@ -1,10 +1,13 @@
-<!-- Denne include-siden er utviklet av Simen A. Lyse og Kristoffer Sorensen , siste gang endret 14.12.2018
-// Denne include-siden er kontrollert av Simen A. Lyse, siste gang 12.01.2019 -->
+<?php
+// Denne include-siden er utviklet av Simen A. Lyse , siste gang endret 24.05.2019
+// Denne include-siden er kontrollert av Simen A. Lyse, siste gang 24.05.2019
+?>
 <style>
 input:focus {
   outline: 1px solid #6699ff;
   background-color: lightyellow;
 }
+
 </style>
 <nav>
 <a class="bilde" href="default.php">
