@@ -202,9 +202,20 @@ nav .ikon {
      float: right;
      display: block;
    }
- }
 
- @media screen and (max-width: 768px) {
+nav .logginPassord, nav .logginBruker {
+  float: none;
+  display: block;
+  text-align: left;
+  width: 100%;
+  width: 100vw;
+  margin: 0;
+  padding: 14px;
+  border: 1px solid #ccc;
+  }
+}
+
+@media screen and (max-width: 768px) {
    .topnav.responsiv {position: relative;}
    .topnav.responsiv .ikon {
      position: absolute;
@@ -223,9 +234,12 @@ nav .ikon {
      width: 100%;
      text-align: left;
    }
+   nav a {
+     display: none;
+   }
  }
 
- @media screen and (min-width: 76px) {
+ @media screen and (min-width: 768px) {
    .dropdown {
      display: none;
    }
