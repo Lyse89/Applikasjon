@@ -7,6 +7,71 @@ body {
      font-family: arial;
  }
 
+ /*Default.php*/
+ /* En container for Tittel og registreringsboks */
+ #DefaultBoxes{
+     margin-top:5%;
+     background-color: white;
+ }
+
+ /* Tittel */
+ #DefaultBoxes .Box{
+     margin-top: 6%;
+     float:left;
+     text-align: center;
+     width:35%;
+     background-color: lightgrey;
+     margin-left: 10%;
+     margin-right: 5%;
+     margin-top: 7%;
+     border-radius: 5px;
+ }
+
+ /* registreringsboks */
+ #DefaultBoxes .Box1{
+     border-radius: 5px;
+     margin: 2% 2% 2% 2%;
+     float:left;
+     text-align: center;
+     width:35%;
+     background-color: lightgrey;
+ }
+
+ #DefaultBoxes .Box1 h2{
+     padding-left: 22px;
+ }
+
+ /* Register form */
+ .Box1 input[type=password], input[type=email], input[type=date], input[type=text]{
+     width: 70%;
+     padding: 10px;
+     margin: 5px 0px 22px 22px;
+     display: inline-block;
+     border: none;
+     background: #f1f1f1;
+ }
+
+ .Box1 input[type="submit"]{
+     float: right;
+     margin-right: 12.5%;
+     background: #f1f1f1;
+     font-size: 17px;
+     border: none;
+     cursor: pointer;
+     margin-bottom: 22px;
+ }
+
+ /* Responsivt Design */
+ @media(max-width: 768px){
+     #DefaultBoxes .Box,
+     #DefaultBoxes .Box1{
+         text-align:center;
+         width:100%;
+         margin: 2% 2% 2% 2%;
+         float:none;
+     }
+}
+
  /* Header */
 
  nav {
@@ -28,9 +93,9 @@ body {
   background-color: #ddd;
   float: right;
   color: #0d0d0d;
-  border: none;
   color: black;
-  padding: 14px 16px;
+  margin: 9px 12px;
+  padding: 5px 5px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -38,8 +103,9 @@ body {
   cursor: pointer;
  }
 
-.Loggin input[type=password], input[type=text] {
+nav .logginBruker {
    padding: 6px;
+   margin-bottom: 5px;
    margin-top: 8px;
    font-size: 17px;
    border: none;
@@ -47,21 +113,39 @@ body {
    background: #f1f1f1;
  }
 
- .aktiv {
+nav .logginPassord {
+    padding: 6px;
+    margin-top: 8px;
+    margin-bottom: 5px;
+    font-size: 17px;
+    border: none;
+    width: 170px;
+    background: #f1f1f1;
+}
+
+.sjekk {
+  float: right;
+}
+
+.Loggin {
+  float: right;
+}
+
+.aktiv {
    background-color: #595959;
    color: white;
- }
+}
 
- nav .ikon {
+nav .ikon {
    display: none;
- }
+}
 
- .dropdown {
+.dropdown {
    float: left;
    overflow: hidden;
- }
+}
 
- .dropdown .dropbtn {
+.dropdown .dropbtn {
    font-size: 17px;
    border: none;
    outline: none;
@@ -70,16 +154,16 @@ body {
    background-color: inherit;
    font-family: inherit;
    margin: 0;
- }
+}
 
- .drop-innhold {
+.drop-innhold {
    display: none;
    position: absolute;
    background-color: #f9f9f9;
    min-width: 160px;
    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
    z-index: 1;
- }
+}
 
  .drop-innhold a {
    float: none;
@@ -168,69 +252,4 @@ body {
   margin-right: 150px;
   margin-left: 80px;
   background-color: darkgrey;
-}
-
-/*Default.php*/
-/* En container for Tittel og registreringsboks */
-#DefaultBoxes{
-    margin-top:5%;
-    background-color: white;
-}
-
-/* Tittel */
-#DefaultBoxes .Box{
-    margin-top: 6%;
-    float:left;
-    text-align: center;
-    width:35%;
-    background-color: lightgrey;
-    margin-left: 10%;
-    margin-right: 5%;
-    margin-top: 7%;
-    border-radius: 5px;
-}
-
-/* registreringsboks */
-#DefaultBoxes .Box1{
-    border-radius: 5px;
-    margin: 2% 2% 2% 2%;
-    float:left;
-    text-align: center;
-    width:35%;
-    background-color: lightgrey;
-}
-
-#DefaultBoxes .Box1 h2{
-    padding-left: 22px;
-}
-
-/* Register form */
-.Box1 input[type=password], input[type=email], input[type=date], input[type=text]{
-    width: 70%;
-    padding: 10px;
-    margin: 5px 0px 22px 22px;
-    display: inline-block;
-    border: none;
-    background: #f1f1f1;
-}
-
-.Box1 input[type="submit"]{
-    float: right;
-    margin-right: 12.5%;
-    background: #f1f1f1;
-    font-size: 17px;
-    border: none;
-    cursor: pointer;
-    margin-bottom: 22px;
-}
-
-/* Responsivt Design */
-@media(max-width: 768px){
-    #DefaultBoxes .Box,
-    #DefaultBoxes .Box1{
-        text-align:center;
-        width:100%;
-        margin: 2% 2% 2% 2%;
-        float:none;
-    }
 }
