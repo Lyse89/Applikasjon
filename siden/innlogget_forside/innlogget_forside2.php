@@ -4,8 +4,8 @@
 //
 //CSS'en skal senere flyttes ut av denne filen
 include('../includes/ikke_logget_inn.inc.php');
-include_once('../includes/init.php');
-$db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
+include('../includes/logg_inn_db.inc.php');
+
 ?>
 <!DOCTYPE html>
 <html>
