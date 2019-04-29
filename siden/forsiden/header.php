@@ -1,10 +1,13 @@
-<!-- Denne include-siden er utviklet av Simen A. Lyse og Kristoffer Sorensen , siste gang endret 14.12.2018
-// Denne include-siden er kontrollert av Simen A. Lyse, siste gang 12.01.2019 -->
+<?php
+// Denne include-siden er utviklet av Simen A. Lyse , siste gang endret 24.05.2019
+// Denne include-siden er kontrollert av Simen A. Lyse, siste gang 24.05.2019
+?>
 <style>
 input:focus {
   outline: 1px solid #6699ff;
   background-color: lightyellow;
 }
+
 </style>
 <nav>
 <a class="bilde" href="default.php">
@@ -20,12 +23,14 @@ input:focus {
 
         } else {
           echo '<form method="post" id="form1" action="default.php">
-                <input type="text" id="Bruker" name="brukernavn" placeholder="Brukernavn" autofocus>
-                <input type="password" id="Passord" name="passord" placeholder="Passord">
+                <input class="logginBruker" type="text" id="Bruker" name="brukernavn" placeholder="Brukernavn" autofocus>
+                <input class="logginPassord" type="password" id="Passord" name="passord" placeholder="Passord">
                 <button type="submit" value="Logg inn" name="Logginn">Login</button><br />
+                <div class="sjekk">
                 <label class="loggincookie">Forbli innlogget?
                 <input type="checkbox" name="forbliInnlogget">
                 </label>
+                </div>
                 </form>';
         }
     ?>

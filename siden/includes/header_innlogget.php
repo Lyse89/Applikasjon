@@ -1,56 +1,58 @@
-<!-- Denne include-siden er utviklet av Simen A. Lyse , siste gang endret 14.12.2018
-// Denne include-siden er kontrollert av Simen A. Lyse, siste gang 14.12.2018 -->
+<?php
+// Denne include-siden er utviklet av Simen A. Lyse , siste gang endret 24.05.2019
+// Denne include-siden er kontrollert av Simen A. Lyse, siste gang 24.05.2019
+?>
+<body>
 
-<nav>
-  <a class="bilde" href="../../default.php">
-    <img class="logo-navHeaderForsiden" src="../img/logo.png" alt="Logoen til USN" width="84" height="42">
-  </a>
-  <div id="linker">
-    <a href="../anonser/anonser.php">Annonser</a>
-    <a href="../sosialt/sosialt.php">Eventer</a>
-    <a href="../nyheter/nyheter.php">IT nyheter</a>
-    <a href="../personer/personer.php">Søk Interesser</a>
-    <a href="../min_profil/min_profil.php">Min Profil</a>
-    <a href="../meldinger/meldinger.php">Meldinger</a>
-    <a href="../brukerInstillinger/profil.php">Instillinger</a>
-    <div class="Loggin">
-
-
-      <form action="../includes/loggut.inc.php" method="POST">
-          <?php
-          include("settrolle.inc.php");
-          if ($_SESSION['rolle'] == "Admin") {
-          ?>
-              <a href="../admin/admin_hovedside.php">Admin</a>
-              <style>
-                  nav{
-                      background-color: red;
-                  }
-              </style>
-          <?php
-          };
-           ?>
-      <button type="submit" name="submit">Logout</button>
-      </form>
+<nav class="topnav" id="minTopnav">
+  <form action="../includes/loggut.inc.php" method="POST">
+  <a href="#home" class="aktiv">USN</a>
+  <a href="../anonser/anonser.php">Annonser</a>
+  <a href="../sosialt/sosialt.php">Eventer</a>
+  <a href="../nyheter/nyheter.php">IT nyheter</a>
+  <a href="../personer/personer.php">Søk Interesser</a>
+  <a href="../min_profil/min_profil.php">Min Profil</a>
+  <a href="../meldinger/meldinger.php">Meldinger</a>
+  <a href="../brukerInstillinger/profil.php">Instillinger</a>
+  <?php
+    include("settrolle.inc.php");
+    if ($_SESSION['rolle'] == "Admin") {
+  ?>
+      <a href="../admin/admin_hovedside.php">Admin</a>
+        <style>
+            nav{
+                background-color: red;
+            }
+        </style>
+      <?php
+      };
+     ?>
+  <button type="submit" name="submit">Logout</button>
+</form>
+  <div class="dropdown">
+    <button class="dropbtn">Meny
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="drop-innhold">
+      <a href="../anonser/anonser.php">Annonser</a>
+      <a href="../sosialt/sosialt.php">Eventer</a>
+      <a href="../nyheter/nyheter.php">IT nyheter</a>
+      <a href="../personer/personer.php">Søk Interesser</a>
+      <a href="../min_profil/min_profil.php">Min Profil</a>
+      <a href="../meldinger/meldinger.php">Meldinger</a>
+      <a href="../brukerInstillinger/profil.php">Instillinger</a>
     </div>
   </div>
-
-  <div class="gjome">
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <span class="hamburger">
-      <i class="fa fa-bars"></i>
-    </span>
-    </a>
-  </div>
+  <a href="javascript:void(0);" style="font-size:15px;" class="ikon" onclick="myFunction()">&#9776;</a>
 </nav>
 
 <script>
 function myFunction() {
-  var x = document.getElementById("linker");
-  if (x.style.display === "block") {
-    x.style.display = "none";
+  var x = document.getElementById("minTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsiv";
   } else {
-    x.style.display = "block";
+    x.className = "topnav";
   }
 }
 </script>

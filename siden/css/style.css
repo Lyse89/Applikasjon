@@ -1,182 +1,251 @@
-/*-- Denne include-siden er utviklet av Simen A. Lyse , siste gang endret 14.12.2018
-// Denne include-siden er kontrollert av Simen A. Lyse, siste gang 14.12.2018 */
-
+/*
+Denne include-siden er utviklet av Simen A. Lyse , siste gang endret 24.05.2019
+Denne include-siden er kontrollert av Simen A. Lyse, siste gang 24.05.2019
+*/
 body {
      margin:0;
      font-family: arial;
  }
 
+ /*Default.php*/
+ /* En container for Tittel og registreringsboks */
+ #DefaultBoxes{
+     margin-top:5%;
+     background-color: white;
+ }
+
+ /* Tittel */
+ #DefaultBoxes .Box{
+     margin-top: 6%;
+     float:left;
+     text-align: center;
+     width:35%;
+     background-color: lightgrey;
+     margin-left: 10%;
+     margin-right: 5%;
+     margin-top: 7%;
+     border-radius: 5px;
+ }
+
+ /* registreringsboks */
+ #DefaultBoxes .Box1{
+     border-radius: 5px;
+     margin: 2% 2% 2% 2%;
+     float:left;
+     text-align: center;
+     width:35%;
+     background-color: lightgrey;
+ }
+
+ #DefaultBoxes .Box1 h2{
+     padding-left: 22px;
+ }
+
+ /* Register form */
+ .Box1 input[type=password], input[type=email], input[type=date], input[type=text]{
+     width: 70%;
+     padding: 10px;
+     margin: 5px 0px 22px 22px;
+     display: inline-block;
+     border: none;
+     background: #f1f1f1;
+ }
+
+ .Box1 input[type="submit"]{
+     float: right;
+     margin-right: 12.5%;
+     background: #f1f1f1;
+     font-size: 17px;
+     border: none;
+     cursor: pointer;
+     margin-bottom: 22px;
+ }
+
+ /* Responsivt Design */
+ @media(max-width: 768px){
+     #DefaultBoxes .Box,
+     #DefaultBoxes .Box1{
+         text-align:center;
+         width:100%;
+         margin: 2% 2% 2% 2%;
+         float:none;
+     }
+}
+
  /* Header */
 
-nav {
-    background-color: darkgrey;
-    overflow: hidden;
-}
+ nav {
+   overflow: hidden;
+   background-color: #ddd;
+ }
 
-nav a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-}
+ nav a {
+   float: left;
+   display: block;
+   color: #0d0d0d;
+   text-align: center;
+   padding: 14px 16px;
+   text-decoration: none;
+   font-size: 17px;
+ }
 
-nav .bilde {
-  padding: 2px 2px;
-}
-
-nav a:hover, .dropdown:hover .dropbtn {
-    background-color: #555;
-    color: white;
-}
-
-.logo-navHeaderForsiden {
-    float: left;
-    margin-left: 4px;
-    margin-top: 4px;
-    margin-bottom: 0px;
-}
-
-nav .Loggin {
-    float:right;
-}
-
-nav input[type=text] {
-  height: 10px;
-  margin-top: 8px;
-  margin-bottom: 0px;
-  font-size: 17px;
-  border: none;
-  width: 150px;
-}
-
-nav input[type=password] {
-  height: 10px;
-  margin-top: 8px;
-  margin-bottom: 0px;
-  font-size: 17px;
-  border: none;
-  width: 150px;
-}
-
-nav .Loggin button {
-  float: right;
-  padding: 5px;
-  margin-top: 8px;
-  margin-right: 16px;
-  margin-left: 16px;
-  background: #ddd;
-  font-size: 17px;
-  border: none;
-  cursor: pointer;
-}
-
-.loggincookie {
-  display: block;
-  margin-top: 4px;
-  margin-bottom: 4px;
-  cursor: pointer;
-  font-size: 17px;
-  margin-left: 23px;
-  cursor: pointer;
-}
-
-nav .Loggin button:hover {
-  background: #ccc;
-}
-
-@media screen and (max-width: 480px) {
-nav {
-  overflow: hidden;
-  position: relative;
-  }
-
-nav #linker {
-  display: none;
-}
-
-.hamburger {
-    position: relative;
-    display: inline-block;
-    width: 1.25em;
-    height: 0.8em;
-    margin-right: 0.3em;
-    border-top: 0.2em solid #fff;
-    border-bottom: 0.2em solid #fff;
-}
-
-.hamburger:before {
-    content: "";
-    position: absolute;
-    top: 0.3em;
-    left: 0px;
-    width: 100%;
-    border-top: 0.2em solid #fff;
-}
-
-
-nav a {
-  color: white;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-  display: block;
-}
-
-nav a:hover {
+ nav button {
   background-color: #ddd;
+  float: right;
+  color: #0d0d0d;
   color: black;
+  margin: 9px 12px;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+ }
+
+nav .logginBruker {
+   padding: 6px;
+   margin-bottom: 5px;
+   margin-top: 8px;
+   font-size: 17px;
+   border: none;
+   width: 170px;
+   background: #f1f1f1;
+ }
+
+nav .logginPassord {
+    padding: 6px;
+    margin-top: 8px;
+    margin-bottom: 5px;
+    font-size: 17px;
+    border: none;
+    width: 170px;
+    background: #f1f1f1;
 }
 
-.active {
-  background-color: #4CAF50;
-  color: white;
+.sjekk {
+  float: right;
 }
 
-@media screen and (min-width: 480px) {
-  div.gjome {
-    display: none;
-  }
+.Loggin {
+  float: right;
 }
 
-
+.aktiv {
+   background-color: #595959;
+   color: white;
 }
-/* {
-  .navHeaderForsiden .Loggin {
-    float: none;
-  }
-  nav a, .navHeader input[type=text], .navHeader .Loggin button {
-    clear: both;
-    float: none;
-    display: block;
-    text-align: left;
-    width: 100%;
-    margin: 0;
-    padding: 14px;
-  }
-  nav a, .navHeader input[type=password], .navHeader .Loggin button {
-    clear: both;
-    float: none;
-    display: block;
-    text-align: left;
-    width: 100%;
-    margin: 0;
-    padding: 14px;
-  }
-  nav input[type=text] {
-    border: 1px solid #ccc;
-  }
-  nav input[type=password] {
-    border: 1px solid #ccc;
-  }
-.logo-navHeaderForsiden {
+
+nav .ikon {
+   display: none;
+}
+
+.dropdown {
+   float: left;
+   overflow: hidden;
+}
+
+.dropdown .dropbtn {
+   font-size: 17px;
+   border: none;
+   outline: none;
+   color: white;
+   padding: 14px 16px;
+   background-color: inherit;
+   font-family: inherit;
+   margin: 0;
+}
+
+.drop-innhold {
+   display: none;
+   position: absolute;
+   background-color: #f9f9f9;
+   min-width: 160px;
+   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+   z-index: 1;
+}
+
+ .drop-innhold a {
+   float: none;
+   color: black;
+   padding: 12px 16px;
+   text-decoration: none;
+   display: block;
+   text-align: left;
+ }
+
+ .topnav a:hover, .dropdown:hover .dropbtn {
+   background-color: #LightGray;
+   color: white;
+ }
+
+ .drop-innhold a:hover {
+   background-color: #LightGray;
+   color: black;
+ }
+
+ button:hover {
+   background-color: #LightGray;
+   color: white;
+ }
+
+
+ .dropdown:hover .drop-innhold {
+   display: block;
+ }
+
+ @media screen and (max-width: 768px) {
+   .topnav a:not(:first-child), .dropdown .dropbtn {
+     display: none;
+   }
+   .topnav a.ikon {
+     float: right;
+     display: block;
+   }
+
+nav .logginPassord, nav .logginBruker {
+  float: none;
   display: block;
-  margin-left: 38%;
+  text-align: left;
+  width: 100%;
+  width: 100vw;
+  margin: 0;
+  padding: 14px;
+  border: 1px solid #ccc;
+  }
 }
-*/
-}
+
+@media screen and (max-width: 768px) {
+   .topnav.responsiv {position: relative;}
+   .topnav.responsiv .ikon {
+     position: absolute;
+     right: 0;
+     top: 0;
+   }
+   .topnav.responsiv a {
+     float: none;
+     display: block;
+     text-align: left;
+   }
+   .topnav.responsiv .dropdown {float: none;}
+   .topnav.responsiv .drop-innhold {position: relative;}
+   .topnav.responsiv .dropdown .dropbtn {
+     display: block;
+     width: 100%;
+     text-align: left;
+   }
+   nav a {
+     display: none;
+   }
+ }
+
+ @media screen and (min-width: 768px) {
+   .dropdown {
+     display: none;
+   }
+ }
+
+
 /*Min side*/
 
 .error {
