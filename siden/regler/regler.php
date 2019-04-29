@@ -1,3 +1,6 @@
+<?php
+  include_once('../includes/ikke_logget_inn.inc.php');
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -13,7 +16,6 @@
 <body>
 <?php
   include_once('../includes/header_innlogget.php');
-  include_once('../includes/ikke_logget_inn.inc.php');
 ?>
 
 <?php 
