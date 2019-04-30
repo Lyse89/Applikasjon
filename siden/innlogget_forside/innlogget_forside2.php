@@ -120,8 +120,8 @@ body {
 
                 $beskrivelse = substr($row['beskrivelse'], 0, 120);
                 echo '<div>';
-                    echo '<h3>', $row['tittel'],'</h3>';
-                    echo '<p>'.$beskrivelse.'</p>';
+                echo '<a href=\'../nyheter/nyhet.php?id='. $row['nyhetsid'] . '\'' .'><h3>', $row['tittel'],'</h3></a>';
+                echo '<p>'.$beskrivelse.'</p>';
                 echo '</div>';
             }
         }
@@ -131,7 +131,7 @@ body {
 
 
 <div class="center">
-<h2>Events</h2>
+<h2>Arrangement</h2>
 <div class="flex-container">
     <?php
 
@@ -142,9 +142,10 @@ body {
 
                 $beskrivelse = substr($row['Beskrivelse'], 0, 120);
                 echo '<div>';
-                    echo '<h3>', $row['tittel'],'</h3>';
-                    echo '<img src="something.png" style="width:100%;">';
-                    echo '<p>'.$beskrivelse.'</p>';
+                echo '<a href=\'../sosialt/arrangement.php?id='. $row['arrangementId'] . '\'' .'><h3>', $row['tittel'],'</h3></a>';
+
+                echo '<img src="something.png" style="width:100%;">';
+                echo '<p>'.$beskrivelse.'</p>';
                 echo '</div>';
             }
         }
@@ -164,8 +165,8 @@ body {
 
                 $beskrivelse = substr($row['beskrivelse'], 0, 120);
                 echo '<div>';
-                    echo '<h3>', $row['tittel'],'</h3>';
-                    echo '<p>'.$beskrivelse.'</p>';
+                echo '<a href=\'../jobber/jobbannonse.php?id='. $row['annonseid'] . '\'' .'><h3>', $row['tittel'],'</h3></a>';
+                echo '<p>'.$beskrivelse.'</p>';
                 echo '</div>';
             }
         }

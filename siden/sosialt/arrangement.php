@@ -1,5 +1,20 @@
 <?php 
 include_once('../includes/ikke_logget_inn.inc.php');
+
+if(isset($_GET['id'])) {
+	$id = $_GET['id'];
+} else {
+    header("Location:../404.php");
+}
+
+include('../includes/logg_inn_db.inc.php');
+
+// Sjekk for om eventen finnes her ----------------------------------------------------------
+
+
+    //header("Location:../404.php");
+// ------------------------------------------------------------------------------------------
+
 ?>
 <!-- Denne include-siden er utviklet av Kristoffer Sorensen, siste gang endret 08.03.2019
 // Denne include-siden er kontrollert av Kristoffer Sorensen, siste gang 08.03.2019-->
