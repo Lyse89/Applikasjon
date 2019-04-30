@@ -13,6 +13,7 @@ include('../includes/logg_inn_db.inc.php');
 <title>USN-Alumni</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="../css/style.css">
+<link rel="stylesheet" type="text/css" href="../css/generell.css">
 <meta charset="utf-8">
 
 <style>
@@ -20,6 +21,7 @@ body {
     font-family:arial;
     background-color:#ddd;
 }
+
 
 /* Endre navnet paa center */
 .center {
@@ -120,7 +122,7 @@ body {
 
                 $beskrivelse = substr($row['beskrivelse'], 0, 120);
                 echo '<div>';
-                echo '<a href=\'../nyheter/nyhet.php?id='. $row['nyhetsid'] . '\'' .'><h3>', $row['tittel'],'</h3></a>';
+                echo '<a class=\'headerlink\' href=\'../nyheter/nyhet.php?id='. $row['nyhetsid'] . '\'' .'><h3>', $row['tittel'],'</h3></a>';
                 echo '<p>'.$beskrivelse.'</p>';
                 echo '</div>';
             }
@@ -142,7 +144,7 @@ body {
 
                 $beskrivelse = substr($row['Beskrivelse'], 0, 120);
                 echo '<div>';
-                echo '<a href=\'../sosialt/arrangement.php?id='. $row['arrangementId'] . '\'' .'><h3>', $row['tittel'],'</h3></a>';
+                echo '<a class=\'headerlink\' href=\'../sosialt/arrangement.php?id='. $row['arrangementId'] . '\'' .'><h3>', $row['tittel'],'</h3></a>';
 
                 echo '<img src="something.png" style="width:100%;">';
                 echo '<p>'.$beskrivelse.'</p>';
@@ -165,7 +167,7 @@ body {
 
                 $beskrivelse = substr($row['beskrivelse'], 0, 120);
                 echo '<div>';
-                echo '<a href=\'../jobber/jobbannonse.php?id='. $row['annonseid'] . '\'' .'><h3>', $row['tittel'],'</h3></a>';
+                echo '<a class=\'headerlink\' href=\'../jobber/jobbannonse.php?id='. $row['annonseid'] . '\'' .'><h3>', $row['tittel'],'</h3></a>';
                 echo '<p>'.$beskrivelse.'</p>';
                 echo '</div>';
             }
