@@ -1,23 +1,11 @@
-<?php
-    include_once('../includes/ikke_logget_inn.inc.php');
-?>
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html>
+<head>
+<title>Meldinger</title>
 <link rel="stylesheet" type="text/css" href="../css/style.css">
-  <head>
     <meta charset="utf-8">
-    <title>Meldinger</title>
     <style>
-    form {
-      margin: 5px 5px 30px 20px;
-    }
-
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #ddd;
-    }
-
+      
     .center {
         box-shadow: 10px 10px 8px #c0c0c0;
         margin: 0 5% 50px 5%;
@@ -70,6 +58,7 @@
 
     </style>
     <?php
+    include_once('../includes/ikke_logget_inn.inc.php');
     include_once('../includes/header_innlogget.php');
     ?>
   </head>
