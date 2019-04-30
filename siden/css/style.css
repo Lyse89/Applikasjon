@@ -4,6 +4,7 @@ Denne include-siden er kontrollert av Simen A. Lyse, siste gang 24.05.2019
 */
 body {
      margin:0;
+     padding: 0;
      font-family: arial;
  }
 
@@ -221,6 +222,10 @@ nav .logginPassord, nav .logginBruker {
      position: absolute;
      right: 0;
      top: 0;
+   }
+
+   .dropdown {
+     display: none;
    }
    .topnav.responsiv a {
      float: none;

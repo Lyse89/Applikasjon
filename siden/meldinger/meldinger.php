@@ -12,12 +12,6 @@
       margin: 5px 5px 30px 20px;
     }
 
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #ddd;
-    }
-
     .center {
         box-shadow: 10px 10px 8px #c0c0c0;
         margin: 0 5% 50px 5%;
