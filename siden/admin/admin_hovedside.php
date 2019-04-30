@@ -97,7 +97,7 @@ include_once('../includes/ikke_logget_inn.inc.php');
                                 <option value="Bruker">Bruker</option>
                                 <option value="Avregistrert">Avregistrert</option>
                             </select>
-                            <br>
+
                 <input type="submit" name="btnGiRolle" value="Gi Rolle" id="GiRolleButton">
             </form>
         </div>
