@@ -20,7 +20,7 @@
   ?>
       <a href="../admin/admin_hovedside.php">Admin</a>
         <style>
-            nav{
+            .topnav{
                 background-color: red;
             }
         </style>
