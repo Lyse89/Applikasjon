@@ -5,7 +5,7 @@
 <link rel="stylesheet" type="text/css" href="../css/style.css">
     <meta charset="utf-8">
     <style>
-      
+
     .center {
         box-shadow: 10px 10px 8px #c0c0c0;
         margin: 0 5% 50px 5%;
@@ -60,6 +60,7 @@
     <?php
     include_once('../includes/ikke_logget_inn.inc.php');
     include_once('../includes/header_innlogget.php');
+    include_once('../includes/rollesjekk.inc.php');
     ?>
   </head>
   <body>

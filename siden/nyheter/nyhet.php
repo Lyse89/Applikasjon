@@ -2,6 +2,7 @@
 //Denne include-siden er utviklet av Kristoffer Sorensen, siste gang endret 30.04.2019
 // Denne include-siden er kontrollert av Kristoffer Sorensen, siste gang 30.04.2019
 include_once('../includes/ikke_logget_inn.inc.php');
+include_once('../includes/rollesjekk.inc.php');
 ?>
 
 <!DOCTYPE html>

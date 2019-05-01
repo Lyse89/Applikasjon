@@ -1,5 +1,6 @@
 <?php
     include_once('../includes/ikke_logget_inn.inc.php');
+    include_once('../includes/rollesjekk.inc.php');
 ?>
 <!DOCTYPE html>
 <!-- Denne include-siden er utviklet av Simen A. Lyse , siste gang endret 14.12.2018

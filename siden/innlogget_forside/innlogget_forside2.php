@@ -103,6 +103,7 @@ body {
 
   <?php
   include('../includes/header_innlogget.php');
+  include_once('../includes/rollesjekk.inc.php');
   ?>
 <div class ="topp-nyhets-boks">
 	<h1>Lorem Ipsum</h1>

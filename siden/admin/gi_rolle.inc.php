@@ -3,6 +3,7 @@
 include_once("../includes/init.php");
 include_once('../includes/header_innlogget.php');
 include_once('../includes/ikke_logget_inn.inc.php');
+include_once('../includes/rollesjekk.inc.php');
 
 
 $db = new PDO($dsn,$dbBrukernavn,$dbPassord);
