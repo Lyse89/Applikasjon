@@ -24,8 +24,6 @@ if ($_SESSION['rolle'] == "Karantene"){
             echo $row['startTid'],'<br>';
             echo("Slutt tid: ");
             echo $row['sluttTid'],'<br><br>';
-            echo($row['sluttTid']);
-            echo($date);
     }
 }
 

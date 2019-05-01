@@ -1,6 +1,6 @@
-<?php 
+<?php
 include_once('../includes/ikke_logget_inn.inc.php');
-
+include_once('../includes/rollesjekk.inc.php');
 if(isset($_GET['id'])) {
 	$id = $_GET['id'];
 } else {
