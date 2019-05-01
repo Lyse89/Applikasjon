@@ -36,7 +36,7 @@ body {
 }
 
 .center h2 {
-    font-size: 40px;
+    font-size: 35px;
     margin-bottom: 7px;
     padding: 0 0 0 20px;
 }
@@ -44,7 +44,7 @@ body {
 
 .flex-container {
     width:100%;
-    margin: 30px 0 0 0;
+    margin: 20px 0 0 0;
     padding-bottom: 25px;
     display: flex;
     flex-wrap: wrap;
