@@ -73,18 +73,20 @@ CREATE TABLE token (
     CONSTRAINT tokenbruker FOREIGN KEY (brukerNavn) REFERENCES bruker (brukerNavn)
 );
 
-/*
+
 CREATE TABLE meldinger (
+	meldingID INT(10) NOT NULL AUTO_INCREMENT,
 	avsender VARCHAR(45),
     mottaker VARCHAR(45),
     tittel VARCHAR(120),
     sendtTid DATETIME,
     melding VARCHAR(255),
-    CONSTRAINT meldingerPK PRIMARY KEY (avsender, mottaker, sendtTid),
+    CONSTRAINT meldingerPK PRIMARY KEY (meldingID),
     CONSTRAINT meldingerBrukerFK FOREIGN KEY (avsender) REFERENCES bruker (brukerNavn),
     CONSTRAINT meldingerBrukerFK2 FOREIGN KEY (mottaker) REFERENCES bruker (brukerNavn)
 );
-*/
+
+
 -- For arrangement
 CREATE TABLE arrangement (
     arrangementId INT(5),

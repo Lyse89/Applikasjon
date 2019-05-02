@@ -12,7 +12,7 @@
   <a href="../nyheter/nyheter.php">IT nyheter</a>
   <a href="../personer/personer.php">Søk Interesser</a>
   <a href="../min_profil/min_profil.php">Min Profil</a>
-  <a href="../meldinger/meldinger.php">Meldinger</a>
+  <a href="../meldinger/melding.php">Meldinger</a>
   <a href="../brukerInstillinger/profil.php">Instillinger</a>
   <?php
     include("settrolle.inc.php");
@@ -39,7 +39,7 @@
       <a href="../nyheter/nyheter.php">IT nyheter</a>
       <a href="../personer/personer.php">Søk Interesser</a>
       <a href="../min_profil/min_profil.php">Min Profil</a>
-      <a href="../meldinger/meldinger.php">Meldinger</a>
+      <a href="../meldinger/melding.php">Meldinger</a>
       <a href="../brukerInstillinger/profil.php">Instillinger</a>
     </div>
   </div>
