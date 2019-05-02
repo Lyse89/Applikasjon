@@ -87,7 +87,7 @@
             while ($row = $stmt->fetch()){
 
                 echo '<div class="arrangementListeBoks" >';
-                    echo '<h2><a href="arrangement.php">', $row['tittel'],'</a></h2>';
+                    echo '<h2><a href="arrangement.php?id=' . $row['arrangementId'] .'">', $row['tittel'],'</a></h2>';
                     echo '<p>Dato : ', $row['startTid'], '</p>';
                     echo '<p>Sted : ', $row['lokasjon'], '</p>';
                 echo '</div>';

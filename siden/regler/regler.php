@@ -1,3 +1,6 @@
+<?php
+  include_once('../includes/ikke_logget_inn.inc.php');
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -13,10 +16,9 @@
 <body>
 <?php
   include_once('../includes/header_innlogget.php');
-  include_once('../includes/ikke_logget_inn.inc.php');
 ?>
 
-<?php 
+<?php
 include_once("../includes/init.php");
 $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
 $stmt = $db->query("SELECT * FROM regler");
@@ -24,7 +26,7 @@ $stmt = $db->query("SELECT * FROM regler");
 $stmt->rowCount();
     echo "<table width=100%>";
     echo "<h2> Regler: </h2>";
-   
+
 
     while ($row = $stmt->fetch())
     {

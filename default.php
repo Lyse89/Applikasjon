@@ -34,7 +34,7 @@
     <div id="DefaultBoxes">
         <div class="Box"> <!-- Alumni Overskrift (Venstre) -->
             <h1 style="font-size: 50px;">Alumni</h1>
-            <p>USN Ringerike IT</p>
+            <p>Et nettverk for samarbeid og kunnskapsdeling mellom nåværende og tidligere studenter innen IT på usn. Deling av informasjon relatert til arrangementer, jobb og generelt nytt om hva som skjer på campus.</p>
         </div>
         <div class="Box1"> <!-- Registrerings box -->
             <h2>Opprett en ny konto</h2>

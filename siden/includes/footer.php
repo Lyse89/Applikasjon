@@ -5,7 +5,7 @@
 
 <style>
 footer {
-	margin: 50px 0 0 0;
+	margin: 100px 0 0 0;
 	float: left;
 	height: 200px;
 	width: 100%;

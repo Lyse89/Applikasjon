@@ -117,6 +117,7 @@ include_once('../includes/init.php')
 <body>
     <?php
     include_once('../includes/header_innlogget.php');
+    include_once('../includes/rollesjekk.inc.php');
     ?>
 
     <article id="MinProfil">

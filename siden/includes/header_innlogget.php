@@ -6,7 +6,7 @@
 
 <nav class="topnav" id="minTopnav">
   <form action="../includes/loggut.inc.php" method="POST">
-  <a href="#home" class="aktiv">USN</a>
+  <a href="../innlogget_forside/innlogget_forside2.php" class="aktiv">USN</a>
   <a href="../anonser/anonser.php">Annonser</a>
   <a href="../sosialt/sosialt.php">Eventer</a>
   <a href="../nyheter/nyheter.php">IT nyheter</a>
@@ -20,7 +20,7 @@
   ?>
       <a href="../admin/admin_hovedside.php">Admin</a>
         <style>
-            nav{
+            .topnav{
                 background-color: red;
             }
         </style>

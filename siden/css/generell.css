@@ -1,0 +1,24 @@
+/*
+ * Denne filen er utviklet av Kristoffer sorensen, siste gang endret 30.04.2019
+ * Denne er kontrollert av __ 30.04.2019
+*/
+
+/*
+ * Generell css som gjelder for alle filer
+ */
+
+    /* Linker ---------------------------------------- */
+
+.headerlink:visited, :link {
+	color: black;
+	background-color: transparent;
+	text-decoration: none;
+}
+
+
+.headerlink:hover {
+	color: red;
+	background-color: transparent;
+	text-decoration: none;
+}
+

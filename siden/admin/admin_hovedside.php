@@ -3,6 +3,7 @@
 // Denne include-siden er kontrollert av Simen A. Lyse, siste gang 14.12.2018
 include('../includes/ikke_logget_inn.inc.php');
 include('../includes/adminsjekk.inc.php');
+include_once('../includes/rollesjekk.inc.php');
 ?>
 
 <!DOCTYPE html>
@@ -97,7 +98,7 @@ include_once('../includes/ikke_logget_inn.inc.php');
                                 <option value="Bruker">Bruker</option>
                                 <option value="Avregistrert">Avregistrert</option>
                             </select>
-                            <br>
+
                 <input type="submit" name="btnGiRolle" value="Gi Rolle" id="GiRolleButton">
             </form>
         </div>

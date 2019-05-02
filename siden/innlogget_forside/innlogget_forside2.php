@@ -4,8 +4,8 @@
 //
 //CSS'en skal senere flyttes ut av denne filen
 include('../includes/ikke_logget_inn.inc.php');
-include_once('../includes/init.php');
-$db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
+include('../includes/logg_inn_db.inc.php');
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,6 +13,7 @@ $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
 <title>USN-Alumni</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="../css/style.css">
+<link rel="stylesheet" type="text/css" href="../css/generell.css">
 <meta charset="utf-8">
 
 <style>
@@ -21,10 +22,11 @@ body {
     background-color:#ddd;
 }
 
+
 /* Endre navnet paa center */
 .center {
     box-shadow: 10px 10px 8px #c0c0c0;
-    margin: 0 5% 50px 5%;
+    margin: 50px 5% 0 5%;
     padding: 0 2% 0 2%;
     width: 86%;
     /*max-width: 1230px;*/
@@ -34,7 +36,7 @@ body {
 }
 
 .center h2 {
-    font-size: 40px;
+    font-size: 35px;
     margin-bottom: 7px;
     padding: 0 0 0 20px;
 }
@@ -42,7 +44,7 @@ body {
 
 .flex-container {
     width:100%;
-    margin: 30px 0 0 0;
+    margin: 20px 0 0 0;
     padding-bottom: 25px;
     display: flex;
     flex-wrap: wrap;
@@ -71,14 +73,15 @@ body {
     border-bottom: solid #9985ad 20px;
 	/* #666699 #6699cc #9985ad   */
     background-color: white;
-    height: 300px;
+    min-height: 250px;
     width: 100%;
-    margin: 0 0 50px 0;
+    margin: 0;
+    overflow: auto;
 }
 .topp-nyhets-boks h1{
 	padding: 50px 0 0 0;
 	margin: 0px 0px 0px 30% ;
-	font-size: 45px;
+	font-size: 25px;
 }
 .topp-nyhets-boks p{
 	line-height:1.5;
@@ -86,14 +89,14 @@ body {
 	margin: 0px 0px 0px 31% ;
 
 }
-/*footer {
-	margin: 50px 0 0 0;
-	float: left;
-	height: 300px;
-	width: 100%;
-	background-color: #aaaaaa;
-*/
+
+/* Brukt for aa fjerne global-meldingsboks
+ */
+.topp-nyhets-boks {
+    display: none;
+    visibility: hidden;
 }
+
 </style>
 </head>
 
@@ -101,13 +104,13 @@ body {
 
   <?php
   include('../includes/header_innlogget.php');
+  include_once('../includes/rollesjekk.inc.php');
   ?>
-<div class ="topp-nyhets-boks">
-	<h1>Lorem Ipsum</h1>
+<section class ="topp-nyhets-boks">
+	<h1>Global melding</h1>
 	<p>Et quia saepe et rerum hic suscipit. Sequi eligendi consequuntur delectus. <br>In ipsum praesentium est voluptas laudantium quo. Quisquam et enim<br> aspernatur fuga ea error. Est error enim eos mollitia voluptas et est exercitationem.<br>Sequi est quo nulla qui ipsam fuga magnam.</p>
-</div>
+</section>
 
-<!-- Denne delen vil senere erstattes med data hentet fra db'en -->
 <div class="center">
 <h2>Nyheter</h2>
 <div class="flex-container">
@@ -120,8 +123,8 @@ body {
 
                 $beskrivelse = substr($row['beskrivelse'], 0, 120);
                 echo '<div>';
-                    echo '<h3>', $row['tittel'],'</h3>';
-                    echo '<p>'.$beskrivelse.'</p>';
+                echo '<a class=\'headerlink\' href=\'../nyheter/nyhet.php?id='. $row['nyhetsid'] . '\'' .'><h3>', $row['tittel'],'</h3></a>';
+                echo '<p>'.$beskrivelse.'</p>';
                 echo '</div>';
             }
         }
@@ -131,7 +134,7 @@ body {
 
 
 <div class="center">
-<h2>Events</h2>
+<h2>Arrangement</h2>
 <div class="flex-container">
     <?php
 
@@ -142,9 +145,10 @@ body {
 
                 $beskrivelse = substr($row['Beskrivelse'], 0, 120);
                 echo '<div>';
-                    echo '<h3>', $row['tittel'],'</h3>';
-                    echo '<img src="something.png" style="width:100%;">';
-                    echo '<p>'.$beskrivelse.'</p>';
+                echo '<a class=\'headerlink\' href=\'../sosialt/arrangement.php?id='. $row['arrangementId'] . '\'' .'><h3>', $row['tittel'],'</h3></a>';
+
+                echo '<img src="something.png" style="width:100%;">';
+                echo '<p>'.$beskrivelse.'</p>';
                 echo '</div>';
             }
         }
@@ -164,8 +168,8 @@ body {
 
                 $beskrivelse = substr($row['beskrivelse'], 0, 120);
                 echo '<div>';
-                    echo '<h3>', $row['tittel'],'</h3>';
-                    echo '<p>'.$beskrivelse.'</p>';
+                echo '<a class=\'headerlink\' href=\'../jobber/jobbannonse.php?id='. $row['annonseid'] . '\'' .'><h3>', $row['tittel'],'</h3></a>';
+                echo '<p>'.$beskrivelse.'</p>';
                 echo '</div>';
             }
         }

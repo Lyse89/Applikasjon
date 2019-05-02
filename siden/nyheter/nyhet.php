@@ -68,7 +68,7 @@ include_once('../includes/header_innlogget.php');
 ?>
 
 <div class="center">
-    <h1>Alle nyheter</h1>
+    <h1>Nyhet-tittel</h1>
     <div class="flex-container">
 
     </div>

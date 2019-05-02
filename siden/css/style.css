@@ -2,8 +2,11 @@
 Denne include-siden er utviklet av Simen A. Lyse , siste gang endret 24.05.2019
 Denne include-siden er kontrollert av Simen A. Lyse, siste gang 24.05.2019
 */
+.topnav {background-color: darkgrey;}
+
 body {
-     margin:0;
+     margin: 0px;
+     padding: 0px;
      font-family: arial;
  }
 
@@ -14,8 +17,8 @@ body {
      background-color: white;
  }
 
- /* Tittel */
- #DefaultBoxes .Box{
+/* Tittel */
+#DefaultBoxes .Box{
      margin-top: 6%;
      float:left;
      text-align: center;
@@ -25,8 +28,12 @@ body {
      margin-right: 5%;
      margin-top: 7%;
      border-radius: 5px;
- }
+}
 
+.Box p {
+    padding: 0 30px 50px 30px;
+    
+}
  /* registreringsboks */
  #DefaultBoxes .Box1{
      border-radius: 5px;
@@ -42,10 +49,10 @@ body {
  }
 
  /* Register form */
- .Box1 input[type=password], input[type=email], input[type=date], input[type=text]{
+ input[type=password], input[type=email], input[type=date], input[type=text], select{
      width: 70%;
      padding: 10px;
-     margin: 5px 0px 22px 22px;
+     margin: 5px 0px 10px 0px;
      display: inline-block;
      border: none;
      background: #f1f1f1;
@@ -221,6 +228,10 @@ nav .logginPassord, nav .logginBruker {
      position: absolute;
      right: 0;
      top: 0;
+   }
+
+   .dropdown {
+     display: none;
    }
    .topnav.responsiv a {
      float: none;

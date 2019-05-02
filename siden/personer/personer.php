@@ -85,6 +85,7 @@
     <?php
     include_once("../includes/init.php");
     include_once('../includes/header_innlogget.php');
+    include_once('../includes/rollesjekk.inc.php');
     ?>
         <h1> Top 10 Interesser </h1>
     <div class = "top10interesser">
