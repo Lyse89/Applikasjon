@@ -128,11 +128,11 @@ include_once('../includes/init.php')
 
         if($stmt->rowCount()){
             while ($row = $stmt->fetch()){
-                echo "<h1>{$row['fornavn']} {$row['etternavn']}</h1>";
+                echo "<h1>{$row['fornavn']} {$row['etternavn']} <a href='../brukerInstillinger/profil.php'><img src='../img/settings.png' width='18px' height='18px'></a></h1>";
             }
         }
-
         ?>
+
         <section class="Profilbilde">
             <br>
             <img src="../profil/Profilbilde/profilbilde.png" style="width:250px;height:250px;">

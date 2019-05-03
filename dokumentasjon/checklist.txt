@@ -60,7 +60,7 @@ DEL 5
     [ ] Legge til regler som admin, på regel siden
     [ ] Lagge en rapport funksjon for brukere
     [x] Admin skal kunne gi advarsel
-    [semi x] Sette brukere i karantene/utestenge (Kan gi rolle som admin, men trenger funksjon for at brukere ikke kan logge seg inn)
+    [x] Sette brukere i karantene/utestenge (Kan gi rolle som admin, men trenger funksjon for at brukere ikke kan logge seg inn)
     [semi x] Avregistrering av brukeer (set rollen til avregistreret)Kan gi rolle som admin, men trenger funksjon for at brukere ikke kan logge seg inn
     [x] Side med oversikt over antall anmerkninger
     [ ] Ta ut en begrenset rapport om misbrukt eller ekslusjon
@@ -69,7 +69,7 @@ DEL 5
 	til administrator. Denne meldingen vil være en automatisert rapport til administrator om misbruk.
     [x] En administrator skal kunne kvalifisere en annen bruker som administrator også
     [ ] Melding til administrator skal gå til alle administratorer.
-    [ ] Dersom administrator har gitt en advarsel, en karantene eller en eksklusjon, så 
+    [x] Dersom administrator har gitt en advarsel, en karantene eller en eksklusjon, så 
 	skal det registreres i databasen hvilken administrator som har gjort dette. 
 
     [ ] Lag SQL tabeller for Nyheter og Events

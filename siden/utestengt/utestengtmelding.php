@@ -26,7 +26,6 @@ if ($_SESSION['rolle'] == "Karantene"){
             echo $row['sluttTid'],'<br><br>';
     }
 }
-
 ?>
 
 <form action="../includes/loggut.inc.php" method="POST">
