@@ -139,17 +139,17 @@ include_once('../includes/header_innlogget.php');
     <div class="flex-container">
 
         <div class="instillinger-boks">
-              <form class="byttePO" action="/bytt_passord.inc.php" method="POST">
+              <form class="byttePO" action="../brukerInstillinger/bytt_passord.inc.php" method="POST">
                 <h2 id="byttePass">Bytte Passord</h2>
-                  <input type="password" name="gamlePO" id=gamlePO placeholder="Gamle Passordet"><br>
-                  <input type="password" name="nyePO" id=nyePO placeholder="Nye Passordet"><br>
-                  <input type="password" name="nyePO_sjekk" placeholder="Gjenta ny Passordet"><br>
+                <input type="password" name="gammeltPassord" id=gamlePO placeholder="Gamle Passordet"><br>
+                <input type="password" name="nyttPassord" id="nyttPassord"  placeholder="Nye Passordet"><br>
+                <input type="password" name="nyttPassordGjenta" id="nyttPassordGjenta" placeholder="Gjenta ny Passordet"><br>
                   <input type="submit" name="submitByttePO" id="byttePO" value="Bytt Passord">
                 </form>
         </div>
 
         <div class="instillinger-boks">
-              <form class="BytteEpost" action="/bytteEpost.inc.php" method="POST">
+              <form class="BytteEpost" action="../brukerInstillinger/bytteEpost.inc.php" method="POST">
                   <h2 id="bytteEpost">Bytte E-post</h2>
                 <input type="email" name="epost" placeholder="Skriv nye Epost"><br>
                 <input type="password" name="passord" placeholder="Passord"><br>
@@ -158,5 +158,21 @@ include_once('../includes/header_innlogget.php');
         </div>
     </div>
 </div>
+<script type="text/javascript">
+	var nyttPassord = document.getElementById("nyttPassord");
+	var nyttPassordGjenta = document.getElementById("nyttPassordGjenta");
+
+	function validerPassord(){
+	  if(nyttPassord.value != nyttPassordGjenta.value) {
+		nyttPassordGjenta.setCustomValidity("Passordene samsvarer ikke");
+	  } else {
+		nyttPassordGjenta.setCustomValidity('');
+	  }
+	}
+
+	//
+	nyttPassord.onchange = validerPassord;
+	nyttPassordGjenta.onkeyup = validerPassord;
+</script>
 </body>
 </html>
