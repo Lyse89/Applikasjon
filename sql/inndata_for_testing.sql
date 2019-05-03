@@ -81,10 +81,21 @@ CREATE TABLE jobbAnnonse (
     lagtTil DATETIME,
     CONSTRAINT jobbAnnonsePK PRIMARY KEY(annonseid)
 );
+update karantene
+set sluttTid = now()
+where brukerNavn = 'w';
 
-UPDATE karantene
-SET sluttTid = now()
-where brukerNavn = "w";
+
+SELECT * FROM bruker
+WHERE fornavn and etternavn LIKE 'william rastad';
+
+SELECT * FROM bruker
+WHERE CONCAT(fornavn,' ', etternavn) LIKE 'William Rastad';
+
+update bruker
+set rolle = "Admin"
+where brukerNavn = 'q';
+
 select * from arrangement;
 select * from bruker;
 select * from utestengt;
