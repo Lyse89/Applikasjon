@@ -1,4 +1,6 @@
 <?php
+// Denne include-siden er kontrollert av William Rastad, siste gang 05.03.2019 -->
+// Denne include-siden er utviklet av William Rastad , siste gang endret 05.03.2019
 include_once('../includes/ikke_logget_inn.inc.php');
 include_once('../includes/rollesjekk.inc.php');
 include_once("../includes/init.php");
