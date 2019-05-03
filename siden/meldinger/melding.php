@@ -34,6 +34,8 @@ include_once('../includes/header_innlogget.php');
 </form>
 
 
+
+
 <!-- Footer -->
 <footer class ="footer"></footer>
 
