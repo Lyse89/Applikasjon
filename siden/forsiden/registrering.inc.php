@@ -31,7 +31,6 @@ if(isset($_POST['btnSignup_form'])) {
 
     // Sjekk for om registrering er vellykket
 
-    mkdir("../brukere/$bbrukernavn", 0700);
     $stmt->execute();
 
 

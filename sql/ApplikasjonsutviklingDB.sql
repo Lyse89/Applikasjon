@@ -86,6 +86,14 @@ CREATE TABLE meldinger (
     CONSTRAINT meldingerBrukerFK2 FOREIGN KEY (mottaker) REFERENCES bruker (brukerNavn)
 );
 
+CREATE TABLE innutboks (
+	meldingID INT(10),
+	bruker VARCHAR(45),
+    innut VARCHAR(3),
+	CONSTRAINT innutboks PRIMARY KEY (meldingID, bruker),
+    CONSTRAINT innutboksFK FOREIGN KEY (meldingID) REFERENCES meldinger (meldingID),
+    CONSTRAINT innutboksFK2 FOREIGN KEY (bruker) REFERENCES bruker (brukerNavn)
+);
 
 -- For arrangement
 CREATE TABLE arrangement (
