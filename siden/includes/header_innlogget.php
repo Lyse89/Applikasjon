@@ -25,7 +25,6 @@
                 float:right;
                 color:blue;
                 border-right: solid;
-                border-left: solid;
                 margin-right: 5px;
             }
 
@@ -33,6 +32,12 @@
                 color:darkblue;
                 border-color: darkblue;
 
+            }
+            @media screen and (max-width: 768px) {
+                #Adminknappheader{
+                    float:left;
+                    border: none;
+                }
             }
         </style>
       <?php
