@@ -165,7 +165,7 @@
         $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
         $søkord = $_POST['brukernavn'];
         $stmt = $db->query("SELECT * FROM bruker
-        WHERE fornavn LIKE '%$søkord%' OR etternavn LIKE '%$søkord%'");
+        WHERE fornavn LIKE '%$søkord%' OR etternavn LIKE '%$søkord%' OR CONCAT(fornavn,' ', etternavn) LIKE '%$søkord%'");
 
         if (!$søkord){
             echo "<div id='errormsg'>Skriv inn et fornavn</div>";

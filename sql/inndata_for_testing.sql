@@ -81,10 +81,21 @@ CREATE TABLE jobbAnnonse (
     lagtTil DATETIME,
     CONSTRAINT jobbAnnonsePK PRIMARY KEY(annonseid)
 );
+update karantene
+set sluttTid = now()
+where brukerNavn = 'w';
 
-UPDATE karantene
-SET sluttTid = now()
-where brukerNavn = "w";
+
+SELECT * FROM bruker
+WHERE fornavn and etternavn LIKE 'william rastad';
+
+SELECT * FROM bruker
+WHERE CONCAT(fornavn,' ', etternavn) LIKE 'William Rastad';
+
+update bruker
+set rolle = "Admin"
+where brukerNavn = 'q';
+
 select * from arrangement;
 select * from bruker;
 select * from utestengt;
@@ -100,8 +111,6 @@ INSERT INTO karantene (brukerNavn, startTid, sluttTid) VALUES
 ('q', now(), now() + INTERVAL 1 DAY),
 ('q', now(), now() + INTERVAL 1 WEEK),
 ('q', now(), now() + INTERVAL 1 MONTH);
-
-UPDATE bruker SET bruker.rolle = 'Admin' WHERE bruker.brukerNavn = 'q'
 
 insert into regler values(1, 'Man skal ikke plage andre');
 insert into regler values(2, 'Man skal være grei og snil');

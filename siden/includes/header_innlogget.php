@@ -10,24 +10,34 @@
   <a href="../anonser/anonser.php">Annonser</a>
   <a href="../sosialt/sosialt.php">Eventer</a>
   <a href="../nyheter/nyheter.php">IT nyheter</a>
-  <a href="../personer/personer.php">Søk Interesser</a>
+  <a href="../personer/personer.php">Søk</a>
   <a href="../min_profil/min_profil.php">Min Profil</a>
   <a href="../meldinger/melding.php">Meldinger</a>
   <a href="../brukerInstillinger/profil.php">Instillinger</a>
+  <button type="submit" name="submit">Logout</button>
   <?php
     include("settrolle.inc.php");
     if ($_SESSION['rolle'] == "Admin") {
   ?>
-      <a href="../admin/admin_hovedside.php">Admin</a>
+      <a href="../admin/admin_hovedside.php" id="Adminknappheader">Admin</a>
         <style>
-            .topnav{
-                background-color: red;
+            #Adminknappheader{
+                float:right;
+                color:blue;
+                border-right: solid;
+                border-left: solid;
+                margin-right: 5px;
+            }
+
+            #Adminknappheader:hover{
+                color:darkblue;
+                border-color: darkblue;
+
             }
         </style>
       <?php
       };
      ?>
-  <button type="submit" name="submit">Logout</button>
 </form>
   <div class="dropdown">
     <button class="dropbtn">Meny
