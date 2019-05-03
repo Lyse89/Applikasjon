@@ -79,31 +79,43 @@ include('../includes/logg_inn_db.inc.php');
 <body>
     <?php
     include_once('../includes/header_innlogget.php');
+
+    $stmt = $db->query('SELECT * FROM arrangement WHERE arrangementid =\''. $id . '\';');
+    if($stmt->rowCount()){
+        while ($row = $stmt->fetch()){
+            $beskrivelse = $row['Beskrivelse'];
+            $tittel = $row['tittel'];
+        }
+    }
+
+
     ?>
     <div class="arrangementBoks">
-		<h1>Tittel for arrangement</h1>
+		<h1><?php echo $tittel; ?></h1>
 
 		<div class="arrangementBeskrivelse">
             <img>
 			<h2>Detaljer</h2>
-			<p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-			non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-			</p>
+            <p><?php echo $beskrivelse; ?></p>
 			<input type="button" value="Delta">
 		</div>
 		<div class="arrangementDeltagelse">
 			<h2>Skal</h2>
-			<p>Fornavn Etternavn</p>
-			<p>Fornavn Etternavn</p>
-			<p>Fornavn Etternavn</p>
-			<p>Fornavn Etternavn</p>
+<?php
+    // Finner brukere som er satt til aa delta paa prosjektet
+    $stmt2 = $db->query('select a.*, b.fornavn, b.etternavn from arrangementDeltagelse as a,'.
+						'bruker as b where arrangementId = 11111 and a.deltager = b.brukerNavn;');
+    
+    if($stmt->rowCount()){
+        while ($row2 = $stmt2->fetch()){
+			$fornavn = $row2['fornavn'];
+			$etternavn = $row2['etternavn'];
+			$brukernavn = $row2['deltager'];
 
-
+			echo '<p><a href=\'../min_profil/min_profil.php?id='. $brukernavn . '\'>' . $fornavn . ' ' . $etternavn . '</a></p>';
+        }
+    }
+?>
 		</div>
         <div class = "arrangementInvitasjon">
             <h2>Inviter til arrangementet</h2>

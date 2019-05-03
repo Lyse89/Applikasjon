@@ -101,8 +101,13 @@ INSERT INTO karantene (brukerNavn, startTid, sluttTid) VALUES
 ('q', now(), now() + INTERVAL 1 WEEK),
 ('q', now(), now() + INTERVAL 1 MONTH);
 
-UPDATE bruker SET bruker.rolle = 'Admin' WHERE bruker.brukerNavn = 'q'
+UPDATE bruker SET bruker.rolle = 'Admin' WHERE bruker.brukerNavn = 'q';
 
 insert into regler values(1, 'Man skal ikke plage andre');
 insert into regler values(2, 'Man skal være grei og snil');
 insert into regler values(3, 'for øvrig kan man gjøre hva man vil');
+
+-- arrangementDeltagelse, forutsetter at brukeren q, a, b finnes
+insert into arrangementDeltagelse values(11111, 'q');
+insert into arrangementDeltagelse values(11111, 'a');
+insert into arrangementDeltagelse values(11111, 'b');
