@@ -5,7 +5,7 @@ include_once('../includes/init.php');
 if(isset($_GET['id'])) {
 	$id = $_GET['id'];
 } else {
-    $id = $_SESSION['brukernavn'];
+    header('Location: min_profil.php');
 }
 ?>
 <!DOCTYPE html>

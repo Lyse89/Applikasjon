@@ -1,12 +1,7 @@
 <?php
 include_once('../includes/ikke_logget_inn.inc.php');
 include_once('../includes/init.php');
-
-if(isset($_GET['id'])) {
-	$id = $_GET['id'];
-} else {
-    $id = $_SESSION['brukernavn'];
-}
+$id = $_SESSION['brukernavn'];
 ?>
 <!DOCTYPE html>
 <html>
