@@ -145,7 +145,7 @@ body {
 
                 $beskrivelse = substr($row['Beskrivelse'], 0, 120);
                 echo '<div>';
-                echo '<a class=\'headerlink\' href=\'../sosialt/arrangement.php?id='. $row['arrangementId'] . '\'' .'><h3>', $row['tittel'],'</h3></a>';
+                echo '<a class=\'headerlink\' href=\'../arrangement/arrangement.php?id='. $row['arrangementId'] . '\'' .'><h3>', $row['tittel'],'</h3></a>';
 
                 echo '<img src="something.png" style="width:100%;">';
                 echo '<p>'.$beskrivelse.'</p>';

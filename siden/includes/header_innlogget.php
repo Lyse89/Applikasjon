@@ -8,10 +8,10 @@
   <form action="../includes/loggut.inc.php" method="POST">
   <a href="../innlogget_forside/innlogget_forside2.php" class="aktiv">USN</a>
   <a href="../anonser/anonser.php">Annonser</a>
-  <a href="../sosialt/sosialt.php">Eventer</a>
-  <a href="../nyheter/nyheter.php">IT nyheter</a>
+  <a href="../arrangement/arrangementer.php">Arrangement</a>
+  <a href="../nyheter/nyheter.php">Nyheter</a>
   <a href="../personer/personer.php">Søk</a>
-  <a href="../min_profil/min_profil.php">Min Profil</a>
+  <a href="../profil/min_profil.php">Min Profil</a>
   <a href="../meldinger/melding.php">Meldinger</a>
   <a href="../brukerInstillinger/profil.php">Instillinger</a>
   <button type="submit" name="submit">Logout</button>
@@ -50,10 +50,10 @@
     </button>
     <div class="drop-innhold">
       <a href="../anonser/anonser.php">Annonser</a>
-      <a href="../sosialt/sosialt.php">Eventer</a>
+      <a href="../arrangement/arrangementer.php">Eventer</a>
       <a href="../nyheter/nyheter.php">IT nyheter</a>
       <a href="../personer/personer.php">Søk Interesser</a>
-      <a href="../min_profil/min_profil.php">Min Profil</a>
+      <a href="../profil/min_profil.php">Min Profil</a>
       <a href="../meldinger/melding.php">Meldinger</a>
       <a href="../brukerInstillinger/profil.php">Instillinger</a>
     </div>

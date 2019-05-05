@@ -123,7 +123,7 @@ include('../includes/logg_inn_db.inc.php');
                     $etternavn = $row2['etternavn'];
                     $brukernavn = $row2['deltager'];
 
-                    echo '<p><a href=\'../min_profil/min_profil.php?id='. $brukernavn . '\'>' . $fornavn . ' ' . $etternavn . '</a></p>';
+                    echo '<p><a href=\'../profil/bruker.php?id='. $brukernavn . '\'>' . $fornavn . ' ' . $etternavn . '</a></p>';
                 }
             }
             ?>

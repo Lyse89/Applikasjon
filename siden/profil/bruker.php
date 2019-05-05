@@ -133,7 +133,7 @@ if(isset($_GET['id'])) {
 
         if($stmt->rowCount()){
             while ($row = $stmt->fetch()){
-                echo "<h1>{$row['fornavn']} {$row['etternavn']} <a href='../brukerInstillinger/profil.php'><img src='../img/settings.png' width='18px' height='18px'></a></h1>";
+                echo "<h1>{$row['fornavn']} {$row['etternavn']}</h1>";
             }
         }
         ?>
@@ -216,15 +216,6 @@ if(isset($_GET['id'])) {
             ?>
             </div>
         </section>
-
-        <section class="Leggtilnyinteresse">
-            <h1>Legg til en ny interesse</h1>
-            <form class="presentasjon" action="leggTilInteresse.inc.php" method="POST">
-              <input type="text" name="interesser" id=interesse placeholder="Skriv en Interesse"><br>
-              <input type="submit" name="registrerInt" id="registrerInt" value="Registrer Interesse">
-            </form>
-        </section>
-
         <section class="Events">
             <h1>Events</h1>
         </section>
