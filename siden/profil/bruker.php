@@ -5,7 +5,7 @@ include_once('../includes/init.php');
 if(isset($_GET['id'])) {
 	$id = $_GET['id'];
 } else {
-    header('Location: min_profil.php');
+    header('Location: ../404.php');
 }
 ?>
 <!DOCTYPE html>
