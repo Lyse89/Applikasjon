@@ -2,11 +2,18 @@
 //Denne include-siden er utviklet av Kristoffer Sorensen, siste gang endret 30.04.2019
 // Denne include-siden er kontrollert av Kristoffer Sorensen, siste gang 30.04.2019
 include_once('../includes/ikke_logget_inn.inc.php');
+include('../includes/logg_inn_db.inc.php');
 include_once('../includes/rollesjekk.inc.php');
+
+if(isset($_GET['id'])) {
+	$id = $_GET['id'];
+} else {
+    header("Location:../404.php");
+}
 ?>
 
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" >
 <link rel="stylesheet" type="text/css" href="../css/style.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
   <head>
@@ -64,13 +71,23 @@ include_once('../includes/rollesjekk.inc.php');
 
 <body>
 <?php
-include_once('../includes/header_innlogget.php');
+    include_once('../includes/header_innlogget.php');
 ?>
 
 <div class="center">
-    <h1>Nyhet-tittel</h1>
-    <div class="flex-container">
+<?php
 
-    </div>
+    $stmt = $db->query('SELECT * FROM nyheter WHERE nyhetsid = \''. $id . '\';');
+
+        if($stmt->rowCount()){
+        while ($row = $stmt->fetch()){
+            echo '<h1>' . $row['tittel'] . '</h1>';
+            echo '<div class="flex-container">';
+            echo '<p>' . $row['beskrivelse'] . '</p>';
+            echo '</div>';
+        }
+    }
+?>
+
 </body>
 </html>
