@@ -56,8 +56,16 @@
         width: 260px;
         padding: 30px;
     }
-    .instillinger-boks {
+    .instillinger-boks-bred {
+        width: 520px;
+        padding: 30px;
 
+    }
+    .tekstboks {
+		-webkit-box-sizing:border-box;
+        -moz-box-sizing:border-box;
+        box-sizing:border-box;
+        width: 100%;
     }
 
 </style>
@@ -126,10 +134,10 @@ include_once('../includes/header_innlogget.php');
               </form>
         </div>
 
-        <div class="instillinger-boks">
+        <div class="instillinger-boks-bred">
               <form class="presentasjon" action="presentasjon.inc.php" method="POST">
                 <h2 id="redigerePres">Redigere Presentasjon</h2>
-                    <textarea name="bio" placeholder="Skriv din bio(maks 255 tegn) "rows="6" cols="70" minlength="0" maxlength="255"></textarea><br>
+                    <textarea class="tekstboks" name="bio" placeholder="Skriv din bio(maks 255 tegn) "rows="6" cols="70" minlength="0" maxlength="255"></textarea><br>
                 <input type="submit" name="submitPres" id="skrivPres" value="Redigere">
               </form>
         </div>
