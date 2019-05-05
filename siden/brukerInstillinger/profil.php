@@ -2,8 +2,8 @@
     include_once('../includes/ikke_logget_inn.inc.php');
     include_once('../includes/rollesjekk.inc.php');
 ?>
-<!-- Denne include-siden er utviklet av Simen A. Lyse , siste gang endret 14.12.2018
-// Denne include-siden er kontrollert av Simen A. Lyse, siste gang 14.12.2018 -->
+<!-- Denne siden er utviklet av Kristoffer Sorensen og Simen A. Lyse, siste gang endret 05.05.2019
+// Denne siden er kontrollert av Kristoffer Sorensen, siste gang 05.05.2019 -->
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">

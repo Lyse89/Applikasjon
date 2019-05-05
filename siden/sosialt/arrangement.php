@@ -97,25 +97,37 @@ include('../includes/logg_inn_db.inc.php');
             <img>
 			<h2>Detaljer</h2>
             <p><?php echo $beskrivelse; ?></p>
-			<input type="button" value="Delta">
+
+            <?php 
+            echo '<form action="settDeltagelse.inc.php" method="POST">
+			<input type="hidden" name="brukernavn" value="' . $_SESSION['brukernavn'] .'">
+			<input type="hidden" name="arrangementid" value="'. $id .'">
+            <button type="submit" name="submit">Delta</button>
+            </form>';
+            ?>
+
 		</div>
 		<div class="arrangementDeltagelse">
 			<h2>Skal</h2>
-<?php
-    // Finner brukere som er satt til aa delta paa prosjektet
-    $stmt2 = $db->query('select a.*, b.fornavn, b.etternavn from arrangementDeltagelse as a,'.
-						'bruker as b where arrangementId = 11111 and a.deltager = b.brukerNavn;');
-    
-    if($stmt->rowCount()){
-        while ($row2 = $stmt2->fetch()){
-			$fornavn = $row2['fornavn'];
-			$etternavn = $row2['etternavn'];
-			$brukernavn = $row2['deltager'];
 
-			echo '<p><a href=\'../min_profil/min_profil.php?id='. $brukernavn . '\'>' . $fornavn . ' ' . $etternavn . '</a></p>';
-        }
-    }
-?>
+            <?php
+            // Finner brukere som er satt til aa delta paa prosjektet
+            $stmt2 = $db->query('select a.*, b.fornavn, b.etternavn from arrangementDeltagelse as a,'.
+                                'bruker as b where arrangementId = ' . $id . ' and a.deltager = b.brukerNavn;');
+            
+            //$stmt2 = $db->query('select a.*, b.fornavn, b.etternavn from arrangementDeltagelse as a,'.
+            //                    'bruker as b where arrangementId = '. $id .'and a.deltager = b.brukerNavn;');
+            if($stmt2->rowCount()){
+                while ($row2 = $stmt2->fetch()){
+                    $fornavn = $row2['fornavn'];
+                    $etternavn = $row2['etternavn'];
+                    $brukernavn = $row2['deltager'];
+
+                    echo '<p><a href=\'../min_profil/min_profil.php?id='. $brukernavn . '\'>' . $fornavn . ' ' . $etternavn . '</a></p>';
+                }
+            }
+            ?>
+
 		</div>
         <div class = "arrangementInvitasjon">
             <h2>Inviter til arrangementet</h2>
