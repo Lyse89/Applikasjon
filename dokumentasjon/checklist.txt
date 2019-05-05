@@ -7,12 +7,12 @@ DEL 1
     [x] Sette innloggingsfelt til forsiden - Simen(?)
     [x] Registreringsknapp - William
     [x] Farge paa fokusert input felt  - William
-    [ ] Style Instillinger siden  - Simen
+    [x] Style Instillinger siden  - Kristoffer
     [x] Bytte PROFILNAVN til STUDENTID (everywhere)
     [x] Bytte "Person" Siden sitt navn til "Søk" - William
     [ ] Organisere css-filene
     [ ] Sette opp orientation for apple devices
-    [ ] Bestemme 3 grenseverdier for opplosning
+    [x] Bestemme 3 grenseverdier for opplosning
     [x] Tydeligere visuelt hint for markerte felt - William
     [ ] IF ELSE tester for registrering
 
@@ -32,9 +32,9 @@ DEL 2
 DEL 3
     [ ] Forbli innlogget via cookie
     [x] Presentasjon om bruker (bio) - William
-    [ ] Endre e-post - Kristoffer
-    [ ] Endre passord - Kristoffer
-    [ ] Avregistrere seg
+    [ ] Endre e-post -
+    [ ] Endre passord -
+    [ ] Avregistrere seg -
     [x] Registrere interesser? -William
     [x] Lage ny interesse - William
     [x] Bruker se liste over brukere
@@ -50,15 +50,15 @@ DEL 4
     [x] Arrangement-side - Kristoffer
     [ ] Enkeltarrangement-side - Kristoffer
     [ ] Invitering av brukere til arrangement
-    [ ] Registrere interesse for arrangement
+    [x] Registrere interesse for arrangement - Kristoffer
     [ ] Sende meldinger til andre brukere !!EMAIL!! - Simen
     [ ] Behold scroll ved oppdatering av relevante sider(losning paa canvas)
 
 
 DEL 5
-    [x] Regel side
+    [ ] Endre regel side til html
     [ ] Legge til regler som admin, på regel siden
-    [ ] Lagge en rapport funksjon for brukere
+    [ ] Lage en rapport-funksjon for brukere
     [x] Admin skal kunne gi advarsel
     [x] Sette brukere i karantene/utestenge (Kan gi rolle som admin, men trenger funksjon for at brukere ikke kan logge seg inn)
     [semi x] Avregistrering av brukeer (set rollen til avregistreret)Kan gi rolle som admin, men trenger funksjon for at brukere ikke kan logge seg inn
@@ -72,7 +72,9 @@ DEL 5
     [x] Dersom administrator har gitt en advarsel, en karantene eller en eksklusjon, så 
 	skal det registreres i databasen hvilken administrator som har gjort dette. 
 
-    [ ] Lag SQL tabeller for Nyheter og Events
+    [x] Lag SQL tabeller for Nyheter og Events
     [ ] Se over Entitetisering i SQL
     [ ] Prøve å fjerne <div> sections
 
+EKSTRA
+    [ ] Kommentarfelt - Kristoffer
