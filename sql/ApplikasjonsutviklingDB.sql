@@ -97,7 +97,7 @@ CREATE TABLE innutboks (
 
 -- For arrangement
 CREATE TABLE arrangement (
-    arrangementId INT(5),
+    arrangementId INTEGER(5) AUTO_INCREMENT,
     tittel VARCHAR(40),
     vert VARCHAR(45),
     lokasjon VARCHAR(45),
@@ -117,7 +117,7 @@ CREATE TABLE arrangementDeltagelse (
 );
 
 CREATE TABLE nyheter (
-    nyhetsid INTEGER(5),
+    nyhetsid INTEGER(5) AUTO_INCREMENT,
     tittel VARCHAR(40),
     forfatter VARCHAR(20),
     beskrivelse VARCHAR(1000),
@@ -126,7 +126,7 @@ CREATE TABLE nyheter (
 );
 
 CREATE TABLE jobbAnnonse (
-    annonseid INTEGER(5),
+    annonseid INTEGER(5) AUTO_INCREMENT,
     tittel VARCHAR(40),
     stilling VARCHAR(40),
     forfatter VARCHAR(20),
@@ -177,4 +177,15 @@ CREATE TABLE regler (
 	regelnr VARCHAR(2),
     tekst VARCHAR(255),
     CONSTRAINT regelnrPK PRIMARY KEY(regelnr)
+);
+
+CREATE TABLE kommentar (
+    kommentarid INTEGER(8) AUTO_INCREMENT,
+    kommentar VARCHAR(255) NOT NULL,
+    tid DATETIME NOT NULL,
+    brukernavn VARCHAR(45) NOT NULL,
+    arrangementId INTEGER(5) NOT NULL,
+    CONSTRAINT kommentarPK PRIMARY KEY(kommentarid),
+    CONSTRAINT kommentarBrukerFK FOREIGN KEY (brukernavn) REFERENCES bruker(brukerNavn),
+    CONSTRAINT kommentarArrangementFK FOREIGN KEY (arrangementId) REFERENCES arrangement(arrangementId)
 );

@@ -2,24 +2,70 @@
 USE alumni05;
 ALTER DATABASE alumni05 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-INSERT INTO token(brukernavn,token,expires) VALUES
-('bruker', 'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh', CURRENT_DATE());
+-- Admin-bruker
+insert into bruker values('admin', 'afd5ca0084efcf026e296ea5dfd7429cfc5a3fe7', 'Olav', 'Hellig', 'oh@usn.no', '0', NULL, NULL, NULL);
+UPDATE bruker SET bruker.rolle = 'Admin' WHERE bruker.brukerNavn = 'admin';
+
+-- Vanlige brukere
+insert into bruker values('a', 'd46ea8b655e4e602024688b8dfab5f6a13c6da51', 'arne', 'and', 'a@usn.no', '0', NULL, NULL, NULL);
+insert into bruker values('b', '6a08ca76200a364d96214eae8970269aa5023124', 'bjarne', 'betjent', 'b@usn.no', '0', NULL, NULL, NULL);
+insert into bruker values('c', '3c6e238f13cf76c438902069df4dd35b56e2d959', 'carl', 'cung', 'c@usn.no', '0', NULL, NULL, NULL);
+insert into bruker values('d', 'c2112c042635ab4c1b028f6b4b44c6a2634442c6', 'Donald', 'Dal', 'd@usn.no', '0', NULL, NULL, NULL);
+insert into bruker values('q', '752e0644435a3ab633189c13cf6c8f531d2ea343', 'q', 'q', 'q@usn.no', '0', NULL, NULL, NULL);
 
 
+-- INSERT INTO token(brukernavn,token,expires) VALUES
+-- ('bruker', 'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh', CURRENT_DATE());
 -- Testverdi (en bruker av systemet som skal kunne logge seg inn
 -- attributtet for passord er hashen for passordet 'passord'
 
-INSERT INTO interesser (brukerNavn, interesse) VALUES
-('654321', 'Python'),
-('1', 'Java'),
-('1', 'Php'),
-('2', 'lego'),
-('2', 'Python');
+
+INSERT INTO interesser (interesse) VALUES
+('Java'),
+('Php'),
+('lego'),
+('Python');
 
 INSERT INTO bio (brukerNavn, bio) VALUES
-('q', 'Hei jeg heter william');
+('a', 'Hei jeg heter Arne And og det her er min bio');
 
 
+-- Inndata for eventer
+insert into arrangement(tittel, vert, lokasjon,startTid, sluttTid, Beskrivelse) values
+('Motivasjonsforedrag i vestre fløy', 'q', 'Lokasjon for arr2', now(), now(), 'Velkommen til motivasjonsforedrag. Dette er beskrivelsen av arrangementet. Vi kan by på pizza og kaker til påmeldte.'),
+('Hackathon', 'q', 'Lokasjon for arr1', now(), now(), 'Vel møtt til hackathon, arrangementet starter i det lille auditoriet. Oppgavene slippes klokken 7 og før dette vil deltagere deles opp i grupper for brainstorming.'),
+('Lan 23-25 mars', 'q', 'Lokasjon for arr3', now(), now(), 'Debug inviterer til lan i workshop rommet. Det vil bli avholdt konkurranser i de spillene som stemmer frem. Det vil bli servert gratis pizza på fredag kveld.'),
+('Quiz - Jokern', 'q', 'Lokasjon for arr4', now(), now(), 'Imorgen blir det quiz på Jokern - Ringerike Studentkro kl 20, husk det blir premier! Trykk skal hvis dere vet dere kommer! Gledes til å se dere imorgen!'),
+('10 års jubileum', 'q', 'Lokasjon for arr5', now(), now(), 'Beskrivelse av arrangementet5');
+
+
+-- arrangementDeltagelse
+insert into arrangementDeltagelse values(1, 'q');
+insert into arrangementDeltagelse values(1, 'a');
+insert into arrangementDeltagelse values(1, 'b');
+
+
+-- insert into nyheter values(11111, 'Tittel', 'q', 'beskrivelse');
+insert into nyheter(tittel, forfatter, beskrivelse,lagtTil) values
+('50 nye parkeringsplasser', 'q', 'Iløpet av høsten vil det komme 50 ny parkeringsplasser disponible for studenter.',now()),
+('Leie av serverplass', 'q', 'Det vil nå være mulig for studenter ved usn å leie egen serverplass.',now()),
+('Stundenter fra usn på utveksling', 'q', 'beskrivelse',now()),
+('Åpning av det nye bygget', 'q', 'Nybygget står klart til høsten. I denne forbindelse vil det være åpningsseremoni med underholdning 14.04.2019.',now());
+
+insert into jobbAnnonse(tittel, stilling, forfatter, beskrivelse, url, lagtTil) values
+('Sopra Steria', 'Junior-Utvikler','q','Sopra Steria er for tredje år på rad kåret til Norges beste arbeidsplass av Great Place to Work. Som kunnskapsbedrift er det viktig for oss å tiltrekke de flinkeste menneskene og utvikle dem videre i deres karriere, samtidig som de har det gøy på jobb. Med noen av Norges mest spennende kunder og digitaliseringsprosjekter, er vi stadig på jakt etter dyktige konsulenter. Har du lyst til å bli vår kollega?', 'https://www.soprasteria.no', now()),
+('Kartverket', 'Systemarkitekt','q','Beskrivelse', 'url', now()),
+('DnB', 'Dev-ops','q','We are looking for an experienced DevOps Engineer to work in the IT Group Wealth Management Section of DNB IT. The position entails working in a highly competent and collaborative environment to maintain and improve critical applications used by Wealth Management Business.', 'url', now()),
+('Atea', 'It-konsulent','q','Vi leter etter IT konsulenter til vårt kontor i Tromsø. Vi ser etter deg som aktivt søker utfordringer. Du venter ikke bare på at noen skal fortelle deg hvordan ting skal gjøres, men du utforsker selv og kommer med forslag på hvordan du og andre kan jobbe smartere og ha enda større påvirkning. Du finner måter vi kan få brukt vår samlede ekspertise til beste for kundene våre. For en jobb i Atea innebærer at hver og en av oss tar ansvar for jobben vår og fremtiden til selskapet – og vi vet at vi er gode alene, men aller best sammen.', 'url', now());
+
+-- Kommentarer
+insert into kommentar(kommentar, tid, brukernavn, arrangementId) values('Dette er kommentar som skal presenteres', now(), 'a', 1);
+
+
+
+
+
+/*
 UPDATE bio
 SET bio = 'heiheihei'
 WHERE bio.brukerNavn = 'q';
@@ -53,34 +99,7 @@ GROUP BY interesse
 ORDER BY COUNT(*) DESC
 LIMIT 10;
 
--- Inndata for eventer
-insert into arrangement values(11111, 'Motivasjonsforedrag i vestre fløy', 'q', 'Lokasjon for arr2', current_date(), current_date(), 'Velkommen til motivasjonsforedrag. Dette er beskrivelsen av arrangementet. Vi kan by på pizza og kaker til påmeldte.');
-insert into arrangement values(11112, 'Hackathon', 'q', 'Lokasjon for arr1', current_date(), current_date(), 'Vel møtt til hackathon, arrangementet starter i det lille auditoriet. Oppgavene slippes klokken 7 og før dette vil deltagere deles opp i grupper for brainstorming.');
-insert into arrangement values(11113, 'Lan 23-25 mars', 'q', 'Lokasjon for arr3', current_date(), current_date(), 'Debug inviterer til lan i workshop rommet. Det vil bli avholdt konkurranser i de spillene som stemmer frem. Det vil bli servert gratis pizza på fredag kveld.');
-insert into arrangement values(11114, 'Quiz - Jokern', 'q', 'Lokasjon for arr4', current_date(), current_date(), 'Imorgen blir det quiz på Jokern - Ringerike Studentkro kl 20, husk det blir premier! Trykk skal hvis dere vet dere kommer! Gledes til å se dere imorgen!');
-insert into arrangement values(11115, '10 års jubileum', 'q', 'Lokasjon for arr5', current_date(), current_date(), 'Beskrivelse av arrangementet5');
 
--- insert into nyheter values(11111, 'Tittel', 'q', 'beskrivelse');
-insert into nyheter values(11111, '50 nye parkeringsplasser', 'q', 'Iløpet av høsten vil det komme 50 ny parkeringsplasser disponible for studenter.',current_date());
-insert into nyheter values(11112, 'Leie av serverplass', 'q', 'Det vil nå være mulig for studenter ved usn å leie egen serverplass.',current_date());
-insert into nyheter values(11113, 'Stundenter fra usn på utveksling', 'q', 'beskrivelse',current_date());
-insert into nyheter values(11114, 'Åpning av det nye bygget', 'q', 'Nybygget står klart til høsten. I denne forbindelse vil det være åpningsseremoni med underholdning 14.04.2019.',current_date());
-
-insert into jobbAnnonse values(11111, 'Sopra Steria', 'Junior-Utvikler','q','Sopra Steria er for tredje år på rad kåret til Norges beste arbeidsplass av Great Place to Work. Som kunnskapsbedrift er det viktig for oss å tiltrekke de flinkeste menneskene og utvikle dem videre i deres karriere, samtidig som de har det gøy på jobb. Med noen av Norges mest spennende kunder og digitaliseringsprosjekter, er vi stadig på jakt etter dyktige konsulenter. Har du lyst til å bli vår kollega?', 'https://www.soprasteria.no', current_date());
-insert into jobbAnnonse values(11112, 'Kartverket', 'Systemarkitekt','q','Beskrivelse', 'url', current_date());
-insert into jobbAnnonse values(11113, 'DnB', 'Dev-ops','q','We are looking for an experienced DevOps Engineer to work in the IT Group Wealth Management Section of DNB IT. The position entails working in a highly competent and collaborative environment to maintain and improve critical applications used by Wealth Management Business.', 'url', current_date());
-insert into jobbAnnonse values(11114, 'Atea', 'It-konsulent','q','Vi leter etter IT konsulenter til vårt kontor i Tromsø. Vi ser etter deg som aktivt søker utfordringer. Du venter ikke bare på at noen skal fortelle deg hvordan ting skal gjøres, men du utforsker selv og kommer med forslag på hvordan du og andre kan jobbe smartere og ha enda større påvirkning. Du finner måter vi kan få brukt vår samlede ekspertise til beste for kundene våre. For en jobb i Atea innebærer at hver og en av oss tar ansvar for jobben vår og fremtiden til selskapet – og vi vet at vi er gode alene, men aller best sammen.', 'url', current_date());
-
-CREATE TABLE jobbAnnonse (
-    annonseid INTEGER(5),
-    tittel VARCHAR(40),
-    stilling VARCHAR(40),
-    forfatter VARCHAR(20),
-    beskrivelse VARCHAR(200),
-    url VARCHAR(100),
-    lagtTil DATETIME,
-    CONSTRAINT jobbAnnonsePK PRIMARY KEY(annonseid)
-);
 update karantene
 set sluttTid = now()
 where brukerNavn = 'w';
@@ -100,6 +119,7 @@ select * from arrangement;
 select * from bruker;
 select * from utestengt;
 select * from anmerkning;
+
 INSERT INTO utestengt (brukerNavn, gittAv, tid) VALUES
 ("q", "q", now());
 
@@ -112,13 +132,9 @@ INSERT INTO karantene (brukerNavn, startTid, sluttTid) VALUES
 ('q', now(), now() + INTERVAL 1 WEEK),
 ('q', now(), now() + INTERVAL 1 MONTH);
 
-UPDATE bruker SET bruker.rolle = 'Admin' WHERE bruker.brukerNavn = 'q';
+*/
+
 
 insert into regler values(1, 'Man skal ikke plage andre');
 insert into regler values(2, 'Man skal være grei og snil');
 insert into regler values(3, 'for øvrig kan man gjøre hva man vil');
-
--- arrangementDeltagelse, forutsetter at brukeren q, a, b finnes
-insert into arrangementDeltagelse values(11111, 'q');
-insert into arrangementDeltagelse values(11111, 'a');
-insert into arrangementDeltagelse values(11111, 'b');
