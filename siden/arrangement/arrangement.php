@@ -1,13 +1,14 @@
 <?php
 include_once('../includes/ikke_logget_inn.inc.php');
 include_once('../includes/rollesjekk.inc.php');
+include('../includes/logg_inn_db.inc.php');
+
 if(isset($_GET['id'])) {
 	$id = $_GET['id'];
 } else {
     header("Location:../404.php");
 }
 
-include('../includes/logg_inn_db.inc.php');
 
 // Sjekk for om eventen finnes her ----------------------------------------------------------
 
@@ -136,7 +137,7 @@ include('../includes/logg_inn_db.inc.php');
     </div>
 
     <?php
-    include('../includes/kommentarer.php');
+    include('../kommentarfelt/kommentarer.php');
     ?>
   </body>
 </html>
