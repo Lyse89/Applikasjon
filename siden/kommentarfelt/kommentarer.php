@@ -1,6 +1,8 @@
 <!-- Denne siden er utviklet av Kristoffer Sorensen, siste gang endret 02.10.2018-->
 <form class="nyKommentarBoks" action="../kommentarfelt/leggTilKommentar.php" method="POST">
     <label for="nyKommentar">Skriv en ny kommentar</label>
+    <input type="hidden" name="brukernavn" value="<?php$_SESSION['brukernavn'] ?>">
+    <input type="hidden" name="brukernavn" value="<?php$_SESSION['brukernavn'] ?>">
     <textarea name="nyKommentar">Tekst...</textarea>
     <button type="submit" name="submit">Legg til</button>
 </form>
