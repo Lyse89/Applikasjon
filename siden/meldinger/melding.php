@@ -5,7 +5,11 @@
 
 // Sjekk for om brukeren er innlogget og videresending til innlogget forside
 include_once('../includes/ikke_logget_inn.inc.php');
+include_once('../includes/init.php');
+
+$bruker = $_SESSION['brukernavn'];
 ?>
+
 
 <html lang="en" dir="ltr">
 <head>
@@ -14,6 +18,23 @@ include_once('../includes/ikke_logget_inn.inc.php');
     <meta charset="utf-8">
     <title>Meldinger</title>
     <style>
+
+    .innboks {
+      border-style: solid;
+      box-shadow: 10px 10px 8px #c0c0c0;
+      margin: 50px 5% 0 5%;
+      padding: 5px 5px 5px 5px;
+    }
+
+    .melding {
+      border: solid;
+      border-style: none double double;
+      padding: 0px 0px 2px 5px;
+    }
+
+    h2 {
+      margin: 0px 0px 0px 0px;
+    }
 
     </style>
 </head>
@@ -33,7 +54,23 @@ include_once('../includes/header_innlogget.php');
   </fieldset>
 </form>
 
+<div class="innboks">
+<h1>Innboks</h1>
+<?php
+    $stmt = $db->query("SELECT meldinger.avsender, meldinger.melding, meldinger.tittel FROM innutboks, meldinger WHERE meldinger.meldingID = innutboks.meldingID AND bruker = '$bruker' AND innut = 'inn';");
 
+        if($stmt->rowCount()){
+            while ($row = $stmt->fetch()){
+              echo '<div class="melding">';
+              echo '<h2>', 'Emne:  ', $row['tittel'], '</h2>';
+              echo 'Fra:  ', $row['avsender'], '<br>';
+              echo $row['melding'];
+              echo '<br>';
+              echo '</div>';
+            }
+        }
+    ?>
+</div>
 
 
 <!-- Footer -->

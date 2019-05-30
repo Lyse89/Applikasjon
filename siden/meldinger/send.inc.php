@@ -2,12 +2,10 @@
 
 // Denne include-siden er utviklet av Simen Lyse , siste gang endret 04.05.2019
 // Kontrollert og testet av Simen Lyse , siste gang endret 04.05.2019
-include_once("../includes/init.php");
+include('../includes/logg_inn_db.inc.php');
 session_start();
 
 if(isset($_POST['send'])) {
-
-      $db = new PDO($dsn,$dbBrukernavn,$dbPassord);
 
       $sql = "insert into meldinger (avsender,mottaker,tittel,sendtTid,melding)";
       $sql.= "values (:avsender,:mottaker,:tittel,:sendtTid,:melding)";
@@ -31,6 +29,8 @@ if(isset($_POST['send'])) {
 
       innboks($db);
       utboks($db);
+
+      header("Location: melding.php");
 
 }
 
@@ -77,8 +77,9 @@ function utboks($db) {
 
       $stmt->execute();
 
-      echo $bruker, $innut, $id;
 }
+
+
 
 
 ?>

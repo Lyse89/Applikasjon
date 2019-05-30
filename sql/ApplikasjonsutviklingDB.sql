@@ -80,7 +80,7 @@ CREATE TABLE meldinger (
     mottaker VARCHAR(45),
     tittel VARCHAR(120),
     sendtTid DATETIME,
-    melding VARCHAR(255),
+    melding VARCHAR(2000),
     CONSTRAINT meldingerPK PRIMARY KEY (meldingID),
     CONSTRAINT meldingerBrukerFK FOREIGN KEY (avsender) REFERENCES bruker (brukerNavn),
     CONSTRAINT meldingerBrukerFK2 FOREIGN KEY (mottaker) REFERENCES bruker (brukerNavn)
