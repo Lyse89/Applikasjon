@@ -78,3 +78,4 @@ DEL 5
 
 EKSTRA
     [ ] Kommentarfelt - Kristoffer
+    [ ] Fikse alle mine prepared statements - William

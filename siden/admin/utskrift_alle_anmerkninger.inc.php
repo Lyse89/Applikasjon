@@ -2,11 +2,11 @@
 <html>
 <!-- Denne include-siden er utviklet av William Rastad, siste gang endret 01.06.2019 -->
 <head>
-	<title>Utskrift anmerkning</title>
+	<title>Utskrift alle anmerkninger</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <meta charset="utf-8">
-    <style>
+	<style>
         h1, h2{
             text-align: center;
 
@@ -50,24 +50,13 @@ include_once('../includes/rollesjekk.inc.php');
 include_once('../includes/header_innlogget.php');
 include_once("../includes/init.php");
 ?>
-<h1>Anmerkninger for en bruker</h1>
+<h1>Alle Anmerkninger</h1>
 <h2>Sortert etter brukernavn og dato</h2>
 
 <?php
 $db = new PDO($dsn,$dbBrukernavn,$dbPassord);
-$brukernavn = $_POST['BrukerNavnUtskriftAnmerkning'];
 
-$sql = ("SELECT * FROM anmerkning WHERE brukerNavn = :brukernavn GROUP BY brukerNavn DESC, tid DESC;");
-// Prepared statemens
-$stmt = $db->prepare($sql);
-$stmt->bindParam(':brukernavn',$bbrukernavn);
-
-// Henter verdier
-$bbrukernavn = $brukernavn;
-
-// Kjører sql query
-$stmt->execute();
-
+$stmt = $db->query("SELECT * FROM anmerkning GROUP BY brukerNavn DESC, tid DESC;");
 
 $stmt->rowCount();
     echo "<div class='SøkResultater'>";
