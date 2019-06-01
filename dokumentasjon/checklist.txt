@@ -32,8 +32,8 @@ DEL 2
 DEL 3
     [ ] Forbli innlogget via cookie
     [x] Presentasjon om bruker (bio) - William
-    [ ] Endre e-post -
-    [ ] Endre passord -
+    [x] Endre e-post -William	
+    [x] Endre passord - William
     [ ] Avregistrere seg -
     [x] Registrere interesser? -William
     [x] Lage ny interesse - William

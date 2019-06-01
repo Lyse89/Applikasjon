@@ -58,7 +58,18 @@ include_once('../includes/rollesjekk.inc.php');
         padding: 30px;
     }
     .instillinger-boks {
+    }
 
+    select{
+        width: 100%;
+    }
+    input[type=text]{
+        width: 93%;
+    }
+    input[type="submit"]{
+        margin-top: 5px;
+        padding: 5px 5px 5px 5px;
+        width: 100%;
     }
 
 </style>
@@ -92,7 +103,7 @@ include_once('../includes/ikke_logget_inn.inc.php');
         <div class="instillinger-boks">
             <h2>Gi bruker en rolle</h2>
             <form class="GiRolle-form" action="gi_rolle.inc.php" method="POST">
-                <p>Bruker:  <input type="text" name="BrukerNavnGiRolle" id="BrukerNavnGiRolle" placeholder="BrukerNavn"> </p>
+                <p>Bruker:  <input type="text" name="BrukerNavnGiRolle" id="BrukerNavnGiRolle" placeholder="Brukernavn"> </p>
                 <p>Rolle:   <select name="Roller"> </p>
                                 <option value="Admin">Admin</option>
                                 <option value="Bruker">Bruker</option>
@@ -106,7 +117,7 @@ include_once('../includes/ikke_logget_inn.inc.php');
         <div class="instillinger-boks">
             <h2>Gi bruker en straff</h2>
             <form class="GiStraff-form" action="gi_straff.inc.php" method="POST">
-                <p>Bruker:  <input type="text" name="BrukerNavnGiStraff" id="BrukerNavnGiStraff" placeholder="BrukerNavn"> </p>
+                <p>Bruker:  <input type="text" name="BrukerNavnGiStraff" id="BrukerNavnGiStraff" placeholder="Brukernavn"> </p>
                 <p>Straff:  <select name="Straff" onchange="KaranteneUtestengtCheck(this);"> </p>
                                 <option value="Utestengt">Utestengt(Permanent)</option>
                                 <option value="Karantene">Karantene</option>
@@ -120,13 +131,21 @@ include_once('../includes/ikke_logget_inn.inc.php');
                                             </select>
                 </div>
                 <div id="ifAnmerkning" style="display: none;">
-                    <textarea name="anmerkningForklaring" placeholder="Skriv forklaring på anmerkningen (Maks 255 tegn)"rows="6" cols="70" minlength="0" maxlength="255"></textarea>
+                    <textarea name="anmerkningForklaring" placeholder="Skriv forklaring på anmerkningen (Maks 255 tegn)"rows="6" cols="33" minlength="0" maxlength="255"></textarea>
                 </div>
                 <input type="submit" name="btnGiStraff" value="Gi Straff" id="GiStraffButton">
             </form>
         </div>
 
         <div class="instillinger-boks">
+            <h2>Utskrift av anmerkning</h2>
+            <form class="UtskriftAnmerkninger" action="utskrift_anmerkning.inc.php" method="POST">
+                <p>Bruker:  <input type="text" name="BrukerNavnUtskriftAnmerkning" id="BrukerNavnUtskriftAnmerkningID" placeholder="Brukernavn"> </p>
+                <input type="submit" name="btnUtskriftAnmerkning" value="Skriv ut anmerkning for bruker" id="btnSkrivUtAnmerkninger">
+            </form>
+
+                        
+            <input type="submit" name="btnUtskriftAlleAnmerkninger" value="Skriv ut alle anmerkninger" id="btnSkrivUtAlleAnmerkninger">
         </div>
 
         <div class="instillinger-boks">
