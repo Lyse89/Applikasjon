@@ -1,9 +1,9 @@
 <?php
-//DOCTYPE
-//Denne siden er utviklet av Simen Lyse, siste gang endret 02.05.2019
-//Denne siden er kontrollert av Simen Lyse, siste gang 02.05.2019
+/* DOCTYPE
+Denne siden er utviklet av Simen Lyse, siste gang endret 02.05.2019
+Denne siden er kontrollert av Simen Lyse, siste gang 02.05.2019 */
 
-// Sjekk for om brukeren er innlogget og videresending til innlogget forside
+
 include_once('../includes/ikke_logget_inn.inc.php');
 include_once('../includes/init.php');
 
@@ -40,36 +40,51 @@ $bruker = $_SESSION['brukernavn'];
 </head>
 
 <body>
-<?php
-include_once("../includes/init.php");
-include_once('../includes/header_innlogget.php');
-?>
+  <<?php include_once('../includes/header_innlogget.php'); ?>
 
 <form class="sendMelding" action="send.inc.php" method="POST" onsubmit="sjekkSubmit();">
   <fieldset>
       <input type="text" placeholder="Til" name="til" id="til" class="inputBoks" onchange="sjekkFelt()" autofocus>
       <input type="text" placeholder="Titel" name="subj" id="subj" class="inputTitel" onchange="sjekkFelt()">
-      <textarea type="text" placeholder="Tekst...." name="meld" id="meld" class="inputText"></textarea>
+      <textarea type="text" placeholder="Tekst (2000 tegn)" name="meld" id="meld" class="inputText"></textarea>
       <input type="submit" value="Send" name="send" id="send" class="sndBtn">
   </fieldset>
 </form>
 
-<div class="innboks">
+<div class="boks">
 <h1>Innboks</h1>
 <?php
-    $stmt = $db->query("SELECT meldinger.avsender, meldinger.melding, meldinger.tittel FROM innutboks, meldinger WHERE meldinger.meldingID = innutboks.meldingID AND bruker = '$bruker' AND innut = 'inn';");
+    $stmt = $db->query("SELECT meldinger.sendtTid, meldinger.avsender, meldinger.melding, meldinger.tittel FROM innutboks, meldinger WHERE meldinger.meldingID = innutboks.meldingID AND bruker = '$bruker' AND innut = 'inn';");
 
         if($stmt->rowCount()){
             while ($row = $stmt->fetch()){
               echo '<div class="melding">';
               echo '<h2>', 'Emne:  ', $row['tittel'], '</h2>';
-              echo 'Fra:  ', $row['avsender'], '<br>';
+              echo 'Fra:  <b>', $row['avsender'], '</b> Tid sendt:<b>  ', $row['sendtTid'], '</b><br><br>';
               echo $row['melding'];
               echo '<br>';
               echo '</div>';
             }
         }
-    ?>
+  ?>
+</div>
+
+<div class="boks">
+<h1>Utboks</h1>
+<?php
+    $stmt = $db->query("SELECT meldinger.sendtTid, meldinger.mottaker, meldinger.melding, meldinger.tittel FROM innutboks, meldinger WHERE meldinger.meldingID = innutboks.meldingID AND bruker = '$bruker' AND innut = 'ut';");
+
+        if($stmt->rowCount()){
+            while ($row = $stmt->fetch()){
+              echo '<div class="melding">';
+              echo '<h2>', 'Emne:  ', $row['tittel'], '</h2>';
+              echo 'Til:  <b>', $row['mottaker'], '</b> Tid sendt:<b>  ', $row['sendtTid'], '</b><br><br>';
+              echo $row['melding'];
+              echo '<br>';
+              echo '</div>';
+            }
+        }
+  ?>
 </div>
 
 
