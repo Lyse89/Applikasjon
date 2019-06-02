@@ -1,76 +1,143 @@
 <?php
-//Denne include-siden er utviklet av Kristoffer Sorensen, siste gang endret 30.04.2019
-// Denne include-siden er kontrollert av Kristoffer Sorensen, siste gang 30.04.2019
-include_once('../includes/ikke_logget_inn.inc.php');
-include_once('../includes/rollesjekk.inc.php');
+    include_once('../includes/ikke_logget_inn.inc.php');
+    //Denne include-siden er utviklet av Kristoffer Sorensen, siste gang endret 27.03.2019
+    // Denne include-siden er kontrollert av Kristoffer Sorensen, siste gang 27.03.2019
 ?>
-
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="no" dir="ltr">
 <link rel="stylesheet" type="text/css" href="../css/style.css">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-  <head>
+
+<head>
     <meta charset="utf-8">
-    <title>Instillinger</title>
-  </head>
-  <style media="screen">
+    <title>IT Nyheter</title>
+<style>
     body {
-      margin: 0;
-      padding: 0;
-      background-color: #ddd;
-    }
-    h2{
-        font-size: 18px;
+        margin: 0;
+        padding: 0;
+        background-color:#ddd;
 
     }
-
-    .center {
-        box-shadow: 10px 10px 8px #c0c0c0;
-        margin: 0 5% 50px 5%;
-        margin-top: 50px;
-        padding: 0 2% 0 2%;
-        width: 86%;
-        /*max-width: 1230px;*/
+    /* Endret til liste fra */
+    .liste {
         background-color: white;
         float: left;
-        /*margin-bottom: 50px;*/
+        width: 40%;
+        margin: 50px 2.5% 0 7.5%;
+		box-shadow: 10px 10px 8px #c0c0c0;
     }
+    .liste h1{
+        width: 90%;
+        margin: 25px 5% 25px 5%;
+        border-bottom: 3px solid lightgrey;
+    }
+    /* spesifikk for denne siden */
+    .liste p{
+        margin: 7px 0 7px 0;
+    }
+    .datoTekst {
+        color: grey;
+    }
+    /* */
 
-    .flex-container {
-        width:100%;
-        margin: 30px 0 30px 0;
-        padding-bottom: 25px;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: stretch;
+    .nyhetsListeBoks {
+        box-sizing: border-box;
+        border-bottom: 2px solid lightgrey;
+        padding: 10px 25px 0 25px;
+        width: 100%;
+        height: 100px;
         background-color: white;
-        border-top: solid grey 3px;
+    }
+    .nyhetsListeBoks h2{
+        margin: 0;
+        font-size: 20px;
+    }
+    .nyhetsListeBoks a{
+		text-decoration: none;
+		color: black;
+    }
+    
+    .nyhetsListeBoks a:hover{
+		color: #9985ad;
     }
 
-    .flex-container img {
-        height: 200px;
-        background-color: #dddddd;
+    .leggTilNyttArrangement {
+        float: right;
+        margin: 50px 7.5% 0 2.5%;
+        background-color: white;
+        height: 600px;
+        width: 40%;
+		box-shadow: 10px 10px 8px #c0c0c0;
     }
 
-    .instillinger-boks {
-        width: 260px;
-        padding: 30px;
+    .leggTilNyttArrangement h1{
+        width: 90%;
+        margin: 25px 5% 25px 5%;
+        border-bottom: 3px solid lightgrey;
     }
-    .instillinger-boks {
+    .tekstfelt {
+        width: 15px;
 
+    }
+
+    .stortTekstfelt {
+        /* Lagt til annen hoyde for boksen i nyhetsside */
+        font-size: 14px;
+        padding: 5px;
+        margin: 15px 0 15px 0;
+        -webkit-box-sizing:border-box;
+        -moz-box-sizing:border-box;
+        box-sizing:border-box;
+        width: 100%;
+        height: 350px;
+        background-color: #eeeeee;
+        border: none;
+    }
+    .opprettArrangementBoks {
+        padding: 0;
+        margin: 25px;
+    }
+    #registrerArrKnapp {
+        float: right;
     }
 
 </style>
 
+</head>
+
 <body>
-<?php
-include_once('../includes/header_innlogget.php');
-?>
+    <?php
+    include_once('../includes/header_innlogget.php');
+    include_once('../includes/init.php');
+    ?>
 
-<div class="center">
-    <h1>Alle nyheter</h1>
-    <div class="flex-container">
+<section class="liste">
+    <h1>Nyheter</h1>
 
-    </div>
+    <?php
+        $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
+        $stmt = $db->query('SELECT * FROM nyheter ORDER BY lagtTil DESC LIMIT 7');
+
+        if($stmt->rowCount()){
+            while ($row = $stmt->fetch()){
+
+                echo '<div class="nyhetsListeBoks" >';
+                    echo '<h2><a href="nyhet.php?id=' . $row['nyhetsid'] .'">', $row['tittel'],'</a></h2>';
+                    echo '<p class=\'datoTekst\'>', $row['lagtTil'], '</p>';
+                    echo '<p>', $row['forfatter'], '</p>';
+                echo '</div>';
+            }
+        }
+    ?>
+</section>
+<section class="leggTilNyttArrangement">
+    <h1>Opprett nyhet</h1>
+    <form class="opprettArrangementBoks" action="leggTilInteresse.inc.php" method="POST">
+        <input type="text" name="tittel" id="tekstfelt" placeholder="Tittel"><br>
+        <textarea class="stortTekstfelt" name="Beksrivelse" placeholder="Beskrivelse"></textarea><br>
+
+        <input type="submit" name="registrerInt" id="registrerArrKnapp" value="Registrer arrangment">
+    </form>
+</section>
 </body>
 </html>
+<?php
