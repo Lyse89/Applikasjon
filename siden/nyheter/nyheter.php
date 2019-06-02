@@ -49,7 +49,7 @@
     }
     .nyhetsListeBoks h2{
         margin: 0;
-        font-size: 20px;
+        font-size: 18px;
     }
     .nyhetsListeBoks a{
 		text-decoration: none;

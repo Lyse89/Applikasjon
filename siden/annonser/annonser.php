@@ -1,21 +1,151 @@
 <?php
     include_once('../includes/ikke_logget_inn.inc.php');
-    include_once('../includes/rollesjekk.inc.php');
+    //Denne include-siden er utviklet av Kristoffer Sorensen, siste gang endret 02.06.2019
+    // Denne include-siden er kontrollert av Kristoffer Sorensen, siste gang 02.06.2019
 ?>
 <!DOCTYPE html>
-<!-- Denne include-siden er utviklet av Simen A. Lyse , siste gang endret 14.12.2018
-// Denne include-siden er kontrollert av Simen A. Lyse, siste gang 14.12.2018 -->
-<html lang="en" dir="ltr">
+<html lang="no" dir="ltr">
 <link rel="stylesheet" type="text/css" href="../css/style.css">
-  <head>
+
+<head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anonser</title>
-  </head>
-  <body>
+    <title>IT Nyheter</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color:#ddd;
+
+    }
+    /* Endret til liste fra */
+    .liste {
+        background-color: white;
+        float: left;
+        width: 40%;
+        margin: 50px 2.5% 0 7.5%;
+		box-shadow: 10px 10px 8px #c0c0c0;
+    }
+    .liste h1{
+        width: 90%;
+        margin: 25px 5% 25px 5%;
+        border-bottom: 3px solid lightgrey;
+    }
+    /* spesifikk for denne siden */
+    .beskrivelseParagraf {
+        margin: 7px 0 25px 0;
+    }
+/*
+    .liste p{
+        margin: 7px 0 7px 0;
+    }
+*/
+    .datoTekst {
+        color: grey;
+    }
+    /* */
+
+    .nyhetsListeBoks {
+        box-sizing: border-box;
+        border-bottom: 2px solid lightgrey;
+        padding: 10px 25px 0 25px;
+        width: 100%;
+        /*height: 250px;*/
+        background-color: white;
+    }
+    .nyhetsListeBoks h2{
+        margin: 0;
+        font-size: 18px;
+    }
+    .nyhetsListeBoks a{
+		text-decoration: none;
+		color: black;
+    }
+    
+    .nyhetsListeBoks a:hover{
+		color: #9985ad;
+    }
+
+    .leggTilNyttArrangement {
+        float: right;
+        margin: 50px 7.5% 0 2.5%;
+        background-color: white;
+        height: 600px;
+        width: 40%;
+		box-shadow: 10px 10px 8px #c0c0c0;
+    }
+
+    .leggTilNyttArrangement h1{
+        width: 90%;
+        margin: 25px 5% 25px 5%;
+        border-bottom: 3px solid lightgrey;
+    }
+    .tekstfelt {
+        width: 15px;
+
+    }
+
+    .stortTekstfelt {
+        /* Lagt til annen hoyde for boksen i nyhetsside */
+        font-size: 14px;
+        padding: 5px;
+        margin: 15px 0 15px 0;
+        -webkit-box-sizing:border-box;
+        -moz-box-sizing:border-box;
+        box-sizing:border-box;
+        width: 100%;
+        height: 350px;
+        background-color: #eeeeee;
+        border: none;
+    }
+    .opprettArrangementBoks {
+        padding: 0;
+        margin: 25px;
+    }
+    #registrerArrKnapp {
+        float: right;
+    }
+
+</style>
+
+</head>
+
+<body>
     <?php
     include_once('../includes/header_innlogget.php');
+    include_once('../includes/init.php');
     ?>
 
-  </body>
+<section class="liste">
+    <h1>Annonser</h1>
+
+    <?php
+        $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
+        $stmt = $db->query('SELECT * FROM jobbAnnonse ORDER BY lagtTil DESC LIMIT 7');
+
+        if($stmt->rowCount()){
+            while ($row = $stmt->fetch()){
+
+                echo '<div class="nyhetsListeBoks" >';
+                    echo '<h2><a href="nyhet.php?id=' . $row['annonseid'] .'">', $row['tittel'],'</a></h2>';
+                    echo '<p class=\'datoTekst\'>', $row['lagtTil'], '</p>';
+                    echo '<p>', $row['forfatter'], '</p>';
+                    echo '<p class=\'beskrivelseParagraf\'>', $row['beskrivelse'], '</p>';
+
+                echo '</div>';
+            }
+        }
+    ?>
+</section>
+<section class="leggTilNyttArrangement">
+    <h1>Opprett annonse</h1>
+    <form class="opprettArrangementBoks" action="leggTilInteresse.inc.php" method="POST">
+        <input type="text" name="tittel" id="tekstfelt" placeholder="Tittel"><br>
+        <input type="text" name="url" id="url" placeholder="Link"><br>
+        <textarea class="stortTekstfelt" name="Beksrivelse" placeholder="Beskrivelse"></textarea><br>
+
+        <input type="submit" name="registrerInt" id="registrerArrKnapp" value="Registrer arrangment">
+    </form>
+</section>
+</body>
 </html>
+<?php
