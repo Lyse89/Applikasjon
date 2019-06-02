@@ -51,7 +51,7 @@
 		color: #9985ad;
     }
 
-    .arrangementNy {
+    .leggTilNyttArrangement {
         float: right;
         margin: 50px 7.5% 0 2.5%;
         background-color: white;
@@ -60,10 +60,34 @@
 		box-shadow: 10px 10px 8px #c0c0c0;
     }
 
-    .arrangementNy h1{
+    .leggTilNyttArrangement h1{
         width: 90%;
         margin: 25px 5% 25px 5%;
         border-bottom: 3px solid lightgrey;
+    }
+    .tekstfelt {
+        width: 15px;
+
+    }
+
+    .stortTekstfelt {
+        font-size: 14px;
+        padding: 5px;
+        margin: 15px 0 15px 0;
+        -webkit-box-sizing:border-box;
+        -moz-box-sizing:border-box;
+        box-sizing:border-box;
+        width: 100%;
+        height: 100px;
+        background-color: #eeeeee;
+        border: none;
+    }
+    .opprettArrangementBoks {
+        padding: 0;
+        margin: 25px;
+    }
+    #registrerArrKnapp {
+        float: right;
     }
 
 </style>
@@ -95,9 +119,16 @@
         }
     ?>
 </div>
-<div class="arrangementNy">
+<section class="leggTilNyttArrangement">
     <h1>Opprett nytt arrangement</h1>
-</div>
+    <form class="opprettArrangementBoks" action="leggTilInteresse.inc.php" method="POST">
+        <input type="text" name="tittel" id="tekstfelt" placeholder="Tittel"><br>
+        <input type="text" name="lokasjon" id="tekstfelt" placeholder="Sted"><br>
+        <textarea class="stortTekstfelt" name="Beksrivelse" placeholder="Beskrivelse" rows="6" cols="150" minlength="0" maxlength="255"></textarea><br>
 
+        <input type="hidden" name="vert" id="tekstfelt" >
+        <input type="submit" name="registrerInt" id="registrerArrKnapp" value="Registrer arrangment">
+    </form>
+</section>
 </body>
 </html>
