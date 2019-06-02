@@ -19,10 +19,17 @@ $bruker = $_SESSION['brukernavn'];
     <title>Meldinger</title>
     <style>
 
-    .boks {
+    .boks1 {
       border-style: solid;
       box-shadow: 10px 10px 8px #c0c0c0;
-      margin: 50px 5% 0 5%;
+      margin: 50px 4% 0 4%;
+      padding: 5px 5px 5px 5px;
+    }
+
+    .boks2 {
+      border-style: solid;
+      box-shadow: 10px 10px 8px #c0c0c0;
+      margin: 50px 4% 0 4%;
       padding: 5px 5px 5px 5px;
     }
 
@@ -43,8 +50,9 @@ $bruker = $_SESSION['brukernavn'];
       width: 80%;
     }
 
-    form {
+    .sendMelding {
       background-color: #c0c0c0;
+      margin: 0 5% 0 5%;
     }
 
     .sndBtn {
@@ -55,6 +63,23 @@ $bruker = $_SESSION['brukernavn'];
         border: none;
         cursor: pointer;
         margin-top: 10px;
+    }
+
+    @media screen and (min-width: 768px) {
+      .sammler {
+
+      }
+
+      .boks1 {
+        float: left;
+        width: 40%;
+      }
+
+      .boks2 {
+        float: right;
+        width: 40%;
+      }
+
     }
 
 
@@ -75,7 +100,8 @@ $bruker = $_SESSION['brukernavn'];
   </fieldset>
 </form>
 
-<div class="boks">
+<div class="sammler">
+<div class="boks1">
 <h1>Innboks</h1>
 <?php
     $stmt = $db->query("SELECT meldinger.sendtTid, meldinger.avsender, meldinger.melding, meldinger.tittel FROM innutboks, meldinger WHERE meldinger.meldingID = innutboks.meldingID AND bruker = '$bruker' AND innut = 'inn';");
@@ -93,7 +119,7 @@ $bruker = $_SESSION['brukernavn'];
   ?>
 </div>
 
-<div class="boks">
+<div class="boks2">
 <h1>Utboks</h1>
 <?php
     $stmt = $db->query("SELECT meldinger.sendtTid, meldinger.mottaker, meldinger.melding, meldinger.tittel FROM innutboks, meldinger WHERE meldinger.meldingID = innutboks.meldingID AND bruker = '$bruker' AND innut = 'ut';");
@@ -110,7 +136,7 @@ $bruker = $_SESSION['brukernavn'];
         }
   ?>
 </div>
-
+</div>
 
 <!-- Footer -->
 <footer class ="footer"></footer>
