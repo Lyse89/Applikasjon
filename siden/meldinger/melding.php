@@ -19,7 +19,7 @@ $bruker = $_SESSION['brukernavn'];
     <title>Meldinger</title>
     <style>
 
-    .innboks {
+    .boks {
       border-style: solid;
       box-shadow: 10px 10px 8px #c0c0c0;
       margin: 50px 5% 0 5%;
@@ -36,11 +36,35 @@ $bruker = $_SESSION['brukernavn'];
       margin: 0px 0px 0px 0px;
     }
 
+    textarea {
+      margin: 2px 2px 2px 2px;
+      border: 1px solid;
+      height: 100px;
+      width: 80%;
+    }
+
+    form {
+      background-color: #c0c0c0;
+    }
+
+    .sndBtn {
+        float: right;
+        margin-right: 12.5%;
+        background: #f1f1f1;
+        font-size: 17px;
+        border: none;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+
     </style>
 </head>
 
 <body>
-  <<?php include_once('../includes/header_innlogget.php'); ?>
+  <?php
+  include_once('../includes/header_innlogget.php');
+  ?>
 
 <form class="sendMelding" action="send.inc.php" method="POST" onsubmit="sjekkSubmit();">
   <fieldset>
