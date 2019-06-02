@@ -1,7 +1,7 @@
 <?php
 
-// Denne include-siden er utviklet av Simen Lyse , siste gang endret 04.05.2019
-// Kontrollert og testet av Simen Lyse , siste gang endret 04.05.2019
+// Denne include-siden er utviklet av Simen Lyse , siste gang endret 01.06.2019
+// Kontrollert og testet av Simen Lyse , siste gang endret 01.06.2019
 include('../includes/logg_inn_db.inc.php');
 session_start();
 
@@ -20,8 +20,7 @@ if(isset($_POST['send'])) {
 
       $avsender = $_SESSION['brukernavn'];
       $mottaker = $_POST['til'];
-      /*date_default_timezone_set('Europe/Oslo');
-      $sendtTid = (date('m-d-Y h:i:s', time()));*/
+      $sendtTid = date('Y-m-d G:i:s');
       $tittel = $_POST['subj'];
       $melding = $_POST['meld'];
 
@@ -49,7 +48,7 @@ function innboks($db) {
       $stmt->bindParam(':id',$id);
       $stmt->bindParam(':bruker',$bruker);
       $stmt->bindParam(':innut',$innut);
-      
+
       $bruker = $_POST['til'];
       $innut = 'inn';
 
@@ -71,7 +70,7 @@ function utboks($db) {
       $stmt->bindParam(':id',$id);
       $stmt->bindParam(':bruker',$bruker);
       $stmt->bindParam(':innut',$innut);
-    
+
       $bruker = $_SESSION['brukernavn'];
       $innut = 'ut';
 

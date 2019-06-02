@@ -70,6 +70,8 @@ UPDATE bio
 SET bio = 'heiheihei'
 WHERE bio.brukerNavn = 'q';
 
+SELECT * FROM anmerkning WHERE brukerNavn = 'q' GROUP BY brukerNavn DESC, tid DESC;
+
 
 SELECT * FROM bruker;
 SELECT * FROM interesser;
@@ -120,6 +122,7 @@ select * from bruker;
 select * from utestengt;
 select * from anmerkning;
 
+
 INSERT INTO utestengt (brukerNavn, gittAv, tid) VALUES
 ("q", "q", now());
 
@@ -132,9 +135,8 @@ INSERT INTO karantene (brukerNavn, startTid, sluttTid) VALUES
 ('q', now(), now() + INTERVAL 1 WEEK),
 ('q', now(), now() + INTERVAL 1 MONTH);
 
-*/
-
 
 insert into regler values(1, 'Man skal ikke plage andre');
 insert into regler values(2, 'Man skal være grei og snil');
 insert into regler values(3, 'for øvrig kan man gjøre hva man vil');
+*/
