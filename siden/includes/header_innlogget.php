@@ -7,7 +7,7 @@
 <nav class="topnav" id="minTopnav">
   <form action="../includes/loggut.inc.php" method="POST">
   <a href="../innlogget_forside/innlogget_forside2.php" class="aktiv">USN</a>
-  <a href="../anonser/anonser.php">Annonser</a>
+  <a href="../annonser/annonser.php">Annonser</a>
   <a href="../arrangement/arrangementer.php">Arrangement</a>
   <a href="../nyheter/nyheter.php">Nyheter</a>
   <a href="../personer/personer.php">Søk</a>
@@ -49,7 +49,7 @@
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="drop-innhold">
-      <a href="../anonser/anonser.php">Annonser</a>
+      <a href="../annonser/annonser.php">Annonser</a>
       <a href="../arrangement/arrangementer.php">Eventer</a>
       <a href="../nyheter/nyheter.php">IT nyheter</a>
       <a href="../personer/personer.php">Søk Interesser</a>
