@@ -1,7 +1,7 @@
 <?php
     include_once('../includes/ikke_logget_inn.inc.php');
-    //Denne include-siden er utviklet av Kristoffer Sorensen, siste gang endret 27.03.2019
-    // Denne include-siden er kontrollert av Kristoffer Sorensen, siste gang 27.03.2019
+    //Denne include-siden er utviklet av Kristoffer Sorensen, siste gang endret 02.06.2019
+    // Denne include-siden er kontrollert av Kristoffer Sorensen, siste gang 02.06.2019
 ?>
 <!DOCTYPE html>
 <html lang="no" dir="ltr">
@@ -31,9 +31,14 @@
         border-bottom: 3px solid lightgrey;
     }
     /* spesifikk for denne siden */
+    .beskrivelseParagraf {
+        margin: 7px 0 25px 0;
+    }
+/*
     .liste p{
         margin: 7px 0 7px 0;
     }
+*/
     .datoTekst {
         color: grey;
     }
@@ -44,7 +49,7 @@
         border-bottom: 2px solid lightgrey;
         padding: 10px 25px 0 25px;
         width: 100%;
-        height: 100px;
+        /*height: 250px;*/
         background-color: white;
     }
     .nyhetsListeBoks h2{
@@ -111,28 +116,31 @@
     ?>
 
 <section class="liste">
-    <h1>Nyheter</h1>
+    <h1>Annonser</h1>
 
     <?php
         $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
-        $stmt = $db->query('SELECT * FROM nyheter ORDER BY lagtTil DESC LIMIT 7');
+        $stmt = $db->query('SELECT * FROM jobbAnnonse ORDER BY lagtTil DESC LIMIT 7');
 
         if($stmt->rowCount()){
             while ($row = $stmt->fetch()){
 
                 echo '<div class="nyhetsListeBoks" >';
-                    echo '<h2><a href="nyhet.php?id=' . $row['nyhetsid'] .'">', $row['tittel'],'</a></h2>';
+                    echo '<h2><a href="nyhet.php?id=' . $row['annonseid'] .'">', $row['tittel'],'</a></h2>';
                     echo '<p class=\'datoTekst\'>', $row['lagtTil'], '</p>';
                     echo '<p>', $row['forfatter'], '</p>';
+                    echo '<p class=\'beskrivelseParagraf\'>', $row['beskrivelse'], '</p>';
+
                 echo '</div>';
             }
         }
     ?>
 </section>
 <section class="leggTilNyttArrangement">
-    <h1>Opprett nyhet</h1>
+    <h1>Opprett annonse</h1>
     <form class="opprettArrangementBoks" action="leggTilInteresse.inc.php" method="POST">
         <input type="text" name="tittel" id="tekstfelt" placeholder="Tittel"><br>
+        <input type="text" name="url" id="url" placeholder="Link"><br>
         <textarea class="stortTekstfelt" name="Beksrivelse" placeholder="Beskrivelse"></textarea><br>
 
         <input type="submit" name="registrerInt" id="registrerArrKnapp" value="Registrer arrangment">

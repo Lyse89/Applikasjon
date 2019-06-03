@@ -40,7 +40,7 @@
     }
     .arrangementListeBoks h2{
         margin: 0;
-        font-size: 20px;
+        font-size: 18px;
     }
     .arrangementListeBoks a{
 		text-decoration: none;
@@ -100,7 +100,7 @@
     include_once('../includes/init.php');
     ?>
 
-<div class="arrangementListe">
+<section class="arrangementListe">
     <h1>Kommende arrangement</h1>
 
     <?php
@@ -118,7 +118,7 @@
             }
         }
     ?>
-</div>
+</section>
 <section class="leggTilNyttArrangement">
     <h1>Opprett nytt arrangement</h1>
     <form class="opprettArrangementBoks" action="leggTilInteresse.inc.php" method="POST">
