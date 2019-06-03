@@ -90,6 +90,44 @@
         float: right;
     }
 
+    @media screen and (max-width: 1079px) {
+
+        .leggTilNyttArrangement {
+            width: 90%;
+            margin-right: 5%;
+            margin-left: 5%;
+            float: left;
+        }
+
+        .arrangementListe {
+            width: 90%;
+            margin-right: 5%;
+            margin-left: 5%;
+            float: left;
+    
+            clear: both;
+        }
+
+    }
+    @media screen and (max-width: 767px) {
+        .leggTilNyttArrangement {
+            width: 100%;
+            margin-right: 0;
+            margin-left: 0;
+            float: left;
+        }
+
+        .arrangementListe {
+            width: 100%;
+            margin-right: 0;
+            margin-left: 0;
+            float: left;
+    
+            clear: both;
+        }
+    }
+
+
 </style>
 
 </head>
@@ -99,6 +137,18 @@
     include_once('../includes/header_innlogget.php');
     include_once('../includes/init.php');
     ?>
+
+<section class="leggTilNyttArrangement">
+    <h1>Opprett nytt arrangement</h1>
+    <form class="opprettArrangementBoks" action="leggTilInteresse.inc.php" method="POST">
+        <input type="text" name="tittel" id="tekstfelt" placeholder="Tittel"><br>
+        <input type="text" name="lokasjon" id="tekstfelt" placeholder="Sted"><br>
+        <textarea class="stortTekstfelt" name="Beksrivelse" placeholder="Beskrivelse" rows="6" cols="150" minlength="0" maxlength="255"></textarea><br>
+
+        <input type="hidden" name="vert" id="tekstfelt" >
+        <input type="submit" name="registrerInt" id="registrerArrKnapp" value="Registrer arrangment">
+    </form>
+</section>
 
 <section class="arrangementListe">
     <h1>Kommende arrangement</h1>
@@ -118,17 +168,6 @@
             }
         }
     ?>
-</section>
-<section class="leggTilNyttArrangement">
-    <h1>Opprett nytt arrangement</h1>
-    <form class="opprettArrangementBoks" action="leggTilInteresse.inc.php" method="POST">
-        <input type="text" name="tittel" id="tekstfelt" placeholder="Tittel"><br>
-        <input type="text" name="lokasjon" id="tekstfelt" placeholder="Sted"><br>
-        <textarea class="stortTekstfelt" name="Beksrivelse" placeholder="Beskrivelse" rows="6" cols="150" minlength="0" maxlength="255"></textarea><br>
-
-        <input type="hidden" name="vert" id="tekstfelt" >
-        <input type="submit" name="registrerInt" id="registrerArrKnapp" value="Registrer arrangment">
-    </form>
 </section>
 </body>
 </html>
