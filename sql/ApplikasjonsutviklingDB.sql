@@ -29,6 +29,7 @@ CREATE TABLE bruker (
     feilLoginnSiste DATETIME,
     FeilIP VARCHAR(45),
     rolle VARCHAR(15),
+    bilde VARCHAR(255),
     CONSTRAINT brukerNavnPK PRIMARY KEY (brukerNavn),
     CONSTRAINT brukerRolleFK FOREIGN KEY(rolle) REFERENCES roller(rolle)
 );

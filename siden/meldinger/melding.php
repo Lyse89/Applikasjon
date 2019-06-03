@@ -23,14 +23,12 @@ $bruker = $_SESSION['brukernavn'];
       border-style: solid;
       box-shadow: 10px 10px 8px #c0c0c0;
       margin: 50px 4% 0 4%;
-      padding: 5px 5px 5px 5px;
     }
 
     .boks2 {
       border-style: solid;
       box-shadow: 10px 10px 8px #c0c0c0;
       margin: 50px 4% 0 4%;
-      padding: 5px 5px 5px 5px;
     }
 
     .melding {
@@ -66,9 +64,7 @@ $bruker = $_SESSION['brukernavn'];
     }
 
     @media screen and (min-width: 768px) {
-      .sammler {
 
-      }
 
       .boks1 {
         float: left;
