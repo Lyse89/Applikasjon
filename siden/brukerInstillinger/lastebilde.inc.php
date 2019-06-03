@@ -1,9 +1,9 @@
 <?php
-$Mappe = "..siden/brukere/";
-$Navn = $_SESSION['brukernavn'];
+$Mappe = "../brukere/";
+$bruker = $_SESSION['brukernavn'];
 
 if(isset($_POST["submitProfilBilde"])) {
-    $Fil = $Mappe . basename($_FILES["lasteOppProfilBilde"][$Navn]);
+    $Fil = $Mappe . basename($_FILES["lasteOppProfilBilde"]["name"]);
     $FileType = strtolower(pathinfo($Fil,PATHINFO_EXTENSION));
 }
 
