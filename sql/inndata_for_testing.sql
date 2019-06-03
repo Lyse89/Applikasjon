@@ -13,6 +13,8 @@ insert into bruker values('c', '3c6e238f13cf76c438902069df4dd35b56e2d959', 'carl
 insert into bruker values('d', 'c2112c042635ab4c1b028f6b4b44c6a2634442c6', 'Donald', 'Dal', 'd@usn.no', '0', NULL, NULL, NULL);
 insert into bruker values('q', '752e0644435a3ab633189c13cf6c8f531d2ea343', 'q', 'q', 'q@usn.no', '0', NULL, NULL, NULL);
 
+update bruker set bilde = 'bruker' where brukerNavn = '1';
+
 
 -- INSERT INTO token(brukernavn,token,expires) VALUES
 -- ('bruker', 'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh', CURRENT_DATE());

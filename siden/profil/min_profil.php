@@ -123,7 +123,7 @@ $id = $_SESSION['brukernavn'];
 
     <article id="MinProfil">
         <?php
-        $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
+        include('../includes/logg_inn_db.inc.php');
         $stmt = $db->query("SELECT fornavn, etternavn FROM bruker WHERE brukerNavn LIKE '$id'");
 
         if($stmt->rowCount()){
@@ -135,13 +135,22 @@ $id = $_SESSION['brukernavn'];
 
         <section class="Profilbilde">
             <br>
-            <img src="../profil/Profilbilde/profilbilde.png" style="width:250px;height:250px;">
+            <?php
+              include('../includes/logg_inn_db.inc.php');
+                $stmt = $db->query("SELECT bilde FROM bruker WHERE brukerNavn = '$id'");
+                if($stmt->rowCount()){
+                    while ($row = $stmt->fetch()){
+                        echo '<img src="', $row['bilde'], '" style="width:250px;height:250px;">';
+                      }
+                    }
+            ?>
+
         </section>
 
         <section class="Bio">
             <div class="biotekst">
                 <?php
-                $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
+                include('../includes/logg_inn_db.inc.php');
                 $stmt = $db->query("SELECT bio FROM bio WHERE brukerNavn = '$id'");
                 echo "<h2> Bio:";
                 if($stmt->rowCount()){
@@ -159,7 +168,7 @@ $id = $_SESSION['brukernavn'];
         <section class="StudieSection">
             <div class="StudieDiv">
                 <?php
-                $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
+                include('../includes/logg_inn_db.inc.php');
                 $stmt = $db->query("SELECT studier.studie FROM studier INNER JOIN studiekobling ON studiekobling.studie = studier.studie AND studiekobling.brukernavn = '$id'");
                 echo "<h2> Studie: ";
                 if($stmt->rowCount()){
@@ -170,8 +179,8 @@ $id = $_SESSION['brukernavn'];
                         if ($count <= 39 ) {
                             echo ", ";
                         }
-                        if ($count == 5 OR $count == 10 OR $count == 15 OR 
-                            $count == 20 OR $count == 25 OR $count == 30 OR 
+                        if ($count == 5 OR $count == 10 OR $count == 15 OR
+                            $count == 20 OR $count == 25 OR $count == 30 OR
                             $count == 35 OR $count == 40){
                             echo "<br>";
                         }
@@ -186,7 +195,7 @@ $id = $_SESSION['brukernavn'];
         <section class="Interesser">
             <div class="Interessernr">
             <?php
-            $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
+            include('../includes/logg_inn_db.inc.php');
             $stmt = $db->query("SELECT interesser.interesse FROM interesser INNER JOIN interessekobling ON interessekobling.interesse = interesser.interesse AND interessekobling.brukernavn = '$id'");
             echo "<h2> Interesser:";
             if($stmt->rowCount()){

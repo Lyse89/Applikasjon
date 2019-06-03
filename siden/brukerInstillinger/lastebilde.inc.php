@@ -26,6 +26,15 @@ else {
     if (move_uploaded_file($_FILES["lasteOppProfilBilde"]["tmp_name"], $nyttNavn)) {
         $CookieMelding = "Filen ". basename( $_FILES["lasteOppProfilBilde"]["name"]). " har blitt lastet opp.";
         header("Location: profil.php?bilde=suksess");
+        try {
+          include('../includes/logg_inn_db.inc.php');
+          $sql = "UPDATE Bruker SET bilde = '$nyttNavn' where brukerNavn = '$bruker'";
+          $stmt = $db->prepare($sql);
+          $stmt->execute();
+        } catch(PDOException $e)
+          {
+          echo $sql . "<br>" . $e->getMessage();
+          }
         exit();
     }
 }
