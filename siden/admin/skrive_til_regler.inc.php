@@ -17,7 +17,7 @@ if(isset($_POST['btnRegel'])) {
 
   $handle = fopen("../regler/regler.html",'w');
   fwrite($handle,"<html>\n\t<head><title>Regler</title></head>");
-  fwrite($handle,"\t<body><p>1. ", "'$regel0';", "</p>");
+  fwrite($handle,"\t<body><p>1. $regel0 </p> \n");
   fwrite($handle,"\t<p>2. $regel1 </p> \n");
   fwrite($handle,"\t<p>3. $regel2 </p> \n");
   fwrite($handle,"\t<p>4. $regel3 </p> \n");
