@@ -150,6 +150,21 @@ include_once('../includes/ikke_logget_inn.inc.php');
         </div>
 
         <div class="instillinger-boks">
+          <h2>Lage regler</h2>
+            <form class="lagRegler" action="skrive_til_regler.inc.php" method="post">
+              <input type="text" name="regel0" value="" placeholder="Regel 1">
+              <input type="text" name="regel1" value="" placeholder="Regel 2">
+              <input type="text" name="regel2" value="" placeholder="Regel 3">
+              <input type="text" name="regel3" value="" placeholder="Regel 4">
+              <input type="text" name="regel4" value="" placeholder="Regel 5">
+              <input type="text" name="regel5" value="" placeholder="Regel 6">
+              <input type="text" name="regel6" value="" placeholder="Regel 7">
+              <input type="text" name="regel7" value="" placeholder="Regel 8">
+              <input type="text" name="regel8" value="" placeholder="Regel 9">
+              <input type="text" name="regel9" value="" placeholder="Regel 10">
+              <input type="submit" name="btnRegel" value="Lag Regel">
+            </form>
+          </form>
         </div>
 
         <div class="instillinger-boks">
