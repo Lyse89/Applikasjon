@@ -150,7 +150,10 @@ include_once('../includes/ikke_logget_inn.inc.php');
         </div>
 
         <div class="instillinger-boks">
-          <h2>
+          <h2>Lage regler</h2>
+          <form class="" action="skrive_til_regler.inc.php" method="post">
+            
+          </form>
         </div>
 
         <div class="instillinger-boks">
