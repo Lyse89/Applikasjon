@@ -11,6 +11,7 @@
     <meta charset="utf-8">
     <title>IT Nyheter</title>
 <style>
+
     body {
         margin: 0;
         padding: 0;
@@ -64,7 +65,8 @@
         float: right;
         margin: 50px 7.5% 0 2.5%;
         background-color: white;
-        height: 600px;
+        padding-bottom: 20px;
+        /* height: 600px; */
         width: 40%;
 		box-shadow: 10px 10px 8px #c0c0c0;
     }
@@ -100,6 +102,42 @@
         float: right;
     }
 
+    @media screen and (max-width: 1079px) {
+
+        .leggTilNyttArrangement {
+            width: 90%;
+            margin-right: 5%;
+            margin-left: 5%;
+            float: left;
+        }
+
+        .liste {
+            width: 90%;
+            margin-right: 5%;
+            margin-left: 5%;
+            float: left;
+    
+            clear: both;
+        }
+
+    }
+    @media screen and (max-width: 767px) {
+        .leggTilNyttArrangement {
+            width: 100%;
+            margin-right: 0;
+            margin-left: 0;
+            float: left;
+        }
+
+        .liste {
+            width: 100%;
+            margin-right: 0;
+            margin-left: 0;
+            float: left;
+    
+            clear: both;
+        }
+    }
 </style>
 
 </head>
@@ -109,6 +147,16 @@
     include_once('../includes/header_innlogget.php');
     include_once('../includes/init.php');
     ?>
+
+<section class="leggTilNyttArrangement">
+    <h1>Opprett nyhet</h1>
+    <form class="opprettArrangementBoks" action="leggTilInteresse.inc.php" method="POST">
+        <input type="text" name="tittel" id="tekstfelt" placeholder="Tittel"><br>
+        <textarea class="stortTekstfelt" name="Beksrivelse" placeholder="Beskrivelse"></textarea><br>
+
+        <input type="submit" name="registrerInt" id="registrerArrKnapp" value="Registrer arrangment">
+    </form>
+</section>
 
 <section class="liste">
     <h1>Nyheter</h1>
@@ -129,15 +177,7 @@
         }
     ?>
 </section>
-<section class="leggTilNyttArrangement">
-    <h1>Opprett nyhet</h1>
-    <form class="opprettArrangementBoks" action="leggTilInteresse.inc.php" method="POST">
-        <input type="text" name="tittel" id="tekstfelt" placeholder="Tittel"><br>
-        <textarea class="stortTekstfelt" name="Beksrivelse" placeholder="Beskrivelse"></textarea><br>
 
-        <input type="submit" name="registrerInt" id="registrerArrKnapp" value="Registrer arrangment">
-    </form>
-</section>
 </body>
 </html>
 <?php
