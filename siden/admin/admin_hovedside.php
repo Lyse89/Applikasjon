@@ -150,6 +150,7 @@ include_once('../includes/ikke_logget_inn.inc.php');
         </div>
 
         <div class="instillinger-boks">
+          <h2>
         </div>
 
         <div class="instillinger-boks">
