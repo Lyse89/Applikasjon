@@ -54,8 +54,9 @@
     .leggTilNyttArrangement {
         float: right;
         margin: 50px 7.5% 0 2.5%;
+        padding-bottom: 20px;
         background-color: white;
-        height: 600px;
+        /* height: 600px; */
         width: 40%;
 		box-shadow: 10px 10px 8px #c0c0c0;
     }
