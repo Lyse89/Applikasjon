@@ -60,7 +60,7 @@
 		text-decoration: none;
 		color: black;
     }
-    
+
     .nyhetsListeBoks a:hover{
 		color: #9985ad;
     }
@@ -120,7 +120,7 @@
             margin-right: 5%;
             margin-left: 5%;
             float: left;
-    
+
             clear: both;
         }
 
@@ -138,7 +138,7 @@
             margin-right: 0;
             margin-left: 0;
             float: left;
-    
+
             clear: both;
         }
     }
@@ -185,6 +185,10 @@
         }
     ?>
 </section>
+
+<?php
+  include_once('../includes/footer.php');
+?>
 
 </body>
 </html>

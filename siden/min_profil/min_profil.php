@@ -175,8 +175,8 @@ if(isset($_GET['id'])) {
                         if ($count <= 39 ) {
                             echo ", ";
                         }
-                        if ($count == 5 OR $count == 10 OR $count == 15 OR 
-                            $count == 20 OR $count == 25 OR $count == 30 OR 
+                        if ($count == 5 OR $count == 10 OR $count == 15 OR
+                            $count == 20 OR $count == 25 OR $count == 30 OR
                             $count == 35 OR $count == 40){
                             echo "<br>";
                         }
@@ -229,6 +229,9 @@ if(isset($_GET['id'])) {
             <h1>Events</h1>
         </section>
     </article>
+		<?php
+		  include_once('../includes/footer.php');
+		?>
 </body>
 
 </html>

@@ -46,7 +46,7 @@
 		text-decoration: none;
 		color: black;
     }
-    
+
     .arrangementListeBoks a:hover{
 		color: #9985ad;
     }
@@ -105,7 +105,7 @@
             margin-right: 5%;
             margin-left: 5%;
             float: left;
-    
+
             clear: both;
         }
 
@@ -123,7 +123,7 @@
             margin-right: 0;
             margin-left: 0;
             float: left;
-    
+
             clear: both;
         }
     }
@@ -136,7 +136,7 @@
         border: none;
         height: 30px;
     }
-    
+
 
 
 </style>
@@ -188,5 +188,10 @@
         }
     ?>
 </section>
+
+<?php
+  include_once('../includes/footer.php');
+?>
+
 </body>
 </html>

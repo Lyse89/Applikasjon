@@ -50,7 +50,9 @@
         </div>
     </div>
     <!-- Footer -->
-    <footer class ="footer"></footer>
+    <?php
+      include_once('../includes/footer.php');
+    ?>
 
   </body>
 </html>
