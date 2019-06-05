@@ -233,6 +233,11 @@ $id = $_SESSION['brukernavn'];
             <h1>Events</h1>
         </section>
     </article>
+
+    <?php
+      include_once('../includes/footer.php');
+    ?>
+
 </body>
 
 </html>
