@@ -1,13 +1,13 @@
 <?php
-    include_once('../includes/ikke_logget_inn.inc.php');
     //Denne include-siden er utviklet av Kristoffer Sorensen, siste gang endret 02.06.2019
     // Denne include-siden er kontrollert av Kristoffer Sorensen, siste gang 02.06.2019
+    include_once('../includes/ikke_logget_inn.inc.php');
 ?>
 <!DOCTYPE html>
 <html lang="no" dir="ltr">
-<link rel="stylesheet" type="text/css" href="../css/style.css">
 
 <head>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
     <meta charset="utf-8">
     <title>IT Nyheter</title>
 <style>
@@ -17,15 +17,15 @@
         background-color:#ddd;
 
     }
-    /* Endret til liste fra */
-    .liste {
+    /* Endret til annonseListe fra */
+    .annonseListe {
         background-color: white;
         float: left;
         width: 40%;
         margin: 50px 2.5% 0 7.5%;
 		box-shadow: 10px 10px 8px #c0c0c0;
     }
-    .liste h1{
+    .annonseListe h1{
         width: 90%;
         margin: 25px 5% 25px 5%;
         border-bottom: 3px solid lightgrey;
@@ -35,7 +35,7 @@
         margin: 7px 0 25px 0;
     }
 /*
-    .liste p{
+    .annonseListe p{
         margin: 7px 0 7px 0;
     }
 */
@@ -44,7 +44,7 @@
     }
     /* */
 
-    .nyhetsListeBoks {
+    .annonseannonseListeBoks {
         box-sizing: border-box;
         border-bottom: 2px solid lightgrey;
         padding: 10px 25px 0 25px;
@@ -52,30 +52,29 @@
         /*height: 250px;*/
         background-color: white;
     }
-    .nyhetsListeBoks h2{
+    .annonseannonseListeBoks h2{
         margin: 0;
         font-size: 18px;
     }
-    .nyhetsListeBoks a{
+    .annonseannonseListeBoks a{
 		text-decoration: none;
 		color: black;
     }
     
-    .nyhetsListeBoks a:hover{
+    .annonseannonseListeBoks a:hover{
 		color: #9985ad;
     }
 
-    .leggTilNyttArrangement {
+    .leggTilNyAnnonse {
         float: right;
         margin: 50px 7.5% 0 2.5%;
         padding-bottom: 20px;
         background-color: white;
-        height: 600px;
         width: 40%;
 		box-shadow: 10px 10px 8px #c0c0c0;
     }
 
-    .leggTilNyttArrangement h1{
+    .leggTilNyAnnonse h1{
         width: 90%;
         margin: 25px 5% 25px 5%;
         border-bottom: 3px solid lightgrey;
@@ -98,24 +97,24 @@
         background-color: #eeeeee;
         border: none;
     }
-    .opprettArrangementBoks {
+    .opprettAnnonseBoks {
         padding: 0;
         margin: 25px;
     }
-    #registrerArrKnapp {
+    #registrerKnapp {
         float: right;
     }
 
     @media screen and (max-width: 1079px) {
 
-        .leggTilNyttArrangement {
+        .leggTilNyAnnonse {
             width: 90%;
             margin-right: 5%;
             margin-left: 5%;
             float: left;
         }
 
-        .liste {
+        .annonseListe {
             width: 90%;
             margin-right: 5%;
             margin-left: 5%;
@@ -126,14 +125,14 @@
 
     }
     @media screen and (max-width: 767px) {
-        .leggTilNyttArrangement {
+        .leggTilNyAnnonse {
             width: 100%;
             margin-right: 0;
             margin-left: 0;
             float: left;
         }
 
-        .liste {
+        .annonseListe {
             width: 100%;
             margin-right: 0;
             margin-left: 0;
@@ -153,29 +152,32 @@
     include_once('../includes/init.php');
     ?>
 
-<section class="leggTilNyttArrangement">
+<div class="leggTilNyAnnonse">
     <h1>Opprett annonse</h1>
-    <form class="opprettArrangementBoks" action="leggTilInteresse.inc.php" method="POST">
+    <form class="opprettAnnonseBoks" action="opprettAnnonse.php" method="POST">
+
         <input type="text" name="tittel" id="tekstfelt" placeholder="Tittel"><br>
-        <input type="text" name="url" id="url" placeholder="Link"><br>
-        <textarea class="stortTekstfelt" name="Beksrivelse" placeholder="Beskrivelse"></textarea><br>
+        <input type="text" name="stilling" id="stilling" placeholder="Stilling"><br>
+        <input type="text" name="url" id="url" placeholder="Link til annonse"><br>
+        <textarea class="stortTekstfelt" name="beskrivelse" placeholder="Beskrivelse"></textarea><br>
 
-        <input type="submit" name="registrerInt" id="registrerArrKnapp" value="Registrer arrangment">
+        <input type="submit" name="opprettAnnonse" id="registrerKnapp" value="Registrer annonse">
     </form>
-</section>
+</div>
 
-<section class="liste">
+<section class="annonseListe">
     <h1>Annonser</h1>
 
     <?php
-        $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
+        // koble til database
+        include('../includes/logg_inn_db.inc.php');
         $stmt = $db->query('SELECT * FROM jobbAnnonse ORDER BY lagtTil DESC LIMIT 7');
 
         if($stmt->rowCount()){
             while ($row = $stmt->fetch()){
 
-                echo '<div class="nyhetsListeBoks" >';
-                    echo '<h2><a href="nyhet.php?id=' . $row['annonseid'] .'">', $row['tittel'],'</a></h2>';
+                echo '<div class="annonseannonseListeBoks" >';
+                    echo '<h2><a href="'.$row['url'].'">', $row['tittel'],'</a></h2>';
                     echo '<p class=\'datoTekst\'>', $row['lagtTil'], '</p>';
                     echo '<p>', $row['forfatter'], '</p>';
                     echo '<p class=\'beskrivelseParagraf\'>', $row['beskrivelse'], '</p>';
@@ -186,6 +188,9 @@
     ?>
 </section>
 
+<?php
+  include_once('../includes/footer.php');
+?>
+
 </body>
 </html>
-<?php
