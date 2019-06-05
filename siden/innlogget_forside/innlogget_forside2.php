@@ -29,14 +29,13 @@ body {
     margin: 50px 5% 0 5%;
     padding: 0 2% 0 2%;
     width: 86%;
-    /*max-width: 1230px;*/
     background-color: white;
     float: left;
-    /*margin-bottom: 50px;*/
 }
 
 .center h2 {
-    font-size: 35px;
+    color: #303030;
+    font-size: 25px;
     margin-bottom: 7px;
     padding: 0 0 0 20px;
 }
@@ -50,10 +49,11 @@ body {
     flex-wrap: wrap;
     align-items: stretch;
     background-color: white;
-    border-top: solid grey 3px;
+    border-top: solid #e9e9e9 3px;
+
 }
-.flex-container :hover{
-    background-color: light-grey;
+.flex-container a{
+    color: #303030;
 
 }
 
@@ -74,6 +74,48 @@ body {
 }
 .flex-container p {
     line-height: 15px;
+    color: #303030;
+}
+
+.flex-bildeboks {
+    float: left;
+    clear: both;
+    width:100%;
+    margin: 50px 0 0 0;
+    padding-bottom: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    background-color: #aeadad;
+    /* border-top: solid #e9e9e9 3px; */
+
+    justify-content: center;
+}
+.flex-bildeboks a{
+    color: #303030;
+
+}
+
+.flex-bildeboks img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+
+    background-color: #dddddd;}
+
+.flex-bildeboks > div {
+    /* box-shadow: 10px 10px 8px #c0c0c0; */
+    background-color: white;
+    color: black;
+    width: 350px;
+    padding: 15px;
+    margin: 15px;
+    line-height: 10px;
+    font-size: 15px;
+}
+.flex-bildeboks p {
+    line-height: 15px;
+    color: #303030;
 }
 
 .topp-nyhets-boks {
@@ -118,6 +160,7 @@ body {
 	<p>Et quia saepe et rerum hic suscipit. Sequi eligendi consequuntur delectus. <br>In ipsum praesentium est voluptas laudantium quo. Quisquam et enim<br> aspernatur fuga ea error. Est error enim eos mollitia voluptas et est exercitationem.<br>Sequi est quo nulla qui ipsam fuga magnam.</p>
 </section>
 
+
 <div class="center">
 <h2>Nyheter</h2>
 <div class="flex-container">
@@ -141,30 +184,6 @@ body {
 
 
 <div class="center">
-<h2>Arrangement</h2>
-<div class="flex-container">
-    <?php
-
-        $stmt = $db->query('SELECT * FROM arrangement ORDER BY startTid DESC LIMIT 4');
-
-        if($stmt->rowCount()){
-            while ($row = $stmt->fetch()){
-
-                $beskrivelse = substr($row['Beskrivelse'], 0, 120);
-                echo '<div>';
-
-                $bildesti = '<img src=\'' . '../arrangement/bilder/' . $row['arrangementId'] . '.png\' >';
-                echo '<a class=\'headerlink\' href=\'../arrangement/arrangement.php?id='. $row['arrangementId'] . '\'' .'><h3>', $row['tittel'],'</h3>'.$bildesti.'</a>';
-                
-                echo '<p>'.$beskrivelse.'</p>';
-                echo '</div>';
-            }
-        }
-    ?>
-</div>
-</div>
-
-<div class="center">
 <h2>Jobber</h2>
 <div class="flex-container">
     <?php
@@ -184,6 +203,29 @@ body {
     ?>
 </div>
 </div>
+<!-- <div class="center"> -->
+<!-- <h2>Arrangement</h2> -->
+<div class="flex-bildeboks">
+    <?php
+
+        $stmt = $db->query('SELECT * FROM arrangement ORDER BY startTid DESC LIMIT 4');
+
+        if($stmt->rowCount()){
+            while ($row = $stmt->fetch()){
+
+                $beskrivelse = substr($row['Beskrivelse'], 0, 120);
+                echo '<div>';
+
+                $bildesti = '<img src=\'' . '../arrangement/bilder/' . $row['arrangementId'] . '.png\' >';
+                echo '<a class=\'headerlink\' href=\'../arrangement/arrangement.php?id='. $row['arrangementId'] . '\'' .'><h3>', $row['tittel'],'</h3>'.$bildesti.'</a>';
+                
+                echo '<p>'.$beskrivelse.'</p>';
+                echo '</div>';
+            }
+        }
+    ?>
+</div>
+<!-- </div> -->
 <?php
   include_once('../includes/footer.php');
 ?>
