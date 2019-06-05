@@ -1,8 +1,12 @@
 <?php
+// Denne include-siden er utviklet av Kristoffer Sorensen, siste gang endret 06.06.2019
+// Denne include-siden er kontrollert av Kristoffer Sorensen, siste gang 06.06.2019
+
 include_once('../includes/ikke_logget_inn.inc.php');
 include_once('../includes/rollesjekk.inc.php');
 include('../includes/logg_inn_db.inc.php');
 
+// Henter id fra toppen av url'en
 if(isset($_GET['id'])) {
 	$id = $_GET['id'];
 } else {
@@ -17,8 +21,6 @@ if(isset($_GET['id'])) {
 // ------------------------------------------------------------------------------------------
 
 ?>
-<!-- Denne include-siden er utviklet av Kristoffer Sorensen, siste gang endret 08.03.2019
-// Denne include-siden er kontrollert av Kristoffer Sorensen, siste gang 08.03.2019-->
 <!DOCTYPE html>
 <html lang="no" dir="ltr">
 <head>
@@ -58,6 +60,7 @@ if(isset($_GET['id'])) {
             background-color: lightgrey;
             width: 100%;
             height: 200px;
+            object-fit: cover;
         }
 		.arrangementBeskrivelse {
 			width: 50%;
@@ -95,7 +98,7 @@ if(isset($_GET['id'])) {
 		<h1><?php echo $tittel; ?></h1>
 
 		<div class="arrangementBeskrivelse">
-            <img>
+        <img src='<?php echo("bilder/" . $id . ".png");?>'>
 			<h2>Detaljer</h2>
             <p><?php echo $beskrivelse; ?></p>
 
