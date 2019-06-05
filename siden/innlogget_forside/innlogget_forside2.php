@@ -226,10 +226,8 @@ body {
     ?>
 </div>
 <!-- </div> -->
-
-
-</body>
 <?php
   include_once('../includes/footer.php');
 ?>
+</body>
 </html>
