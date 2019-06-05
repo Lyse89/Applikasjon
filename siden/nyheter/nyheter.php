@@ -98,7 +98,7 @@
         padding: 0;
         margin: 25px;
     }
-    #registrerArrKnapp {
+    #opprettNyhetKnapp {
         float: right;
     }
 
@@ -150,13 +150,15 @@
 
 <section class="leggTilNyttArrangement">
     <h1>Opprett nyhet</h1>
-    <form class="opprettArrangementBoks" action="leggTilInteresse.inc.php" method="POST">
-        <input type="text" name="tittel" id="tekstfelt" placeholder="Tittel"><br>
-        <textarea class="stortTekstfelt" name="Beksrivelse" placeholder="Beskrivelse"></textarea><br>
 
-        <input type="submit" name="registrerInt" id="registrerArrKnapp" value="Registrer arrangment">
+    <form class="opprettArrangementBoks" action="opprettNyhet.php" method="POST">
+        <input type="text" name="tittel" id="tekstfelt" placeholder="Tittel"><br>
+        <textarea class="stortTekstfelt" name="beskrivelse" placeholder="Beskrivelse"></textarea><br>
+        <input type="submit" name="opprettNyhet" id="opprettNyhetKnapp" value="Legg til">
     </form>
+
 </section>
+
 
 <section class="liste">
     <h1>Nyheter</h1>

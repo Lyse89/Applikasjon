@@ -127,6 +127,16 @@
             clear: both;
         }
     }
+    .leggTilNyttArrangement label{
+        color: grey;
+    }
+    .leggTilNyttArrangement input[type=datetime-local]{
+        color:grey;
+        background-color:#eeeeee;
+        border: none;
+        height: 30px;
+    }
+    
 
 
 </style>
@@ -141,13 +151,21 @@
 
 <section class="leggTilNyttArrangement">
     <h1>Opprett nytt arrangement</h1>
-    <form class="opprettArrangementBoks" action="leggTilInteresse.inc.php" method="POST">
+
+    <form class="opprettArrangementBoks" action="opprettArrangement.php" method="POST">
+
         <input type="text" name="tittel" id="tekstfelt" placeholder="Tittel"><br>
         <input type="text" name="lokasjon" id="tekstfelt" placeholder="Sted"><br>
-        <textarea class="stortTekstfelt" name="Beksrivelse" placeholder="Beskrivelse" rows="6" cols="150" minlength="0" maxlength="255"></textarea><br>
 
+        <label>Fra</label><br>
+        <input type="datetime-local" name="fraDato" id="fraDato" placeholder="yyyy-mm-ddThh:mm"><br>
+
+        <label>Til</label><br>
+        <input type="datetime-local" name="tilDato" id="tilDato" placeholder="yyyy-mm-ddThh:mm"><br>
+
+        <textarea class="stortTekstfelt" name="beskrivelse" placeholder="Beskrivelse"></textarea><br>
         <input type="hidden" name="vert" id="tekstfelt" >
-        <input type="submit" name="registrerInt" id="registrerArrKnapp" value="Registrer arrangment">
+        <input type="submit" name="opprettArrangement" id="registrerArrKnapp" value="Registrer arrangment">
     </form>
 </section>
 

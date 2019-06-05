@@ -30,17 +30,15 @@ if(isset($_GET['id'])) {
         font-size: 18px;
 
     }
-
+/*
     .center {
         box-shadow: 10px 10px 8px #c0c0c0;
         margin: 0 5% 50px 5%;
         margin-top: 50px;
         padding: 0 2% 0 2%;
         width: 86%;
-        /*max-width: 1230px;*/
         background-color: white;
         float: left;
-        /*margin-bottom: 50px;*/
     }
 
     .flex-container {
@@ -66,6 +64,18 @@ if(isset($_GET['id'])) {
     .instillinger-boks {
 
     }
+*/
+    .flex-boks {
+        display: flex;
+        justify-content: center;
+    }
+    .flex-boks > article{
+        background-color: white;
+        width: 1080px;
+        padding: 20px;
+        line-height: 10px;
+    }
+    article h1 {font-size: 30px;}
 
 </style>
 
@@ -74,20 +84,23 @@ if(isset($_GET['id'])) {
     include_once('../includes/header_innlogget.php');
 ?>
 
-<div class="center">
+<section class="flex-boks">
 <?php
 
     $stmt = $db->query('SELECT * FROM nyheter WHERE nyhetsid = \''. $id . '\';');
 
         if($stmt->rowCount()){
         while ($row = $stmt->fetch()){
+            echo '<div>';
+            echo '<article>';
             echo '<h1>' . $row['tittel'] . '</h1>';
-            echo '<div class="flex-container">';
             echo '<p>' . $row['beskrivelse'] . '</p>';
+            echo '</article>';
             echo '</div>';
         }
     }
 ?>
+</section>
 
 </body>
 </html>

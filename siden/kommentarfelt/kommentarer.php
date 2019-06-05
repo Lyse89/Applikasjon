@@ -6,9 +6,6 @@
     <textarea name="nyKommentar">Tekst...</textarea>
     <button type="submit" name="submit">Legg til</button>
 </form>
-<?php
-echo $id;
-?>
 
 <div class="KommentarContainer">
     <div class="Kommentar">

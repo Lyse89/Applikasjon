@@ -52,9 +52,16 @@ body {
     background-color: white;
     border-top: solid grey 3px;
 }
+.flex-container :hover{
+    background-color: light-grey;
+
+}
 
 .flex-container img {
+    width: 100%;
     height: 200px;
+    object-fit: cover;
+
     background-color: #dddddd;}
 
 .flex-container > div {
@@ -145,9 +152,10 @@ body {
 
                 $beskrivelse = substr($row['Beskrivelse'], 0, 120);
                 echo '<div>';
-                echo '<a class=\'headerlink\' href=\'../arrangement/arrangement.php?id='. $row['arrangementId'] . '\'' .'><h3>', $row['tittel'],'</h3></a>';
 
-                echo '<img src="something.png" style="width:100%;">';
+                $bildesti = '<img src=\'' . '../arrangement/bilder/' . $row['arrangementId'] . '.png\' >';
+                echo '<a class=\'headerlink\' href=\'../arrangement/arrangement.php?id='. $row['arrangementId'] . '\'' .'><h3>', $row['tittel'],'</h3>'.$bildesti.'</a>';
+                
                 echo '<p>'.$beskrivelse.'</p>';
                 echo '</div>';
             }
