@@ -74,6 +74,7 @@
         text-align: center;
     }
 
+
     .instillinger-boks {
         width: 260px;
         padding: 30px;
@@ -130,7 +131,7 @@
         include("../includes/init.php");
         $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
         $søkord = $_POST['Interesser'];
-        $stmt = $db->query("SELECT bruker.fornavn, bruker.etternavn, interessekobling.interesse FROM bruker INNER JOIN interessekobling ON bruker.brukerNavn = interessekobling.brukerNavn WHERE interesse LIKE '%$søkord%'");
+        $stmt = $db->query("SELECT bruker.brukerNavn, bruker.fornavn, bruker.etternavn, interessekobling.interesse FROM bruker INNER JOIN interessekobling ON bruker.brukerNavn = interessekobling.brukerNavn WHERE interesse LIKE '%$søkord%'");
 
         if (!$søkord){
             echo "<div id='errormsg'>Skriv inn en interesse</div>";
@@ -139,11 +140,16 @@
             echo "<div class='SøkResultater'>";
             echo "<table width=100%>";
             echo "<h2> Resultater:";
-            echo "<tr><td><b>Fornavn</b></td><td><b>Etternavn</b></td><td><b>Interesse</b></td>";
+            echo "<h3>(Trykk på navn for å besøke profil)<h3>";
+            echo "<tr><td><b>Navn</b></td><td><b>Interesse</b></td>";
 
             while ($row = $stmt->fetch())
             {
-                echo "<tr><td>{$row['fornavn']}</td><td>{$row['etternavn']}</td><td>{$row['interesse']}</tr>";
+                $profilbrukernavn = $row['brukerNavn'];
+                $fornavn = $row['fornavn'];
+                $etternavn = $row['etternavn'];
+                $interesse = $row['interesse'];
+                echo '<tr><td><p><a href=\'../profil/bruker.php?id='. $profilbrukernavn . '\'>' . $fornavn . ' ' . $etternavn . '</a></p></td><td>' . $interesse . '</td></tr>';
             }
             echo "</table>";
             echo "</div>";
@@ -174,11 +180,17 @@
             echo "<div class='SøkResultater'>";
             echo "<table width=100%>";
             echo "<h2> Resultater:";
-            echo "<tr><td><b>Fornavn</b></td><td><b>Etternavn</b></td></td>";
+            echo "<h3>(Trykk på navn for å besøke profil)<h3>";
+            echo "<tr><td><b>Navn</b></td><td><b>Epost</b></td></td>";
 
             while ($row = $stmt->fetch())
             {
-                echo "<tr><td>{$row['fornavn']}</td><td>{$row['etternavn']}</td></tr>";
+                $profilbrukernavn = $row['brukerNavn'];
+                $fornavn = $row['fornavn'];
+                $etternavn = $row['etternavn'];
+                $ePost = $row['ePost'];
+
+                echo '<tr><td><p><a href=\'../profil/bruker.php?id='. $profilbrukernavn . '\'>' . $fornavn . ' ' . $etternavn . '</a></p></td><td>' . $ePost . '</td></tr>';
             }
             echo "</table>";
             echo "</div>";
