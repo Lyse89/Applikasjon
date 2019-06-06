@@ -1,60 +1,36 @@
 <!-- Denne siden er utviklet av Kristoffer Sorensen, siste gang endret 02.10.2018-->
+
 <form class="nyKommentarBoks" action="../kommentarfelt/leggTilKommentar.php" method="POST">
     <label for="nyKommentar">Skriv en ny kommentar</label>
-    <input type="hidden" name="brukernavn" value="<?php$_SESSION['brukernavn'] ?>">
-    <input type="hidden" name="brukernavn" value="<?php$_SESSION['brukernavn'] ?>">
-    <textarea name="nyKommentar">Tekst...</textarea>
+    <?php echo '<input type="hidden" name="arrangementId" value="' . $id .'">'; ?>
+    <?php echo '<input type="hidden" name="brukernavn" value="' . $_SESSION['brukernavn'] . '">' ?>
+    <textarea name="kommentar" placeholder="Kommentar"></textarea>
     <button type="submit" name="submit">Legg til</button>
 </form>
 
-<div class="KommentarContainer">
-    <div class="Kommentar">
+<?php 
+// hentes fra db
+$stmt = $db->query('SELECT kommentarid, kommentar, tid, kommentar.brukernavn, bruker.fornavn, bruker.etternavn, bruker.bilde FROM kommentar, bruker WHERE arrangementId = \'' . $id . '\' AND kommentar.brukernavn = bruker.brukerNavn ORDER BY tid DESC;');
 
-		<div class="KommentarBildeBoks">
-			<img src="img/profile-icon.png" alt="profil-bilde" width="100px">
-		</div>
+if($stmt->rowCount()){
+    while ($row = $stmt->fetch()){
+        echo '<div class="KommentarContainer">';
+            echo '<div class="Kommentar">';
 
-        <div class="KommentarTekst">
-            <ol>
-                <li class="kommentarNavn"><h3>Fornavn Etternavn</h3><li>
-                <li class="kommentarDato">2018-09-28<li>
-            </ol>
+                echo '<div class="KommentarBildeBoks">';
+                    echo '<img src="' . $row['bilde'] . '" alt="profil-bilde" width="100px">';
+                echo '</div>';
 
-			<!-- Her må det finnes ut en losning for hvordan det blir med tekst i databasen -->
-			<p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-			non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-			</p>
-        </div>
-    </div>
-</div>
+                echo '<div class="KommentarTekst">';
+                    echo '<ol>';
+                        echo '<li class="kommentarNavn"><h3>' . $row['fornavn']. ' ' .$row['etternavn'] . '</h3><li>';
+                        echo '<li class="kommentarDato">' . $row['tid'] . '<li>';
+                    echo '</ol>';
 
-<div class="KommentarContainer">
-    <div class="Kommentar">
-
-		<div class="KommentarBildeBoks">
-			<img src="img/profile-icon.png" alt="profil-bilde" width="100px">
-		</div>
-
-        <div class="KommentarTekst">
-            <ol>
-                <li class="kommentarNavn"><h3>Fornavn Etternavn</h3><li>
-                <li class="kommentarDato">2018-09-28<li>
-            </ol>
-
-			<!-- Her må det finnes ut en losning for hvordan det blir med tekst i databasen -->
-			<p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-			non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-			</p>
-        </div>
-    </div>
-</div>
+                    echo '<p>' . $row['kommentar'] . '</p>';
+                echo '</div>';
+            echo '</div>';
+        echo '</div>';
+    }
+}
+?>
