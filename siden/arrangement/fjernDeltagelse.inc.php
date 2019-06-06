@@ -11,13 +11,12 @@ $brukernavn = $_POST['brukernavn'];
 
 // trygg mot sql injection ettersom at id er en int og at brukernavn
 // er vasket for escape chars ved registrering
-$sql = "insert into arrangementDeltagelse values(" .
-		$arrangementid . ", '" . $brukernavn . "');";
+$sql = "delete from arrangementDeltagelse where arrangementId = '" .
+		$arrangementid . "' and deltager = '" . $brukernavn . "';";
 
 $stmt =  $db->prepare($sql);
 $stmt->execute();
 
 $arrangementside = 'Location: arrangement.php?id=' . $arrangementid;
 header($arrangementside);
-
 ?>

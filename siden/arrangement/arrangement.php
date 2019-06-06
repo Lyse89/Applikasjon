@@ -136,7 +136,10 @@ if(isset($_GET['id'])) {
         }
     // Dersom det ikke kommer noe resultat paa id fra get-req finnes ikke arr
     // og brukeren videresendes til side ikke funnet.
-    } else {header("Location: ../404.php");}
+    } else {
+        header("Location: ../404.php");
+    }
+
     ?>
 
     <div class="arrangementBoks">
@@ -148,12 +151,28 @@ if(isset($_GET['id'])) {
             <p><?php echo $beskrivelse; ?></p>
 
             <?php
-            echo '<form action="settDeltagelse.inc.php" method="POST">
-			<input type="hidden" name="brukernavn" value="' . $_SESSION['brukernavn'] .'">
-			<input type="hidden" name="arrangementid" value="'. $id .'">
-            <input type="submit" name="submit" value="Delta">
-            </form>';
+            // Form for setting eller fjerning av deltagelse
+            
+            // finnes deltagelse.
+            include('finnesDeltagelse.inc.php');
+            $deltar = deltar($_SESSION['brukernavn'],$id);
+
+            if ($deltar) {
+                echo '<form action="fjernDeltagelse.inc.php" method="POST">
+                <input type="hidden" name="brukernavn" value="' . $_SESSION['brukernavn'] .'">
+                <input type="hidden" name="arrangementid" value="'. $id .'">
+                <input type="submit" name="submit" value="Fjern deltagelse">
+                </form>';
+            
+            } else {
+                echo '<form action="settDeltagelse.inc.php" method="POST">
+                <input type="hidden" name="brukernavn" value="' . $_SESSION['brukernavn'] .'">
+                <input type="hidden" name="arrangementid" value="'. $id .'">
+                <input type="submit" name="submit" value="Delta">
+                </form>';
+            }
             ?>
+
 
 		</div>
         <div class="skalInvitBoks">
@@ -180,9 +199,13 @@ if(isset($_GET['id'])) {
 
             </div>
             <div class = "arrangementInvitasjon">
+            <form action = "inviterBruker.php" method = "POST">
                 <h2>Inviter til arrangementet</h2>
-                <input type="text" name="" id="" placeholder="Brukernavn"><br>
-                <input type="submit" name="regInvitasjon" id="regInvitasjon" value="Inviter">
+                <input type="text" name="tilBruker" id="tilBruker" placeholder="Brukernavn"><br>
+                <?php echo '<input type="hidden" name="tittel" id="tittel" value="'.$tittel.'">' ?>
+                <?php echo '<input type="hidden" name="arrangementId" id="arrangementId" value="' . $id .'">' ?>
+                <input type="submit" name="inviterBruker" id="regInvitasjon" value="Inviter">
+            </form>
             </div>
         </div>
     </div>

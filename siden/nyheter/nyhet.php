@@ -30,48 +30,19 @@ if(isset($_GET['id'])) {
         font-size: 18px;
 
     }
-/*
-    .center {
-        box-shadow: 10px 10px 8px #c0c0c0;
-        margin: 0 5% 50px 5%;
+    .nyhetSeksjon {
+        max-width: 1080px;
+        background-color: white;
         margin-top: 50px;
-        padding: 0 2% 0 2%;
-        width: 86%;
-        background-color: white;
-        float: left;
+        padding: 0 50px 70px 50px;
     }
-
-    .flex-container {
-        width:100%;
-        margin: 30px 0 30px 0;
-        padding-bottom: 25px;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: stretch;
-        background-color: white;
-        border-top: solid grey 3px;
-    }
-
-    .flex-container img {
-        height: 200px;
-        background-color: #dddddd;
-    }
-
-    .instillinger-boks {
-        width: 260px;
-        padding: 30px;
-    }
-    .instillinger-boks {
-
-    }
-*/
     .flex-boks {
         display: flex;
         justify-content: center;
     }
     .flex-boks > article{
         background-color: white;
-        width: 1080px;
+        width: 70%;
         padding: 20px;
         line-height: 10px;
     }
@@ -91,12 +62,12 @@ if(isset($_GET['id'])) {
 
         if($stmt->rowCount()){
         while ($row = $stmt->fetch()){
-            echo '<div>';
+            echo '<section class = "nyhetSeksjon">';
             echo '<article>';
             echo '<h1>' . $row['tittel'] . '</h1>';
             echo '<p>' . $row['beskrivelse'] . '</p>';
             echo '</article>';
-            echo '</div>';
+            echo '</section>';
         }
     }
 ?>
