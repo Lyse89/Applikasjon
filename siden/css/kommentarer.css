@@ -39,6 +39,15 @@
     float:right;
 }
 
+.KommentarTekst a {
+    text-decoration: none;
+    color: black;
+}
+
+.KommentarTekst a:hover {
+    color: #9985ad;
+}
+
 .KommentarBildeBoks {
 	padding-top: 28px;
 	float:left;

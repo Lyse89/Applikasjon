@@ -23,7 +23,7 @@ if($stmt->rowCount()){
 
                 echo '<div class="KommentarTekst">';
                     echo '<ol>';
-                        echo '<li class="kommentarNavn"><h3>' . $row['fornavn']. ' ' .$row['etternavn'] . '</h3><li>';
+                        echo '<li class="kommentarNavn"><h3><a href="../profil/bruker.php?id='.$row['brukernavn'].'">' . $row['fornavn']. ' ' .$row['etternavn'] . '</a></h3><li>';
                         echo '<li class="kommentarDato">' . $row['tid'] . '<li>';
                     echo '</ol>';
 

@@ -73,6 +73,16 @@ if(isset($_GET['id'])) {
 			width: 100%;
 			float: right;
 		}
+
+		.arrangementDeltagelse a {
+            text-decoration: none;
+            color: black;
+        }
+		.arrangementDeltagelse a:hover {
+            color: #9985ad;
+        }
+
+
 		.arrangementInvitasjon {
             clear: right;
 
