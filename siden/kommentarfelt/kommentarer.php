@@ -24,9 +24,10 @@ if($stmt->rowCount()){
                 echo '<div class="KommentarTekst">';
                     echo '<ol>';
                         echo '<li class="kommentarNavn"><h3><a href="../profil/bruker.php?id='.$row['brukernavn'].'">' . $row['fornavn']. ' ' .$row['etternavn'] . '</a></h3><li>';
-                        echo '<li class="kommentarDato">' . $row['tid'] . '<li>';
                     echo '</ol>';
 
+                    $tid = substr($row['tid'], 0, 16);
+                    echo '<p style="color: grey; font-size: 14px; margin-top:7px;">' . $tid . '</p>';
                     echo '<p>' . $row['kommentar'] . '</p>';
                 echo '</div>';
             echo '</div>';

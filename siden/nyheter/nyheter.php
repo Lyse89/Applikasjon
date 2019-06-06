@@ -172,7 +172,8 @@
 
                 echo '<div class="nyhetsListeBoks" >';
                     echo '<h2><a href="nyhet.php?id=' . $row['nyhetsid'] .'">', $row['tittel'],'</a></h2>';
-                    echo '<p class=\'datoTekst\'>', $row['lagtTil'], '</p>';
+                    $lagtTil = substr($row['lagtTil'], 0, 16);
+                    echo '<p class=\'datoTekst\'>', $lagtTil, '</p>';
                     echo '<p>', $row['forfatter'], '</p>';
                 echo '</div>';
             }

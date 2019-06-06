@@ -68,7 +68,10 @@
     }
     .tekstfelt {
         width: 15px;
+    }
 
+    .datoTekst {
+        color: grey;
     }
 
     .stortTekstfelt {
@@ -181,7 +184,8 @@
 
                 echo '<div class="arrangementListeBoks" >';
                     echo '<h2><a href="arrangement.php?id=' . $row['arrangementId'] .'">', $row['tittel'],'</a></h2>';
-                    echo '<p>Dato : ', $row['startTid'], '</p>';
+                    $startTid = substr($row['startTid'], 0, 16);
+                    echo '<p class=\'datoTekst\'>', $startTid, '</p>';
                     echo '<p>Sted : ', $row['lokasjon'], '</p>';
                 echo '</div>';
             }

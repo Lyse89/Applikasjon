@@ -30,6 +30,10 @@
         margin: 25px 5% 25px 5%;
         border-bottom: 3px solid lightgrey;
     }
+    .leggTilNyAnnonse h1 {
+        font-size: 25px;
+    }
+
     /* spesifikk for denne siden */
     .beskrivelseParagraf {
         margin: 7px 0 25px 0;
@@ -178,7 +182,8 @@
 
                 echo '<div class="annonseannonseListeBoks" >';
                     echo '<h2><a href="'.$row['url'].'">', $row['tittel'],'</a></h2>';
-                    echo '<p class=\'datoTekst\'>', $row['lagtTil'], '</p>';
+                    $lagtTil = substr($row['lagtTil'], 0, 16);
+                    echo '<p class=\'datoTekst\'>', $lagtTil, '</p>';
                     echo '<p>', $row['forfatter'], '</p>';
                     echo '<p class=\'beskrivelseParagraf\'>', $row['beskrivelse'], '</p>';
 
