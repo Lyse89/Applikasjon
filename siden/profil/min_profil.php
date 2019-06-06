@@ -152,7 +152,7 @@ $id = $_SESSION['brukernavn'];
                 <?php
                 include('../includes/logg_inn_db.inc.php');
                 $stmt = $db->query("SELECT bio FROM bio WHERE brukerNavn = '$id'");
-                echo "<h2> Bio:";
+                echo "<h2>";
                 if($stmt->rowCount()){
                     echo "<br>";
 
