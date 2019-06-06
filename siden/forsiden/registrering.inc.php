@@ -6,38 +6,53 @@ include("../includes/init.php");
 if(isset($_POST['btnSignup_form'])) {
     include_once("../includes/init.php");
 
+    $posjekk = $_POST['passord'];
+    if(strlen($posjekk) < 8) {
+      $regsjekk = 0;
+      header("Location: ../../default.php?reg=kortpo");
+      exit();
+    } else {
+      $regsjekk = 1;
+    }
+
     // Maa endres fra innocent, finne ut hva disse gjor
     $db = new PDO($dsn,$dbBrukernavn,$dbPassord);
 
-    $loginnTeller = 0;
+    if ($regsjekk == 1) {
 
-    $sql = "insert into bruker (brukernavn,passord,fornavn,etternavn,ePost,feilLoginnTeller)";
-    $sql.= "values (:brukernavn,:passord,:fornavn,:etternavn,:epost,$loginnTeller)";
+      $loginnTeller = 0;
 
-    $stmt = $db->prepare($sql);
+      $sql = "insert into bruker (brukernavn,passord,fornavn,etternavn,ePost,feilLoginnTeller)";
+      $sql.= "values (:brukernavn,:passord,:fornavn,:etternavn,:epost,$loginnTeller)";
 
-    $stmt->bindParam(':fornavn',$bfornavn);
-    $stmt->bindParam(':etternavn',$betternavn);
-    $stmt->bindParam(':epost',$bepost);
-    $stmt->bindParam(':passord',$bpassord);
-    $stmt->bindParam(':brukernavn',$bbrukernavn);
+      $stmt = $db->prepare($sql);
 
-
-    $bfornavn = $_POST['fornavn'];
-    $betternavn = $_POST['etternavn'];
-    $bepost = $_POST['epost'];
-    $bpassord = sha1($salt.sha1($salt.$_POST['passord']));
-    $bbrukernavn = $_POST['brukernavn'];
-
-    // Sjekk for om registrering er vellykket
-
-    $stmt->execute();
+      $stmt->bindParam(':fornavn',$bfornavn);
+      $stmt->bindParam(':etternavn',$betternavn);
+      $stmt->bindParam(':epost',$bepost);
+      $stmt->bindParam(':passord',$bpassord);
+      $stmt->bindParam(':brukernavn',$bbrukernavn);
 
 
-    $brukernavn2 = $_POST['brukernavn'];
-    $passord2 = $_POST['passord'];
-    include("../includes/logginnfunksjon.inc.php");
-    logginnFunksjon($brukernavn2, $passord2);
+
+      $bfornavn = $_POST['fornavn'];
+      $betternavn = $_POST['etternavn'];
+      $bepost = $_POST['epost'];
+      $bpassord = sha1($salt.sha1($salt.$_POST['passord']));
+      $bbrukernavn = $_POST['brukernavn'];
+
+
+      // Sjekk for om registrering er vellykket
+
+      $stmt->execute();
+
+
+      $brukernavn2 = $_POST['brukernavn'];
+      $passord2 = $_POST['passord'];
+      include("../includes/logginnfunksjon.inc.php");
+      logginnFunksjon($brukernavn2, $passord2);
+
+    }
 
     header("Location: ../../default.php");
 }

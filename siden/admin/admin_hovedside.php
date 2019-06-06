@@ -168,6 +168,15 @@ include_once('../includes/ikke_logget_inn.inc.php');
         </div>
 
         <div class="instillinger-boks">
+          <h2>Send email til brukere</h2>
+          <form method="POST" action="sendemail.inc.php" onsubmit="sjekkSubmit();">
+            <fieldset>
+                <input type="email" placeholder="Til" name="til" id="til" class="inputBoks">
+                <input type="text" placeholder="Titel" name="subj" id="subj" class="inputTitel">
+                <textarea type="text" placeholder="Tekst...." name="meld" id="meld" class="inputText"></textarea>
+                 <input type="submit" value="Send" name="send" id="send" class="sndBtn">
+            </fieldset>
+          </form>
         </div>
 
         <div class="instillinger-boks">
