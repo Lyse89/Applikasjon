@@ -14,6 +14,14 @@ if(isset($_POST['btnSignup_form'])) {
     } else {
       $regsjekk = 1;
     }
+    $emailsjekk = $_POST['epost'];
+    if(substr($emailsjekk, -6) == 'usn.no') {
+      $regsjekk = 1;
+    } else {
+      $regsjekk = 0;
+      header("Location: ../../default.php?reg=ikkeusn");
+      exit();
+    }
 
     // Maa endres fra innocent, finne ut hva disse gjor
     $db = new PDO($dsn,$dbBrukernavn,$dbPassord);

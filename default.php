@@ -81,6 +81,12 @@
                 <input type="text" name="fornavn" id=Fornavn placeholder="Fornavn">
                 <input type="text" name="etternavn" id=Etternavn placeholder="Etternavn"><br>
                 <input type="email" name="epost" placeholder="E-post" id="epost"><br>
+                <?php
+                    $url ="http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+                    if (strpos($url, "reg=ikkeusn") == true) {
+                      echo "<p class='error'>Bruk USN epost, kontakt admin hvis du ikke har</p>";
+                    }
+                  ?>
                 <input type="password" name="forstePassord" id="Passord" placeholder="Passord" minlength=8><br>
                 <?php
                     $url ="http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
