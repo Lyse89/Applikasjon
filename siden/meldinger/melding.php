@@ -100,7 +100,7 @@ $bruker = $_SESSION['brukernavn'];
 <div class="boks1">
 <h1>Innboks</h1>
 <?php
-    $stmt = $db->query("SELECT meldinger.sendtTid, meldinger.avsender, meldinger.melding, meldinger.tittel FROM innutboks, meldinger WHERE meldinger.meldingID = innutboks.meldingID AND bruker = '$bruker' AND innut = 'inn';");
+    $stmt = $db->query("SELECT meldinger.sendtTid, meldinger.avsender, meldinger.melding, meldinger.tittel FROM innutboks, meldinger WHERE meldinger.meldingID = innutboks.meldingID AND bruker = '$bruker' AND innut = 'inn' ORDER BY meldinger.meldingID DESC;");
 
         if($stmt->rowCount()){
             while ($row = $stmt->fetch()){
@@ -118,7 +118,7 @@ $bruker = $_SESSION['brukernavn'];
 <div class="boks2">
 <h1>Utboks</h1>
 <?php
-    $stmt = $db->query("SELECT meldinger.sendtTid, meldinger.mottaker, meldinger.melding, meldinger.tittel FROM innutboks, meldinger WHERE meldinger.meldingID = innutboks.meldingID AND bruker = '$bruker' AND innut = 'ut';");
+    $stmt = $db->query("SELECT meldinger.sendtTid, meldinger.mottaker, meldinger.melding, meldinger.tittel FROM innutboks, meldinger WHERE meldinger.meldingID = innutboks.meldingID AND bruker = '$bruker' AND innut = 'ut' ORDER BY meldinger.meldingID DESC;");
 
         if($stmt->rowCount()){
             while ($row = $stmt->fetch()){
