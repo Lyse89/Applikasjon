@@ -78,10 +78,10 @@ CREATE TABLE token (
 CREATE TABLE meldinger (
 	meldingID INT(10) NOT NULL AUTO_INCREMENT,
 	avsender VARCHAR(45),
-    mottaker VARCHAR(45),
-    tittel VARCHAR(120),
+    mottaker VARCHAR(45) NOT NULL,
+    tittel VARCHAR(120) NOT NULL,
     sendtTid DATETIME,
-    melding VARCHAR(2000),
+    melding VARCHAR(2000) NOT NULL,
     CONSTRAINT meldingerPK PRIMARY KEY (meldingID),
     CONSTRAINT meldingerBrukerFK FOREIGN KEY (avsender) REFERENCES bruker (brukerNavn),
     CONSTRAINT meldingerBrukerFK2 FOREIGN KEY (mottaker) REFERENCES bruker (brukerNavn)

@@ -56,8 +56,8 @@ DEL 4
 
 
 DEL 5
-    [ ] Endre regel side til html - Simen
-    [ ] Legge til regler som admin, på regel siden
+    [x] Endre regel side til html - Simen
+    [x] Legge til regler som admin, på regel siden
     [ ] Lage en rapport-funksjon for brukere
     [x] Admin skal kunne gi advarsel
     [x] Sette brukere i karantene/utestenge (Kan gi rolle som admin, men trenger funksjon for at brukere ikke kan logge seg inn)

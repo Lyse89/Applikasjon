@@ -102,7 +102,7 @@ if(isset($_GET['id'])) {
 			<h2>Detaljer</h2>
             <p><?php echo $beskrivelse; ?></p>
 
-            <?php 
+            <?php
             echo '<form action="settDeltagelse.inc.php" method="POST">
 			<input type="hidden" name="brukernavn" value="' . $_SESSION['brukernavn'] .'">
 			<input type="hidden" name="arrangementid" value="'. $id .'">
@@ -118,7 +118,7 @@ if(isset($_GET['id'])) {
             // Finner brukere som er satt til aa delta paa prosjektet
             $stmt2 = $db->query('select a.*, b.fornavn, b.etternavn from arrangementDeltagelse as a,'.
                                 'bruker as b where arrangementId = ' . $id . ' and a.deltager = b.brukerNavn;');
-            
+
             //$stmt2 = $db->query('select a.*, b.fornavn, b.etternavn from arrangementDeltagelse as a,'.
             //                    'bruker as b where arrangementId = '. $id .'and a.deltager = b.brukerNavn;');
             if($stmt2->rowCount()){
@@ -142,5 +142,10 @@ if(isset($_GET['id'])) {
     <?php
     include('../kommentarfelt/kommentarer.php');
     ?>
+
+		<?php
+		  include_once('../includes/footer.php');
+		?>
+
   </body>
 </html>

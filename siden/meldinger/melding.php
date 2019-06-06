@@ -87,10 +87,32 @@ $bruker = $_SESSION['brukernavn'];
   include_once('../includes/header_innlogget.php');
   ?>
 
-<form class="sendMelding" action="send.inc.php" method="POST" onsubmit="sjekkSubmit();">
+  <script type="text/javascript">
+    function sjekkFelt() {
+      var error = "";
+      if (document.getElementById('til').value == "") {
+        error += "Skriv in mottaker \n";
+        document.getElementById('til').style.border = "1px solid red";
+      }
+      if (document.getElementById('subj').value == "") {
+        error += "Skriv in Tittel \n";
+        document.getElementById('subj').style.border = "1px solid red";
+      }
+      if (document.getElementById('meld').value == "") {
+        error += "Skriv in en Melding \n";
+        document.getElementById('meld').style.borderColor = "red";
+      }
+      if (error != "") {
+        alert(error);
+        return false;
+      }
+    }
+  </script>
+
+<form class="sendMelding" action="send.inc.php" method="POST" onsubmit="return sjekkFelt();">
   <fieldset>
-      <input type="text" placeholder="Til" name="til" id="til" class="inputBoks" onchange="sjekkFelt()" autofocus>
-      <input type="text" placeholder="Titel" name="subj" id="subj" class="inputTitel" onchange="sjekkFelt()">
+      <input type="text" placeholder="Til" name="til" id="til" class="inputBoks" autofocus>
+      <input type="text" placeholder="Tittel" name="subj" id="subj" class="inputTitel">
       <textarea type="text" placeholder="Tekst (2000 tegn)" name="meld" id="meld" class="inputText"></textarea>
       <input type="submit" value="Send" name="send" id="send" class="sndBtn">
   </fieldset>
@@ -100,7 +122,7 @@ $bruker = $_SESSION['brukernavn'];
 <div class="boks1">
 <h1>Innboks</h1>
 <?php
-    $stmt = $db->query("SELECT meldinger.sendtTid, meldinger.avsender, meldinger.melding, meldinger.tittel FROM innutboks, meldinger WHERE meldinger.meldingID = innutboks.meldingID AND bruker = '$bruker' AND innut = 'inn';");
+    $stmt = $db->query("SELECT meldinger.sendtTid, meldinger.avsender, meldinger.melding, meldinger.tittel FROM innutboks, meldinger WHERE meldinger.meldingID = innutboks.meldingID AND bruker = '$bruker' AND innut = 'inn' ORDER BY meldinger.meldingID DESC;");
 
         if($stmt->rowCount()){
             while ($row = $stmt->fetch()){
@@ -118,7 +140,7 @@ $bruker = $_SESSION['brukernavn'];
 <div class="boks2">
 <h1>Utboks</h1>
 <?php
-    $stmt = $db->query("SELECT meldinger.sendtTid, meldinger.mottaker, meldinger.melding, meldinger.tittel FROM innutboks, meldinger WHERE meldinger.meldingID = innutboks.meldingID AND bruker = '$bruker' AND innut = 'ut';");
+    $stmt = $db->query("SELECT meldinger.sendtTid, meldinger.mottaker, meldinger.melding, meldinger.tittel FROM innutboks, meldinger WHERE meldinger.meldingID = innutboks.meldingID AND bruker = '$bruker' AND innut = 'ut' ORDER BY meldinger.meldingID DESC;");
 
         if($stmt->rowCount()){
             while ($row = $stmt->fetch()){
@@ -135,7 +157,9 @@ $bruker = $_SESSION['brukernavn'];
 </div>
 
 <!-- Footer -->
-<footer class ="footer"></footer>
+<?php
+  include_once('../includes/footer.php');
+?>
 
 </body>
 </html>

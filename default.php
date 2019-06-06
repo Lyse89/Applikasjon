@@ -36,9 +36,36 @@
             <h1 style="font-size: 50px;">Alumni</h1>
             <p>Et nettverk for samarbeid og kunnskapsdeling mellom nåværende og tidligere studenter innen IT på usn. Deling av informasjon relatert til arrangementer, jobb og generelt nytt om hva som skjer på campus.</p>
         </div>
+
+        <script type="text/javascript">
+          function sjekkFelt() {
+            var error = "";
+            if (document.getElementById('Fornavn').value == "") {
+              error += "Skriv in Fornavn \n";
+              document.getElementById('Fornavn').style.border = "1px solid red";
+            }
+            if (document.getElementById('Etternavn').value == "") {
+              error += "Skriv in Etternavn \n";
+              document.getElementById('Etternavn').style.border = "1px solid red";
+            }
+            if (document.getElementById('Passord').value == "") {
+              error += "Skriv in en Passord \n";
+              document.getElementById('Passord').style.border = "1px solid red";
+            }
+            if (document.getElementById('brukernavn').value == "") {
+              error += "Skriv in en brukernavn \n";
+              document.getElementById('brukernavn').style.border = "1px solid red";
+            }
+            if (error != "") {
+              alert(error);
+              return false;
+            }
+          }
+        </script>
+
         <div class="Box1"> <!-- Registrerings box -->
             <h2>Opprett en ny konto</h2>
-            <form class="signup-form" action="siden/forsiden/registrering.inc.php" method="POST">
+            <form class="signup-form" action="siden/forsiden/registrering.inc.php" method="POST" onsubmit="return sjekkFelt();">
                 <input type="text" name="fornavn" id=Fornavn placeholder="Fornavn">
                 <input type="text" name="etternavn" id=Etternavn placeholder="Etternavn"><br>
                 <input type="email" name="epost" placeholder="E-post"><br>
@@ -50,7 +77,9 @@
         </div>
     </div>
     <!-- Footer -->
-    <footer class ="footer"></footer>
+    <?php
+      include_once('siden/includes/footer.php');
+    ?>
 
   </body>
 </html>
