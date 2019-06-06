@@ -48,9 +48,21 @@
               error += "Skriv in Etternavn \n";
               document.getElementById('Etternavn').style.border = "1px solid red";
             }
+            if (document.getElementById('epost').value == "") {
+              error += "Skriv in epost \n";
+              document.getElementById('epost').style.border = "1px solid red";
+            }
+            if (document.getElementById('brukernavn').value == "") {
+              error += "Skriv in en brukernavn \n";
+              document.getElementById('brukernavn').style.border = "1px solid red";
+            }
             if (document.getElementById('Passord').value == "") {
               error += "Skriv in en Passord \n";
               document.getElementById('Passord').style.border = "1px solid red";
+            }
+            if (document.getElementById('GjentaPassord').value == "") {
+              error += "Skriv in en GjentaPassord \n";
+              document.getElementById('GjentaPassord').style.border = "1px solid red";
             }
             if (document.getElementById('brukernavn').value == "") {
               error += "Skriv in en brukernavn \n";
@@ -68,8 +80,8 @@
             <form class="signup-form" action="siden/forsiden/registrering.inc.php" method="POST" onsubmit="return sjekkFelt();">
                 <input type="text" name="fornavn" id=Fornavn placeholder="Fornavn">
                 <input type="text" name="etternavn" id=Etternavn placeholder="Etternavn"><br>
-                <input type="email" name="epost" placeholder="E-post"><br>
-                <input type="password" name="forstePassord" id="Passord" placeholder="Passord "><br>
+                <input type="email" name="epost" placeholder="E-post" id="epost"><br>
+                <input type="password" name="forstePassord" id="Passord" placeholder="Passord" minlength=7><br>
                 <input type="password" name="passord" id="GjentaPassord" placeholder="Gjenta Passord"><br>
                 <input type="text" name="brukernavn" id="brukernavn" placeholder="Bruker Navn"> <br>
                 <input type="submit" name="btnSignup_form" value="Registrer Deg" id="registrer" onclick="Validate()">
