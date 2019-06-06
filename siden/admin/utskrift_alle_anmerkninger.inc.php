@@ -60,7 +60,7 @@ $stmt = $db->query("SELECT * FROM anmerkning GROUP BY brukerNavn DESC, tid DESC;
 
 $stmt->rowCount();
     echo "<div class='SøkResultater'>";
-    echo "<table width=100%>";
+    echo "<table>";
     echo "<tr><td><b>Brukernavn</b></td><td><b>Hvem ga anmerkningen</b></td><td><b>Dato</b></td><td><b>Forklaring</b></td></tr>";
     while ($row = $stmt->fetch())
     {
