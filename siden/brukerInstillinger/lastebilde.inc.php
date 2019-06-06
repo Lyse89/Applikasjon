@@ -28,7 +28,7 @@ else {
         header("Location: profil.php?bilde=suksess");
         try {
           include('../includes/logg_inn_db.inc.php');
-          $sql = "UPDATE Bruker SET bilde = '$nyttNavn' where brukerNavn = '$bruker'";
+          $sql = "UPDATE bruker SET bilde = '$nyttNavn' where brukerNavn = '$bruker';";
           $stmt = $db->prepare($sql);
           $stmt->execute();
         } catch(PDOException $e)
@@ -39,5 +39,5 @@ else {
     }
 }
 
- header("Location: profil.php");
+header("Location: profil.php");
 ?>

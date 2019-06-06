@@ -129,18 +129,21 @@ if(isset($_GET['id'])) {
     <article id="MinProfil">
         <?php
         $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
-        $stmt = $db->query("SELECT fornavn, etternavn FROM bruker WHERE brukerNavn LIKE '$id'");
+        $stmt = $db->query("SELECT fornavn, etternavn, bilde FROM bruker WHERE brukerNavn LIKE '$id'");
 
         if($stmt->rowCount()){
             while ($row = $stmt->fetch()){
                 echo "<h1>{$row['fornavn']} {$row['etternavn']}</h1>";
+                $bildesti = $row['bilde'];
             }
         }
         ?>
 
         <section class="Profilbilde">
             <br>
-            <img src="../profil/Profilbilde/profilbilde.png" style="width:250px;height:250px;">
+        <?php
+            echo '<img src="' . $bildesti .'" style="width:250px;height:250px;">';
+        ?>
         </section>
 
         <section class="Bio">
