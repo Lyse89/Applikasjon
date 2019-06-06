@@ -92,15 +92,15 @@ $bruker = $_SESSION['brukernavn'];
       var error = "";
       if (document.getElementById('til').value == "") {
         error += "Skriv in mottaker \n";
-        document.getElementById('til').style.borderColor = 'red';
+        document.getElementById('til').style.border = "1px solid red";
       }
       if (document.getElementById('subj').value == "") {
         error += "Skriv in Tittel \n";
-        document.getElementById('subj').style.borderColor = 'red';
+        document.getElementById('subj').style.border = "1px solid red";
       }
       if (document.getElementById('meld').value == "") {
         error += "Skriv in en Melding \n";
-        document.getElementById('meld').style.borderColor = 'red';
+        document.getElementById('meld').style.borderColor = "red";
       }
       if (error != "") {
         alert(error);
@@ -109,7 +109,7 @@ $bruker = $_SESSION['brukernavn'];
     }
   </script>
 
-<form class="sendMelding" action="send.inc.php" method="POST" onsubmit="sjekkFelt();">
+<form class="sendMelding" action="send.inc.php" method="POST" onsubmit="return sjekkFelt();">
   <fieldset>
       <input type="text" placeholder="Til" name="til" id="til" class="inputBoks" autofocus>
       <input type="text" placeholder="Tittel" name="subj" id="subj" class="inputTitel">
