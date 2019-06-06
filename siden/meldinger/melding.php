@@ -87,10 +87,32 @@ $bruker = $_SESSION['brukernavn'];
   include_once('../includes/header_innlogget.php');
   ?>
 
-<form class="sendMelding" action="send.inc.php" method="POST" onsubmit="sjekkSubmit();">
+  <script type="text/javascript">
+    function sjekkFelt() {
+      var error = "";
+      if (document.getElementById('til').value == "") {
+        error += "Skriv in mottaker \n";
+        document.getElementById('til').style.borderColor = 'red';
+      }
+      if (document.getElementById('subj').value == "") {
+        error += "Skriv in Tittel \n";
+        document.getElementById('subj').style.borderColor = 'red';
+      }
+      if (document.getElementById('meld').value == "") {
+        error += "Skriv in en Melding \n";
+        document.getElementById('meld').style.borderColor = 'red';
+      }
+      if (error != "") {
+        alert(error);
+        return false;
+      }
+    }
+  </script>
+
+<form class="sendMelding" action="send.inc.php" method="POST" onsubmit="sjekkFelt();">
   <fieldset>
-      <input type="text" placeholder="Til" name="til" id="til" class="inputBoks" onchange="sjekkFelt()" autofocus>
-      <input type="text" placeholder="Titel" name="subj" id="subj" class="inputTitel" onchange="sjekkFelt()">
+      <input type="text" placeholder="Til" name="til" id="til" class="inputBoks" autofocus>
+      <input type="text" placeholder="Tittel" name="subj" id="subj" class="inputTitel">
       <textarea type="text" placeholder="Tekst (2000 tegn)" name="meld" id="meld" class="inputText"></textarea>
       <input type="submit" value="Send" name="send" id="send" class="sndBtn">
   </fieldset>
