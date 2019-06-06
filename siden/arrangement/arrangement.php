@@ -70,30 +70,65 @@ if(isset($_GET['id'])) {
 		.arrangementDeltagelse {
 			margin: 0 0 25px 0;
             min-height: 200px;
-			width: 40%;
+			width: 100%;
 			float: right;
 		}
 		.arrangementInvitasjon {
             clear: right;
 
 		}
+        
+        /* Lagt til 06.06.2019 */
 
+        .skalInvitBoks {
+            width: 40%;
+            float: right;
+        }
+    @media screen and (max-width: 1079px) {
+        .arrangementBoks {
+            width: 90%;
+            margin-right: 5%;
+            margin-left: 5%;
+        }
+
+        .skalInvitBoks {
+            width: 100%;
+            clear: both;
+        }
+        .arrangementBeskrivelse {
+            width: 100%;
+        }
+
+    }
+    @media screen and (max-width: 767px) {
+        .arrangementBoks {
+            width: 100%;
+            margin-right: 0;
+            margin-left: 0;
+        }
+
+    }
+    
+
+        /* slutt Lagt til 06.06.2019 */
     </style>
 </head>
 <body>
     <?php
     include_once('../includes/header_innlogget.php');
 
+    // Dersom arrangementet finnes settes tittel og beskrivelse
     $stmt = $db->query('SELECT * FROM arrangement WHERE arrangementid =\''. $id . '\';');
     if($stmt->rowCount()){
         while ($row = $stmt->fetch()){
             $beskrivelse = $row['Beskrivelse'];
             $tittel = $row['tittel'];
         }
-    }
-
-
+    // Dersom det ikke kommer noe resultat paa id fra get-req finnes ikke arr
+    // og brukeren videresendes til side ikke funnet.
+    } else {header("Location: ../404.php");}
     ?>
+
     <div class="arrangementBoks">
 		<h1><?php echo $tittel; ?></h1>
 
@@ -106,36 +141,39 @@ if(isset($_GET['id'])) {
             echo '<form action="settDeltagelse.inc.php" method="POST">
 			<input type="hidden" name="brukernavn" value="' . $_SESSION['brukernavn'] .'">
 			<input type="hidden" name="arrangementid" value="'. $id .'">
-            <button type="submit" name="submit">Delta</button>
+            <input type="submit" name="submit" value="Delta">
             </form>';
             ?>
 
 		</div>
-		<div class="arrangementDeltagelse">
-			<h2>Skal</h2>
+        <div class="skalInvitBoks">
+            <div class="arrangementDeltagelse">
+                <h2>Skal</h2>
 
-            <?php
-            // Finner brukere som er satt til aa delta paa prosjektet
-            $stmt2 = $db->query('select a.*, b.fornavn, b.etternavn from arrangementDeltagelse as a,'.
-                                'bruker as b where arrangementId = ' . $id . ' and a.deltager = b.brukerNavn;');
+                <?php
+                // Finner brukere som er satt til aa delta paa prosjektet
+                $stmt2 = $db->query('select a.*, b.fornavn, b.etternavn from arrangementDeltagelse as a,'.
+                                    'bruker as b where arrangementId = ' . $id . ' and a.deltager = b.brukerNavn;');
 
-            //$stmt2 = $db->query('select a.*, b.fornavn, b.etternavn from arrangementDeltagelse as a,'.
-            //                    'bruker as b where arrangementId = '. $id .'and a.deltager = b.brukerNavn;');
-            if($stmt2->rowCount()){
-                while ($row2 = $stmt2->fetch()){
-                    $fornavn = $row2['fornavn'];
-                    $etternavn = $row2['etternavn'];
-                    $brukernavn = $row2['deltager'];
+                //$stmt2 = $db->query('select a.*, b.fornavn, b.etternavn from arrangementDeltagelse as a,'.
+                //                    'bruker as b where arrangementId = '. $id .'and a.deltager = b.brukerNavn;');
+                if($stmt2->rowCount()){
+                    while ($row2 = $stmt2->fetch()){
+                        $fornavn = $row2['fornavn'];
+                        $etternavn = $row2['etternavn'];
+                        $brukernavn = $row2['deltager'];
 
-                    echo '<p><a href=\'../profil/bruker.php?id='. $brukernavn . '\'>' . $fornavn . ' ' . $etternavn . '</a></p>';
+                        echo '<p><a href=\'../profil/bruker.php?id='. $brukernavn . '\'>' . $fornavn . ' ' . $etternavn . '</a></p>';
+                    }
                 }
-            }
-            ?>
+                ?>
 
-		</div>
-        <div class = "arrangementInvitasjon">
-            <h2>Inviter til arrangementet</h2>
-            <input type="text" name="" id="" placeholder="Søk på navn">
+            </div>
+            <div class = "arrangementInvitasjon">
+                <h2>Inviter til arrangementet</h2>
+                <input type="text" name="" id="" placeholder="Brukernavn"><br>
+                <input type="submit" name="regInvitasjon" id="regInvitasjon" value="Inviter">
+            </div>
         </div>
     </div>
 
