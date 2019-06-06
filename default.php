@@ -81,7 +81,13 @@
                 <input type="text" name="fornavn" id=Fornavn placeholder="Fornavn">
                 <input type="text" name="etternavn" id=Etternavn placeholder="Etternavn"><br>
                 <input type="email" name="epost" placeholder="E-post" id="epost"><br>
-                <input type="password" name="forstePassord" id="Passord" placeholder="Passord" minlength=7><br>
+                <input type="password" name="forstePassord" id="Passord" placeholder="Passord" minlength=8><br>
+                <?php
+                    $url ="http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+                    if (strpos($url, "reg=kortpo") == true) {
+                      echo "<p class='error'>For kort passord</p>";
+                    }
+                  ?>
                 <input type="password" name="passord" id="GjentaPassord" placeholder="Gjenta Passord"><br>
                 <input type="text" name="brukernavn" id="brukernavn" placeholder="Bruker Navn"> <br>
                 <input type="submit" name="btnSignup_form" value="Registrer Deg" id="registrer" onclick="Validate()">
