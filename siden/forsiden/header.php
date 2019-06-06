@@ -24,7 +24,7 @@ input:focus {
         } else {
           echo '<form method="post" id="form1" action="default.php">
                 <input class="logginBruker" type="text" id="Bruker" name="brukernavn" placeholder="Brukernavn" autofocus>
-                <input class="logginPassord" type="password" id="Passord" name="passord" placeholder="Passord">
+                <input class="logginPassord" type="password" id="Passordh" name="passord" placeholder="Passord">
                 <button type="submit" value="Logg inn" name="Logginn">Login</button><br />
                 <div class="sjekk">
                 <label class="loggincookie">Forbli innlogget?
