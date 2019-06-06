@@ -19,7 +19,7 @@
     margin: 0% 10% 0% 10%;
 }
 
-.nyKommentarBoks button {
+#leggTilKommentarKnapp {
     margin: 10px 12% 40px 0;
     clear: both;
     float: right;
@@ -82,4 +82,37 @@
     display: inline-block;
     padding: 0 10px 0 0;
     
+}
+
+@media screen and (max-width: 1079px) {
+
+    .KommentarContainer {
+        width: 95%;
+        margin-right: 2.5%;
+        margin-left: 2.5%;
+    }
+
+    .nyKommentarBoks {
+        width: 90%;
+        margin-right: 5%;
+        margin-left: 5%;
+    }
+
+
+}
+@media screen and (max-width: 767px) {
+
+    .nyKommentarBoks {
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .KommentarContainer {
+        width: 95%;
+        margin-right: 2.5%;
+        margin-left: 2.5%;
+
+    }
+
 }

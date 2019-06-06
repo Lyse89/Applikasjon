@@ -5,7 +5,7 @@
     <?php echo '<input type="hidden" name="arrangementId" value="' . $id .'">'; ?>
     <?php echo '<input type="hidden" name="brukernavn" value="' . $_SESSION['brukernavn'] . '">' ?>
     <textarea name="kommentar" placeholder="Kommentar"></textarea>
-    <button type="submit" name="submit">Legg til</button>
+    <input type="submit" name="submit" id="leggTilKommentarKnapp" value="Legg til">
 </form>
 
 <?php 
