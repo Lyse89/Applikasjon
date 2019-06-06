@@ -18,7 +18,7 @@ if($stmt->rowCount()){
             echo '<div class="Kommentar">';
 
                 echo '<div class="KommentarBildeBoks">';
-                    echo '<img src="' . $row['bilde'] . '" alt="profil-bilde" width="100px">';
+                    echo '<img src="../brukere/' . $row['bilde'] . '" alt="profil-bilde" width="100px">';
                 echo '</div>';
 
                 echo '<div class="KommentarTekst">';
