@@ -180,7 +180,7 @@
 
     <?php
         $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
-        $stmt = $db->query('SELECT * FROM arrangement ORDER BY startTid DESC LIMIT 8 ');
+        $stmt = $db->query('SELECT * FROM arrangement ORDER BY startTid ASC LIMIT 8 ');
 
         if($stmt->rowCount()){
             while ($row = $stmt->fetch()){

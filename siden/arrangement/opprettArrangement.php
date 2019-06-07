@@ -41,9 +41,9 @@ include_once('../includes/ikke_logget_inn.inc.php');
 
 
 function arrangmentBilde($db){
-    $Mappe = "";
+    $Mappe = "../arrangement/bilder/";
     $posttittel = $_POST['tittel'];
-    $nyttNavn = $Mappe . $posttittel .'.'. pathinfo($_FILES["lasteOpparrangementlBilde"]["name"] ,PATHINFO_EXTENSION);
+    $nyttNavn = $posttittel .'.'. pathinfo($_FILES["lasteOpparrangementlBilde"]["name"] ,PATHINFO_EXTENSION);
 
     if(isset($_POST["opprettArrangement"])) {
         $Fil = $Mappe . basename($_FILES["lasteOpparrangementlBilde"]["name"]);
@@ -62,7 +62,7 @@ function arrangmentBilde($db){
 
 
     else {
-        if (move_uploaded_file($_FILES["lasteOpparrangementlBilde"]["tmp_name"], $nyttNavn)) {
+        if (move_uploaded_file($_FILES["lasteOpparrangementlBilde"]["tmp_name"], $Mappe . $nyttNavn)) {
             $CookieMelding = "Filen ". basename( $_FILES["lasteOpparrangementlBilde"]["name"]). " har blitt lastet opp.";
             try {
               include('../includes/logg_inn_db.inc.php');
