@@ -30,8 +30,8 @@ if(isset($_POST['btnSignup_form'])) {
 
       $loginnTeller = 0;
 
-      $sql = "insert into bruker (brukernavn,passord,fornavn,etternavn,ePost,feilLoginnTeller)";
-      $sql.= "values (:brukernavn,:passord,:fornavn,:etternavn,:epost,$loginnTeller)";
+      $sql = "insert into bruker (brukernavn,passord,fornavn,etternavn,ePost,feilLoginnTeller, bilde)";
+      $sql.= "values (:brukernavn,:passord,:fornavn,:etternavn,:epost,$loginnTeller, '../brukere/default/profil.png')";
 
       $stmt = $db->prepare($sql);
 

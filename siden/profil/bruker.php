@@ -34,6 +34,14 @@ if(isset($_GET['id'])) {
         float:left;
         text-align: right;
     }
+
+    .Profilbilde img {
+        width: 250px;
+        height: 250px;
+        object-fit: cover;
+
+    }
+
     /*Bio Box*/
     #MinProfil .Bio{
         width:60%;
@@ -98,6 +106,7 @@ if(isset($_GET['id'])) {
         border-style: ridge;
     }
 	.flex-bildeboks {
+        text-align: left;
 	    float: left;
 	    clear: both;
 	    width:100%;
@@ -106,12 +115,13 @@ if(isset($_GET['id'])) {
 	    display: flex;
 	    flex-wrap: wrap;
 	    align-items: stretch;
-	    background-color: #aeadad;
 	    /* border-top: solid #e9e9e9 3px; */
 
 	    justify-content: center;
 	}
 	.flex-bildeboks a{
+        text-align: center;
+        text-decoration: none;
 	    color: #303030;
 
 	}
@@ -182,7 +192,7 @@ if(isset($_GET['id'])) {
         <section class="Profilbilde">
             <br>
         <?php
-            echo '<img src="' . $bildesti .'" style="width:250px;height:250px;">';
+            echo '<img src="' . $bildesti .'">';
         ?>
         </section>
 
@@ -191,7 +201,7 @@ if(isset($_GET['id'])) {
                 <?php
                 $db = new PDO($dsn,"$dbBrukernavn","$dbPassord");
                 $stmt = $db->query("SELECT bio FROM bio WHERE brukerNavn = '$id'");
-                echo "<h2> Bio:";
+                echo "<h2>";
                 if($stmt->rowCount()){
                     echo "<br>";
 
@@ -261,7 +271,7 @@ if(isset($_GET['id'])) {
         </section>
 		<section class="flex-bildeboks">
             <?php
-				echo "<h2 style='width: 100%'>arrangementer</h2>";
+				echo "<h2 style='width: 100%; text-align:center;'>arrangementer</h2>";
                 $stmt = $db->query("SELECT * FROM arrangement JOIN arrangementDeltagelse ON arrangement.arrangementId = arrangementDeltagelse.arrangementId AND arrangementDeltagelse.deltager = '$id' ORDER BY startTid DESC LIMIT 3;");
 
                 if($stmt->rowCount()){

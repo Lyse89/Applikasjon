@@ -29,6 +29,14 @@ $id = $_SESSION['brukernavn'];
         float:left;
         text-align: right;
     }
+
+    .Profilbilde img {
+        width: 250px;
+        height: 250px;
+        object-fit: cover;
+
+    }
+
     /*Bio Box*/
     #MinProfil .Bio{
         width:60%;
@@ -101,7 +109,6 @@ $id = $_SESSION['brukernavn'];
         display: flex;
         flex-wrap: wrap;
         align-items: stretch;
-        background-color: #aeadad;
         /* border-top: solid #e9e9e9 3px; */
 
         justify-content: center;
@@ -179,7 +186,8 @@ $id = $_SESSION['brukernavn'];
                 $stmt = $db->query("SELECT bilde FROM bruker WHERE brukerNavn = '$id'");
                 if($stmt->rowCount()){
                     while ($row = $stmt->fetch()){
-                        echo '<img src="', $row['bilde'], '" style="width:250px;height:250px;">';
+                        echo '<img src="', $row['bilde'], '">';
+        
                       }
                     }
             ?>
