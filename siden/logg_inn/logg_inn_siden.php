@@ -67,6 +67,10 @@
       font-size: 17;
   }
 
+  .formCenter {
+      text-align: center;
+  }
+
 </style>
 </head>
 
@@ -74,7 +78,7 @@
 <body>
 <nav>
 	<a class="bilde" href="../../default.php">
-	  <img class="logo-navHeaderForsiden" src="../img/logo.png" alt="Logoen til USN" width="84" height="42">
+        <h1>Alumni</h1>
 	</a>
 </nav>
 
@@ -95,12 +99,14 @@
 	</table>
 	<p align="center"><input type="submit" value="Logg inn" name="Logginn" id="Logginn"></p>
 </form>
-
+<div class='formCenter'>
 <form  class="gjen_PO" action="gjen_PO.inc.php" method="post">
   <h1>Gjennoppret passord</h1>
   <p>Skriv inn epost å få et nytt passord sendt</p>
   <input type="email" name="epost" value="Epost" placeholder="epost">
   <input type="submit" name="btnGjenPO" value="Send">
+
+</div>
 </form>
 </body>
 </html>

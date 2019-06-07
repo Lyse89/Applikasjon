@@ -11,7 +11,7 @@ input:focus {
 </style>
 <nav>
 <a class="bilde" href="default.php">
-  <img class="logo-navHeaderForsiden" src="siden/img/logo.png" alt="Logoen til USN" width="84" height="42">
+  <h1>Alumni</h1>
 </a>
   <div class="Loggin">
     <?php

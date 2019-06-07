@@ -6,7 +6,7 @@
 
 <nav class="topnav" id="minTopnav">
   <form action="../includes/loggut.inc.php" method="POST">
-  <a href="../innlogget_forside/innlogget_forside2.php" class="aktiv">USN</a>
+  <a href="../innlogget_forside/innlogget_forside2.php" class="aktiv">Alumni</a>
   <a href="../annonser/annonser.php">Annonser</a>
   <a href="../arrangement/arrangementer.php">Arrangement</a>
   <a href="../nyheter/nyheter.php">Nyheter</a>
