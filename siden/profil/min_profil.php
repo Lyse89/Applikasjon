@@ -92,7 +92,46 @@ $id = $_SESSION['brukernavn'];
         text-align: center;
         border-style: ridge;
     }
+    .flex-bildeboks {
+        float: left;
+        clear: both;
+        width:100%;
+        margin: 50px 0 0 0;
+        padding-bottom: 25px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        background-color: #aeadad;
+        /* border-top: solid #e9e9e9 3px; */
 
+        justify-content: center;
+    }
+    .flex-bildeboks a{
+        color: #303030;
+
+    }
+
+    .flex-bildeboks img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+
+        background-color: #dddddd;}
+
+    .flex-bildeboks > div {
+        /* box-shadow: 10px 10px 8px #c0c0c0; */
+        background-color: white;
+        color: black;
+        width: 350px;
+        padding: 15px;
+        margin: 15px;
+        line-height: 10px;
+        font-size: 15px;
+    }
+    .flex-bildeboks p {
+        line-height: 15px;
+        color: #303030;
+    }
     /* Responsiv */
     @media (min-width: 769px) and (max-width: 1080px) {
         #MinProfil .Profilbilde,
@@ -170,7 +209,7 @@ $id = $_SESSION['brukernavn'];
                 <?php
                 include('../includes/logg_inn_db.inc.php');
                 $stmt = $db->query("SELECT studier.studie FROM studier INNER JOIN studiekobling ON studiekobling.studie = studier.studie AND studiekobling.brukernavn = '$id'");
-                echo "<h2> Studie: ";
+                echo "<h2> Studie: </h2>";
                 if($stmt->rowCount()){
                     $count=0;
                     while ($row = $stmt->fetch())
@@ -229,8 +268,26 @@ $id = $_SESSION['brukernavn'];
             </form>
         </section>
 
-        <section class="Events">
-            <h1>Events</h1>
+        <section class="flex-bildeboks">
+
+            <?php
+            echo "<h2 style='width: 100%'>Arrangementer</h2>";
+                $stmt = $db->query("SELECT * FROM arrangement JOIN arrangementDeltagelse ON arrangement.arrangementId = arrangementDeltagelse.arrangementId AND arrangementDeltagelse.deltager = '$id' ORDER BY startTid DESC LIMIT 3;");
+
+                if($stmt->rowCount()){
+                    while ($row = $stmt->fetch()){
+
+                        $beskrivelse = substr($row['Beskrivelse'], 0, 120);
+                        echo '<div>';
+
+                        $bildesti = '<img src=\'' . '../arrangement/bilder/' . $row['arrangementId'] . '.png\' >';
+                        echo '<a class=\'headerlink\' href=\'../arrangement/arrangement.php?id='. $row['arrangementId'] . '\'' .'><h3>', $row['tittel'],'</h3>'.$bildesti.'</a>';
+
+                        echo '<p>'.$beskrivelse.'</p>';
+                        echo '</div>';
+                    }
+                }
+            ?>
         </section>
     </article>
 
