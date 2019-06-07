@@ -33,7 +33,7 @@ if (isset($_POST['inviterBruker'])) {
     header("Location: arragement.php");
 
 }
-header('Location: nyheter.php');
+header('Location: arragement.php');
 
 function sendMelding($db, $tittel, $tilBruker, $fraBruker, $arrangementId) {
 
