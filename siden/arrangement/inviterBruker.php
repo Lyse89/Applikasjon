@@ -13,27 +13,14 @@ if (isset($_POST['inviterBruker'])) {
     $fraBruker = $_SESSION['brukernavn'];
     $arrangementId = $_POST['arrangementId'];
 
-    //
-    $sql = "insert into nyheter(tittel, forfatter, beskrivelse, lagtTil)";
-    $sql .= "values (:tittel, :brukernavn, :beskrivelse, now())";
-
-    // Prepared statemens
-    $stmt =  $db->prepare($sql);
-    $stmt->bindParam(':tittel', $tittel);
-    $stmt->bindParam(':brukernavn', $brukernavn);
-    $stmt->bindParam(':beskrivelse', $beskrivelse);
-
-
-    // Kjører sql query
-    $stmt->execute();
 
     sendMelding($db, $tittel, $tilBruker, $fraBruker, $arrangementId);
     innboks($db, $tilBruker);
 
-    header("Location: arragement.php");
+    header("Location: arrangement.php?id=$arrangementId");
 
 }
-header('Location: arragement.php');
+
 
 function sendMelding($db, $tittel, $tilBruker, $fraBruker, $arrangementId) {
 
