@@ -1,4 +1,6 @@
 <?php
+// Denne include-siden er utviklet av Kirstoffer Sorensen siste gang endret 01.06.2019
+// Kontrollert og testet av Kristoffer Sorensen, William Rastad, Simen Lyse , siste gang endret 01.06.2019
 include('../includes/ikke_logget_inn.inc.php');
 include("../includes/init.php");
 include('../includes/logg_inn_db.inc.php');

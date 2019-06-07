@@ -11,3 +11,5 @@ AND innut = "inn";
 SELECT * FROM innutboks;
 
 SELECT * FROM meldinger;
+
+SELECT * FROM arrangement;

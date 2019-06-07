@@ -1,5 +1,4 @@
 <?php
-
 // Denne include-siden er utviklet av Simen Lyse , siste gang endret 01.06.2019
 // Kontrollert og testet av Simen Lyse , siste gang endret 01.06.2019
 include('../includes/logg_inn_db.inc.php');

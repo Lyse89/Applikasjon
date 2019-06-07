@@ -1,5 +1,8 @@
 <?php
 
+// Denne include-siden er utviklet av Simen Lyse siste gang endret 01.06.2019
+// Kontrollert og testet av Kristoffer Sorensen, William Rastad, Simen Lyse , siste gang endret 01.06.2019
+
 if(isset($_POST['btnRegel'])) {
 
   $regel0 = $_POST['regel0'];

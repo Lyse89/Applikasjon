@@ -2,7 +2,7 @@
     include_once('../includes/ikke_logget_inn.inc.php');
     include_once('../includes/rollesjekk.inc.php');
 ?>
-<!-- Denne siden er utviklet av Kristoffer Sorensen og Simen A. Lyse, siste gang endret 05.05.2019
+<!-- Denne siden er utviklet av William Tastad og Simen A. Lyse, siste gang endret 05.05.2019
 // Denne siden er kontrollert av Kristoffer Sorensen, siste gang 05.05.2019 -->
 
 <!DOCTYPE html>

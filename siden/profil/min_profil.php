@@ -1,4 +1,6 @@
 <?php
+// Denne include-siden er utviklet av William Rastad, Simen Lyse siste gang endret 01.06.2019
+// Kontrollert og testet av Kristoffer Sorensen, William Rastad, Simen Lyse , siste gang endret 01.06.2019
 include_once('../includes/ikke_logget_inn.inc.php');
 include_once('../includes/init.php');
 $id = $_SESSION['brukernavn'];
