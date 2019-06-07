@@ -13,7 +13,7 @@ if (isset($_POST['inviterBruker'])) {
     $fraBruker = $_SESSION['brukernavn'];
     $arrangementId = $_POST['arrangementId'];
 
-    // 
+    //
     $sql = "insert into nyheter(tittel, forfatter, beskrivelse, lagtTil)";
     $sql .= "values (:tittel, :brukernavn, :beskrivelse, now())";
 
@@ -49,7 +49,7 @@ function sendMelding($db, $tittel, $tilBruker, $fraBruker, $arrangementId) {
       $stmt->bindParam(':melding',$melding);
 
       $sendtTid = date('Y-m-d G:i:s');
-      $melding = $fraBruker. 'har invitert deg til ' . '<a href="../arrangement/arrangement.php?id=' . $arrangementId .'">dette arrangementet.</a>';
+      $melding = $fraBruker. ' har invitert deg til ' . '<a href="../arrangement/arrangement.php?id=' . $arrangementId .'">dette arrangementet.</a>';
 
       $stmt->execute();
 

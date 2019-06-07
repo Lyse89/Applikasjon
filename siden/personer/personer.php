@@ -181,7 +181,7 @@
             echo "<table width=100%>";
             echo "<h2> Resultater:";
             echo "<h3>(Trykk på navn for å besøke profil)<h3>";
-            echo "<tr><td><b>Navn</b></td><td><b>Epost</b></td></td>";
+            echo "<tr><td><b>Navn</b></td><td><b>brukernavn</b></td><td><b>Epost</b></td></td>";
 
             while ($row = $stmt->fetch())
             {
@@ -190,7 +190,7 @@
                 $etternavn = $row['etternavn'];
                 $ePost = $row['ePost'];
 
-                echo '<tr><td><p><a href=\'../profil/bruker.php?id='. $profilbrukernavn . '\'>' . $fornavn . ' ' . $etternavn . '</a></p></td><td>' . $ePost . '</td></tr>';
+                echo '<tr><td><p><a href=\'../profil/bruker.php?id='. $profilbrukernavn . '\'>' . $fornavn . ' ' . $etternavn . '</a></p></td><td>' . $profilbrukernavn . '</td><td>' . $ePost . '</td></tr>';
             }
             echo "</table>";
             echo "</div>";
