@@ -1,7 +1,7 @@
 <?php
 /* DOCTYPE
-Denne siden er utviklet av Simen Lyse, siste gang endret 02.05.2019
-Denne siden er kontrollert av Simen Lyse, siste gang 02.05.2019 */
+Denne siden er utviklet av Simen Lyse, siste gang endret 05.06.2019
+Denne siden er kontrollert av Simen Lyse, siste gang 05.06.2019 */
 
 
 include_once('../includes/ikke_logget_inn.inc.php');
