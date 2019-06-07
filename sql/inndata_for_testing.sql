@@ -35,8 +35,8 @@ INSERT INTO bio (brukerNavn, bio) VALUES
 insert into arrangement(tittel, vert, lokasjon,startTid, sluttTid, Beskrivelse, bilde) values
 ('Motivasjonsforedrag i vestre fløy', 'arne', 'Lokasjon for arr2', now(), now(), 'Velkommen til motivasjonsforedrag. Dette er beskrivelsen av arrangementet. Vi kan by på pizza og kaker til påmeldte.','Motivasjonsforedrag i vestre fløy.png'),
 ('Hackathon', 'bjarne', 'Lokasjon for arr1', now(), now(), 'Vel møtt til hackathon, arrangementet starter i det lille auditoriet. Oppgavene slippes klokken 7 og før dette vil deltagere deles opp i grupper for brainstorming.', 'Hackathon.png'),
-('Lan 23-25 mars', 'carl', 'Lokasjon for arr3', now(), now(), 'Debug inviterer til lan i workshop rommet. Det vil bli avholdt konkurranser i de spillene som stemmer frem. Det vil bli servert gratis pizza på fredag kveld.', 'Lan 23-25 mars'),
-('Quiz - Jokern', 'donald', 'Lokasjon for arr4', now(), now(), 'Imorgen blir det quiz på Jokern - Ringerike Studentkro kl 20, husk det blir premier! Trykk skal hvis dere vet dere kommer! Gledes til å se dere imorgen!', 'Quiz - Jokern'),
+('Lan 23-25 mars', 'carl', 'Lokasjon for arr3', now(), now(), 'Debug inviterer til lan i workshop rommet. Det vil bli avholdt konkurranser i de spillene som stemmer frem. Det vil bli servert gratis pizza på fredag kveld.', 'Lan 23-25 mars.png'),
+('Quiz - Jokern', 'donald', 'Lokasjon for arr4', now(), now(), 'Imorgen blir det quiz på Jokern - Ringerike Studentkro kl 20, husk det blir premier! Trykk skal hvis dere vet dere kommer! Gledes til å se dere imorgen!', 'Quiz - Jokern.png'),
 ('10 års jubileum', 'e', 'Lokasjon for arr5', now(), now(), 'Beskrivelse av arrangementet5', '10 års jubileum.png');
 
 
