@@ -37,6 +37,8 @@ include_once('../includes/ikke_logget_inn.inc.php');
     // Kjører sql query
     $stmt->execute();
     arrangmentBilde($db);
+    header('Location: arrangementer.php');
+
 
 function arrangmentBilde($db){
     $Mappe = "../arrangement/bilder/";
@@ -71,9 +73,9 @@ function arrangmentBilde($db){
               {
               echo $sql . "<br>" . $e->getMessage();
               }
-            exit();
+
         }
     }
 }
-header('Location: arrangementer.php');
+
 ?>
