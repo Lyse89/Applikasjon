@@ -113,7 +113,7 @@ $bruker = $_SESSION['brukernavn'];
   <fieldset>
       <input type="text" placeholder="Til" name="til" id="til" class="inputBoks" autofocus>
       <input type="text" placeholder="Tittel" name="subj" id="subj" class="inputTitel">
-      <textarea type="text" placeholder="Tekst (2000 tegn)" name="meld" id="meld" class="inputText"></textarea>
+      <textarea type="text" placeholder="Tekst (2000 tegn)" name="meld" id="meld" class="inputText"></textarea><br>
       <input type="submit" value="Send" name="send" id="send" class="sndBtn">
   </fieldset>
 </form>

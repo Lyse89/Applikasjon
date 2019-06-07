@@ -53,19 +53,20 @@
 <title>Logg inn</title>
 <link rel="stylesheet" type="text/css" href="../css/style.css">
 <style>
-input[type=password], input[type=text]{
-	width: 20%;
-	padding: 10px;
-	margin: 4px 0px 10px 10px;
-	display: inline-block;
-	border: 1;
-	background: #f1f1f1;
-}
-#Melding h2{
-    color: red;
-    text-align: center;
-    font-size: 17;
-}
+  input[type=password], input[type=text], input[type=email]{
+  	width: 20%;
+  	padding: 10px;
+  	margin: 4px 0px 10px 10px;
+  	display: inline-block;
+  	border: 1;
+  	background: #f1f1f1;
+  }
+  #Melding h2{
+      color: red;
+      text-align: center;
+      font-size: 17;
+  }
+
 </style>
 </head>
 
@@ -93,6 +94,13 @@ input[type=password], input[type=text]{
 		</tr>
 	</table>
 	<p align="center"><input type="submit" value="Logg inn" name="Logginn" id="Logginn"></p>
+</form>
+
+<form  class="gjen_PO" action="gjen_PO.inc.php" method="post">
+  <h1>Gjennoppret passord</h1>
+  <p>Skriv inn epost å få et nytt passord sendt</p>
+  <input type="email" name="epost" value="Epost" placeholder="epost">
+  <input type="submit" name="btnGjenPO" value="Send">
 </form>
 </body>
 </html>
