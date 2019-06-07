@@ -155,7 +155,7 @@
 <section class="leggTilNyttArrangement">
     <h1>Opprett nytt arrangement</h1>
 
-    <form class="opprettArrangementBoks" action="opprettArrangement.php" method="POST">
+    <form class="opprettArrangementBoks" action="opprettArrangement.php" method="POST" enctype="multipart/form-data">
 
         <input type="text" name="tittel" id="tekstfelt" placeholder="Tittel"><br>
         <input type="text" name="lokasjon" id="tekstfelt" placeholder="Sted"><br>
@@ -167,6 +167,9 @@
         <input type="datetime-local" name="tilDato" id="tilDato" placeholder="yyyy-mm-ddThh:mm"><br>
 
         <textarea class="stortTekstfelt" name="beskrivelse" placeholder="Beskrivelse"></textarea><br>
+
+        Velg et bilde:<br>
+        <input type="file" name="lasteOpparrangementlBilde" id="lasteOpparrangementlBilde"><br>
         <input type="hidden" name="vert" id="tekstfelt" >
         <input type="submit" name="opprettArrangement" id="registrerArrKnapp" value="Registrer arrangment">
     </form>

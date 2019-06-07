@@ -105,6 +105,7 @@ CREATE TABLE arrangement (
     startTid DATETIME,
     sluttTid DATETIME,
     Beskrivelse VARCHAR(1000),
+    bilde VARCHAR(255),
     CONSTRAINT arrangementPK PRIMARY KEY(arrangementId),
     CONSTRAINT arrangementBrukerFK FOREIGN KEY(vert) REFERENCES bruker(brukerNavn)
 );
