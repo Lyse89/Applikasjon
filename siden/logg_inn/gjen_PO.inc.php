@@ -18,7 +18,7 @@ if(isset($_POST["btnGjenPO"])) {
     date_default_timezone_set("Europe/Oslo");
     $til = $_POST['epost'];
     $fra = 'admin@alumni.no';
-    $subject = 'Gjennoppreting av passord'
+    $subject = 'Gjennoppreting av passord';
     $melding = 'Dit nye passord er'. $nyttPO . 'vær så snill å bytt passord så for som mulig, hvis du ikke ba om nytt passord kontakt en administrator';
     $headers = "From: " . $fra . "\r\n" .
           'X-Mailer: PHP/' . phpversion() . "\r\n" .
