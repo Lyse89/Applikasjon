@@ -19,7 +19,7 @@ update bruker set bilde = 'bruker' where brukerNavn = '1';
 -- ('bruker', 'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh', CURRENT_DATE());
 -- Testverdi (en bruker av systemet som skal kunne logge seg inn
 -- attributtet for passord er hashen for passordet 'passord'
-
+SELECT * FROM arrangement;
 
 INSERT INTO interesser (interesse) VALUES
 ('Java'),
@@ -143,3 +143,8 @@ insert into regler values(1, 'Man skal ikke plage andre');
 insert into regler values(2, 'Man skal være grei og snil');
 insert into regler values(3, 'for øvrig kan man gjøre hva man vil');
 */
+
+SELECT * FROM arrangement
+JOIN arrangementDeltagelse
+ON arrangement.arrangementId = arrangementDeltagelse.arrangementId AND arrangementDeltagelse.deltager = 'q'
+ORDER BY startTid DESC LIMIT 3;

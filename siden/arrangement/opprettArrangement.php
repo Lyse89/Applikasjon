@@ -20,7 +20,7 @@ include_once('../includes/ikke_logget_inn.inc.php');
     $tilDato = strtotime($_POST['fraDato']);
     $tilDato = date('Y-m-d H:i:s', $tilDato);
 
-    // 
+    //
     $sql = "insert into arrangement(tittel, vert, lokasjon, startTid, sluttTid, Beskrivelse)";
     $sql .= "values (:tittel, :brukernavn, :lokasjon, :fraDato, :tilDato, :beskrivelse);";
 
@@ -33,9 +33,47 @@ include_once('../includes/ikke_logget_inn.inc.php');
     $stmt->bindParam(':tilDato', $tilDato);
     $stmt->bindParam(':beskrivelse', $beskrivelse);
 
+
     // Kjører sql query
     $stmt->execute();
+    arrangmentBilde($db);
 
-//}
-//header('Location: arrangementer.php');
+function arrangmentBilde($db){
+    $Mappe = "../arrangement/bilder/";
+    $posttittel = $_POST['tittel'];
+    $nyttNavn = $Mappe . $posttittel .'.'. pathinfo($_FILES["lasteOpparrangementlBilde"]["name"] ,PATHINFO_EXTENSION);
+
+    if(isset($_POST["opprettArrangement"])) {
+        $Fil = $Mappe . basename($_FILES["lasteOpparrangementlBilde"]["name"]);
+        $FileType = strtolower(pathinfo($Fil,PATHINFO_EXTENSION));
+    }
+
+    if ($_FILES["lasteOpparrangementlBilde"]["size"] > 500000) {
+        //  "Filen er for stor, må være mindre en 500 000 bytes";
+        exit();
+    }
+
+    if($FileType != "jpg" && $FileType != "png" && $FileType != "jpeg") {
+        //  "Bare jpg, png, jpeg og gif er lov å laste opp.";
+        exit();
+        }
+
+
+    else {
+        if (move_uploaded_file($_FILES["lasteOpparrangementlBilde"]["tmp_name"], $nyttNavn)) {
+            $CookieMelding = "Filen ". basename( $_FILES["lasteOpparrangementlBilde"]["name"]). " har blitt lastet opp.";
+            try {
+              include('../includes/logg_inn_db.inc.php');
+              $sql = "UPDATE arrangement SET bilde = '$nyttNavn' where tittel = '$posttittel';";
+              $stmt = $db->prepare($sql);
+              $stmt->execute();
+            } catch(PDOException $e)
+              {
+              echo $sql . "<br>" . $e->getMessage();
+              }
+            exit();
+        }
+    }
+}
+header('Location: arrangementer.php');
 ?>

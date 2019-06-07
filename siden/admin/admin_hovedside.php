@@ -59,11 +59,14 @@ include_once('../includes/rollesjekk.inc.php');
     }
     .instillinger-boks {
     }
+    fieldset {
+        border: none;
+    }
 
     select{
         width: 100%;
     }
-    input[type=text]{
+    input[type=text],input[type=email]{
         width: 93%;
     }
     input[type="submit"]{
@@ -149,6 +152,18 @@ include_once('../includes/ikke_logget_inn.inc.php');
             </form>
         </div>
 
+
+        <div class="instillinger-boks">
+          <h2>Send email til brukere</h2>
+          <form method="POST" action="sendemail.inc.php" onsubmit="sjekkSubmit();">
+            <fieldset>
+                <input type="email" placeholder="Til" name="til" id="til" class="inputBoks">
+                <input type="text" placeholder="Tittel" name="subj" id="subj" class="inputTitel">
+                <textarea type="text" placeholder="Tekst...." name="meld" id="meld" class="inputText" rows="10" cols="32"></textarea>
+                 <input type="submit" value="Send" name="send" id="send" class="sndBtn">
+            </fieldset>
+          </form>
+        </div>
         <div class="instillinger-boks">
           <h2>Lage regler</h2>
             <form class="lagRegler" action="skrive_til_regler.inc.php" method="post">
@@ -166,28 +181,21 @@ include_once('../includes/ikke_logget_inn.inc.php');
             </form>
           </form>
         </div>
-
         <div class="instillinger-boks">
-          <h2>Send email til brukere</h2>
-          <form method="POST" action="sendemail.inc.php" onsubmit="sjekkSubmit();">
-            <fieldset>
-                <input type="email" placeholder="Til" name="til" id="til" class="inputBoks">
-                <input type="text" placeholder="Titel" name="subj" id="subj" class="inputTitel">
-                <textarea type="text" placeholder="Tekst...." name="meld" id="meld" class="inputText"></textarea>
-                 <input type="submit" value="Send" name="send" id="send" class="sndBtn">
-            </fieldset>
-          </form>
+            <h2>Opprett Ny bruker</h2>
+            <form class="signup-form" action="registrer_ny_bruker_admin.inc.php" method="POST" onsubmit="return sjekkFelt();">
+                <input type="text" name="fornavn" id=Fornavn placeholder="Fornavn">
+                <input type="text" name="etternavn" id=Etternavn placeholder="Etternavn"><br>
+                <input type="email" name="epost" placeholder="E-post (ender med @usn.no)" id="epost"><br>
+                <input type="password" name="forstePassord" id="Passord" placeholder="Passord (minimum 8 tegn)" minlength=8><br>
+                <input type="password" name="passord" id="GjentaPassord" placeholder="Gjenta Passord"><br>
+                <input type="text" name="brukernavn" id="brukernavn" placeholder="Bruker Navn"> <br>
+                <input type="submit" name="btnSignup_form" value="Registrer Deg" id="registrer" onclick="Validate()">
+            </form>
         </div>
-
-        <div class="instillinger-boks">
-        </div>
-
     </div>
 
     <div class="flex-container">
-
-        <div class="instillinger-boks">
-        </div>
 
         <div class="instillinger-boks">
         </div>

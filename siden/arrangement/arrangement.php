@@ -87,7 +87,7 @@ if(isset($_GET['id'])) {
             clear: right;
 
 		}
-        
+
         /* Lagt til 06.06.2019 */
 
         .skalInvitBoks {
@@ -118,7 +118,7 @@ if(isset($_GET['id'])) {
         }
 
     }
-    
+
 
         /* slutt Lagt til 06.06.2019 */
     </style>
@@ -146,13 +146,21 @@ if(isset($_GET['id'])) {
 		<h1><?php echo $tittel; ?></h1>
 
 		<div class="arrangementBeskrivelse">
-        <img src='<?php echo("bilder/" . $id . ".png");?>'>
+			<?php
+              include('../includes/logg_inn_db.inc.php');
+                $stmt = $db->query("SELECT bilde FROM arrangement WHERE tittel = '$tittel'");
+                if($stmt->rowCount()){
+                    while ($row = $stmt->fetch()){
+                        echo '<img src="', $row['bilde'], '">';
+                      }
+                    }
+            ?>
 			<h2>Detaljer</h2>
             <p><?php echo $beskrivelse; ?></p>
 
             <?php
             // Form for setting eller fjerning av deltagelse
-            
+
             // finnes deltagelse.
             include('finnesDeltagelse.inc.php');
             $deltar = deltar($_SESSION['brukernavn'],$id);
@@ -163,7 +171,7 @@ if(isset($_GET['id'])) {
                 <input type="hidden" name="arrangementid" value="'. $id .'">
                 <input type="submit" name="submit" value="Fjern deltagelse">
                 </form>';
-            
+
             } else {
                 echo '<form action="settDeltagelse.inc.php" method="POST">
                 <input type="hidden" name="brukernavn" value="' . $_SESSION['brukernavn'] .'">

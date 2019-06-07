@@ -1,7 +1,7 @@
 <?php
 /* DOCTYPE
-Denne siden er utviklet av Simen Lyse, siste gang endret 02.05.2019
-Denne siden er kontrollert av Simen Lyse, siste gang 02.05.2019 */
+Denne siden er utviklet av Simen Lyse, siste gang endret 05.06.2019
+Denne siden er kontrollert av Simen Lyse, siste gang 05.06.2019 */
 
 
 include_once('../includes/ikke_logget_inn.inc.php');
@@ -111,7 +111,7 @@ $bruker = $_SESSION['brukernavn'];
 
 <form class="sendMelding" action="send.inc.php" method="POST" onsubmit="return sjekkFelt();">
   <fieldset>
-      <input type="text" placeholder="Til" name="til" id="til" class="inputBoks" autofocus>
+      <input type="text" placeholder="Til (brukernavn)" name="til" id="til" class="inputBoks" autofocus>
       <input type="text" placeholder="Tittel" name="subj" id="subj" class="inputTitel">
       <textarea type="text" placeholder="Tekst (2000 tegn)" name="meld" id="meld" class="inputText"></textarea><br>
       <input type="submit" value="Send" name="send" id="send" class="sndBtn">

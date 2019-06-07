@@ -14,7 +14,7 @@
   <a href="../profil/min_profil.php">Min Profil</a>
   <a href="../meldinger/melding.php">Meldinger</a>
   <a href="../brukerInstillinger/profil.php">Instillinger</a>
-  <button type="submit" name="submit">Logout</button>
+  <button type="submit" name="submit">Logg ut</button>
   <?php
     include("settrolle.inc.php");
     if ($_SESSION['rolle'] == "Admin") {
