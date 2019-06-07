@@ -88,6 +88,7 @@ if(isset($_GET['id'])) {
         }
     }
 ?>
+</div>
 
 <?php
   include_once('../includes/footer.php');
