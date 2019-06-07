@@ -1,4 +1,6 @@
 <?php
+// Denne include-siden er utviklet av Kristoffer Sorensen siste gang endret 01.06.2019
+// Kontrollert og testet av Kristoffer Sorensen, William Rastad, Simen Lyse , siste gang endret 01.06.2019
 if ($_SESSION['rolle'] == 'Utestengt') {
     header("location:../utestengt/utestengtmelding.php");
 }
