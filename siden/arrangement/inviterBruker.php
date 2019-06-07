@@ -30,6 +30,8 @@ if (isset($_POST['inviterBruker'])) {
     sendMelding($db, $tittel, $tilBruker, $fraBruker, $arrangementId);
     innboks($db, $tilBruker);
 
+    header("Location: arragement.php");
+
 }
 header('Location: nyheter.php');
 
@@ -47,13 +49,13 @@ function sendMelding($db, $tittel, $tilBruker, $fraBruker, $arrangementId) {
       $stmt->bindParam(':melding',$melding);
 
       $sendtTid = date('Y-m-d G:i:s');
-      $melding = $fraBruker. 'har invitert deg til' . '<a href="../arrangement/arrangement.php?id=' . $arrangementId .'">dette arrangementet.</a>';
+      $melding = $fraBruker. 'har invitert deg til ' . '<a href="../arrangement/arrangement.php?id=' . $arrangementId .'">dette arrangementet.</a>';
 
       $stmt->execute();
 
 }
 
-function innboks($db, $tilBruker)) {
+function innboks($db, $tilBruker) {
 
     $sqlID = $db->prepare("SELECT meldingID FROM meldinger ORDER BY meldingID DESC LIMIT 1");
     $sqlID->execute();
