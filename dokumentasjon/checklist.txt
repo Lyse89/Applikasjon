@@ -47,11 +47,14 @@ DEL 3
 
 
 DEL 4
-    [x] Arrangement-side - Kristoffer
-    [ ] Enkeltarrangement-side - Kristoffer
+    [x] Arrangementer-side - Kristoffer
+    [x] Nyheter-side - Kristoffer
+    [x] Annonser-side - Kristoffer
+    [x] Enkeltarrangement-side - Kristoffer
+    [x] Enkeltnyhet-side - Kristoffer
     [ ] Invitering av brukere til arrangement
     [x] Registrere interesse for arrangement - Kristoffer
-    [ ] Sende meldinger til andre brukere !!EMAIL!! - Simen
+    [x] Sende meldinger til andre brukere !!EMAIL!! - Simen
     [ ] Behold scroll ved oppdatering av relevante sider(losning paa canvas)
 
 
@@ -77,5 +80,7 @@ DEL 5
     [ ] Prøve å fjerne <div> sections
 
 EKSTRA
-    [ ] Kommentarfelt - Kristoffer
+    [x] Kommentarfelt - Kristoffer
     [ ] Fikse alle mine prepared statements - William
+    [ ] Endre varchar verdier i databasen for nyhet, arrangement, annonse.
+    [ ] Fikse format på bilde min_profil.php og bruker.php
