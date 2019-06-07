@@ -41,7 +41,7 @@ include_once('../includes/ikke_logget_inn.inc.php');
 
 
 function arrangmentBilde($db){
-    $Mappe = "../arrangement/bilder/";
+    $Mappe = "";
     $posttittel = $_POST['tittel'];
     $nyttNavn = $Mappe . $posttittel .'.'. pathinfo($_FILES["lasteOpparrangementlBilde"]["name"] ,PATHINFO_EXTENSION);
 

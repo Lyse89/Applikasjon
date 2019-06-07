@@ -187,7 +187,7 @@ $id = $_SESSION['brukernavn'];
                 if($stmt->rowCount()){
                     while ($row = $stmt->fetch()){
                         echo '<img src="', $row['bilde'], '">';
-        
+
                       }
                     }
             ?>
@@ -288,7 +288,7 @@ $id = $_SESSION['brukernavn'];
                         $beskrivelse = substr($row['Beskrivelse'], 0, 120);
                         echo '<div>';
 
-                        $bildesti = '<img src=\'' . '../arrangement/bilder/' . $row['arrangementId'] . '.png\' >';
+                        $bildesti = '<img src=\'' . '../arrangement/bilder/' . $row['bilde'] . '\' >';
                         echo '<a class=\'headerlink\' href=\'../arrangement/arrangement.php?id='. $row['arrangementId'] . '\'' .'><h3>', $row['tittel'],'</h3>'.$bildesti.'</a>';
 
                         echo '<p>'.$beskrivelse.'</p>';

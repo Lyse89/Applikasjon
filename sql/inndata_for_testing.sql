@@ -12,7 +12,7 @@ insert into bruker values('bjarne', '6a08ca76200a364d96214eae8970269aa5023124', 
 insert into bruker values('carl', '3c6e238f13cf76c438902069df4dd35b56e2d959', 'carl', 'cung', 'c@usn.no', '0', NULL, NULL, NULL, '../brukere/carl.jpg');
 insert into bruker values('donald', 'c2112c042635ab4c1b028f6b4b44c6a2634442c6', 'Donald', 'Dal', 'd@usn.no', '0', NULL, NULL, NULL, '../brukere/donald.jpg');
 insert into bruker values('e', '752e0644435a3ab633189c13cf6c8f531d2ea343', 'Erlend', 'Eng', 'e@usn.no', '0', NULL, NULL, NULL, '../brukere/e.jpg');
-update bruker set bilde = 'bruker' where brukerNavn = '1';
+
 
 
 -- INSERT INTO token(brukernavn,token,expires) VALUES
@@ -63,88 +63,3 @@ insert into jobbAnnonse(tittel, stilling, forfatter, beskrivelse, url, lagtTil) 
 
 -- Kommentarer
 insert into kommentar(kommentar, tid, brukernavn, arrangementId) values('Dette er kommentar som skal presenteres', now(), 'arne', 1);
-
-
-
-
-
-/*
-UPDATE bio
-SET bio = 'heiheihei'
-WHERE bio.brukerNavn = 'q';
-
-SELECT * FROM anmerkning WHERE brukerNavn = 'q' GROUP BY brukerNavn DESC, tid DESC;
-
-
-SELECT * FROM bruker;
-SELECT * FROM interesser;
-SELECT * FROM bio;
-
-SELECT bruker.fornavn, bruker.etternavn, interesser.interesse
-FROM bruker
-INNER JOIN interesser ON bruker.idbruker = interesser.idbruker
-WHERE interesse LIKE "%lego%";
-
-SELECT fornavn, etternavn
-FROM bruker
-WHERE brukerNavn LIKE "q";
-
-SELECT interesse FROM interesser WHERE brukerNavn LIKE "q" ORDER BY interesse ASC;
-
-DELETE FROM interesser
-WHERE brukerNavn ='112311'
-AND interesse LIKE ' ';
-
-DELETE FROM interesser
-WHERE interesse = '';
-
-SELECT interesse
-FROM interesser
-GROUP BY interesse
-ORDER BY COUNT(*) DESC
-LIMIT 10;
-
-
-update karantene
-set sluttTid = now()
-where brukerNavn = 'w';
-
-
-SELECT * FROM bruker
-WHERE fornavn and etternavn LIKE 'william rastad';
-
-SELECT * FROM bruker
-WHERE CONCAT(fornavn,' ', etternavn) LIKE 'William Rastad';
-
-update bruker
-set rolle = "Admin"
-where brukerNavn = 'q';
-
-select * from arrangement;
-select * from bruker;
-select * from utestengt;
-select * from anmerkning;
-
-
-INSERT INTO utestengt (brukerNavn, gittAv, tid) VALUES
-("q", "q", now());
-
-INSERT INTO anmerkning (brukerNavn, tid, forklaring) VALUES
-("q", now(), "Dette er en forklaring på anmerkningen");
-
-select * from karantene;
-INSERT INTO karantene (brukerNavn, startTid, sluttTid) VALUES
-('q', now(), now() + INTERVAL 1 DAY),
-('q', now(), now() + INTERVAL 1 WEEK),
-('q', now(), now() + INTERVAL 1 MONTH);
-
-
-insert into regler values(1, 'Man skal ikke plage andre');
-insert into regler values(2, 'Man skal være grei og snil');
-insert into regler values(3, 'for øvrig kan man gjøre hva man vil');
-*/
-
-SELECT * FROM arrangement
-JOIN arrangementDeltagelse
-ON arrangement.arrangementId = arrangementDeltagelse.arrangementId AND arrangementDeltagelse.deltager = 'q'
-ORDER BY startTid DESC LIMIT 3;

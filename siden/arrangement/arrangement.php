@@ -148,10 +148,10 @@ if(isset($_GET['id'])) {
 		<div class="arrangementBeskrivelse">
 			<?php
               include('../includes/logg_inn_db.inc.php');
-                $stmt = $db->query("SELECT bilde FROM arrangement WHERE tittel = '$tittel'");
+                $stmt = $db->query("SELECT * FROM arrangement WHERE tittel = '$tittel'");
                 if($stmt->rowCount()){
                     while ($row = $stmt->fetch()){
-                        echo '<img src="', $row['bilde'], '">';
+                        echo '<img src="' . '../arrangement/bilder/' . $row['bilde'] . '">';
                       }
                     }
             ?>
