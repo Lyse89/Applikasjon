@@ -111,7 +111,7 @@ $bruker = $_SESSION['brukernavn'];
 
 <form class="sendMelding" action="send.inc.php" method="POST" onsubmit="return sjekkFelt();">
   <fieldset>
-      <input type="text" placeholder="Til" name="til" id="til" class="inputBoks" autofocus>
+      <input type="text" placeholder="Til (brukernavn)" name="til" id="til" class="inputBoks" autofocus>
       <input type="text" placeholder="Tittel" name="subj" id="subj" class="inputTitel">
       <textarea type="text" placeholder="Tekst (2000 tegn)" name="meld" id="meld" class="inputText"></textarea><br>
       <input type="submit" value="Send" name="send" id="send" class="sndBtn">
