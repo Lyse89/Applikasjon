@@ -219,7 +219,7 @@ $id = $_SESSION['brukernavn'];
                 <?php
                 include('../includes/logg_inn_db.inc.php');
                 $stmt = $db->query("SELECT studier.studie FROM studier INNER JOIN studiekobling ON studiekobling.studie = studier.studie AND studiekobling.brukernavn = '$id'");
-                echo "<h2> Studie: </h2>";
+                echo "<h2> Studie: ";
                 if($stmt->rowCount()){
                     $count=0;
                     while ($row = $stmt->fetch())
